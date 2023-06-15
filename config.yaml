@@ -1,0 +1,5 @@
+baseURL: https://ohwr.org/
+title: Open Hardware Repository
+module:
+  imports:
+  - path: github.com/gethugothemes/bigspring-light

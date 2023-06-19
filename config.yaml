@@ -4,3 +4,41 @@ title: Open Hardware Repository
 module:
   imports:
   - path: github.com/gethugothemes/bigspring-light
+menus:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Projects
+      url: projects/
+      weight: 2
+    - name: Licenses
+      url: licenses/
+      weight: 3
+    - name: About
+      url: about/
+      weight: 4
+    - name: Forum
+      url: faq/
+      weight: 5
+  footer_left:
+    - name: About Us
+      url: '#'
+    - name: Quick Start
+      url: '#'
+    - name: Pricing
+      url: pricing/
+  footer_middle:
+    - name: Pricing
+      url: pricing/
+    - name: Platform
+      url: '#'
+    - name: Features
+      url: '#'
+  footer_right:
+    - name: Privacy Policy
+      url: privacy-policy/
+    - name: Terms & Conditions
+      url: terms-conditions/
+    - name: FAQ
+      url: faq/

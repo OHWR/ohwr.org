@@ -45,6 +45,7 @@ menus:
     - name: News
       url: news/
 params:
+  favicon: images/favicon.ico
   logo: images/logo.png
   logo_width: 325px
   navigation_button:

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 CERN (home.cern)
+
+SPDX-License-Identifier: CC-BY-SA-4.0+
+-->
+
 [![Deploy to GitHub Pages](https://github.com/OHWR/ohwr.org/actions/workflows/hugo.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/hugo.yaml)
 
 # Open Hardware Repository :globe_with_meridians:

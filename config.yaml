@@ -1,0 +1,54 @@
+baseURL: https://ohwr.org/
+title: Open Hardware Repository
+module:
+  imports:
+  - path: github.com/gethugothemes/bigspring-light
+menus:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Projects
+      url: projects/
+      weight: 2
+    - name: Licenses
+      url: licenses/
+      weight: 3
+    - name: About
+      url: about/
+      weight: 4
+    - name: Forum
+      url: forum/
+      weight: 5
+    - name: News
+      url: news/
+      weight: 5
+  footer_left:
+    - name: About
+      url: about/
+    - name: Projects
+      url: projects/
+    - name: Get Started
+      url: get-started/
+  footer_middle:
+    - name: Licenses
+      url: licenses/
+    - name: Members
+      url: members/
+    - name: Help
+      url: help/
+  footer_right:
+    - name: Forum
+      url: forum/
+    - name: FAQ
+      url: faq/
+    - name: News
+      url: news/
+params:
+  favicon: images/favicon.ico
+  logo: images/logo.png
+  logo_width: 325px
+  navigation_button:
+    enable: true
+    label: Get Started
+    link: get-started

@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: 2023 CERN (home.cern)
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0+
+
 ####################### Banner #########################
 banner:
   title : Welcome to the Open Hardware Repository

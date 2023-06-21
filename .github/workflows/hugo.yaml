@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 CERN (home.cern)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 # Workflow for building and deploying a Hugo site to GitHub Pages
 name: Deploy Hugo site to Pages
 

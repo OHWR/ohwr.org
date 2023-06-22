@@ -29,7 +29,7 @@ git clone https://github.com/OHWR/ohwr.org.git
 ```
 2. Go to the project directory
 ```
-cd ohwr.org
+cd ohwr.org/site
 ```
 3. Build the website
 ```

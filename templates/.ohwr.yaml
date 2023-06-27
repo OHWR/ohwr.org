@@ -1,0 +1,67 @@
+---
+# SPDX-FileCopyrightText: 2023 CERN (home.cern)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+# The version of the .ohwr.yaml template.
+version: '1.0.0'
+
+project:
+
+  # The name of your project.
+  name: 'Project Name'
+
+  # The description of your project. There are 2 options:
+  #   * Enter an inline Markdown description (like in the example below).
+  #   * Enter the URL of the Markdown file containing the description
+  #     (e.g. 'https://raw.githubusercontent.com/user/project/master/.ohwr/description.md').
+  description: |
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin velit ac luctus dignissim. Nullam
+    sodales tellus ac scelerisque [venenatis](https://foo.com/bar).
+
+    Ut in nulla at velit dictum rutrum pretium eu metus. Etiam rhoncus suscipit leo at varius. Nulla id enim
+    sollicitudin, condimentum tortor ac, laoreet dui. Nunc id lectus id ligula.'
+
+  # The website of your project.
+  # Use the web page of your git repository if your project doesn't have dedicated website
+  # (e.g. 'https://github.com/user/project').
+  website: 'https://your.project.com'
+
+  # The licenses of your project. Use SPDX identifiers - https://spdx.org/licenses/.
+  licenses:
+    - 'CERN-OHL-W-2.0+'
+    - 'CC-BY-SA-4.0+'
+    - 'BSD-3-Clause'
+
+  # (optional) Image of your project (e.g. a photo of the latest prototype).
+  image: 'https://your.project.com/img.png'
+
+  # (optional) Link to the documentation of your project.
+  documentation: 'https://github.com/user/project/wiki'
+
+  # (optional) Link to the issue/bug tracker of your project.
+  issues: 'https://github.com/user/project/issues'
+
+  # (optional) Link to the latest release of your project.
+  latest_release: 'https://github.com/user/project/releases/latest'
+
+  # (optional) Link to the forum where your community has conversations, asks questions and posts answers.
+  forum: 'https://forums.ohwr.org/c/project'
+
+  # (optional) Link to the news page of your project.
+  news: 'https://your.project.com/news'
+
+  # (optional) Addtional links.
+  links:
+    - name: 'Link text here'
+      url: 'https://foo.com/bar1'
+    - name: 'Link text here'
+      url: 'https://foo.com/bar2'
+    - name: 'Link text here'
+      url: 'https://foo.com/bar3'
+
+  # (optional) Additional images (maximum 5 images).
+  gallery:
+    - 'https://foo.com/bar/img1.png'
+    - 'https://foo.com/bar/img2.png'
+    - 'https://foo.com/bar/img3.png'

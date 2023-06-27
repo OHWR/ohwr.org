@@ -30,15 +30,15 @@ git clone https://github.com/OHWR/ohwr.org.git
 ```
 2. Go to the project directory
 ```
-cd ohwr.org/site
+cd ohwr.org
 ```
 3. Build the website
 ```
-hugo --gc --minify
+make build
 ```
 4. Serve the website
 ```
-hugo server
+make run
 ```
 
 To view the website, open the URL displayed in your terminal.

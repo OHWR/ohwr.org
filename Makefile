@@ -15,7 +15,7 @@ build: build-hugo
 
 .PHONY: build-hugo
 build-hugo:
-	hugo --gc --minify --source $(SOURCE)
+	hugo --gc --minify --source $(SOURCE) $${BASE_URL:+--baseURL $(BASE_URL)}
 
 ###############################################################################
 # Run

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-HUGO_SRC = $(CURDIR)/site
+SOURCE = $(CURDIR)/src
 
 all: lint build
 
@@ -15,7 +15,7 @@ build: build-hugo
 
 .PHONY: build-hugo
 build-hugo:
-	hugo --gc --minify --source $(HUGO_SRC)
+	hugo --gc --minify --source $(SOURCE)
 
 ###############################################################################
 # Run
@@ -26,7 +26,7 @@ run: run-hugo
 
 .PHONY: run-hugo
 run-hugo:
-	hugo serve --source $(HUGO_SRC)
+	hugo serve --source $(SOURCE)
 
 ###############################################################################
 # Lint
@@ -52,4 +52,4 @@ clean: clean-hugo
 
 .PHONY: clean-hugo
 clean-hugo:
-	rm -rf $(HUGO_SRC)/public $(HUGO_SRC)/resources/_gen $(HUGO_SRC)/.hugo_build.lock
+	rm -rf $(SOURCE)/public $(SOURCE)/resources/_gen $(SOURCE)/.hugo_build.lock

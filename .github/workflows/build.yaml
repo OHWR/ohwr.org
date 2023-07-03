@@ -24,6 +24,7 @@ jobs:
       - name: Build
         run: make build
         env:
+          PROJECT_URLS: ${{ vars.PROJECT_URLS }}
           BASE_URL: "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

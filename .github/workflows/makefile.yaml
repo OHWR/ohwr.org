@@ -1,0 +1,17 @@
+---
+# SPDX-FileCopyrightText: 2023 CERN (home.cern)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+name: Makefile Lint
+
+on: [push, pull_request, workflow_dispatch]  # yamllint disable-line rule:truthy
+
+jobs:
+  makefile-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Makefile Lint
+        uses: Uno-Takashi/checkmake-action@v2

@@ -9,8 +9,10 @@ SOURCE			= ${CURDIR}/src
 PROJECT_DATA_DIR	= ${SOURCE}/data/projects
 PROJECT_CONTENT_DIR	= ${SOURCE}/content/projects
 PROJECT_CONTENT		= $(foreach PROJECT,${PROJECTS},${PROJECT_CONTENT_DIR}/${PROJECT}.md)
+MAKEFILE		= ${CURDIR}/Makefile
 
-all: lint build
+.PHONY: all
+all: test build
 
 ###############################################################################
 # Build
@@ -46,11 +48,11 @@ run-hugo:
 	hugo serve --source ${SOURCE}
 
 ###############################################################################
-# Lint
+# Test
 ###############################################################################
 
-.PHONY: lint
-lint: lint-reuse lint-yaml
+.PHONY: test
+test: lint-reuse lint-yaml lint-makefile
 
 .PHONY: lint-reuse
 lint-reuse:
@@ -59,6 +61,10 @@ lint-reuse:
 .PHONY: lint-yaml
 lint-yaml:
 	yamllint ${CURDIR}
+
+.PHONY: lint-makefile
+lint-makefile:
+	checkmake ${MAKEFILE}
 
 ###############################################################################
 # Clean

@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 # Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
+/src/public/
+/src/resources/_gen/
+/src/assets/jsconfig.json
 hugo_stats.json
 
 # Executable may be added to repository
@@ -14,4 +14,10 @@ hugo.darwin
 hugo.linux
 
 # Temporary lock file while building
-/.hugo_build.lock
+/src/.hugo_build.lock
+
+# Data files imported while building
+/src/data/projects/
+
+# Project pages generated while building
+/src/content/projects/

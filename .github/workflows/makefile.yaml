@@ -3,15 +3,15 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-name: REUSE Compliance Check
+name: Makefile Lint
 
 on: [push, pull_request, workflow_dispatch]  # yamllint disable-line rule:truthy
 
 jobs:
-  reuse-lint:
+  makefile-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: REUSE Compliance Check
-        uses: fsfe/reuse-action@v1
+      - name: Makefile Lint
+        uses: Uno-Takashi/checkmake-action@v2

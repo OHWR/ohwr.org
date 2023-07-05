@@ -2,9 +2,17 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-HUGO_SRC = $(CURDIR)/site
+PROJECTS_FILE		= ${CURDIR}/projects.txt
+override PROJECT_URLS	+= $(shell [ -f ${PROJECTS_FILE} ] && cat ${PROJECTS_FILE})
+PROJECTS		= $(basename $(notdir ${PROJECT_URLS}))
+SOURCE			= ${CURDIR}/src
+PROJECT_DATA_DIR	= ${SOURCE}/data/projects
+PROJECT_CONTENT_DIR	= ${SOURCE}/content/projects
+PROJECT_CONTENT		= $(foreach PROJECT,${PROJECTS},${PROJECT_CONTENT_DIR}/${PROJECT}.md)
+MAKEFILE		= ${CURDIR}/Makefile
 
-all: lint build
+.PHONY: all
+all: test build
 
 ###############################################################################
 # Build
@@ -14,8 +22,19 @@ all: lint build
 build: build-hugo
 
 .PHONY: build-hugo
-build-hugo:
-	hugo --gc --minify --source $(HUGO_SRC)
+build-hugo: ${PROJECT_CONTENT}
+	hugo --gc --minify --source ${SOURCE} $${BASE_URL:+--baseURL ${BASE_URL}}
+
+${PROJECT_CONTENT_DIR}/%.md: ${PROJECT_DATA_DIR}/%.yaml
+	hugo new --source ${SOURCE} content/projects/${@F}
+
+.PRECIOUS: ${PROJECT_DATA_DIR}/%.yaml
+${PROJECT_DATA_DIR}/%.yaml:
+	@mkdir -p ${@D}
+	$(eval TMP := $(shell mktemp -d))
+	git clone --depth 1 $(filter %/$*.git, ${PROJECT_URLS}) ${TMP}
+	cp ${TMP}/.ohwr.yaml $@
+	rm -rf ${TMP}
 
 ###############################################################################
 # Run
@@ -26,14 +45,14 @@ run: run-hugo
 
 .PHONY: run-hugo
 run-hugo:
-	hugo serve --source $(HUGO_SRC)
+	hugo serve --source ${SOURCE}
 
 ###############################################################################
-# Lint
+# Test
 ###############################################################################
 
-.PHONY: lint
-lint: lint-reuse lint-yaml
+.PHONY: test
+test: lint-reuse lint-yaml lint-makefile
 
 .PHONY: lint-reuse
 lint-reuse:
@@ -41,15 +60,27 @@ lint-reuse:
 
 .PHONY: lint-yaml
 lint-yaml:
-	yamllint $(CURDIR)
+	yamllint ${CURDIR}
+
+.PHONY: lint-makefile
+lint-makefile:
+	checkmake ${MAKEFILE}
 
 ###############################################################################
 # Clean
 ###############################################################################
 
 .PHONY: clean
-clean: clean-hugo
+clean: clean-hugo clean-project-data clean-project-content
 
 .PHONY: clean-hugo
 clean-hugo:
-	rm -rf $(HUGO_SRC)/public $(HUGO_SRC)/resources/_gen $(HUGO_SRC)/.hugo_build.lock
+	rm -rf ${SOURCE}/public ${SOURCE}/resources/_gen ${SOURCE}/.hugo_build.lock
+
+.PHONY: clean-project-data
+clean-project-data:
+	rm -rf ${PROJECT_DATA_DIR}
+
+.PHONY: clean-project-content
+clean-project-content:
+	rm -rf ${PROJECT_CONTENT_DIR}

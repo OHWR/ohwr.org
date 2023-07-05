@@ -16,11 +16,11 @@ project:
   #   * Enter the URL of the Markdown file containing the description
   #     (e.g. 'https://raw.githubusercontent.com/user/project/master/.ohwr/description.md').
   description: |
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin velit ac luctus dignissim. Nullam
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin velit ac luctus dignissim. Nullam
     sodales tellus ac scelerisque [venenatis](https://foo.com/bar).
 
     Ut in nulla at velit dictum rutrum pretium eu metus. Etiam rhoncus suscipit leo at varius. Nulla id enim
-    sollicitudin, condimentum tortor ac, laoreet dui. Nunc id lectus id ligula.'
+    sollicitudin, condimentum tortor ac, laoreet dui. Nunc id lectus id ligula.
 
   # The website of your project.
   # Use the web page of your git repository if your project doesn't have dedicated website

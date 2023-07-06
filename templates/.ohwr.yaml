@@ -11,7 +11,7 @@ project:
   # The name of your project.
   name: 'Project Name'
 
-  # The description of your project. There are 2 options:
+  # The description of your project (minimum 30 words). There are 2 options:
   #   * Enter an inline Markdown description (like in the example below).
   #   * Enter the URL of the Markdown file containing the description
   #     (e.g. 'https://raw.githubusercontent.com/user/project/master/.ohwr/description.md').

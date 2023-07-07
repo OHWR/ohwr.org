@@ -5,40 +5,60 @@ SPDX-License-Identifier: BSD-3-Clause
 -->
 
 {{ with ( index .Site.Data.projects ( .Get 0 ) ).project }}
+{{ if .image }}
 <div class="text-center">
-        {{ if .image }}
-                <img src="{{ .image | relURL }}" class="img-fluid w-75 rounded-lg">
-        {{ end }}
+        <img src="{{ .image | relURL }}" class="img-fluid w-75 rounded-lg">
 </div>
+{{ end }}
+{{ if .description }}
 <p>{{ .description | markdownify }}</p>
+{{ end }}
+{{ if .website }}
 <h3 class="section-title">Website</h3>
 <p>{{ .website }}</p>
+{{ end }}
+{{ if .licenses }}
 <h3 class="section-title">Licenses</h3>
 <ul>
         {{ range .licenses }}
         <li>{{ . }}</li>
         {{ end }}
 </ul>
+{{ end }}
+{{ if .documentation }}
 <h3 class="section-title">Documentation</h3>
 <p>{{ .documentation }}</p>
+{{ end }}
+{{ if .issues }}
 <h3 class="section-title">Issues</h3>
 <p>{{ .issues }}</p>
+{{ end }}
+{{ if .latest_release }}
 <h3 class="section-title">Latest Release</h3>
 <p>{{ .latest_release }}</p>
+{{ end }}
+{{ if .forum }}
 <h3 class="section-title">Forum</h3>
 <p>{{ .forum }}</p>
+{{ end }}
+{{ if .news }}
 <h3 class="section-title">News</h3>
 <p>{{ .news }}</p>
+{{ end }}
+{{ if .links }}
 <h3 class="section-title">Links</h3>
 <ul>
         {{ range .links }}
         <li><a href="{{ .url }}">{{ .name }}</a></li>
         {{ end }}
 </ul>
+{{ end }}
+{{ if .gallery }}
 <h3 class="section-title">Gallery</h3>
 <div {{if gt (len .gallery) 1}} class="slider" {{end}}>
         {{ range .gallery }}
         <img src="{{ . | relURL }}">
         {{ end }}
 </div>
+{{ end }}
 {{ end }}

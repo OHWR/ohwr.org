@@ -1,0 +1,33 @@
+// SPDX-FileCopyrightText: 2023 CERN (home.cern)
+//
+// SPDX-License-Identifier: BSD-3-Clause
+
+@import 'search';
+
+.search-toggle {
+    background-color: transparent;
+    border: 0;
+    font-size: 22px;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.content .slider {
+    * {
+        margin-bottom: 0;
+    }
+
+    .slick-list {
+        overflow:  hidden;
+        max-height: 50vw;
+    }
+
+    .slick-dots li {
+        padding-left: 0%;
+        &::before {
+            display: none;
+        }
+    }
+}

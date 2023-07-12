@@ -1,2 +1,4 @@
 github.com/gethugothemes/bigspring-light v0.0.0-20230613052311-d707b096e00f h1:Vzr+F1Ee7pCLmPk/UKO1pL6J1Cv3sLP4SQ1Demqlu0M=
 github.com/gethugothemes/bigspring-light v0.0.0-20230613052311-d707b096e00f/go.mod h1:kIhxWhe+YlW0iU1YbUanAxbLvDiWJsX1NGzjGbw5r98=
+github.com/gethugothemes/hugo-modules/search v0.0.0-20230705095442-1f2d5ac8b18d h1:grjQs30Rm5R10vljSKrtLjjSe04Y2oDOqZ1Nu58zm7Q=
+github.com/gethugothemes/hugo-modules/search v0.0.0-20230705095442-1f2d5ac8b18d/go.mod h1:tmDvLaZCM+QDvS/WLZXNjY1QTdWh7/68D2wIToECbyA=

@@ -6,6 +6,18 @@
 {{ with (index .Site.Data.projects .Name).project }}
 title: {{ .name }}
 image: {{ .image }}
+{{ if .tags }}
+tags:
+{{ range .tags }}
+  - {{ . }}
+{{ end }}
+{{ end }}
+{{ if .categories }}
+categories:
+{{ range .categories }}
+  - {{ . }}
+{{ end }}
+{{ end }}
 {{ end }}
 date: {{ .Date }}
 ---

@@ -13,3 +13,21 @@
         color: $primary-color;
     }
 }
+
+.content .slider {
+    * {
+        margin-bottom: 0;
+    }
+
+    .slick-list {
+        overflow:  hidden;
+        max-height: 50vw;
+    }
+
+    .slick-dots li {
+        padding-left: 0%;
+        &::before {
+            display: none;
+        }
+    }
+}

@@ -9,6 +9,11 @@ DATA		= ${SOURCE}/data/projects
 CONTENT		= ${SOURCE}/content/projects
 
 PARSE_CONFIG	= $(shell yq '.projects.[] | ${1}' ${CONFIG})
+HOST		= $(shell echo ${1} | cut -d'/' -f3)
+OWNER		= $(shell echo ${1} | cut -d'/' -f4)
+REPO		= $(shell echo ${1} | cut -d'/' -f5 | cut -d'.' -f1)
+URL_GH		= https://api.github.com/repos/$(call OWNER, ${1})/$(call REPO, ${1})/contents/.ohwr.yaml
+IMPORT_GH	= curl -H 'Accept: application/vnd.github.v3.raw' $(call URL_GH, ${1}) -L -o ${2}
 
 define IMPORT
 $(eval TMP := $(shell mktemp -d))
@@ -35,7 +40,7 @@ ${CONTENT}/%.md: ${DATA}/%.yaml
 ${DATA}/%.yaml:
 	@mkdir -p ${@D}
 	$(eval URL = $(call PARSE_CONFIG, select(.id == "$*") | .url))
-	$(call IMPORT, ${URL}, $@)
+	$(if $(filter github.com, $(call HOST, ${URL})), $(call IMPORT_GH, ${URL}, $@), $(call IMPORT, ${URL}, $@))
 
 ###############################################################################
 # Run

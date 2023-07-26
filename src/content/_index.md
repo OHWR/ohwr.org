@@ -10,8 +10,8 @@ banner:
   content : "A place on the web for electronics designers at experimental physics facilities to collaborate on open hardware designs, much in the philosophy of the free software movement."
   button:
     enable : true
-    label : Get Started
-    link : get-started/
+    label : Join
+    link : join/
 
 ##################### Feature ##########################
 feature:
@@ -103,11 +103,11 @@ screenshot:
 ##################### Call to action #####################
 call_to_action:
   enable : true
-  title : "Ready to get started?"
+  title : "Ready to join?"
   image : "images/banner.jpg"
   content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur."
   button:
     enable : true
-    label : "Get Started"
-    link : "get-started/"
+    label : "Join"
+    link : "join/"
 ---

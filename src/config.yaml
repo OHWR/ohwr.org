@@ -41,8 +41,8 @@ menus:
       url: about/
     - name: Projects
       url: projects/
-    - name: Get Started
-      url: get-started/
+    - name: Join
+      url: join
   footer_middle:
     - name: Licenses
       url: licenses/
@@ -64,8 +64,8 @@ params:
   logo_width: 325px
   navigation_button:
     enable: true
-    label: Get Started
-    link: get-started
+    label: Join
+    link: join
   plugins:
     js:
       - link: plugins/jQuery/jquery.slim.min.js

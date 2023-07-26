@@ -10,6 +10,9 @@ title: {{ . }}
 {{ with .image }}
 image: {{ . }}
 {{ end }}
+{{ with .type }}
+type: {{ . }}
+{{ end }}
 {{ with .tags }}
 tags:
 {{ range . }}

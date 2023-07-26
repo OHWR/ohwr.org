@@ -74,7 +74,7 @@ params:
       - link: 'js/search.js'
   search:
     enable: true
-    primary_color: '#ce8460'
+    primary_color: '#0aa8a7'
     include_all_sections: true
     show_image: true
     show_description: true

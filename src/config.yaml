@@ -21,8 +21,8 @@ module:
     - path: github.com/gethugothemes/hugo-modules/search
 menus:
   main:
-    - name: Home
-      url: /
+    - name: About
+      url: about/
       weight: 1
     - name: Projects
       url: projects/
@@ -30,12 +30,9 @@ menus:
     - name: Licenses
       url: licenses/
       weight: 3
-    - name: About
-      url: about/
-      weight: 4
     - name: Forum
       url: forum/
-      weight: 5
+      weight: 4
     - name: News
       url: news/
       weight: 5

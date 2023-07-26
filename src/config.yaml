@@ -31,7 +31,7 @@ menus:
       url: licenses/
       weight: 3
     - name: Forum
-      url: forum/
+      url: https://forums.ohwr.org
       weight: 4
     - name: News
       url: news/
@@ -52,7 +52,7 @@ menus:
       url: help/
   footer_right:
     - name: Forum
-      url: forum/
+      url: https://forums.ohwr.org
     - name: FAQ
       url: faq/
     - name: News

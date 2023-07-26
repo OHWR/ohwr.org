@@ -10,7 +10,7 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ end }}
 {{ with .website }}
 <h3 class="section-title">Website</h3>
-<p>{{ . }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
 {{ with .licenses }}
 <h3 class="section-title">Licenses</h3>
@@ -22,27 +22,27 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ end }}
 {{ with .repository }}
 <h3 class="section-title">Repository</h3>
-<p>{{ . }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
 {{ with .documentation }}
 <h3 class="section-title">Documentation</h3>
-<p>{{ . }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
 {{ with .issues }}
 <h3 class="section-title">Issues</h3>
-<p>{{ . }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
 {{ with .latest_release }}
 <h3 class="section-title">Latest Release</h3>
-<p>{{ . }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
 {{ with .forum }}
 <h3 class="section-title">Forum</h3>
-<p>{{ . }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
 {{ with .news }}
 <h3 class="section-title">News</h3>
-<p>{{ . }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
 {{ with .links }}
 <h3 class="section-title">Links</h3>

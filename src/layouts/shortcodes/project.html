@@ -54,10 +54,6 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ end }}
 {{ with .gallery }}
 <h3 class="section-title">Gallery</h3>
-<div {{if gt (len .) 1}} class="slider" {{end}}>
-  {{ range . }}
-  <img src="{{ . | relURL }}" class="img-fluid">
-  {{ end }}
-</div>
+{{ partial "slider.html" (dict "Srcs" .) }}
 {{ end }}
 {{ end }}

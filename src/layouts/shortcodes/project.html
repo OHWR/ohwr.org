@@ -20,6 +20,10 @@ SPDX-License-Identifier: BSD-3-Clause
   {{ end }}
 </ul>
 {{ end }}
+{{ with .repository }}
+<h3 class="section-title">Repository</h3>
+<p>{{ . }}</p>
+{{ end }}
 {{ with .documentation }}
 <h3 class="section-title">Documentation</h3>
 <p>{{ . }}</p>

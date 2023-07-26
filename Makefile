@@ -41,6 +41,7 @@ ${DATA}/%.yaml:
 	@mkdir -p ${@D}
 	$(eval URL = $(call PARSE_CONFIG, select(.id == "$*") | .url))
 	$(if $(filter github.com, $(call HOST, ${URL})), $(call IMPORT_GH, ${URL}, $@), $(call IMPORT, ${URL}, $@))
+	yq -i '.project.repository = "${URL}"' $@
 	$(eval TYPE = $(call PARSE_CONFIG, select(.id == "$*") | .type))
 	$(if $(filter-out null, ${TYPE}), yq -i '.project.type = "${TYPE}"' $@)
 

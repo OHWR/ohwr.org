@@ -21,6 +21,12 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Yamale
+        run: pip install 'yamale @ git+https://github.com/OHWR/Yamale@4.0.5'
       - name: Build
         run: make build
         env:

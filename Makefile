@@ -5,17 +5,18 @@
 SOURCE		= ${CURDIR}/src
 CONFIG		= ${CURDIR}/config.yaml
 MAKEFILE	= ${CURDIR}/Makefile
+SCHEMA		= ${CURDIR}/schema.yaml
 DATA		= ${SOURCE}/data/projects
 CONTENT		= ${SOURCE}/content/projects
 
-PARSE_CONFIG	= $(shell yq '.projects.[] | ${1}' ${CONFIG})
 HOST		= $(shell echo ${1} | cut -d'/' -f3)
 OWNER		= $(shell echo ${1} | cut -d'/' -f4)
 REPO		= $(shell echo ${1} | cut -d'/' -f5 | cut -d'.' -f1)
 URL_GH		= https://api.github.com/repos/$(call OWNER, ${1})/$(call REPO, ${1})/contents/.ohwr.yaml
-IMPORT_GH	= curl -H 'Accept: application/vnd.github.v3.raw' $(call URL_GH, ${1}) -L -o ${2}
+IS_GH		= $(filter github.com, $(call HOST, ${1}))
+IMPORT_GH	= curl --silent -H 'Accept: application/vnd.github.v3.raw' $(call URL_GH, ${1}) -L -o ${2}
 
-define IMPORT
+define IMPORT_GIT
 $(eval TMP := $(shell mktemp -d))
 git clone --depth 1 ${1} ${TMP}
 cp ${TMP}/.ohwr.yaml ${2}
@@ -30,19 +31,20 @@ all: test build
 ###############################################################################
 
 .PHONY: build
-build: $(foreach ID, $(call PARSE_CONFIG, '.id'), ${CONTENT}/${ID}.md)
-	hugo --gc --minify --source ${SOURCE} $${BASE_URL:+--baseURL ${BASE_URL}}
+build: $(foreach ID, $(shell yq '.projects.[] | .id' ${CONFIG}), ${CONTENT}/${ID}.md)
+	hugo --gc --minify --source ${SOURCE} $${BASE_URL:+--baseURL $${BASE_URL}}
 
 ${CONTENT}/%.md: ${DATA}/%.yaml
-	hugo new --source ${SOURCE} $${BASE_URL:+--baseURL ${BASE_URL}} content/projects/${@F}
+	hugo new --source ${SOURCE} $${BASE_URL:+--baseURL $${BASE_URL}} content/projects/${@F}
 
 .PRECIOUS: ${DATA}/%.yaml
 ${DATA}/%.yaml:
 	@mkdir -p ${@D}
-	$(eval URL = $(call PARSE_CONFIG, select(.id == "$*") | .url))
-	$(if $(filter github.com, $(call HOST, ${URL})), $(call IMPORT_GH, ${URL}, $@), $(call IMPORT, ${URL}, $@))
+	$(eval URL := $(shell yq '.projects.[] | select(.id == "$*") | .url' ${CONFIG}))
+	$(if $(call IS_GH, ${URL}), $(call IMPORT_GH, ${URL}, $@), $(call IMPORT_GIT, ${URL}, $@))
+	yamale -s ${SCHEMA} $@
 	yq -i '.project.repository = "${URL}"' $@
-	$(eval TYPE = $(call PARSE_CONFIG, select(.id == "$*") | .type))
+	$(eval TYPE = $(shell yq '.projects.[] | select(.id == "$*") | .type' ${CONFIG}))
 	$(if $(filter-out null, ${TYPE}), yq -i '.project.type = "${TYPE}"' $@)
 
 ###############################################################################

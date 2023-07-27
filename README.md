@@ -21,9 +21,15 @@ The website is built with [Hugo](https://gohugo.io) using the [Bigspring Light](
 
 ## Build :hammer:
 
-Before building the website, make sure to have [Go](https://go.dev/doc/install) and [Hugo](https://gohugo.io/installation) (the extended edition) installed.
+### Requirements :clipboard:
 
-To build the website:
+* [Go](https://go.dev/doc/install) >= go1.20.3
+* [Hugo](https://gohugo.io/installation) (the extended edition) >= v0.110.0+extended 
+* [yq](https://github.com/mikefarah/yq#install) >= v4.34.2
+* [Yamale](https://github.com/OHWR/Yamale) (our fork) >= 4.0.5
+
+### Steps :footprints:
+
 1. Clone the project
 ```
 git clone https://github.com/OHWR/ohwr.org.git

@@ -4,30 +4,21 @@
 
 @import 'search';
 
-.search-toggle {
-    background-color: transparent;
-    border: 0;
-    font-size: 22px;
+@import 'gallery-slider';
 
-    &:hover {
-        color: $primary-color;
-    }
+.search-toggle {
+  background-color: transparent;
+  border: 0;
+  font-size: 22px;
+
+  &:hover {
+    color: $primary-color;
+  }
 }
 
-.content .slider {
-    * {
-        margin-bottom: 0;
-    }
-
-    .slick-list {
-        overflow:  hidden;
-        max-height: 50vw;
-    }
-
-    .slick-dots li {
-        padding-left: 0%;
-        &::before {
-            display: none;
-        }
-    }
+.gallery-slider {
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $primary-color;
+  }
 }

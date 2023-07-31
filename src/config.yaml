@@ -2,82 +2,92 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-baseURL: https://ohwr.org/
-title: Open Hardware Repository
+baseURL: 'https://ohwr.org/'
+title: 'Open Hardware Repository'
 summaryLength: 30
 outputs:
   home:
-    - html
-    - SearchIndex
+    - 'html'
+    - 'SearchIndex'
 outputFormats:
   SearchIndex:
-    mediaType: application/json
-    baseName: searchindex
+    mediaType: 'application/json'
+    baseName: 'searchindex'
     isPlainText: true
     notAlternative: true
 module:
   imports:
-    - path: github.com/gethugothemes/bigspring-light
-    - path: github.com/gethugothemes/hugo-modules/search
+    - path: 'github.com/gethugothemes/bigspring-light-hugo'
+    - path: 'github.com/gethugothemes/hugo-modules/search'
+    - path: 'github.com/gethugothemes/hugo-modules/gallery-slider'
+
 menus:
   main:
-    - name: Home
-      url: /
+    - name: 'About'
+      url: 'about/'
       weight: 1
-    - name: Projects
-      url: projects/
+    - name: 'Projects'
+      url: 'projects/'
       weight: 2
-    - name: Licenses
-      url: licenses/
+    - name: 'Licenses'
+      url: 'licenses/'
       weight: 3
-    - name: About
-      url: about/
+    - name: 'Forum'
+      url: 'https://forums.ohwr.org/'
       weight: 4
-    - name: Forum
-      url: forum/
-      weight: 5
-    - name: News
-      url: news/
+    - name: 'News'
+      url: 'news/'
       weight: 5
   footer_left:
-    - name: About
-      url: about/
-    - name: Projects
-      url: projects/
-    - name: Get Started
-      url: get-started/
+    - name: 'About'
+      url: 'about/'
+    - name: 'Projects'
+      url: 'projects/'
+    - name: 'Join'
+      url: 'join/'
   footer_middle:
-    - name: Licenses
-      url: licenses/
-    - name: Members
-      url: members/
-    - name: Help
-      url: help/
+    - name: 'Licenses'
+      url: 'licenses/'
+    - name: 'Members'
+      url: 'members/'
+    - name: 'Help'
+      url: 'help/'
   footer_right:
-    - name: Forum
-      url: forum/
-    - name: FAQ
-      url: faq/
-    - name: News
-      url: news/
+    - name: 'Forum'
+      url: 'https://forums.ohwr.org/'
+    - name: 'FAQ'
+      url: 'faq/'
+    - name: 'News'
+      url: 'news/'
 params:
-  blogCategoryType: projects
-  favicon: images/favicon.ico
-  logo: images/logo.png
-  logo_width: 325px
+  blogCategoryType: 'projects'
+  favicon: 'images/favicon.ico'
+  logo: 'images/logo.png'
+  logo_width: '325px'
   navigation_button:
     enable: true
-    label: Get Started
-    link: get-started
+    label: 'Join'
+    link: 'join'
   plugins:
+    css:
+      - link: 'plugins/bootstrap/bootstrap.min.css'
+      - link: 'plugins/slick/slick.css'
+      - link: 'plugins/glightbox/glightbox.css'
+      - link: 'plugins/swiper/swiper-bundle.css'
+      - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css'
+      - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css'
+      - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css'
     js:
-      - link: plugins/jQuery/jquery.slim.min.js
-      - link: plugins/bootstrap/bootstrap.min.js
-      - link: plugins/slick/slick.min.js
-      - link: js/search.js
+      - link: 'plugins/jQuery/jquery.slim.min.js'
+      - link: 'plugins/bootstrap/bootstrap.min.js'
+      - link: 'plugins/slick/slick.min.js'
+      - link: 'js/search.js'
+      - link: 'plugins/swiper/swiper-bundle.js'
+      - link: 'plugins/glightbox/glightbox.js'
+      - link: 'js/gallery-slider.js'
   search:
     enable: true
-    primary_color: "#ce8460"
+    primary_color: '#0aa8a7'
     include_all_sections: true
     show_image: true
     show_description: true

@@ -1,0 +1,27 @@
+---
+# SPDX-FileCopyrightText: 2023 CERN (home.cern)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+version: str(equals='1.0.0')
+
+project:
+  name: str()
+  description: regex('(\S{1,}\s{1,}){30,}', name='minimum 30 words')
+  website: url(reachable=True, timeout=3)
+  licenses: list(str(), min=1)
+  image: url(reachable=True, timeout=3, required=False, none=False)
+  documentation: url(reachable=True, timeout=3, required=False, none=False)
+  issues: url(reachable=True, timeout=3, required=False, none=False)
+  latest_release: url(reachable=True, timeout=3, required=False, none=False)
+  forum: url(reachable=True, timeout=3, required=False, none=False)
+  news: url(reachable=True, timeout=3, required=False, none=False)
+  links: list(include('link'), min=1, required=False)
+  gallery: list(url(reachable=True, timeout=3), min=1, max=5, required=False)
+  categories: list(str(), min=1, required=False)
+  tags: list(str(), min=1, required=False)
+
+---
+link:
+  name: str()
+  url: url(reachable=True, timeout=3)

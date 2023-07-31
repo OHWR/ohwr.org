@@ -4,61 +4,56 @@ SPDX-FileCopyrightText: 2023 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ with ( index .Site.Data.projects ( .Get 0 ) ).project }}
-{{ if .image }}
-<div class="text-center">
-        <img src="{{ .image | relURL }}" class="img-fluid w-75 rounded-lg">
-</div>
+{{ with (index .Site.Data.projects (.Get 0)).project }}
+{{ with .description }}
+<p>{{ . | markdownify }}</p>
 {{ end }}
-{{ if .description }}
-<p>{{ .description | markdownify }}</p>
-{{ end }}
-{{ if .website }}
+{{ with .website }}
 <h3 class="section-title">Website</h3>
-<p>{{ .website }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
-{{ if .licenses }}
+{{ with .licenses }}
 <h3 class="section-title">Licenses</h3>
 <ul>
-        {{ range .licenses }}
-        <li>{{ . }}</li>
-        {{ end }}
+  {{ range . }}
+  <li>{{ . }}</li>
+  {{ end }}
 </ul>
 {{ end }}
-{{ if .documentation }}
+{{ with .repository }}
+<h3 class="section-title">Repository</h3>
+<p><a href="{{ . }}">{{ . }}</a></p>
+{{ end }}
+{{ with .documentation }}
 <h3 class="section-title">Documentation</h3>
-<p>{{ .documentation }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
-{{ if .issues }}
+{{ with .issues }}
 <h3 class="section-title">Issues</h3>
-<p>{{ .issues }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
-{{ if .latest_release }}
+{{ with .latest_release }}
 <h3 class="section-title">Latest Release</h3>
-<p>{{ .latest_release }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
-{{ if .forum }}
+{{ with .forum }}
 <h3 class="section-title">Forum</h3>
-<p>{{ .forum }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
-{{ if .news }}
+{{ with .news }}
 <h3 class="section-title">News</h3>
-<p>{{ .news }}</p>
+<p><a href="{{ . }}">{{ . }}</a></p>
 {{ end }}
-{{ if .links }}
+{{ with .links }}
 <h3 class="section-title">Links</h3>
 <ul>
-        {{ range .links }}
-        <li><a href="{{ .url }}">{{ .name }}</a></li>
-        {{ end }}
+  {{ range . }}
+  <li><a href="{{ .url }}">{{ .name }}</a></li>
+  {{ end }}
 </ul>
 {{ end }}
-{{ if .gallery }}
+{{ with .gallery }}
 <h3 class="section-title">Gallery</h3>
-<div {{if gt (len .gallery) 1}} class="slider" {{end}}>
-        {{ range .gallery }}
-        <img src="{{ . | relURL }}" class="img-fluid">
-        {{ end }}
-</div>
+{{ partial "slider.html" (dict "Srcs" .) }}
 {{ end }}
 {{ end }}

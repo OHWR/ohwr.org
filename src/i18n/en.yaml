@@ -2,11 +2,9 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-- id: search_input_placeholder
-  translation: Search Here
-
-- id: no_results_for
-  translation: No results for
-
-- id: empty_search_results_placeholder
-  translation: Type something to search...
+- id: 'search_input_placeholder'
+  translation: 'Search Here'
+- id: 'no_results_for'
+  translation: 'No results for'
+- id: 'empty_search_results_placeholder'
+  translation: 'Type something to search...'

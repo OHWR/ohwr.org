@@ -4,17 +4,24 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {{ with (index .Site.Data.projects .Name).project }}
-title: {{ .name }}
-image: {{ .image }}
-{{ if .tags }}
+{{ with .name }}
+title: {{ . }}
+{{ end }}
+{{ with .image }}
+image: {{ . }}
+{{ end }}
+{{ with .type }}
+type: {{ . }}
+{{ end }}
+{{ with .tags }}
 tags:
-{{ range .tags }}
+{{ range . }}
   - {{ . }}
 {{ end }}
 {{ end }}
-{{ if .categories }}
+{{ with .categories }}
 categories:
-{{ range .categories }}
+{{ range . }}
   - {{ . }}
 {{ end }}
 {{ end }}

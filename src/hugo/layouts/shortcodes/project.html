@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2023 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ with (index .Site.Data.projects (.Get 0)).project }}
+{{ with (index .Site.Data.projects (.Get 0)) }}
 {{ with .description }}
 <p>{{ . | markdownify }}</p>
 {{ end }}
@@ -56,4 +56,29 @@ SPDX-License-Identifier: BSD-3-Clause
 <h3 class="section-title">Gallery</h3>
 {{ partial "slider.html" (dict "Srcs" .) }}
 {{ end }}
+{{ with (path.Join "/news" .id | site.GetPage) }}
+<div class="d-flex justify-content-between">
+  <h3 class="section-title d-flex align-items-center">Latest News</h3>
+  <a href="{{.Permalink}}" class="btn btn-primary btn-sm d-flex align-items-center">See All News</a>
+</div>
+<div class="row">
+  {{ range (first 3 .RegularPages.ByDate.Reverse) }}
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card border-0">
+      <img src="{{ .Params.image |relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-5">
+      <div class="card-body p-0">
+        <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h4>
+        <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+        <p class="card-text">{{ .Summary }}</p>
+        <a href="{{.Permalink}}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">{{ i18n "readmore" }}</a>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  <div class="col-12">
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</div>
 {{ end }}
+{{ end }}
+

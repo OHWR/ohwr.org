@@ -14,7 +14,11 @@ SPDX-License-Identifier: BSD-3-Clause
         <h2 class="mb-4">{{ .Title }}</h2>
         <div class="d-flex justify-content-between">
           <time class="d-flex align-items-center">{{ .Date.Format "Jan 2, 2006" }}</time>
-          <h5><a href="{{ (path.Join `/projects` .Params.project | .Site.GetPage ).Permalink }}" class="post-title d-flex align-items-center">{{ (index site.Data.projects .Params.project).name }}</a></h5>
+          <h5>
+            <a href="{{ path.Join `projects` .Params.project | relURL }}" class="post-title d-flex align-items-center">
+              {{ (index site.Data.projects .Params.project).name }}
+            </a>
+          </h5>
         </div>
         <div class="content">{{.Content}}</div>
       </div>

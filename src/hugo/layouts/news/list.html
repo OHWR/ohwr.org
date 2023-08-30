@@ -21,7 +21,7 @@ SPDX-License-Identifier: BSD-3-Clause
             </div>
             <div class="col-md-9">
               <div class="card-body p-0">
-                <h6><a href="{{ (path.Join `/projects` .Params.project | .Site.GetPage ).Permalink }}" class="post-title">
+                <h6><a href="{{ path.Join `projects` .Params.project | relURL }}" class="post-title">
                   {{ (index site.Data.projects .Params.project).name }}
                 </a></h6>
                 <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>

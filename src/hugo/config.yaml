@@ -27,17 +27,28 @@ menus:
       url: 'about/'
       weight: 1
     - name: 'Projects'
-      url: 'projects/'
       weight: 2
+    - name: 'All Projects'
+      url: 'projects/'
+      weight: 3
+      parent: 'Projects'
+    - name: 'Categories'
+      url: 'categories/'
+      weight: 4
+      parent: 'Projects'
+    - name: 'Tags'
+      url: 'tags/'
+      weight: 5
+      parent: 'Projects'
     - name: 'Licenses'
       url: 'licenses/'
-      weight: 3
+      weight: 6
     - name: 'Forum'
       url: 'https://forums.ohwr.org/'
-      weight: 4
+      weight: 7
     - name: 'News'
       url: 'news/'
-      weight: 5
+      weight: 8
   footer_left:
     - name: 'About'
       url: 'about/'

@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-{{ with (index .Site.Data.projects .Name).project }}
+{{ with (index .Site.Data.projects .Name) }}
 {{ with .name }}
 title: {{ . }}
 {{ end }}

@@ -25,13 +25,13 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - name: Install Yamale
-        run: pip install 'yamale @ git+https://github.com/OHWR/Yamale@4.0.5'
+      - name: Install dependencies
+        run: pip install -r ./src/compose/requirements.txt
       - name: Build
         run: make build
         env:
-          BASE_URL: "${{ steps.pages.outputs.base_url }}/"
+          HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./src/public
+          path: ./public

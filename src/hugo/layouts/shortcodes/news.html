@@ -1,0 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2023 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+{{ with (index (index .Site.Data.news (.Get 0)) (string (.Get 1))) }}
+{{ with .content }}
+<p>{{ . | markdownify }}</p>
+{{ end }}
+{{ end }}

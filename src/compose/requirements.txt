@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2023 CERN (home.cern)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+PyYAML==6.0.1
+pydantic==2.1.1

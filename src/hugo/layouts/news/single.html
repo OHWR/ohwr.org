@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<!--
+SPDX-FileCopyrightText: 2023 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="img-fluid w-100 rounded mb-4">
+        <h2 class="mb-4">{{ .Title }}</h2>
+        <div class="d-flex justify-content-between">
+          <time class="d-flex align-items-center">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <h5>
+            <a href="{{ path.Join `projects` .Params.project | relURL }}" class="post-title d-flex align-items-center">
+              {{ (index site.Data.projects .Params.project).name }}
+            </a>
+          </h5>
+        </div>
+        <div class="content">{{.Content}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

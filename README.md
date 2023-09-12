@@ -45,6 +45,30 @@ make run
 
 To view the website, open the URL displayed in your terminal.
 
+## Test :test_tube:
+
+### Requirements :clipboard:
+
+* [reuse](https://reuse.readthedocs.io/en/v1.0.0/readme.html#install) >= 2.1.0
+* [wemake-python-styleguide](https://wemake-python-styleguide.readthedocs.io/en/latest/#quickstart) >= 0.18.0
+* [yamllint](https://yamllint.readthedocs.io/en/stable/quickstart.html#installing-yamllint) >= 1.32.0
+* [checkmake](https://github.com/mrtazz/checkmake#installation) >= 0.2.2
+
+### Steps :footprints:
+
+1. Clone the project
+```
+git clone https://github.com/OHWR/ohwr.org.git
+```
+2. Go to the project directory
+```
+cd ohwr.org
+```
+3. Run the tests
+```
+make test
+```
+
 ## Deployment :satellite:
 
 The website is deployed to [GitHub Pages](https://pages.github.com/) with the [GitHub Actions](https://github.com/features/actions) workflow defined in `.github/workflows/deploy.yaml`.

@@ -1,3 +1,4 @@
+---
 # SPDX-FileCopyrightText: 2023 CERN (home.cern)
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -85,8 +86,11 @@ params:
       - link: 'plugins/slick/slick.css'
       - link: 'plugins/glightbox/glightbox.css'
       - link: 'plugins/swiper/swiper-bundle.css'
+      # yamllint disable-line rule:line-length
       - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css'
+      # yamllint disable-line rule:line-length
       - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css'
+      # yamllint disable-line rule:line-length
       - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css'
     js:
       - link: 'plugins/jQuery/jquery.slim.min.js'

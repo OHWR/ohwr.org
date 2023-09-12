@@ -11,8 +11,9 @@ source: './src/hugo'
 
 # Projects to include in the OHWR website.
 projects:
-    # Unique project identifier.
-    # The project page URL depends on the id (i.e. http://ohwr.org/projects/<id>/).
+  # Unique project identifier.
+  # The project page URL depends on the id
+  # (i.e. http://ohwr.org/projects/<id>/).
   - id: 'svec'
     # URL to the Git repository of the project.
     # The Git repository must contain a .ohwr.yaml file.

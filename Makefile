@@ -39,7 +39,7 @@ lint-reuse:
 
 .PHONY: lint-yaml
 lint-yaml:
-	yamllint ${CURDIR}
+	yamllint -d '{extends: default, ignore-from-file: .gitignore}' .
 
 .PHONY: lint-makefile
 lint-makefile:

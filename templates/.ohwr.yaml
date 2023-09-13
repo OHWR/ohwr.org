@@ -28,8 +28,13 @@ project:
     - 'CERN-OHL-W-2.0+'
     - 'CC-BY-SA-4.0+'
     - 'BSD-3-Clause'
-  # (optional) Image of your project (e.g. a photo of the latest prototype).
-  image: 'https://your.project.com/img.png'
+  # (optional) Images of your project (maximum 5 images).
+  # The main image should be the first in the list.
+  # (e.g. a photo of the latest prototype).
+  images:
+    - 'https://your.project.com/img1.png'
+    - 'https://your.project.com/img2.png'
+    - 'https://your.project.com/img3.png'
   # (optional) Link to the documentation of your project.
   documentation: 'https://github.com/user/project/wiki'
   # (optional) Link to the issue/bug tracker of your project.
@@ -62,11 +67,6 @@ project:
       url: 'https://foo.com/bar2'
     - name: 'Link text here'
       url: 'https://foo.com/bar3'
-  # (optional) Additional images (maximum 5 images).
-  gallery:
-    - 'https://foo.com/bar/img1.png'
-    - 'https://foo.com/bar/img2.png'
-    - 'https://foo.com/bar/img3.png'
   # (optional) Categories to which your project belongs.
   # (e.g. 'FMC Carriers').
   categories:

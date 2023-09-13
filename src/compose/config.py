@@ -9,7 +9,7 @@ import subprocess  # noqa: S404
 from datetime import date
 from logging import debug, info
 from tempfile import TemporaryDirectory
-from typing import Literal, Optional, TextIO, Union
+from typing import Optional, TextIO, Union
 from urllib import request
 from urllib.error import URLError
 from urllib.parse import urlparse
@@ -44,18 +44,17 @@ class ProjConfig(BaseModel):
 
     id: str
     url: str
-    type: Optional[Literal['featured', 'regular']] = 'regular'
+    featured: Optional[bool] = False
     name: str
     description: str
     website: URL
     licenses: list[str]
-    image: Optional[URL] = None
+    images: Optional[list[URL]] = None
     documentation: Optional[URL] = None
     issues: Optional[URL] = None
     latest_release: Optional[URL] = None
     forum: Optional[URL] = None
     links: Optional[list[LinkConfig]] = None
-    gallery: Optional[list[URL]] = None
     categories: Optional[list[str]] = None
     tags: Optional[list[str]] = None
     news: Optional[list[NewsConfig]] = None

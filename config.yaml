@@ -18,12 +18,11 @@ projects:
     # URL to the Git repository of the project.
     # The Git repository must contain a .ohwr.yaml file.
     url: 'https://github.com/vascoguita/svec.git'
-    # (optional) Project type ('regular' or 'featured').
-    # The OHWR highlights featured projects.
-    type: 'featured'
+    # (optional) Show project as featured.
+    featured: true
   - id: 'spec'
     url: 'https://github.com/vascoguita/spec.git'
-    type: 'featured'
+    featured: true
   - id: 'fmc-tdc'
     url: 'https://github.com/vascoguita/fmc-tdc.git'
   - id: 'fmc-delay-1ns-8cha'

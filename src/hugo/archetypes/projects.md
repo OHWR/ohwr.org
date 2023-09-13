@@ -7,11 +7,14 @@
 {{ with .name }}
 title: {{ . }}
 {{ end }}
-{{ with .image }}
-image: {{ . }}
+{{ with .images }}
+images:
+{{ range . }}
+  - {{ . }}
 {{ end }}
-{{ with .type }}
-type: {{ . }}
+{{ end }}
+{{ with .featured }}
+featured: {{ . }}
 {{ end }}
 {{ with .tags }}
 tags:

@@ -52,10 +52,6 @@ SPDX-License-Identifier: BSD-3-Clause
   {{ end }}
 </ul>
 {{ end }}
-{{ with .gallery }}
-<h3 class="section-title">Gallery</h3>
-{{ partial "slider.html" (dict "Srcs" .) }}
-{{ end }}
 {{ with (path.Join "/news" .id | site.GetPage) }}
 <div class="d-flex justify-content-between">
   <h3 class="section-title d-flex align-items-center">Latest News</h3>

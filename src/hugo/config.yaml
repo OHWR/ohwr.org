@@ -72,7 +72,6 @@ menus:
     - name: 'News'
       url: 'news/'
 params:
-  blogCategoryType: 'projects'
   favicon: 'images/favicon.ico'
   logo: 'images/logo.png'
   logo_width: '325px'

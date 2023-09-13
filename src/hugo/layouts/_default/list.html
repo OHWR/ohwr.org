@@ -33,7 +33,11 @@ SPDX-License-Identifier: BSD-3-Clause
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0">
           {{ if .Params.images }}
-          <img src="{{ index .Params.images 0 |relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-4">
+          <img src="{{ index .Params.images 0 | relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-4">
+          {{ else if eq .Kind "term" }}
+          {{ range first 1 (where .Data.Pages "Params.images" "!=" nil) }}
+          <img src="{{ index .Params.images 0 | relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-4">
+          {{ end }}
           {{ end }}
           <div class="card-body p-0">
             <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>

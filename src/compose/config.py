@@ -23,14 +23,14 @@ class ConfigError(Exception):
     """Failed to load, parse or validate configuration."""
 
 
-class LinkConfig(BaseModel):
+class LinkConfig(BaseModel, extra='forbid'):
     """Parses and validates link configuration."""
 
     name: str
     url: URL
 
 
-class NewsConfig(BaseModel):
+class NewsConfig(BaseModel, extra='forbid'):
     """Parses and validates news configuration."""
 
     title: str
@@ -39,7 +39,7 @@ class NewsConfig(BaseModel):
     content: Optional[str] = None  # noqa: WPS110
 
 
-class ProjConfig(BaseModel):
+class ProjConfig(BaseModel, extra='forbid'):
     """Loads, parses and validates project sources configuration."""
 
     id: str

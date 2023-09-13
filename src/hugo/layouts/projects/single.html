@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<!--
+SPDX-FileCopyrightText: 2023 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        {{ with .Params.images }}
+        {{ partial "slider.html" (dict "Srcs" . "Class" "rounded mb-4") }}
+        {{ end }}
+        <h2 class="mb-4">{{ .Title }}</h2>
+        <div class="content">{{.Content}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

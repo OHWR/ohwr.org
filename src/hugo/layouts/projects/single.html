@@ -15,6 +15,31 @@ SPDX-License-Identifier: BSD-3-Clause
         {{ end }}
         <h2 class="mb-4">{{ .Title }}</h2>
         <div class="content">{{.Content}}</div>
+        {{ with (path.Join "/news" .File.ContentBaseName | site.GetPage) }}
+        <div class="row align-items-center mb-4">
+          <div class="col">
+            <h3>Latest News</h3>
+          </div>
+          <div class="col text-right">
+            <a href="{{.Permalink}}" class="btn btn-primary btn-sm">See All News</a>
+          </div>
+        </div>
+        <div class="row">
+          {{ range (first 3 .RegularPages.ByDate.Reverse) }}
+          <div class="col-lg-4 col-sm-6 mb-5">
+            <div class="card shadow border-0">
+              <img src="{{ .Params.image |relURL }}" alt="{{ .Title }}" class="card-img mb-4">
+              <div class="card-body p-3">
+                <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h4>
+                <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+                <p class="card-text">{{ .Summary }}</p>
+                <a href="{{.Permalink}}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">{{ i18n "readmore" }}</a>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
       </div>
     </div>
   </div>

@@ -31,11 +31,15 @@ SPDX-License-Identifier: BSD-3-Clause
       {{ $paginator := .Paginate (complement $featured .Data.Pages) }}
       {{ range $paginator.Pages }}
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0">
+        <div class="card shadow border-0">
           {{ if .Params.images }}
-          <img src="{{ index .Params.images 0 |relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-4">
+          <img src="{{ index .Params.images 0 | relURL }}" alt="{{ .Title }}" class="card-img mb-4">
+          {{ else if eq .Kind "term" }}
+          {{ range first 1 (where .Data.Pages "Params.images" "!=" nil) }}
+          <img src="{{ index .Params.images 0 | relURL }}" alt="{{ .Title }}" class="card-img mb-4">
           {{ end }}
-          <div class="card-body p-0">
+          {{ end }}
+          <div class="card-body p-3">
             <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>
             <p class="card-text">{{ .Summary }}</p>
             <a href="{{.Permalink}}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">{{ i18n "readmore" }}</a>

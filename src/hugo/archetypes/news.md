@@ -11,7 +11,7 @@ title: {{ . }}
 {{ with .date }}
 date: {{ . }}
 {{ end }}
-{{ with (.image | default (index (index site.Data.projects $project).images 0)) }}
+{{ with .image }}
 image: {{ . }}
 {{ end }}
 {{ end }}

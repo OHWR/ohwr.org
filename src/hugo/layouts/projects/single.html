@@ -11,7 +11,23 @@ SPDX-License-Identifier: BSD-3-Clause
     <div class="row">
       <div class="col-lg-8 mx-auto">
         {{ with .Params.images }}
-        {{ partial "slider.html" (dict "Srcs" . "Class" "rounded mb-4") }}
+        <div id="carouselControls" class="carousel slide mb-4" data-ride="carousel">
+          <div class="carousel-inner">
+            {{ range $index, $image := . }}
+            <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
+              <img src="{{ $image }}" class="d-block position-absolute mh-100 mw-100 m-auto">
+            </div>
+            {{ end }}
+          </div>
+          <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
         {{ end }}
         <h2 class="mb-4">{{ .Title }}</h2>
         <div class="content">{{.Content}}</div>
@@ -21,24 +37,33 @@ SPDX-License-Identifier: BSD-3-Clause
             <h3>Latest News</h3>
           </div>
           <div class="col text-right">
-            <a href="{{.Permalink}}" class="btn btn-primary btn-sm">See All News</a>
+            <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">See All News</a>
           </div>
         </div>
-        <div class="row">
-          {{ range (first 3 .RegularPages.ByDate.Reverse) }}
-          <div class="col-lg-4 col-sm-6 mb-5">
-            <div class="card shadow border-0">
-              <img src="{{ .Params.image |relURL }}" alt="{{ .Title }}" class="card-img mb-4">
-              <div class="card-body p-3">
+        {{ range (first 3 .RegularPages.ByDate.Reverse) }}
+        <div class="card border-0 shadow-lg mb-4">
+          {{ if .Params.image }}
+          <div class="row">
+            <div class="col-md-3">
+              <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded ">
+            </div>
+            <div class="col-md-9 p-0">
+          {{ end }}
+              <div class="card-body">
                 <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h4>
                 <time>{{ .Date.Format "Jan 2, 2006" }}</time>
                 <p class="card-text">{{ .Summary }}</p>
-                <a href="{{.Permalink}}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">{{ i18n "readmore" }}</a>
+                <p class="card-text"></p>
+                <a href="{{ .Permalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">
+                  {{ i18n "readmore" }}
+                </a>
               </div>
+          {{ if .Params.image }}
             </div>
           </div>
           {{ end }}
         </div>
+        {{ end }}
         {{ end }}
       </div>
     </div>

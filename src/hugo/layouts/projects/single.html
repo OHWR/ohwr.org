@@ -11,7 +11,7 @@ SPDX-License-Identifier: BSD-3-Clause
     <div class="row">
       <div class="col-lg-8 mx-auto">
         {{ with .Params.images }}
-        <div id="carouselControls" class="carousel slide mb-4" data-ride="carousel">
+        <div id="gallery" class="carousel slide mb-4" data-ride="carousel">
           <div class="carousel-inner">
             {{ range $index, $image := . }}
             <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
@@ -19,11 +19,11 @@ SPDX-License-Identifier: BSD-3-Clause
             </div>
             {{ end }}
           </div>
-          <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#gallery" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#gallery" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
@@ -45,7 +45,7 @@ SPDX-License-Identifier: BSD-3-Clause
           {{ if .Params.image }}
           <div class="row">
             <div class="col-md-3">
-              <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded ">
+              <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded">
             </div>
             <div class="col-md-9 p-0">
           {{ end }}

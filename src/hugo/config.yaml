@@ -53,8 +53,8 @@ menus:
       url: 'about/'
     - name: 'Projects'
       url: 'projects/'
-    - name: 'Join'
-      url: 'join/'
+    - name: 'Submit Project'
+      url: 'submit-project/'
   footer_middle:
     - name: 'Licenses'
       url: 'licenses/'
@@ -75,8 +75,8 @@ params:
   logo_width: '325px'
   navigation_button:
     enable: true
-    label: 'Join'
-    link: 'join'
+    label: 'Submit Project'
+    link: 'submit-project/'
   plugins:
     js:
       - link: 'plugins/jQuery/jquery.slim.min.js'

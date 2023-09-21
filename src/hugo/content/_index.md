@@ -11,8 +11,8 @@ banner:
     designs, much in the philosophy of the free software movement.
   button:
     enable: true
-    label: 'Join'
-    link: 'join/'
+    label: 'Submit Project'
+    link: 'submit-project/'
 feature:
   enable: true
   title: 'Featured projects'
@@ -73,29 +73,4 @@ service:
         enable: true
         label: 'Check it out'
         link: '#'
-    - title: 'A company standing different from others'
-      images:
-        - 'images/banner.jpg'
-      content: |
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
-        Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique
-        eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat.
-      button:
-        enable: true
-        label: 'Check it out'
-        link: '#'
-screenshot:
-  enable: true
-  title: 'Experience the best workflow with us'
-  image: 'images/banner.jpg'
-call_to_action:
-  enable: true
-  title: 'Ready to join?'
-  image: 'images/banner.jpg'
-  content: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
-  button:
-    enable: true
-    label: 'Join'
-    link: 'join/'
 ---

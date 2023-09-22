@@ -5,6 +5,7 @@
 
 title: About OHWR
 date: 2020-10-27
+image: https://cds.cern.ch/record/2721990/files/TRQ_7292.jpg
 ---
 
 The Open Hardware Repository [ohwr.org](https://www.ohwr.org) is a place on the

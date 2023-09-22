@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install pydantic PyYAML -c requirements.txt
       - name: Build
         run: make build
         env:

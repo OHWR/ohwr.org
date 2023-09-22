@@ -31,7 +31,7 @@ run:
 ###############################################################################
 
 .PHONY: test
-test: lint-reuse lint-yaml lint-makefile lint-python
+test: lint-reuse lint-yaml lint-makefile lint-python lint-markdown
 
 .PHONY: lint-reuse
 lint-reuse:
@@ -48,6 +48,10 @@ lint-makefile:
 .PHONY: lint-python
 lint-python:
 	flake8 ${COMPOSE}
+
+.PHONY: lint-markdown
+lint-markdown:
+	markdownlint-cli2 ${CURDIR}/**/*.md -c
 
 ###############################################################################
 # Clean

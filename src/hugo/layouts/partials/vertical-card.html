@@ -1,0 +1,22 @@
+<!--
+SPDX-FileCopyrightText: 2023 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<div class="col-lg-4 col-sm-6 mb-5">
+  <div class="card shadow-lg border-0 h-100">
+    {{ if .Params.images }}
+    <img src="{{ index .Params.images 0 | relURL }}" class="card-img-top">
+    {{ else if eq .Kind "term" }}
+    {{ with index (where .Data.Pages "Params.images" "!=" nil) 0 }}
+    <img src="{{ index .Params.images 0 | relURL }}" class="card-img-top">
+    {{ end }}
+    {{ end }}
+    <div class="card-body d-flex  flex-column p-3">
+      <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>
+      <p class="card-text">{{ .Summary }}</p>
+      <a href="{{ .Permalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm mt-auto mr-auto">{{ i18n "readmore" }}</a>
+    </div>
+  </div>
+</div>

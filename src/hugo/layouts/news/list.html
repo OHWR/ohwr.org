@@ -10,32 +10,8 @@ SPDX-License-Identifier: BSD-3-Clause
 
 <section class="section">
   <div class="container">
-    {{ $paginator := .Paginate .RegularPagesRecursive.ByDate.Reverse }}
-    {{ range $paginator.Pages }}
-    <div class="card border-0 shadow-lg mb-4">
-      {{ if .Params.image }}
-      <div class="row">
-        <div class="col-md-3">
-          <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded">
-        </div>
-        <div class="col-md-9 p-0">
-      {{ end }}
-          <div class="card-body">
-            <h6><a href="{{ path.Join `projects` .Params.project | relURL }}" class="post-title">
-              {{ (index site.Data.projects .Params.project).name }}
-            </a></h6>
-            <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>
-            <time>{{ .Date.Format "Jan 2, 2006" }}</time>
-            <p class="card-text">{{ .Summary }}</p>
-            <a href="{{ .Permalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">
-              {{ i18n "readmore" }}
-            </a>
-          </div>
-      {{ if .Params.image }}
-        </div>
-      </div>
-      {{ end }}
-    </div>
+    {{ range (.Paginate .RegularPagesRecursive.ByDate.Reverse).Pages }}
+    {{ partial "horizontal-card.html" . }}
     {{ end }}
     {{ template "_internal/pagination.html" . }}
   </div>

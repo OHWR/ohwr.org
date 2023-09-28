@@ -4,46 +4,59 @@ SPDX-FileCopyrightText: 2023 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ with (index .Site.Data.projects (.Get 0)) }}
-{{ with .description }}
-<p>{{ . | markdownify }}</p>
-{{ end }}
-{{ with .website }}
-<h3 class="section-title">Website</h3>
-<p><a href="{{ . }}">{{ . }}</a></p>
-{{ end }}
-{{ with .licenses }}
-<h3 class="section-title">Licenses</h3>
-<ul>
-  {{ range . }}
-  <li>{{ . }}</li>
+{{ with index .Site.Data.projects (.Get 0) }}
+<div class="row project-links mx-auto">
+  {{ with .website }}
+  <div class="col-auto align-self-center p-1 m-0">
+    <a href="{{ . }}" class="badge btn-primary m-0">
+      <i class="fas fa-globe m-0"></i> Project Website
+    </a>
+  </div>
   {{ end }}
-</ul>
-{{ end }}
-{{ with .repository }}
-<h3 class="section-title">Repository</h3>
-<p><a href="{{ . }}">{{ . }}</a></p>
-{{ end }}
-{{ with .documentation }}
-<h3 class="section-title">Documentation</h3>
-<p><a href="{{ . }}">{{ . }}</a></p>
-{{ end }}
-{{ with .issues }}
-<h3 class="section-title">Issues</h3>
-<p><a href="{{ . }}">{{ . }}</a></p>
-{{ end }}
-{{ with .latest_release }}
-<h3 class="section-title">Latest Release</h3>
-<p><a href="{{ . }}">{{ . }}</a></p>
-{{ end }}
-{{ with .forum }}
-<h3 class="section-title">Forum</h3>
-<p><a href="{{ . }}">{{ . }}</a></p>
-{{ end }}
-{{ with .news }}
-<h3 class="section-title">News</h3>
-<p><a href="{{ . }}">{{ . }}</a></p>
-{{ end }}
+  {{ with .documentation }}
+  <div class="col-auto align-self-center p-1 m-0">
+    <a href="{{ . }}" class="badge badge-secondary m-0">
+      <i class="fas fa-book-open m-0"></i> Documentation
+    </a>
+  </div>
+  {{ end }}
+  {{ with .url }}
+  <div class="col-auto align-self-center p-1 m-0">
+    <a href="{{ . }}" class="badge badge-secondary m-0">
+      <i class="fab fa-git-alt m-0"></i> Repository
+    </a>
+  </div>
+  {{ end }}
+  {{ with .issues }}
+  <div class="col-auto align-self-center p-1 m-0">
+    <a href="{{ . }}" class="badge badge-secondary m-0">
+      <i class="fas fa-bug m-0"></i> Issues
+    </a>
+  </div>
+  {{ end }}
+  {{ with .latest_release }}
+  <div class="col-auto align-self-center p-1 m-0">
+    <a href="{{ . }}" class="badge badge-secondary m-0">
+      <i class="fas fa-cube m-0"></i> Latest Release
+    </a>
+  </div>
+  {{ end }}
+  {{ with .forum }}
+  <div class="col-auto align-self-center p-1 m-0">
+    <a href="{{ . }}" class="badge badge-secondary m-0">
+      <i class="fab fa-discourse m-0"></i> Forum
+    </a>
+  </div>
+  {{ end }}
+  {{ range .licenses }}
+  <div class="col-auto align-self-center p-1 m-0">
+    <a href="{{ . }}" class="badge badge-secondary m-0">
+      <i class="fas fa-balance-scale m-0"></i> {{ . }}
+    </a>
+  </div>
+  {{ end }}
+</div>
+{{ .description | markdownify }}
 {{ with .links }}
 <h3 class="section-title">Links</h3>
 <ul>

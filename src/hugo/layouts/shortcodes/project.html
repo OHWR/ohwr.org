@@ -66,16 +66,9 @@ SPDX-License-Identifier: BSD-3-Clause
 </ul>
 {{ end }}
 {{ end }}
+{{ with (path.Join "/news" .Page.File.ContentBaseName | site.GetPage) }}
+<h3>Latest News</h3>
 <div class="latest-news">
-  {{ with (path.Join "/news" .Page.File.ContentBaseName | site.GetPage) }}
-  <div class="row align-items-center mb-4">
-    <div class="col">
-      <h3>Latest News</h3>
-    </div>
-    <div class="col text-right">
-      <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">See All News</a>
-    </div>
-  </div>
   {{ range (first 3 .RegularPages.ByDate.Reverse) }}
   <div class="card border-0 shadow-lg mb-4">
     {{ if .Params.image }}
@@ -99,5 +92,6 @@ SPDX-License-Identifier: BSD-3-Clause
     {{ end }}
   </div>
   {{ end }}
-  {{ end }}
+  <div class="text-center"><a href="{{ .Permalink }}" class="btn btn-primary btn-sm">See All News</a></div>
 </div>
+{{ end }}

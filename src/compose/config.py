@@ -30,6 +30,31 @@ class LinkConfig(BaseModel, extra='forbid'):
     url: URL
 
 
+class LicenseConfig(LinkConfig):
+    """Parses, validates license configuration."""
+
+    @classmethod
+    def from_id(cls, license_id: str, spdx_license_list: dict):
+        """
+        Construct a LicenseConfig object from an SPDX license identifier.
+
+        Parameters:
+            license_id: SPDX license identifier.
+            spdx_license_list: SPDX license data list.
+
+        Returns:
+            LicenseConfig object.
+
+        Raises:
+            ConfigError: if license_id is not a valid SPDX license identifier.
+        """
+        for license in spdx_license_list['licenses']:
+            if license['licenseId'] == license_id:
+                return cls(name=license['name'], url=license['reference'])
+        msg = 'License ID is not a valid SPDX license ID: {0}'
+        raise ConfigError(msg.format(license_id))
+
+
 class NewsConfig(BaseModel, extra='forbid'):
     """Parses and validates news configuration."""
 
@@ -48,7 +73,7 @@ class ProjConfig(BaseModel, extra='forbid'):
     name: str
     description: str
     website: URL
-    licenses: list[str]
+    licenses: list[LicenseConfig]
     images: Optional[list[URL]] = None
     documentation: Optional[URL] = None
     issues: Optional[URL] = None
@@ -58,6 +83,22 @@ class ProjConfig(BaseModel, extra='forbid'):
     categories: Optional[list[str]] = None
     tags: Optional[list[str]] = None
     news: Optional[list[NewsConfig]] = None
+
+    def __init__(self, licenses: list[str], spdx_license_list: dict, **kwargs):
+        """
+        Construct a ProjConfig object.
+
+        Parameters:
+            licenses: SPDX license identifiers.
+            spdx_license_list: SPDX license data list.
+            kwargs: project configuration attributes
+        """
+        license_configs = []
+        for license_id in licenses:
+            license_configs.append(
+                LicenseConfig.from_id(license_id, spdx_license_list),
+            )
+        super().__init__(licenses=license_configs, **kwargs)
 
     @classmethod
     def from_url(cls, url: str, **kwargs):

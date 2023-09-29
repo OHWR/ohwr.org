@@ -5,7 +5,9 @@
 """CLI to generate content for ohwr.org."""
 
 import argparse
+import json
 import logging
+from urllib.request import urlopen
 
 import yaml
 from config import ConfigError, ProjConfig
@@ -22,9 +24,15 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',  # noqa: WPS323
 )
 
+with urlopen(config['license_list']) as response:  # noqa: S310
+    spdx_license_list = json.load(response)
+
 for proj in config['projects']:
     try:
-        proj_config = ProjConfig.from_url(**proj)
+        proj_config = ProjConfig.from_url(
+            spdx_license_list=spdx_license_list,
+            **proj,
+        )
     except ConfigError as error:
         msg = 'Could not configure the {0} project:\n↳ {1}'
         logging.error(msg.format(proj['id'], error))

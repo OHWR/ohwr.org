@@ -6,6 +6,9 @@
 # Logging level ('DEBUG', 'INFO', 'WARNING', 'ERROR' or 'CRITICAL')
 log_level: 'INFO'
 
+# SPDX JSON license list URL
+license_list: 'https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json'  # yamllint disable-line rule:line-length
+
 # Hugo sources directory
 source: './src/hugo'
 

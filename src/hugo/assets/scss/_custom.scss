@@ -23,12 +23,6 @@
 }
 
 .latest-news {
-  .btn {
-    color: $white;
-    &:hover {
-      color: $white;
-    }
-  }
   a.post-title {
     color: $text-color-dark;
     &:hover {
@@ -43,6 +37,22 @@
   }
   p {
     margin-bottom: 1rem;
+  }
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.project-links {
+  a, i {
+    font-size: 16px;
+    color: $white;
+    &:hover {
+      color: $white;
+    }
   }
 }
 

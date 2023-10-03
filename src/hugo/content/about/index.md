@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 title: About OHWR
-date: 2020-10-27
 image: https://be-cem-edl.web.cern.ch/ohwr/graphics/fmc_nanofip_transparent.png
 ---
 

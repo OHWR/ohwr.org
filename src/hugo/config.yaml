@@ -10,16 +10,9 @@ outputs:
   home:
     - 'html'
     - 'SearchIndex'
-outputFormats:
-  SearchIndex:
-    mediaType: 'application/json'
-    baseName: 'searchindex'
-    isPlainText: true
-    notAlternative: true
 module:
   imports:
-    - path: 'github.com/gethugothemes/bigspring-light-hugo'
-    - path: 'github.com/gethugothemes/hugo-modules/search'
+    - path: 'github.com/OHWR/bigspring-light-hugo'
 menus:
   main:
     - name: 'About'
@@ -77,17 +70,3 @@ params:
     enable: true
     label: 'Submit Project'
     link: 'submit-project/'
-  plugins:
-    js:
-      - link: 'plugins/jQuery/jquery.slim.min.js'
-      - link: 'plugins/bootstrap/bootstrap.min.js'
-      - link: 'plugins/slick/slick.min.js'
-      - link: 'js/search.js'
-  search:
-    enable: true
-    primary_color: '#0aa8a7'
-    include_all_sections: true
-    show_image: true
-    show_description: true
-    show_tags: true
-    show_categories: true

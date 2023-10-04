@@ -2,18 +2,6 @@
 //
 // SPDX-License-Identifier: BSD-3-Clause
 
-@import 'search';
-
-.search-toggle {
-  background-color: transparent;
-  border: 0;
-  font-size: 22px;
-
-  &:hover {
-    color: $primary-color;
-  }
-}
-
 #gallery .carousel-item, .card-img-top {
   aspect-ratio: 4 / 3;
 }

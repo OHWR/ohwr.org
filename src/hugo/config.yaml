@@ -70,8 +70,8 @@ menus:
     - name: 'News'
       url: 'news/'
 params:
-  favicon: 'images/favicon.ico'
-  logo: 'images/logo.png'
+  favicon: 'https://be-cem-edl.web.cern.ch/ohwr/graphics/favicon.ico'
+  logo: 'https://be-cem-edl.web.cern.ch/ohwr/graphics/logo.png'
   logo_width: '325px'
   navigation_button:
     enable: true

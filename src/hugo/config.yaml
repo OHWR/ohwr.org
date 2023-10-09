@@ -66,6 +66,8 @@ params:
   favicon: 'https://be-cem-edl.web.cern.ch/ohwr/graphics/favicon.ico'
   logo: 'https://be-cem-edl.web.cern.ch/ohwr/graphics/logo.png'
   logo_width: '325px'
+  variables:
+    text_color: '#3d3846'
   navigation_button:
     enable: true
     label: 'Submit Project'

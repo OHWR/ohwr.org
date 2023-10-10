@@ -9,38 +9,38 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ with index .Site.Data.projects $project }}
 <div class="card border-0 shadow-lg">
   <div class="card-body mb-0">
-    <div class="row justify-content-between project-banner">
-      <div class="col-auto">
+    <div class="row justify-content-between project-banner mb-0">
+      <div class="col-auto mb-1">
         {{ with .website }}
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge btn-primary">
-          <i class="fas fa-globe"></i> Project Website
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge btn-primary mb-0">
+          <i class="fas fa-globe mb-0"></i> Project Website
         </a>
         {{ end }}
       </div>
-      <div class="col-auto">
+      <div class="col-auto mb-1">
         {{ with .latest_release }}
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark" title="Latest Release">
-          <i class="fas fa-rocket"></i>
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark mb-0" title="Latest Release">
+          <i class="fas fa-rocket mb-0"></i>
         </a>
         {{ end }}
         {{ with .documentation }}
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark" title="Documentation">
-          <i class="fas fa-book-open"></i>
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark mb-0" title="Documentation">
+          <i class="fas fa-book-open mb-0"></i>
         </a>
         {{ end }}
         {{ with .url }}
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark" title="Repository">
-          <i class="fab fa-git-alt"></i>
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark mb-0" title="Repository">
+          <i class="fab fa-git-alt mb-0"></i>
         </a>
         {{ end }}
         {{ with .issues }}
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark" title="Issues">
-          <i class="fas fa-bug"></i>
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark mb-0" title="Issues">
+          <i class="fas fa-bug mb-0"></i>
         </a>
         {{ end }}
         {{ with .forum }}
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark" title="Forum">
-          <i class="fas fa-comments"></i>
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-dark mb-0" title="Forum">
+          <i class="fas fa-comments mb-0"></i>
         </a>
         {{ end }}
       </div>

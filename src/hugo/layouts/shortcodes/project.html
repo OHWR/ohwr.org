@@ -17,36 +17,36 @@ SPDX-License-Identifier: BSD-3-Clause
       {{ end }}
       {{ with .latest_release }}
       <div class="col-auto align-self-center p-1 m-0">
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-          <i class="fas fa-rocket m-0"></i> Latest Release
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" title="Latest Release" class="badge badge-secondary m-0">
+          <i class="fas fa-rocket m-0"></i>
         </a>
       </div>
       {{ end }}
       {{ with .documentation }}
       <div class="col-auto align-self-center p-1 m-0">
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-          <i class="fas fa-book-open m-0"></i> Documentation
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" title="Documentation" class="badge badge-secondary m-0">
+          <i class="fas fa-book-open m-0"></i>
         </a>
       </div>
       {{ end }}
       {{ with .url }}
       <div class="col-auto align-self-center p-1 m-0">
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-          <i class="fab fa-git-alt m-0"></i> Repository
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" title="Repository" class="badge badge-secondary m-0">
+          <i class="fab fa-git-alt m-0"></i>
         </a>
       </div>
       {{ end }}
       {{ with .issues }}
       <div class="col-auto align-self-center p-1 m-0">
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-          <i class="fas fa-bug m-0"></i> Issues
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" title="Issues" class="badge badge-secondary m-0">
+          <i class="fas fa-bug m-0"></i>
         </a>
       </div>
       {{ end }}
       {{ with .forum }}
       <div class="col-auto align-self-center p-1 m-0">
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-          <i class="fas fa-comments m-0"></i> Forum
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" title="Forum" class="badge badge-secondary m-0">
+          <i class="fas fa-comments m-0"></i>
         </a>
       </div>
       {{ end }}

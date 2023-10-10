@@ -4,4 +4,10 @@ SPDX-FileCopyrightText: 2023 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-<div class="text-center"><a href="{{ .Get "link" }}" class="btn btn-primary btn-sm">{{ .Get "label" }}</a></div>
+{{ $link := .Get "link" }}
+{{ $label := .Get "label" }}
+{{ $new_window := strings.HasPrefix $link `http` }}
+
+<div class="text-center">
+  <a href="{{ $link }}" {{ if $new_window }}target="_blank" rel="noopener noreferrer"{{ end }} class="btn btn-primary btn-sm">{{ $label }}</a>
+</div>

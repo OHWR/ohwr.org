@@ -5,70 +5,74 @@ SPDX-License-Identifier: BSD-3-Clause
 -->
 
 {{ with index .Site.Data.projects (.Get 0) }}
-<div class="row mx-auto">
-  {{ with .website }}
-  <div class="col-auto align-self-center p-1 m-0">
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge btn-primary m-0">
-      <i class="fas fa-globe m-0"></i> Project Website
-    </a>
+<div class="card border-0 shadow-lg">
+  <div class="card-body">
+    <div class="row mx-auto">
+      {{ with .website }}
+      <div class="col-auto align-self-center p-1 m-0">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge btn-primary m-0">
+          <i class="fas fa-globe m-0"></i> Project Website
+        </a>
+      </div>
+      {{ end }}
+      {{ with .documentation }}
+      <div class="col-auto align-self-center p-1 m-0">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
+          <i class="fas fa-book-open m-0"></i> Documentation
+        </a>
+      </div>
+      {{ end }}
+      {{ with .url }}
+      <div class="col-auto align-self-center p-1 m-0">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
+          <i class="fab fa-git-alt m-0"></i> Repository
+        </a>
+      </div>
+      {{ end }}
+      {{ with .issues }}
+      <div class="col-auto align-self-center p-1 m-0">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
+          <i class="fas fa-bug m-0"></i> Issues
+        </a>
+      </div>
+      {{ end }}
+      {{ with .latest_release }}
+      <div class="col-auto align-self-center p-1 m-0">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
+          <i class="fas fa-cube m-0"></i> Latest Release
+        </a>
+      </div>
+      {{ end }}
+      {{ with .forum }}
+      <div class="col-auto align-self-center p-1 m-0">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
+          <i class="fab fa-discourse m-0"></i> Forum
+        </a>
+      </div>
+      {{ end }}
+    </div>
+    <p>{{ .description | markdownify }}</p>
+    {{ with .links }}
+    <h3 class="section-title">Links</h3>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ with .licenses }}
+    <h3 class="section-title">Licenses</h3>
+    <div>
+      {{ range . }}
+      <p class="m-0">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0 mw-100 text-truncate">
+          <i class="fas fa-balance-scale m-0"></i> {{ .name }}
+        </a>
+      </p>
+      {{ end }}
+    </div>
+    {{ end }}
   </div>
-  {{ end }}
-  {{ with .documentation }}
-  <div class="col-auto align-self-center p-1 m-0">
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-      <i class="fas fa-book-open m-0"></i> Documentation
-    </a>
-  </div>
-  {{ end }}
-  {{ with .url }}
-  <div class="col-auto align-self-center p-1 m-0">
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-      <i class="fab fa-git-alt m-0"></i> Repository
-    </a>
-  </div>
-  {{ end }}
-  {{ with .issues }}
-  <div class="col-auto align-self-center p-1 m-0">
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-      <i class="fas fa-bug m-0"></i> Issues
-    </a>
-  </div>
-  {{ end }}
-  {{ with .latest_release }}
-  <div class="col-auto align-self-center p-1 m-0">
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-      <i class="fas fa-cube m-0"></i> Latest Release
-    </a>
-  </div>
-  {{ end }}
-  {{ with .forum }}
-  <div class="col-auto align-self-center p-1 m-0">
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0">
-      <i class="fab fa-discourse m-0"></i> Forum
-    </a>
-  </div>
-  {{ end }}
 </div>
-<p>{{ .description | markdownify }}</p>
-{{ with .links }}
-<h3 class="section-title">Links</h3>
-<ul>
-  {{ range . }}
-  <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
-  {{ end }}
-</ul>
-{{ end }}
-{{ with .licenses }}
-<h3 class="section-title">Licenses</h3>
-<div>
-  {{ range . }}
-  <p class="m-0">
-    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0 mw-100 text-truncate">
-      <i class="fas fa-balance-scale m-0"></i> {{ .name }}
-    </a>
-  </p>
-  {{ end }}
-</div>
-{{ end }}
 {{ end }}
 

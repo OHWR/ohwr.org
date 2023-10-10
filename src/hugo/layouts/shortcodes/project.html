@@ -56,15 +56,11 @@ SPDX-License-Identifier: BSD-3-Clause
     {{ end }}
     {{ with .licenses }}
     <h3 class="section-title">Licenses</h3>
-    <div>
+    <ul class="fa-ul mb-0">
       {{ range . }}
-      <p class="m-0">
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="badge badge-secondary m-0 mw-100 text-truncate">
-          <i class="fas fa-balance-scale m-0"></i> {{ .name }}
-        </a>
-      </p>
+      <li><i class="fa-li fa fa-balance-scale"></i><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
       {{ end }}
-    </div>
+    </ul>
     {{ end }}
   </div>
 </div>

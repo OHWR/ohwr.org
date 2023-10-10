@@ -67,3 +67,16 @@ a.btn {
     }
   }
 }
+
+.content .fa-ul {
+  margin-left: 0;
+  li {
+    &::before {
+      display: none;
+    }
+    .fa-li {
+      left: -9px;
+      color: $primary-color;
+    }
+  }
+}

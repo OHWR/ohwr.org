@@ -28,10 +28,6 @@
   }
 }
 
-a.badge {
-    font-size: 16px;
-}
-
 .carousel-item img {
   top: 0;
   bottom: 0;
@@ -52,9 +48,22 @@ a.badge {
   line-height: 20px;
 }
 
-a.btn, a.badge {
+a.btn {
   color: $white;
   &:hover {
     color: $white;
+  }
+}
+
+.project-banner {
+  * {
+    margin-bottom: 0;
+  }
+  .badge {
+    font-size: 16px;
+    color: $white;
+    &:hover {
+      color: $white;
+    }
   }
 }

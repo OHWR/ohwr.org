@@ -19,7 +19,9 @@ SPDX-License-Identifier: BSD-3-Clause
           {{ if $page.Params.images }}
           <div class="row h-100">
             <div class="col-md-6 h-100">
-              <img src="{{ index $page.Params.images 0 | relURL }}" class="mh-100 mw-100 m-auto position-absolute rounded-lg">
+              <a href="{{ $page.Permalink }}">
+                <img src="{{ index $page.Params.images 0 | relURL }}" class="mh-100 mw-100 m-auto position-absolute rounded-lg">
+              </a>
             </div>
             <div class="col-md-6">
           {{ end }}

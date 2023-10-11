@@ -43,7 +43,9 @@ SPDX-License-Identifier: BSD-3-Clause
       {{ if .Params.image }}
       </div>
       <div class="col-md-6 mb-4 mb-md-0">
-        <img src="{{ .Params.image | relURL }}" class="img-fluid">
+        <a href="{{ .Permalink }}">
+          <img src="{{ .Params.image | relURL }}" class="img-fluid">
+        </a>
       </div>
       {{ end }}
     </div>

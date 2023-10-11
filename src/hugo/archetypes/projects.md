@@ -33,3 +33,4 @@ date: {{ .Date }}
 ---
 
 {{< project {{ .Name }} >}}
+{{< latest-news project="{{ .Name }}" >}}

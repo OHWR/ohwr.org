@@ -8,7 +8,9 @@ SPDX-License-Identifier: BSD-3-Clause
   {{ if .Params.image }}
   <div class="row">
     <div class="col-md-3">
-      <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded">
+      <a href="{{ .Permalink }}">
+        <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded">
+      </a>
     </div>
     <div class="col-md-9 p-0">
   {{ end }}

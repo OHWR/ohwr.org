@@ -4,12 +4,13 @@ SPDX-FileCopyrightText: 2023 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
+{{ $page := .Page }}
 {{ $project := .Get 0 }}
 
 {{ with index .Site.Data.projects $project }}
 <div class="card border-0 shadow-lg">
   <div class="card-body mb-0">
-    <div class="row justify-content-between project-banner mb-0">
+    <div class="row justify-content-between project-banner">
       <div class="col-auto mb-1">
         {{ with .website }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge btn-primary mb-0">
@@ -45,7 +46,7 @@ SPDX-License-Identifier: BSD-3-Clause
         {{ end }}
       </div>
     </div>
-    <p>{{ .description | markdownify }}</p>
+    {{ .description | $page.RenderString (dict "display" "block") }}
     {{ with .links }}
     <h3 class="section-title">Links</h3>
     <ul>

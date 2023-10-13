@@ -10,6 +10,11 @@ outputs:
   home:
     - 'html'
     - 'SearchIndex'
+markup:
+  highlight:
+    codeFences: true
+    noClasses: true
+    style: native
 module:
   imports:
     - path: 'github.com/OHWR/bigspring-light-hugo'
@@ -67,8 +72,13 @@ params:
   logo: 'https://be-cem-edl.web.cern.ch/ohwr/graphics/logo.png'
   logo_width: '325px'
   variables:
-    text_color: '#3d3846'
+    text_color: '#022b3a'
+    text_color_dark: '#022b3a'
+    primary_color: '#fd810d'
+    light: '#f5faf6'
   navigation_button:
     enable: true
     label: 'Submit Project'
     link: 'submit-project/'
+  search:
+    primary_color: '#fd810d'

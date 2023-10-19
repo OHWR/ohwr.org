@@ -32,3 +32,5 @@ projects:
     url: 'https://github.com/vascoguita/fmc-delay-1ns-8cha.git'
   - id: 'fmc-adc-100m14b4cha'
     url: 'https://github.com/vascoguita/fmc-adc-100m14b4cha.git'
+  - id: 'flux-capacitor'
+    url: 'https://github.com/vascoguita/TimeMachine_FluxCapacitor.git'

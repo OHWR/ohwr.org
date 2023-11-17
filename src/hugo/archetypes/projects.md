@@ -29,8 +29,7 @@ categories:
 {{ end }}
 {{ end }}
 {{ end }}
-date: {{ .Date }}
 ---
 
-{{< project {{ .Name }} >}}
-{{< latest-news project="{{ .Name }}" >}}
+{{< project >}}
+{{< latest-news >}}

@@ -3,21 +3,25 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-{{ $project := path.BaseName .Dir }}
-{{ with (index (index .Site.Data.news $project) .Name) }}
+{{ with (index .Site.Data.news .Name) }}
 {{ with .title }}
 title: {{ . }}
 {{ end }}
 {{ with .date }}
 date: {{ . }}
 {{ end }}
-{{ with .image }}
-image: {{ . }}
+{{ with .images }}
+images: {{ . }}
+{{ end }}
+{{ with .topics }}
+topics:
+{{ range . }}
+  - {{ . }}
 {{ end }}
 {{ end }}
-project: {{ $project }}
 ---
 
-{{ if (ne .Name $project) }}
-{{< news {{ $project }} {{ .Name }} >}}
+{{ with .content}}
+{{ . }}
+{{ end }}
 {{ end }}

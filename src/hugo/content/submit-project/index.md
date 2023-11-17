@@ -50,8 +50,10 @@ project:
   news:
     - title: 'News title here'
       date: 2020-07-30
-      # (optional) Image of the news.
-      image: 'https://your.news.com/img.png'
+      # (optional) Images of the news.
+      images:
+        - 'https://your.news.com/img1.png'
+        - 'https://your.news.com/img2.png'
       # (optional) The Markdown content of the news.
       content: 'Quisque sollicitudin velit ac [luctus](https://foo.com/bar).'
     - title: 'News title here'

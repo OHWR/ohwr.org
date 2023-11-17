@@ -4,17 +4,16 @@ SPDX-FileCopyrightText: 2023 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
+{{ $images := .Params.images }}
+{{ if (and (eq .Kind "term") (not .Params.images)) }}
+{{ $images := index (where .Data.Pages "Params.images" "!=" nil) 0 }}
+{{ end }}
+
 <div class="col-lg-4 col-sm-6 mb-5">
   <div class="card shadow-lg border-0 h-100">
-    {{ if .Params.images }}
+    {{ if $images }}
     <a href="{{ .Permalink }}">
-      <img src="{{ index .Params.images 0 | relURL }}" class="card-img-top">
-    </a>
-    {{ else if eq .Kind "term" }}
-    <a href="{{ .Permalink }}">
-      {{ with index (where .Data.Pages "Params.images" "!=" nil) 0 }}
-      <img src="{{ index .Params.images 0 | relURL }}" class="card-img-top">
-      {{ end }}
+      <img src="{{ index $images 0  | relURL }}" class="card-img-top">
     </a>
     {{ end }}
     <div class="card-body d-flex  flex-column p-3">

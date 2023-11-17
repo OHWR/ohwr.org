@@ -5,27 +5,29 @@ SPDX-License-Identifier: BSD-3-Clause
 -->
 
 <div class="card border-0 shadow-lg mb-4">
-  {{ if .Params.image }}
+  {{ if .Params.images }}
   <div class="row">
     <div class="col-md-3">
       <a href="{{ .Permalink }}">
-        <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded">
+        <img src="{{ index .Params.images 0 | relURL }}" class="m-3 w-100 mh-100 rounded">
       </a>
     </div>
     <div class="col-md-9 p-0">
   {{ end }}
       <div class="card-body">
-        <h6><a href="{{ path.Join `projects` .Params.project | relURL }}" class="post-title">
-          {{ (index site.Data.projects .Params.project).name }}
-        </a></h6>
+        {{ with .Params.topics }}
+        <h6><i class="fas fa-rss"></i><span class="ml-1">{{ delimit . ", " }}</span></h6>
+        {{ end }}
         <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>
-        <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ with .Params.Date }}
+        <time>{{ .Format "Jan 2, 2006" }}</time>
+        {{ end }}
         <p class="card-text">{{ .Summary }}</p>
         <a href="{{ .Permalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">
           {{ i18n "readmore" }}
         </a>
       </div>
-  {{ if .Params.image }}
+  {{ if .Params.images }}
     </div>
   </div>
   {{ end }}

@@ -21,7 +21,7 @@ SPDX-License-Identifier: BSD-3-Clause
           </a>
         </div>
         <div class="col-10">
-          <div id="gallery" class="carousel slide mb-4" data-ride="carousel">
+          <div id="gallery" class="carousel slide mb-4" data-ride="carousel" style="aspect-ratio: 4 / 3;">
             <div class="carousel-inner">
               {{ range $index, $image := .Params.images }}
               <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">

@@ -13,7 +13,7 @@ SPDX-License-Identifier: BSD-3-Clause
   <div class="card shadow-lg border-0 h-100">
     {{ if $images }}
     <a href="{{ .Permalink }}">
-      <img src="{{ index $images 0  | relURL }}" class="card-img-top">
+      <img src="{{ index $images 0  | relURL }}" class="card-img-top" style="aspect-ratio: 4 / 3;">
     </a>
     {{ end }}
     <div class="card-body d-flex  flex-column p-3">

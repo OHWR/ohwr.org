@@ -3,10 +3,6 @@ Upstream-Name: ohwr.org
 Upstream-Contact: CERN (home.cern)
 Source: https://github.com/OHWR/ohwr.org
 
-Files: src/hugo/static/images/*
-Copyright: 2023 CERN (home.cern)
-License: CC-BY-SA-4.0+
-
 Files: src/hugo/go.sum
 Copyright: 2023 CERN (home.cern)
 License: BSD-3-Clause

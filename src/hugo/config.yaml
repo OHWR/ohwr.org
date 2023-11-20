@@ -14,7 +14,11 @@ markup:
   highlight:
     codeFences: true
     noClasses: true
-    style: native
+    style: 'native'
+taxonomies:
+  category: 'categories'
+  tag: 'tags'
+  topic: 'topics'
 module:
   imports:
     - path: 'github.com/OHWR/bigspring-light-hugo'
@@ -44,8 +48,15 @@ menus:
       url: 'https://forums.ohwr.org/'
       weight: 7
     - name: 'News'
-      url: 'news/'
       weight: 8
+    - name: 'All News'
+      url: 'news/'
+      weight: 9
+      parent: 'News'
+    - name: 'Topics'
+      url: 'topics/'
+      weight: 10
+      parent: 'News'
   footer_left:
     - name: 'About'
       url: 'about/'

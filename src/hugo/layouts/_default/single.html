@@ -9,9 +9,10 @@ SPDX-License-Identifier: BSD-3-Clause
 <section class="section">
   <div class="container">
     <div class="col-lg-8 mx-auto">
-      {{ if .Params.image }}
-      <img src="{{ .Params.image | relURL }}" class="img-fluid w-100 rounded mb-4">
-      {{ else if .Params.images }}
+      {{ if .Params.images }}
+      {{ if eq (len .Params.images) 1 }}
+      <img src="{{ index .Params.images 0 | relURL }}" class="img-fluid w-100 rounded mb-4">
+      {{ else }}
       <div class="row justify-content-center flex-nowrap">
         <div class="col-auto">
           <a class="carousel-control-prev w-100" href="#gallery" role="button" data-slide="prev">
@@ -38,8 +39,19 @@ SPDX-License-Identifier: BSD-3-Clause
         </div>
       </div>
       {{ end }}
+      {{ end }}
       <h2 class="mb-4 text-center">{{ .Title }}</h2>
-      <div class="content text-left">{{.Content}}</div>
+      <div class="row justify-content-between">
+        <div class="col-auto">
+          <time>{{ .Params.Date.Format "Jan 2, 2006" }}</time>
+        </div>
+        <div class="col-auto">
+          {{ with .Params.topics }}
+          <h5><i class="fas fa-rss"></i><span class="ml-1">{{ delimit . ", " }}</span></h5>
+          {{ end }}
+        </div>
+      </div>
+      <div class="content text-left">{{ .Content }}</div>
     </div>
   </div>
 </section>

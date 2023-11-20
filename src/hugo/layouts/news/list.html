@@ -10,7 +10,7 @@ SPDX-License-Identifier: BSD-3-Clause
 
 <section class="section">
   <div class="container">
-    {{ range (.Paginate .RegularPagesRecursive.ByDate.Reverse).Pages }}
+    {{ range (.Paginate .Data.Pages).Pages }}
     {{ partial "horizontal-card.html" . }}
     {{ end }}
     {{ template "_internal/pagination.html" . }}

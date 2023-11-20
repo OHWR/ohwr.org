@@ -4,17 +4,15 @@ SPDX-FileCopyrightText: 2023 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ $project := .Get "project" }}
-
-{{ with (path.Join "/news" $project | site.GetPage) }}
+{{ with .Site.Taxonomies.topics.Get ( urlize .Page.Name ) }}
 <h3 class="text-center">Latest News</h3>
 <div class="latest-news">
-  {{ range (first 3 .RegularPages.ByDate.Reverse) }}
+  {{ range (first 3 .Pages) }}
   <div class="card border-0 shadow-lg mb-4">
-    {{ if .Params.image }}
+    {{ if .Params.images }}
     <div class="row">
       <div class="col-md-3">
-        <img src="{{ .Params.image | relURL }}" class="m-3 w-100 mh-100 rounded">
+        <img src="{{ index .Params.images 0 | relURL }}" class="m-3 w-100 mh-100 rounded">
       </div>
       <div class="col-md-9 p-0">
     {{ end }}
@@ -26,12 +24,12 @@ SPDX-License-Identifier: BSD-3-Clause
             {{ i18n "readmore" }}
           </a>
         </div>
-    {{ if .Params.image }}
+    {{ if .Params.images }}
       </div>
     </div>
     {{ end }}
   </div>
   {{ end }}
-  <div class="text-center"><a href="{{ .Permalink }}" class="btn btn-primary btn-sm">See All News</a></div>
+  <div class="text-center"><a href="{{ .Page.Permalink }}" class="btn btn-primary btn-sm">See All News</a></div>
 </div>
 {{ end }}

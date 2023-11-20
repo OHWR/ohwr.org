@@ -15,7 +15,7 @@ from urllib.error import URLError
 from urllib.parse import urlparse
 
 import yaml
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, Field, ValidationError
 from url import URL
 
 
@@ -60,7 +60,8 @@ class NewsConfig(BaseModel, extra='forbid'):
 
     title: str
     date: date
-    image: Optional[URL] = None
+    images: Optional[list[URL]] = None
+    topics: Optional[list[str]] = Field(default_factory=list)
     content: Optional[str] = None  # noqa: WPS110
 
 

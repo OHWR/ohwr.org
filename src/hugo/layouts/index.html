@@ -54,7 +54,7 @@ SPDX-License-Identifier: BSD-3-Clause
     {{ with where .Pages "Params.featured" true }}
     {{ partial "featured.html" . }}
     {{ else }}
-    {{ range first 3 .RegularPagesRecursive.ByDate.Reverse }}
+    {{ range first 3 .Pages }}
     {{ partial "horizontal-card.html" . }}
     {{ end }}
     {{ if $page.button }}

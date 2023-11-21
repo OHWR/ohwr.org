@@ -75,10 +75,10 @@ a.btn {
   background-color: $secondary-color;
   color: $white;
   border-color: $secondary-color;
-
   &:active,
   &:hover,
   &.focus,
+  &:focus,
   &.active {
     background-color: $secondary-color !important;
     border-color: $secondary-color !important;

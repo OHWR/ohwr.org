@@ -4,14 +4,6 @@
 
 $secondary-color: #4dab54;
 
-#gallery .carousel-item, .card-img-top {
-  aspect-ratio: 4 / 3;
-}
-
-#featured .carousel-item, .banner-img {
-  aspect-ratio: 3 / 1;
-}
-
 .latest-news {
   a.post-title {
     color: $text-color-dark;
@@ -28,13 +20,6 @@ $secondary-color: #4dab54;
   p {
     margin-bottom: 1rem;
   }
-}
-
-.carousel-item img {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .carousel-control-prev-icon {
@@ -85,7 +70,6 @@ a.btn {
     }
   }
 }
-
 
 .btn-primary, .project-banner .badge.btn-primary {
   background-color: $secondary-color;

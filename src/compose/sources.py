@@ -60,7 +60,7 @@ class ProjSources(Sources):
         """
         sources = []
         for index, news in enumerate(config.news):
-            news.topics.append(config.name)
+            news.topics.insert(0, config.name)
             sources.append(
                 NewsSources.from_config(
                     news,

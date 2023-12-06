@@ -5,7 +5,7 @@
 
 {{ with (index .Site.Data.news .Name) }}
 {{ with .title }}
-title: {{ . }}
+title: '{{ transform.HTMLEscape . }}'
 {{ end }}
 {{ with .date }}
 date: {{ . }}

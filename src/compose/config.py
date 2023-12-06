@@ -6,7 +6,6 @@
 
 import os
 import subprocess  # noqa: S404
-from datetime import date
 from logging import debug, info
 from tempfile import TemporaryDirectory
 from typing import Optional, TextIO, Union
@@ -15,7 +14,8 @@ from urllib.error import URLError
 from urllib.parse import urlparse
 
 import yaml
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, ValidationError
+from news import News, NewsError, Newsfeed
 from url import URL
 
 
@@ -55,14 +55,8 @@ class LicenseConfig(LinkConfig):
         raise ConfigError(msg.format(license_id))
 
 
-class NewsConfig(BaseModel, extra='forbid'):
+class NewsConfig(News):
     """Parses and validates news configuration."""
-
-    title: str
-    date: date
-    images: Optional[list[URL]] = None
-    topics: Optional[list[str]] = Field(default_factory=list)
-    content: Optional[str] = None  # noqa: WPS110
 
 
 class ProjConfig(BaseModel, extra='forbid'):
@@ -83,9 +77,9 @@ class ProjConfig(BaseModel, extra='forbid'):
     links: Optional[list[LinkConfig]] = None
     categories: Optional[list[str]] = None
     tags: Optional[list[str]] = None
-    news: Optional[list[NewsConfig]] = None
+    news: Optional[list[News]] = None
 
-    def __init__(self, licenses: list[str], spdx_license_list: dict, **kwargs):
+    def __init__(self, licenses: list[str], spdx_license_list: dict, news: URL = None, **kwargs):
         """
         Construct a ProjConfig object.
 
@@ -94,12 +88,20 @@ class ProjConfig(BaseModel, extra='forbid'):
             spdx_license_list: SPDX license data list.
             kwargs: project configuration attributes
         """
+        if news:
+            try:
+                news_configs = Newsfeed.from_url(news).news
+            except NewsError as error:
+                msg = 'News configuration from {0} is not valid:\n↳ {1}'
+                raise ConfigError(msg.format(news, error))
+        else:
+            news_configs = []
         license_configs = []
         for license_id in licenses:
             license_configs.append(
                 LicenseConfig.from_id(license_id, spdx_license_list),
             )
-        super().__init__(licenses=license_configs, **kwargs)
+        super().__init__(licenses=license_configs, news=news_configs, **kwargs)
 
     @classmethod
     def from_url(cls, url: str, **kwargs):

@@ -14,9 +14,13 @@ all: test build
 ###############################################################################
 
 .PHONY: build
-build:
-	python ${COMPOSE} ${CURDIR}/config.yaml
+build: content
 	hugo --gc --minify --source ${HUGO} --destination ${PUBLIC}
+	
+
+.PHONY: content
+content:
+	python ${COMPOSE} ${CURDIR}/config.yaml
 
 ###############################################################################
 # Run
@@ -51,7 +55,8 @@ lint-python:
 
 .PHONY: lint-markdown
 lint-markdown:
-	markdownlint-cli2 ${CURDIR}/**/*.md -c
+	markdownlint-cli2 ${CURDIR}/**/*.md !${HUGO}/content/projects \
+		!${HUGO}/content/news -c
 
 ###############################################################################
 # Clean

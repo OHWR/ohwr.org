@@ -6,7 +6,7 @@
 name: Submit a project
 about: Propose adding a project to OHWR
 title: '[PROJ] '
-labels: enhancement
+labels: project
 assignees: vascoguita
 ---
 

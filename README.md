@@ -8,6 +8,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0+
 
 [![License CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-yellow.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![License BSD 3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](.github/CODE_OF_CONDUCT.md)
 [![Build](https://github.com/OHWR/ohwr.org/actions/workflows/build.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/build.yaml)
 [![Deploy to GitHub Pages](https://github.com/OHWR/ohwr.org/actions/workflows/deploy.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/deploy.yaml)
 [![REUSE Compliance Check](https://github.com/OHWR/ohwr.org/actions/workflows/reuse.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/reuse.yaml)
@@ -15,6 +16,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0+
 [![Makefile Lint](https://github.com/OHWR/ohwr.org/actions/workflows/makefile.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/makefile.yaml)
 [![Python Lint](https://github.com/OHWR/ohwr.org/actions/workflows/python.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/python.yaml)
 [![Markdown Lint](https://github.com/OHWR/ohwr.org/actions/workflows/markdown.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/markdown.yaml)
+[![CodeQL](https://github.com/OHWR/ohwr.org/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/github-code-scanning/codeql)
 [![Lines of Code](https://tokei.rs/b1/github/OHWR/ohwr.org?category=code)](https://github.com/OHWR/ohwr.org)
 
 A new website proposal for the Open Hardware Repository.

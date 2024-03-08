@@ -110,3 +110,19 @@ The website is deployed to [GitHub Pages](https://pages.github.com/) with the
 
 The workflow builds and deploys the website whenever a change is pushed to the
 `master` branch.
+
+## Code of Conduct :scroll:
+
+Please review our [Code of Conduct](.github/CODE_OF_CONDUCT.md) to understand
+the expectations for behavior within the project community.
+
+## Security Policy :lock:
+
+For information on our security policy and reporting vulnerabilities, please
+check our [Security Policy](.github/SECURITY.md).
+
+## Contributing Guidelines :rocket:
+
+We welcome contributions! Before getting started, please read our
+[Contributing Guidelines](.github/CONTRIBUTING.md) for information on how to
+contribute to the project.

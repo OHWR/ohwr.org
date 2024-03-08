@@ -82,4 +82,4 @@ project will be added to the Open Hardware Repository.
 
 Thank you for contributing to the open-source hardware community through OHWR!
 
-{{< button link="https://github.com/OHWR/ohwr.org/issues/new?assignees=vascoguita&labels=enhancement&projects=&template=submit-project.md&title=%5BPROJ%5D+" label="New Issue" >}} <!-- markdownlint-disable-line MD013 MD034 -->
+{{< button link="https://github.com/OHWR/ohwr.org/issues/new?assignees=vascoguita&labels=project&projects=&template=project.md&title=%5BPROJ%5D+" label="New Issue" >}} <!-- markdownlint-disable-line MD013 MD034 -->

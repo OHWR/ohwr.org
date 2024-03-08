@@ -1,5 +1,5 @@
 ---
-# SPDX-FileCopyrightText: 2023 CERN (home.cern)
+# SPDX-FileCopyrightText: 2024 CERN (home.cern)
 #
 # SPDX-License-Identifier: CC-BY-SA-4.0+
 

@@ -110,3 +110,9 @@ The website is deployed to [GitHub Pages](https://pages.github.com/) with the
 
 The workflow builds and deploys the website whenever a change is pushed to the
 `master` branch.
+
+## Contributing Guidelines :rocket:
+
+We welcome contributions! Before getting started, please read our
+[Contributing Guidelines](.github/CONTRIBUTING.md) for information on how to
+contribute to the project.

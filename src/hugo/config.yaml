@@ -62,22 +62,16 @@ menus:
       url: 'about/'
     - name: 'Projects'
       url: 'projects/'
-    - name: 'Submit Project'
-      url: 'submit-project/'
   footer_middle:
     - name: 'Licenses'
       url: 'licenses/'
-    - name: 'Members'
-      url: 'members/'
-    - name: 'Help'
-      url: 'help/'
-  footer_right:
     - name: 'Forum'
       url: 'https://forums.ohwr.org/'
-    - name: 'FAQ'
-      url: 'faq/'
+  footer_right:
     - name: 'News'
       url: 'news/'
+    - name: 'Submit Project'
+      url: 'submit-project/'
 params:
   favicon: 'https://be-cem-edl.web.cern.ch/ohwr/graphics/favicon.ico'
   logo: 'https://be-cem-edl.web.cern.ch/ohwr/graphics/logo.png'

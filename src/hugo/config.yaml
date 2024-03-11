@@ -17,7 +17,6 @@ markup:
     style: 'native'
 taxonomies:
   category: 'categories'
-  tag: 'tags'
   topic: 'topics'
 module:
   imports:
@@ -28,34 +27,26 @@ menus:
       url: 'about/'
       weight: 1
     - name: 'Projects'
-      weight: 2
-    - name: 'All Projects'
       url: 'projects/'
-      weight: 3
-      parent: 'Projects'
+      weight: 2
     - name: 'Categories'
       url: 'categories/'
-      weight: 4
-      parent: 'Projects'
-    - name: 'Tags'
-      url: 'tags/'
-      weight: 5
-      parent: 'Projects'
+      weight: 3
     - name: 'Licenses'
       url: 'licenses/'
-      weight: 6
+      weight: 4
     - name: 'Forum'
       url: 'https://forums.ohwr.org/'
-      weight: 7
+      weight: 5
     - name: 'News'
-      weight: 8
+      weight: 6
     - name: 'All News'
       url: 'news/'
-      weight: 9
+      weight: 7
       parent: 'News'
     - name: 'Topics'
       url: 'topics/'
-      weight: 10
+      weight: 8
       parent: 'News'
   footer_left:
     - name: 'About'

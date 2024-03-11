@@ -16,12 +16,6 @@ images:
 {{ with .featured }}
 featured: {{ . }}
 {{ end }}
-{{ with .tags }}
-tags:
-{{ range . }}
-  - {{ . }}
-{{ end }}
-{{ end }}
 {{ with .categories }}
 categories:
 {{ range . }}

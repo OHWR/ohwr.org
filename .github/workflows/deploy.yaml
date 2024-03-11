@@ -6,6 +6,8 @@
 name: Deploy to GitHub Pages
 
 on:  # yamllint disable-line rule:truthy
+  schedule:
+    - cron: '0 8,15 * * *'
   push:
     branches:
       - master

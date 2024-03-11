@@ -6,4 +6,4 @@ pydantic==2.6.3
 PyYAML==6.0.1
 reuse==3.0.1
 wemake-python-styleguide==0.18.0
-yamllint==1.32.0
+yamllint==1.35.1

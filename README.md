@@ -76,7 +76,7 @@ theme.
 * [wemake-python-styleguide](https://wemake-python-styleguide.readthedocs.io/en/latest/#quickstart)
   \>= 0.18.0
 * [yamllint](https://yamllint.readthedocs.io/en/stable/quickstart.html#installing-yamllint)
-  \>= 1.32.0
+  \>= 1.35.1
 * [checkmake](https://github.com/mrtazz/checkmake#installation)
   \>= 0.2.2
 * [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2#install)

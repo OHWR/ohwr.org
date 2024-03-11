@@ -72,7 +72,7 @@ theme.
 ### Requirements :clipboard: <!-- markdownlint-disable-line MD024 -->
 
 * [reuse](https://reuse.readthedocs.io/en/v1.0.0/readme.html#install)
-  \>= 2.1.0
+  \>= 3.0.1
 * [wemake-python-styleguide](https://wemake-python-styleguide.readthedocs.io/en/latest/#quickstart)
   \>= 0.18.0
 * [yamllint](https://yamllint.readthedocs.io/en/stable/quickstart.html#installing-yamllint)

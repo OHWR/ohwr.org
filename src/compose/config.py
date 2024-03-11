@@ -82,7 +82,6 @@ class ProjConfig(BaseModel, extra='forbid'):
     forum: Optional[URL] = None
     links: Optional[list[LinkConfig]] = None
     categories: Optional[list[str]] = None
-    tags: Optional[list[str]] = None
     news: Optional[list[NewsConfig]] = None
 
     def __init__(self, licenses: list[str], spdx_license_list: dict, **kwargs):

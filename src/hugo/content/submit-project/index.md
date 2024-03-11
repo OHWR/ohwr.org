@@ -66,8 +66,6 @@ project:
       url: 'https://foo.com/bar2'
   # (optional) Categories to which your project belongs (e.g. 'FMC Carriers').
   categories: ['Category X', 'Category Y', 'Category Z']
-  # (optional) Tags that characterize your project (e.g. 'ethernet').
-  tags: ['Tag1', 'Tag2', 'Tag3']
 ```
 
 ### Step 2: Create an issue

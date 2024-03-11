@@ -6,6 +6,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0+
 
 # Open Hardware Repository :penguin:
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0a0184bffaf048a6b3676ad5c32754c6)](https://app.codacy.com/gh/OHWR/ohwr.org?utm_source=github.com&utm_medium=referral&utm_content=OHWR/ohwr.org&utm_campaign=Badge_Grade)
 [![License CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-yellow.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![License BSD 3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](.github/CODE_OF_CONDUCT.md)

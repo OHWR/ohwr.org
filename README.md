@@ -34,7 +34,7 @@ theme.
 * [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.110.0
 * [Python](https://www.python.org/downloads) >= 3.11.4
 * [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) >= 6.0.1
-* [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.6.3
+* [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.6.4
 
 ### Steps :footprints:
 

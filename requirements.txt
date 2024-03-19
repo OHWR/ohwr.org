@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-pydantic==2.6.3
+pydantic==2.6.4
 PyYAML==6.0.1
 reuse==3.0.1
 wemake-python-styleguide==0.18.0

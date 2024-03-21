@@ -51,7 +51,8 @@ lint-python:
 
 .PHONY: lint-markdown
 lint-markdown:
-	markdownlint-cli2 '${CURDIR}/**/*.md' '#${CURDIR}/.venv'
+	markdownlint-cli2 '${CURDIR}/**/*.md' '#${CURDIR}/.venv' \
+		'#${CURDIR}/src/hugo/archetypes'
 
 ###############################################################################
 # Clean
@@ -60,4 +61,5 @@ lint-markdown:
 .PHONY: clean
 clean:
 	rm -rf ${PUBLIC} ${HUGO}/resources ${HUGO}/.hugo_build.lock \
-		${HUGO}/data ${HUGO}/content/projects ${HUGO}/content/news
+		${HUGO}/data ${HUGO}/content/projects ${HUGO}/content/news \
+		${HUGO}/content/categories

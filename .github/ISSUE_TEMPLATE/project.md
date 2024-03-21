@@ -18,3 +18,8 @@ assignees: vascoguita
 
 - **Name:** Your Name
 - **Email:** <your.email@example.com>
+
+## Categories
+
+- Category A
+- Category B (New): Description of the new category.

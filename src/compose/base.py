@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""Load, parse and validate configuration."""
+"""Define custom classes for Pydantic models."""
 
 from http import HTTPMethod, HTTPStatus
 from logging import debug
@@ -10,8 +10,12 @@ from typing import Any, Type
 from urllib import request
 from urllib.error import URLError
 
-from pydantic import GetCoreSchemaHandler, ValidationInfo
+from pydantic import BaseModel, GetCoreSchemaHandler, ValidationInfo
 from pydantic_core import core_schema
+
+
+class BaseModelForbidExtra(BaseModel, extra='forbid'):
+    """Custom base class for Pydantic models with extra='forbid'."""
 
 
 class URL(object):

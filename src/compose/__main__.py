@@ -10,8 +10,8 @@ import logging
 from urllib.request import urlopen
 
 import yaml
-from config import ConfigError, ProjConfig
-from sources import ProjSources
+from config import CatConfig, ConfigError, ProjConfig
+from sources import CatSources, ProjSources
 
 parser = argparse.ArgumentParser()
 parser.add_argument('config', type=argparse.FileType('r'))
@@ -27,15 +27,25 @@ logging.basicConfig(
 with urlopen(config['license_list']) as response:  # noqa: S310
     spdx_license_list = json.load(response)
 
+for cat in config['categories']:
+    try:
+        cat_config = CatConfig(**cat)
+    except ConfigError as cat_error:
+        msg = 'Could not configure the {0} category:\n↳ {1}'
+        logging.error(msg.format(cat['name'], cat_error))
+        continue
+    cat_sources = CatSources.from_config(cat_config)
+    cat_sources.dump(config['source'])
+
 for proj in config['projects']:
     try:
         proj_config = ProjConfig.from_url(
             spdx_license_list=spdx_license_list,
             **proj,
         )
-    except ConfigError as error:
+    except ConfigError as proj_error:
         msg = 'Could not configure the {0} project:\n↳ {1}'
-        logging.error(msg.format(proj['id'], error))
+        logging.error(msg.format(proj['id'], proj_error))
         continue
     proj_sources = ProjSources.from_config(proj_config)
     proj_sources.dump(config['source'])

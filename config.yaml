@@ -27,24 +27,41 @@ projects:
       email: 'vasco.guita@cern.ch'
     # (optional) Show project as featured.
     featured: true
+    # (optional) Include project in categories.
+    categories:
+      - 'FMC Carriers'
   - id: 'spec'
     url: 'https://github.com/vascoguita/spec.git'
-    featured: true
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
+    featured: true
+    categories:
+      - 'FMC Carriers'
   - id: 'fmc-tdc'
     url: 'https://github.com/vascoguita/fmc-tdc.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
+    categories:
+      - 'FMC Modules'
   - id: 'fmc-delay-1ns-8cha'
     url: 'https://github.com/vascoguita/fmc-delay-1ns-8cha.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
+    categories:
+      - 'FMC Modules'
   - id: 'fmc-adc-100m14b4cha'
     url: 'https://github.com/vascoguita/fmc-adc-100m14b4cha.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
+    categories:
+      - 'FMC Modules'
+
+categories:
+  - name: 'FMC Carriers'
+    description: 'Boards that connect FMC Modules'
+  - name: 'FMC Modules'
+    description: 'FPGA Mezzanine Cards'

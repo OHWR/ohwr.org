@@ -15,16 +15,19 @@ from urllib.error import URLError
 from urllib.parse import urlparse
 
 import yaml
-from pydantic import BaseModel, EmailStr, Field, ValidationError
-from url import URL
+from base import URL, BaseModelForbidExtra
+from pydantic import EmailStr, Field, ValidationError
 
 
 class ConfigError(Exception):
     """Failed to load, parse or validate configuration."""
 
 
-class BaseModelForbidExtra(BaseModel, extra='forbid'):
-    """Custom base class for Pydantic models with extra='forbid'."""
+class CatConfig(BaseModelForbidExtra):
+    """Parses and validates category configuration."""
+
+    name: str
+    description: str
 
 
 class ContactConfig(BaseModelForbidExtra):

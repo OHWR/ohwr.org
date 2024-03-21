@@ -64,8 +64,6 @@ project:
       url: 'https://foo.com/bar1'
     - name: 'Link text here'
       url: 'https://foo.com/bar2'
-  # (optional) Categories to which your project belongs (e.g. 'FMC Carriers').
-  categories: ['Category X', 'Category Y', 'Category Z']
 ```
 
 ### Step 2: Create an issue
@@ -74,9 +72,13 @@ Open an issue on the OHWR GitHub repository specifying:
 
 * The URL of the project's git repository.
 * The name and email address of the project maintainer.
+* The categories to include the project in (optional).
 
-Our team will review your submission, and if everything is in order, your
-project will be added to the Open Hardware Repository.
+You can choose categories from the [Categories]({{< ref "categories.md" >}})
+page or propose new ones.
+To propose a new category please provide a name and a short description.
+
+Our team will review your submission and add your project to the OHWR website.
 
 Thank you for contributing to the open-source hardware community through OHWR!
 

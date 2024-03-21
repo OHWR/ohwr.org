@@ -15,7 +15,7 @@ from urllib.error import URLError
 from urllib.parse import urlparse
 
 import yaml
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, EmailStr, Field, ValidationError
 from url import URL
 
 
@@ -23,7 +23,18 @@ class ConfigError(Exception):
     """Failed to load, parse or validate configuration."""
 
 
-class LinkConfig(BaseModel, extra='forbid'):
+class BaseModelForbidExtra(BaseModel, extra='forbid'):
+    """Custom base class for Pydantic models with extra='forbid'."""
+
+
+class ContactConfig(BaseModelForbidExtra):
+    """Parses and validates contact configuration."""
+
+    name: str
+    email: EmailStr
+
+
+class LinkConfig(BaseModelForbidExtra):
     """Parses and validates link configuration."""
 
     name: str
@@ -55,7 +66,7 @@ class LicenseConfig(LinkConfig):
         raise ConfigError(msg.format(license_id))
 
 
-class NewsConfig(BaseModel, extra='forbid'):
+class NewsConfig(BaseModelForbidExtra):
     """Parses and validates news configuration."""
 
     title: str
@@ -65,11 +76,12 @@ class NewsConfig(BaseModel, extra='forbid'):
     content: Optional[str] = None  # noqa: WPS110
 
 
-class ProjConfig(BaseModel, extra='forbid'):
+class ProjConfig(BaseModelForbidExtra):
     """Loads, parses and validates project sources configuration."""
 
     id: str
     url: str
+    contact: ContactConfig
     featured: Optional[bool] = False
     name: str
     description: str

@@ -54,6 +54,10 @@ SPDX-License-Identifier: BSD-3-Clause
       {{ end }}
     </ul>
     {{ end }}
+    {{ with .contact }}
+    <h3 class="section-title">Contact</h3>
+    <pt><a href="mailto:{{ .email }}">{{ .name }}</a></p>
+    {{ end }}
     {{ with .licenses }}
     <h3 class="section-title">Licenses</h3>
     <ul class="fa-ul mb-0">

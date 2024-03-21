@@ -21,14 +21,30 @@ projects:
     # URL to the Git repository of the project.
     # The Git repository must contain a .ohwr.yaml file.
     url: 'https://github.com/vascoguita/svec.git'
+    # Project maintainer contact
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
     # (optional) Show project as featured.
     featured: true
   - id: 'spec'
     url: 'https://github.com/vascoguita/spec.git'
     featured: true
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
   - id: 'fmc-tdc'
     url: 'https://github.com/vascoguita/fmc-tdc.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
   - id: 'fmc-delay-1ns-8cha'
     url: 'https://github.com/vascoguita/fmc-delay-1ns-8cha.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
   - id: 'fmc-adc-100m14b4cha'
     url: 'https://github.com/vascoguita/fmc-adc-100m14b4cha.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'

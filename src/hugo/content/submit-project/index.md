@@ -73,7 +73,7 @@ project:
 Open an issue on the OHWR GitHub repository specifying:
 
 * The URL of the project's git repository.
-* The name and email address of the responsible for the project.
+* The name and email address of the project maintainer.
 
 Our team will review your submission, and if everything is in order, your
 project will be added to the Open Hardware Repository.

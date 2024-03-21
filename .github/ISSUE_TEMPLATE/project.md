@@ -14,7 +14,7 @@ assignees: vascoguita
 
 - **Git Repository URL:** <https://example.com/your-username/your-project.git>
 
-## Owner 👤
+## Maintainer 👤
 
 - **Name:** Your Name
 - **Email:** <your.email@example.com>

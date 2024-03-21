@@ -35,6 +35,8 @@ theme.
 * [Python](https://www.python.org/downloads) >= 3.11.4
 * [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) >= 6.0.1
 * [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.6.4
+* [email-validator](https://github.com/JoshData/python-email-validator?tab=readme-ov-file#installation)
+  \>= 2.1.1
 
 ### Steps :footprints:
 

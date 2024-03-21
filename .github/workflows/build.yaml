@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install pydantic PyYAML -c requirements.txt
+        run: pip install pydantic PyYAML email_validator -c requirements.txt
       - name: Build
         run: make build
         env:

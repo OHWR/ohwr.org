@@ -10,7 +10,7 @@ from dataclasses import dataclass, field
 from logging import info
 
 import yaml
-from config import NewsConfig, ProjConfig
+from config import CatConfig, NewsConfig, ProjConfig
 
 
 @dataclass
@@ -93,5 +93,27 @@ class NewsSources(Sources):
         return cls(
             '{0}.yaml'.format(os.path.join('data/news', news_id)),
             '{0}.md'.format(os.path.join('content/news', news_id)),
+            config.model_dump(exclude_none=True),
+        )
+
+
+class CatSources(Sources):
+    """Writes Hugo data and content file for a category page."""
+
+    @classmethod
+    def from_config(cls, config: CatConfig):
+        """
+        Construct a CatSources object from the configuration.
+
+        Parameters:
+            config: category configuration.
+
+        Returns:
+            CatSources object.
+        """
+        name = config.name.lower().replace(' ', '-')
+        return cls(
+            '{0}.yaml'.format(os.path.join('data/categories', name)),
+            os.path.join('content/categories', name, '_index.md'),
             config.model_dump(exclude_none=True),
         )

@@ -8,7 +8,7 @@ SPDX-License-Identifier: BSD-3-Clause
 <h3 class="text-center">Latest News</h3>
 <div class="latest-news">
   {{ range (first 3 .Pages) }}
-  <div class="card border-0 shadow-lg mb-4">
+  <div class="card interactive-card border-0 shadow-lg mb-4">
     {{ if .Params.images }}
     <div class="row">
       <div class="col-md-3">
@@ -17,12 +17,9 @@ SPDX-License-Identifier: BSD-3-Clause
       <div class="col-md-9 p-0">
     {{ end }}
         <div class="card-body">
-          <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h4>
+          <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="stretched-link post-title">{{ .Title }}</a></h4>
           <time>{{ .Date.Format "Jan 2, 2006" }}</time>
           <p class="card-text">{{ .Summary }}</p>
-          <a href="{{ .Permalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">
-            {{ i18n "readmore" }}
-          </a>
         </div>
     {{ if .Params.images }}
       </div>

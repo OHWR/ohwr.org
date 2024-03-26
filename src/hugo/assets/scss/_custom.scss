@@ -84,3 +84,12 @@ a.btn {
     border-color: $secondary-color !important;
   }
 }
+
+.interactive-card {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1);
+  }
+}

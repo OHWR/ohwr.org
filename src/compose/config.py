@@ -10,12 +10,12 @@ from datetime import date
 from logging import debug, info
 from tempfile import TemporaryDirectory
 from typing import Optional, TextIO, Union
-from urllib import request
-from urllib.error import URLError
+from urllib import error, request
 from urllib.parse import urlparse
 
 import yaml
 from base import URL, BaseModelForbidExtra
+from description import Description, DescriptionError
 from pydantic import EmailStr, Field, ValidationError
 
 
@@ -99,21 +99,41 @@ class ProjConfig(BaseModelForbidExtra):
     categories: Optional[list[str]] = None
     news: Optional[list[NewsConfig]] = None
 
-    def __init__(self, licenses: list[str], spdx_license_list: dict, **kwargs):
+    def __init__(
+        self,
+        description: URL,
+        licenses: list[str],
+        spdx_license_list: dict,
+        **kwargs,
+    ):
         """
         Construct a ProjConfig object.
 
         Parameters:
+            description: Markdown description URL.
             licenses: SPDX license identifiers.
             spdx_license_list: SPDX license data list.
-            kwargs: project configuration attributes
+            kwargs: project configuration attributes.
+
+        Raises:
+            ConfigError: if loading the configuration fails.
         """
+        try:
+            des = Description.from_url(description)
+        except DescriptionError as desc_error:
+            msg = 'Failed to load description from {0}:\n↳ {1}'
+            raise ConfigError(msg.format(description, desc_error))
+
         license_configs = []
         for license_id in licenses:
             license_configs.append(
                 LicenseConfig.from_id(license_id, spdx_license_list),
             )
-        super().__init__(licenses=license_configs, **kwargs)
+        super().__init__(
+            licenses=license_configs,
+            description=des.md,
+            **kwargs,
+        )
 
     @classmethod
     def from_url(cls, url: str, **kwargs):
@@ -154,9 +174,9 @@ class ProjConfig(BaseModelForbidExtra):
                 stderr=subprocess.STDOUT,
                 shell=True,  # noqa: S602
             )
-        except subprocess.CalledProcessError as error:
+        except subprocess.CalledProcessError as subprocess_error:
             msg = 'Failed to clone {0}:\n↳ {1}'
-            raise ConfigError(msg.format(url, error))
+            raise ConfigError(msg.format(url, subprocess_error))
         try:
             with open(os.path.join(tmpdir, '.ohwr.yaml')) as config_file:
                 return cls.from_yaml(config_file, url=url, **kwargs)
@@ -189,9 +209,9 @@ class ProjConfig(BaseModelForbidExtra):
         try:
             with request.urlopen(req) as response:  # noqa: S310
                 return cls.from_yaml(response, url=url, **kwargs)
-        except URLError as error:
+        except error.URLError as url_error:
             msg = 'Failed to request {0}:\n↳ {1}'
-            raise ConfigError(msg.format(req.full_url, error))
+            raise ConfigError(msg.format(req.full_url, url_error))
 
     @classmethod
     def from_yaml(cls, config_yaml: Union[str, TextIO], **kwargs):

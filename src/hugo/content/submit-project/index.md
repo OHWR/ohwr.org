@@ -21,13 +21,9 @@ version: '1.0.0'
 project:
   # The name of your project.
   name: 'Project Name'
-  # The Markdown description of your project (minimum 30 words).
-  description: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-    sollicitudin velit ac luctus [dignissim](https://foo.com/bar).
-
-    Ut in nulla at velit dictum rutrum pretium eu metus. Etiam rhoncus suscipit
-    leo at varius.
+  # Link to the Markdown file with the description of your project. The
+  # description is read from the first section of the file.
+  description: 'https://raw.githubusercontent.com/wiki/user/project/Home.md'
   # The website of your project. Use the web page of your git repository if
   # your project doesn't have website (e.g. 'https://github.com/user/project').
   website: 'https://your.project.com'

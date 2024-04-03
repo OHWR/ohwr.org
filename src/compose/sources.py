@@ -10,7 +10,8 @@ from dataclasses import dataclass, field
 from logging import info
 
 import yaml
-from config import CatConfig, NewsConfig, ProjConfig
+from config import CatConfig, ProjConfig
+from newsfeed import News
 
 
 @dataclass
@@ -60,7 +61,7 @@ class ProjSources(Sources):
         """
         sources = []
         for index, news in enumerate(config.news):
-            news.topics.append(config.name)
+            news.topics = [config.name]
             sources.append(
                 NewsSources.from_config(
                     news,
@@ -79,7 +80,7 @@ class NewsSources(Sources):
     """Writes Hugo data and content file for a news page."""
 
     @classmethod
-    def from_config(cls, config: NewsConfig, news_id: str):
+    def from_config(cls, config: News, news_id: str):
         """
         Construct a NewsSources object from the configuration.
 

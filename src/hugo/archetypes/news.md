@@ -11,7 +11,10 @@ title: {{ . }}
 date: {{ . }}
 {{ end }}
 {{ with .images }}
-images: {{ . }}
+images:
+{{ range . }}
+  - {{ . }}
+{{ end }}
 {{ end }}
 {{ with .topics }}
 topics:

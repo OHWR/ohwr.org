@@ -39,15 +39,8 @@ menus:
       url: 'https://forums.ohwr.org/'
       weight: 5
     - name: 'News'
-      weight: 6
-    - name: 'All News'
       url: 'news/'
-      weight: 7
-      parent: 'News'
-    - name: 'Topics'
-      url: 'topics/'
-      weight: 8
-      parent: 'News'
+      weight: 6
   footer_left:
     - name: 'About'
       url: 'about/'

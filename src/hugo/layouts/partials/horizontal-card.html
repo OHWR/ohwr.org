@@ -10,7 +10,7 @@ SPDX-License-Identifier: BSD-3-Clause
     <div class="col-md-3">
       <img src="{{ index .Params.images 0 | relURL }}" class="m-3 w-100 mh-100 rounded">
     </div>
-    <div class="col-md-9 p-0">
+    <div class="col-md-9 p-0 position-static">
   {{ end }}
       <div class="card-body">
         {{ with .Params.topics }}

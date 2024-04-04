@@ -6,7 +6,6 @@
 
 import os
 import subprocess  # noqa: S404
-from datetime import date
 from logging import debug, info
 from tempfile import TemporaryDirectory
 from typing import Optional, TextIO, Union
@@ -16,7 +15,8 @@ from urllib.parse import urlparse
 import yaml
 from base import URL, BaseModelForbidExtra
 from description import Description, DescriptionError
-from pydantic import EmailStr, Field, ValidationError
+from newsfeed import News, Newsfeed, NewsfeedError
+from pydantic import EmailStr, ValidationError
 
 
 class ConfigError(Exception):
@@ -69,16 +69,6 @@ class LicenseConfig(LinkConfig):
         raise ConfigError(msg.format(license_id))
 
 
-class NewsConfig(BaseModelForbidExtra):
-    """Parses and validates news configuration."""
-
-    title: str
-    date: date
-    images: Optional[list[URL]] = None
-    topics: Optional[list[str]] = Field(default_factory=list)
-    content: Optional[str] = None  # noqa: WPS110
-
-
 class ProjConfig(BaseModelForbidExtra):
     """Loads, parses and validates project sources configuration."""
 
@@ -97,13 +87,14 @@ class ProjConfig(BaseModelForbidExtra):
     forum: Optional[URL] = None
     links: Optional[list[LinkConfig]] = None
     categories: Optional[list[str]] = None
-    news: Optional[list[NewsConfig]] = None
+    news: Optional[list[News]] = None
 
-    def __init__(
+    def __init__(  # noqa: WPS211,WPS210
         self,
         description: URL,
         licenses: list[str],
         spdx_license_list: dict,
+        newsfeed: URL = None,
         **kwargs,
     ):
         """
@@ -113,6 +104,7 @@ class ProjConfig(BaseModelForbidExtra):
             description: Markdown description URL.
             licenses: SPDX license identifiers.
             spdx_license_list: SPDX license data list.
+            newsfeed: Markdown newsfeed URL.
             kwargs: project configuration attributes.
 
         Raises:
@@ -129,9 +121,20 @@ class ProjConfig(BaseModelForbidExtra):
             license_configs.append(
                 LicenseConfig.from_id(license_id, spdx_license_list),
             )
+
+        news = None
+        if newsfeed is not None:
+            try:
+                nf = Newsfeed.from_url(newsfeed)
+            except NewsfeedError as newsfeed_error:
+                msg = 'Failed to load newsfeed from {0}:\n↳ {1}'
+                raise ConfigError(msg.format(newsfeed, newsfeed_error))
+            news = nf.news
+
         super().__init__(
             licenses=license_configs,
             description=des.md,
+            news=news,
             **kwargs,
         )
 

@@ -6,3 +6,7 @@ Source: https://github.com/OHWR/ohwr.org
 Files: src/hugo/go.sum
 Copyright: 2024 CERN (home.cern)
 License: BSD-3-Clause
+
+Files: third_party/spdx/license-list-data/json/licenses.json
+Copyright: 2024 CERN (home.cern)
+License: CC-BY-SA-4.0+

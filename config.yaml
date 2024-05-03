@@ -3,65 +3,46 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-# Logging level ('DEBUG', 'INFO', 'WARNING', 'ERROR' or 'CRITICAL')
-log_level: 'INFO'
+sources: './src/hugo'
 
-# SPDX JSON license list URL
-license_list: 'https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json'  # yamllint disable-line rule:line-length
-
-# Hugo sources directory
-source: './src/hugo'
-
-# Projects to include in the OHWR website.
-projects:
-  # Unique project identifier.
-  # The project page URL depends on the id
-  # (i.e. http://ohwr.org/projects/<id>/).
-  - id: 'svec'
-    # URL to the Git repository of the project.
-    # The Git repository must contain a .ohwr.yaml file.
-    url: 'https://github.com/vascoguita/svec.git'
-    # Project maintainer contact
-    contact:
-      name: 'Vasco Guita'
-      email: 'vasco.guita@cern.ch'
-    # (optional) Show project as featured.
-    featured: true
-    # (optional) Include project in categories.
-    categories:
-      - 'FMC Carriers'
-  - id: 'spec'
-    url: 'https://github.com/vascoguita/spec.git'
-    contact:
-      name: 'Vasco Guita'
-      email: 'vasco.guita@cern.ch'
-    featured: true
-    categories:
-      - 'FMC Carriers'
-  - id: 'fmc-tdc'
-    url: 'https://github.com/vascoguita/fmc-tdc.git'
-    contact:
-      name: 'Vasco Guita'
-      email: 'vasco.guita@cern.ch'
-    categories:
-      - 'FMC Modules'
-  - id: 'fmc-delay-1ns-8cha'
-    url: 'https://github.com/vascoguita/fmc-delay-1ns-8cha.git'
-    contact:
-      name: 'Vasco Guita'
-      email: 'vasco.guita@cern.ch'
-    categories:
-      - 'FMC Modules'
-  - id: 'fmc-adc-100m14b4cha'
-    url: 'https://github.com/vascoguita/fmc-adc-100m14b4cha.git'
-    contact:
-      name: 'Vasco Guita'
-      email: 'vasco.guita@cern.ch'
-    categories:
-      - 'FMC Modules'
+licenses: './third_party/spdx/license-list-data/json/licenses.json'
 
 categories:
   - name: 'FMC Carriers'
     description: 'Boards that connect FMC Modules'
   - name: 'FMC Modules'
     description: 'FPGA Mezzanine Cards'
+
+projects:
+  - repository: 'https://github.com/vascoguita/svec.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
+    featured: true
+    categories:
+      - 'FMC Carriers'
+  - repository: 'https://github.com/vascoguita/spec.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
+    featured: true
+    categories:
+      - 'FMC Carriers'
+  - repository: 'https://github.com/vascoguita/fmc-tdc.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
+    categories:
+      - 'FMC Modules'
+  - repository: 'https://github.com/vascoguita/fmc-delay-1ns-8cha.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
+    categories:
+      - 'FMC Modules'
+  - repository: 'https://github.com/vascoguita/fmc-adc-100m14b4cha.git'
+    contact:
+      name: 'Vasco Guita'
+      email: 'vasco.guita@cern.ch'
+    categories:
+      - 'FMC Modules'

@@ -13,8 +13,10 @@ SPDX-License-Identifier: BSD-3-Clause
     <div class="col-md-9 p-0 position-static">
   {{ end }}
       <div class="card-body">
-        {{ with .Params.topics }}
-        <h6><i class="fas fa-rss"></i><span class="ml-1">{{ delimit . ", " }}</span></h6>
+        {{ if .Params.newsfeed }}
+        {{ with .GetPage (path.Join "projects" .Params.newsfeed) }}
+        <h6><i class="fas fa-rss"></i><span class="ml-1">{{ .Title }}</span></h6>
+        {{ end }}
         {{ end }}
         <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="stretched-link post-title">{{ .Title }}</a></h3>
         {{ with .Params.Date }}

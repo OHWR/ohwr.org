@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 HUGO	= ${CURDIR}/src/hugo
-COMPOSE	= ${CURDIR}/src/compose
 PUBLIC	= ${CURDIR}/public
 
 .PHONY: all
@@ -15,7 +14,7 @@ all: test build
 
 .PHONY: build
 build:
-	python ${COMPOSE} ${CURDIR}/config.yaml
+	python ${CURDIR}/src/compose ${CURDIR}/config.yaml
 	hugo --gc --minify --source ${HUGO} --destination ${PUBLIC}
 
 ###############################################################################
@@ -47,12 +46,11 @@ lint-makefile:
 
 .PHONY: lint-python
 lint-python:
-	flake8 ${COMPOSE}
+	flake8
 
 .PHONY: lint-markdown
 lint-markdown:
-	markdownlint-cli2 '${CURDIR}/**/*.md' '#${CURDIR}/.venv' \
-		'#${CURDIR}/src/hugo/archetypes'
+	markdownlint-cli2 '${CURDIR}/**/*.md' '#${CURDIR}/.venv'
 
 ###############################################################################
 # Clean
@@ -61,5 +59,5 @@ lint-markdown:
 .PHONY: clean
 clean:
 	rm -rf ${PUBLIC} ${HUGO}/resources ${HUGO}/.hugo_build.lock \
-		${HUGO}/data ${HUGO}/content/projects ${HUGO}/content/news \
+		${HUGO}/content/projects ${HUGO}/content/news \
 		${HUGO}/content/categories

@@ -15,41 +15,39 @@ Add an `.ohwr.yaml` file to the root directory of your project's repository.
 This file should follow the following schema:
 
 ```yaml
-# The version of the .ohwr.yaml template.
+# The version of the .ohwr.yaml schema.
 version: '1.0.0'
-
-project:
-  # The name of your project.
-  name: 'Project Name'
-  # Link to the Markdown description of your project. The
-  # description is read from the first section of the file.
-  description: 'https://raw.githubusercontent.com/wiki/user/project/Home.md'
-  # The website of your project. Use the web page of your git repository if
-  # your project doesn't have website (e.g. 'https://github.com/user/project').
-  website: 'https://your.project.com'
-  # The licenses of your project (SPDX IDs - https://spdx.org/licenses/).
-  licenses: ['CERN-OHL-W-2.0+', 'CC-BY-SA-4.0+', 'BSD-3-Clause']
-  # (optional) Images of your project (maximum 5 images). The main image should
-  # be the first in the list (e.g. a photo of the latest prototype).
-  images:
-    - 'https://your.project.com/img1.png'
-    - 'https://your.project.com/img2.png'
-  # (optional) Link to the documentation of your project.
-  documentation: 'https://github.com/user/project/wiki'
-  # (optional) Link to the issue/bug tracker of your project.
-  issues: 'https://github.com/user/project/issues'
-  # (optional) Link to the latest release of your project.
-  latest_release: 'https://github.com/user/project/releases/latest'
-  # (optional) Link to the forum where your community has conversations.
-  forum: 'https://forums.ohwr.org/c/project'
-  # (optional) Link to the Markdown newsfeed of your project.
-  newsfeed: 'https://raw.githubusercontent.com/wiki/user/project/news.md'
-  # (optional) Addtional links.
-  links:
-    - name: 'Link text here'
-      url: 'https://foo.com/bar1'
-    - name: 'Link text here'
-      url: 'https://foo.com/bar2'
+# The name of your project.
+name: 'Project Name'
+# Link to the Markdown description of your project. The
+# description is read from the first section of the file.
+description: 'https://raw.githubusercontent.com/wiki/user/project/Home.md'
+# The website of your project. Use the web page of your git repository if
+# your project doesn't have website (e.g. 'https://github.com/user/project').
+website: 'https://your.project.com'
+# The licenses of your project (SPDX IDs - https://spdx.org/licenses/).
+licenses: ['CERN-OHL-W-2.0+', 'CC-BY-SA-4.0+', 'BSD-3-Clause']
+# (optional) Images of your project (maximum 5 images). The main image should
+# be the first in the list (e.g. a photo of the latest prototype).
+images:
+  - 'https://your.project.com/img1.png'
+  - 'https://your.project.com/img2.png'
+# (optional) Link to the documentation of your project.
+documentation: 'https://github.com/user/project/wiki'
+# (optional) Link to the issue/bug tracker of your project.
+issues: 'https://github.com/user/project/issues'
+# (optional) Link to the latest release of your project.
+latest_release: 'https://github.com/user/project/releases/latest'
+# (optional) Link to the forum where your community has conversations.
+forum: 'https://forums.ohwr.org/c/project'
+# (optional) Link to the Markdown newsfeed of your project.
+newsfeed: 'https://raw.githubusercontent.com/wiki/user/project/news.md'
+# (optional) Addtional links.
+links:
+  - name: 'Link text here'
+    url: 'https://foo.com/bar1'
+  - name: 'Link text here'
+    url: 'https://foo.com/bar2'
 ```
 
 ### Write a newsfeed (**optional**)

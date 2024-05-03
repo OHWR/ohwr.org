@@ -4,49 +4,56 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ $page := .Page }}
+{{ $website := .Page.Params.website }}
+{{ $latest_release := .Page.Params.latest_release }}
+{{ $documentation := .Page.Params.documentation }}
+{{ $repository := .Page.Params.repository }}
+{{ $issues := .Page.Params.issues }}
+{{ $forum := .Page.Params.forum }}
+{{ $links := .Page.Params.links }}
+{{ $contact := .Page.Params.contact }}
+{{ $licenses := .Page.Params.licenses }}
 
-{{ with index .Site.Data.projects .Page.File.BaseFileName }}
 <div class="card border-0 shadow-lg">
   <div class="card-body mb-0">
     <div class="row justify-content-between project-banner">
       <div class="col-auto mb-1">
-        {{ with .website }}
+        {{ with $website }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge btn-primary mb-0">
           <i class="fas fa-globe mb-0"></i> Project Website
         </a>
         {{ end }}
       </div>
       <div class="col-auto mb-1">
-        {{ with .latest_release }}
+        {{ with $latest_release }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Latest Release">
           <i class="fas fa-rocket mb-0"></i>
         </a>
         {{ end }}
-        {{ with .documentation }}
+        {{ with $documentation }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Documentation">
           <i class="fas fa-book-open mb-0"></i>
         </a>
         {{ end }}
-        {{ with .url }}
+        {{ with $repository }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Repository">
           <i class="fab fa-git-alt mb-0"></i>
         </a>
         {{ end }}
-        {{ with .issues }}
+        {{ with $issues }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Issues">
           <i class="fas fa-bug mb-0"></i>
         </a>
         {{ end }}
-        {{ with .forum }}
+        {{ with $forum }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Forum">
           <i class="fas fa-comments mb-0"></i>
         </a>
         {{ end }}
       </div>
     </div>
-    {{ .description | $page.RenderString (dict "display" "block") }}
-    {{ with .links }}
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+    {{ with $links }}
     <h3 class="section-title">Links</h3>
     <ul>
       {{ range . }}
@@ -54,11 +61,11 @@ SPDX-License-Identifier: BSD-3-Clause
       {{ end }}
     </ul>
     {{ end }}
-    {{ with .contact }}
+    {{ with $contact }}
     <h3 class="section-title">Contact</h3>
     <pt><a href="mailto:{{ .email }}">{{ .name }}</a></p>
     {{ end }}
-    {{ with .licenses }}
+    {{ with $licenses }}
     <h3 class="section-title">Licenses</h3>
     <ul class="fa-ul mb-0">
       {{ range . }}
@@ -68,5 +75,3 @@ SPDX-License-Identifier: BSD-3-Clause
     {{ end }}
   </div>
 </div>
-{{ end }}
-

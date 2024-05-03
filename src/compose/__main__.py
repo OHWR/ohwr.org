@@ -2,50 +2,94 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""CLI to generate content for ohwr.org."""
+"""Generate content for ohwr.org."""
 
 import argparse
-import json
 import logging
-from urllib.request import urlopen
+import os
+import sys
 
-import yaml
-from config import CatConfig, ConfigError, ProjConfig
-from sources import CatSources, ProjSources
+from config import Config
+from license import SpdxLicenseList
+from news import Newsfeed
+from pydantic import ValidationError
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',  # noqa: WPS323
+)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('config', type=argparse.FileType('r'))
 args = parser.parse_args()
 
-config = yaml.safe_load(args.config)
+logging.info("Loading configuration from '{0}'...".format(args.config.name))
+try:
+    config = Config.from_yaml(args.config.read())
+except (ValidationError, ValueError) as config_error:
+    logging.error('Failed to load configuration:\n{0}'.format(config_error))
+    sys.exit(1)
 
-logging.basicConfig(
-    level=getattr(logging, config['log_level']),
-    format='%(asctime)s - %(levelname)s - %(message)s',  # noqa: WPS323
-)
+logging.info("Loading SPDX license list from '{0}'...".format(config.licenses))
+try:
+    SpdxLicenseList.from_file(config.licenses)
+except (ValidationError, ValueError) as spdx_error:
+    logging.error('Failed to load SPDX license list:\n{0}'.format(spdx_error))
+    sys.exit(1)
 
-with urlopen(config['license_list']) as response:  # noqa: S310
-    spdx_license_list = json.load(response)
-
-for cat in config['categories']:
+for category in config.categories:
     try:
-        cat_config = CatConfig(**cat)
-    except ConfigError as cat_error:
-        msg = 'Could not configure the {0} category:\n↳ {1}'
-        logging.error(msg.format(cat['name'], cat_error))
-        continue
-    cat_sources = CatSources.from_config(cat_config)
-    cat_sources.dump(config['source'])
+        category.dump(config.sources)
+    except (ValidationError, ValueError) as category_error:
+        logging.error('{0} - Failed to generate category page:\n{1}'.format(
+            category.name, category_error,
+        ))
+        sys.exit(1)
 
-for proj in config['projects']:
+proj_dir = os.path.join(config.sources, 'content/projects')
+try:
+    os.makedirs(proj_dir)
+except OSError as projects_dir_error:
+    logging.error("Failed to create '{0}' directory:\n{1}".format(
+        proj_dir, projects_dir_error,
+    ))
+    sys.exit(1)
+
+news_dir = os.path.join(config.sources, 'content/news')
+try:
+    os.makedirs(news_dir)
+except OSError as news_dir_error:
+    logging.error("Failed to create '{0}' directory:\n{1}".format(
+        news_dir, news_dir_error,
+    ))
+    sys.exit(1)
+
+for project in config.projects:
     try:
-        proj_config = ProjConfig.from_url(
-            spdx_license_list=spdx_license_list,
-            **proj,
-        )
-    except ConfigError as proj_error:
-        msg = 'Could not configure the {0} project:\n↳ {1}'
-        logging.error(msg.format(proj['id'], proj_error))
+        project.dump(os.path.join(proj_dir, '{0}.md'.format(project.id)))
+    except (ValidationError, ValueError) as project_error:
+        logging.error('{0} - Failed to generate project page:\n{1}'.format(
+            project.id, project_error,
+        ))
         continue
-    proj_sources = ProjSources.from_config(proj_config)
-    proj_sources.dump(config['source'])
+
+    if project.manifest.newsfeed:
+        try:
+            newsfeed = Newsfeed.from_url(project.manifest.newsfeed, project.id)
+        except ValueError as newsfeed_error:
+            logging.error('{0} - Failed to load newsfeed:\n{1}'.format(
+                project.id, newsfeed_error,
+            ))
+            continue
+
+        for index, news in enumerate(newsfeed):
+            try:
+                news.dump(os.path.join(news_dir, '{0}-{1}.md'.format(
+                    project.id, index + 1,
+                )))
+            except (ValidationError, ValueError) as news_error:
+                logging.error(
+                    '{0} - Failed to generate news page:\n{1}'.format(
+                        project.id, news_error,
+                    ),
+                )

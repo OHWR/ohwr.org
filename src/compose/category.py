@@ -2,61 +2,89 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""Project category utilities."""
-
+"""Generate categories content."""
 
 import logging
 import os
+from collections import UserDict
 
-from common import AnnotatedStr, BaseModelForbidExtra
-from pydantic import DirectoryPath, validate_call
+from config import Category as Config
+
+from hugo import Page
 
 
-class Category(BaseModelForbidExtra):
-    """Project category."""
+class Category(Page):
+    """Category Hugo page."""
 
-    name: AnnotatedStr
-    description: AnnotatedStr
-
-    @validate_call
-    def hugo(self) -> str:
+    @classmethod
+    def from_config(cls, config: Config) -> 'Category':
         """
-        Generate Hugo content.
-
-        Returns:
-            str: Hugo content string.
-        """
-        return '---\ntitle: {0}\n---\n{1}'.format(self.name, self.description)
-
-    @validate_call
-    def dump(self, sources: DirectoryPath):
-        """
-        Dump Hugo content.
+        Create a category page from a configuration.
 
         Parameters:
-            sources: Hugo sources directory path.
+            config: Category configuration.
+
+        Returns:
+            Category: Instance of Category class.
+        """
+        front_matter = {'title': config.name}
+        return cls(front_matter=front_matter, markdown=config.description)
+
+
+class CategorySection(UserDict[str, Category]):
+    """Category Hugo section."""
+
+    @classmethod
+    def from_config(cls, configs: list[Config]) -> 'CategorySection':
+        """
+        Create a categories section from a list of configurations.
+
+        Parameters:
+            configs: Category configurations.
+
+        Returns:
+            CategorySection: Instance of CategorySection class.
 
         Raises:
-            ValueError: if dumping the Hugo content fails.
+            ValueError: If creating the categories section fails.
         """
-        category_dir = os.path.join(
-            sources, 'content/categories', self.name.lower().replace(' ', '-'),
-        )
-        try:
-            os.makedirs(category_dir)
-        except OSError as makedirs_error:
-            raise ValueError("Failed to create '{0}' directory:\n{1}".format(
-                category_dir, makedirs_error,
-            ))
-        path = os.path.join(category_dir, '_index.md')
-        logging.info("{0} - Writing category page to '{1}'...".format(
-            self.name, path,
-        ))
-        hugo_content = self.hugo()
-        try:
-            with open(path, 'w') as category_file:
-                category_file.write(hugo_content)
-        except OSError as open_error:
-            raise ValueError("Failed to write file '{0}':\n{1}".format(
-                path, open_error,
-            ))
+        categories = {}
+        for config in configs:
+            section = config.name.lower().replace(' ', '-')
+            logging.info("Generating '{0}' page...".format(section))
+            try:
+                category = Category.from_config(config)
+            except ValueError as category_error:
+                raise ValueError("Failed to generate '{0}' page:\n{1}".format(
+                    section, category_error,
+                ))
+            categories[section] = category
+        return cls(categories)
+
+    def write(self, path: str) -> None:
+        """
+        Write the categories section to files.
+
+        Parameters:
+            path: Categories content directory path.
+
+        Raises:
+            ValueError: If writing the categories section to files fails.
+        """
+        for section, category in self.data.items():
+            logging.info("Writing '{0}' page...".format(section))
+            category_dir = os.path.join(path, section)
+            try:
+                os.makedirs(category_dir)
+            except OSError as makedirs_error:
+                raise ValueError(
+                    "Failed to create '{0}' directory:\n{1}".format(
+                        category_dir, makedirs_error,
+                    ),
+                )
+            try:
+                category.write(os.path.join(category_dir, '_index.md'))
+            except ValueError as write_error:
+                raise ValueError("Failed to write '{0}' page:\n{1}".format(
+                    section, write_error,
+                ))

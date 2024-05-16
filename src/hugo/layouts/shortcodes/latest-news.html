@@ -3,7 +3,7 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 
 SPDX-License-Identifier: BSD-3-Clause
 -->
-{{ with .Site.Taxonomies.newsfeed.Get .Page.File.BaseFileName }}
+{{ with .Site.Taxonomies.newsfeeds.Get .Page.File.BaseFileName }}
 <h3 class="text-center">Latest News</h3>
 <div class="latest-news">
   {{ range (first 3 .Pages) }}

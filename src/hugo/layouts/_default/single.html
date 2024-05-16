@@ -46,8 +46,8 @@ SPDX-License-Identifier: BSD-3-Clause
           <time>{{ .Params.Date.Format "Jan 2, 2006" }}</time>
         </div>
         <div class="col-auto">
-          {{ if .Params.newsfeed }}
-          {{ with .GetPage (path.Join "projects" .Params.newsfeed) }}
+          {{ if .Params.newsfeeds }}
+          {{ with .GetPage (path.Join "projects" .Params.newsfeeds) }}
           <a href="{{ .Permalink }}"><h5><i class="fas fa-rss"></i><span class="ml-1">{{ .Title }}</span></h5></a>
           {{ end }}
           {{ end }}

@@ -18,6 +18,7 @@ markup:
 taxonomies:
   category: 'categories'
   newsfeed: 'newsfeeds'
+  parent: 'parents'
 module:
   imports:
     - path: 'github.com/OHWR/bigspring-light-hugo'

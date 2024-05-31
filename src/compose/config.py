@@ -176,22 +176,12 @@ class News(BaseModelForbidExtra):
 class Project(BaseModelForbidExtra):
     """Project configuration."""
 
+    id: AnnotatedStr
     repository: SerializableUrl
     contact: Contact
     featured: Optional[bool] = False
     categories: Optional[AnnotatedStrList] = None
-
-    @computed_field
-    @cached_property
-    def id(self) -> str:
-        """
-        Get id.
-
-        Returns:
-            str: identifier string.
-        """
-        split = str(self.repository).split('/')
-        return split[-1].replace('.git', '')
+    parents: Optional[AnnotatedStrList] = None
 
     @computed_field
     @cached_property
@@ -245,6 +235,17 @@ class Project(BaseModelForbidExtra):
             if not md.startswith('#') and md:
                 return md
         raise ValueError('Failed to parse Markdown description.')
+
+    @computed_field
+    @cached_property
+    def summary(self) -> str:
+        """
+        Get summary.
+
+        Returns:
+            str: summary string.
+        """
+        return '{0}.'.format(self.description.split('.', 1)[0])
 
     @computed_field
     @cached_property
@@ -337,7 +338,33 @@ class Config(Schema):
                 if unknown:
                     raise ValueError(
                         "Project '{0}' with unknown categories: '{1}'.".format(
-                            project.repository, unknown,
+                            project.id, unknown,
+                        ),
+                    )
+        return self
+
+    @model_validator(mode='after')
+    def check_parents_match(self) -> 'Config':
+        """
+        Check if parents in projects match the available projects.
+
+        Returns:
+            Config: The configuration object with validated parents.
+
+        Raises:
+            ValueError: If an unknown parent is found in a project.
+        """
+        parent_ids = []
+        for parent in self.projects:
+            parent_ids.append(parent.id)
+
+        for child in self.projects:
+            if child.parents:
+                unknown = set(child.parents) - set(parent_ids)
+                if unknown:
+                    raise ValueError(
+                        "Project '{0}' with unknown parents: '{1}'.".format(
+                            child.id, unknown,
                         ),
                     )
         return self

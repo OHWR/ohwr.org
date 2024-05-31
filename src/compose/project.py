@@ -35,10 +35,9 @@ class Project(Page):
             exclude_none=True,
             by_alias=True,
         ))
-        markdown = (
-            '{{{{< project >}}}}\n{0}\n{{{{< /project >}}}}\n' +
-            '{{{{< latest-news >}}}}'
-        ).format(config.description)
+        markdown = '{{{{< project >}}}}\n{0}\n{{{{< /project >}}}}'.format(
+            config.description,
+        )
         return cls(front_matter=front_matter, markdown=markdown)
 
 

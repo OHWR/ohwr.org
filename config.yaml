@@ -14,35 +14,49 @@ categories:
     description: 'FPGA Mezzanine Cards'
 
 projects:
-  - repository: 'https://github.com/vascoguita/svec.git'
+  - id: 'svec'
+    repository: 'https://github.com/vascoguita/svec.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
     featured: true
     categories:
       - 'FMC Carriers'
-  - repository: 'https://github.com/vascoguita/spec.git'
+  - id: 'spec'
+    repository: 'https://github.com/vascoguita/spec.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
     featured: true
     categories:
       - 'FMC Carriers'
-  - repository: 'https://github.com/vascoguita/fmc-tdc.git'
+  - id: 'fmc-tdc'
+    repository: 'https://github.com/vascoguita/fmc-tdc.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
     categories:
       - 'FMC Modules'
-  - repository: 'https://github.com/vascoguita/fmc-delay-1ns-8cha.git'
+    parents:
+      - 'spec'
+      - 'svec'
+  - id: 'fmc-delay-1ns-8cha'
+    repository: 'https://github.com/vascoguita/fmc-delay-1ns-8cha.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
     categories:
       - 'FMC Modules'
-  - repository: 'https://github.com/vascoguita/fmc-adc-100m14b4cha.git'
+    parents:
+      - 'spec'
+      - 'svec'
+  - id: 'fmc-adc-100m14b4cha'
+    repository: 'https://github.com/vascoguita/fmc-adc-100m14b4cha.git'
     contact:
       name: 'Vasco Guita'
       email: 'vasco.guita@cern.ch'
     categories:
       - 'FMC Modules'
+    parents:
+      - 'spec'
+      - 'svec'

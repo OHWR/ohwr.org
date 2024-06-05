@@ -300,7 +300,7 @@ class Project(BaseModelForbidExtra):
         news = []
         for match in matches:
             try:
-                news.append(News.from_markdown(match))
+                news.insert(0, News.from_markdown(match))
             except (ValidationError, ValueError) as news_error:
                 raise ValueError('Failed to load news:\n{0}'.format(
                     news_error,

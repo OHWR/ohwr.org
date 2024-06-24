@@ -13,6 +13,8 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ $links := .Page.Params.links }}
 {{ $contact := .Page.Params.contact }}
 {{ $licenses := .Page.Params.licenses }}
+{{ $parents := where .Site.RegularPages "Params.id" "in" .Page.Params.parents }}
+{{ $children := (.Site.Taxonomies.parents.Get .Page.Params.id).Pages }}
 
 <div class="card border-0 shadow-lg">
   <div class="card-body mb-0">
@@ -75,3 +77,57 @@ SPDX-License-Identifier: BSD-3-Clause
     {{ end }}
   </div>
 </div>
+
+{{ range slice (group "Parent" $parents) (group "Child" $children) }}
+{{ if .Pages }}
+<h3 class="text-center">{{ .Key }} Projects</h3>
+<div class="cards-section">
+  {{ range .Pages }}
+  <div class="card interactive-card border-0 shadow-lg mb-4">
+    {{ if .Params.images }}
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{{ index .Params.images 0 | relURL }}" class="m-3 w-100 mh-100 rounded">
+      </div>
+      <div class="col-md-9 p-0">
+    {{ end }}
+        <div class="card-body">
+          <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="stretched-link post-title">{{ .Title }}</a></h4>
+          <p class="card-text">{{ .Params.summary }}</p>
+        </div>
+    {{ if .Params.images }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}
+
+{{ with .Site.Taxonomies.newsfeeds.Get .Page.Params.id }}
+<h3 class="text-center">Latest News</h3>
+<div class="cards-section">
+  {{ range (first 3 .Pages) }}
+  <div class="card interactive-card border-0 shadow-lg mb-4">
+    {{ if .Params.images }}
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{{ index .Params.images 0 | relURL }}" class="m-3 w-100 mh-100 rounded">
+      </div>
+      <div class="col-md-9 p-0">
+    {{ end }}
+        <div class="card-body">
+          <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="stretched-link post-title">{{ .Title }}</a></h4>
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+          <p class="card-text">{{ .Summary }}</p>
+        </div>
+    {{ if .Params.images }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  <div class="text-center"><a href="{{ .Page.Permalink }}" class="btn btn-primary btn-sm">See All News</a></div>
+</div>
+{{ end }}

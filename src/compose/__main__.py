@@ -9,9 +9,11 @@ import logging
 import os
 import sys
 
+from category import CategorySection
 from config import Config
 from license import SpdxLicenseList
-from news import Newsfeed
+from news import NewsSection
+from project import ProjectSection
 from pydantic import ValidationError
 
 logging.basicConfig(
@@ -37,59 +39,43 @@ except (ValidationError, ValueError) as spdx_error:
     logging.error('Failed to load SPDX license list:\n{0}'.format(spdx_error))
     sys.exit(1)
 
-for category in config.categories:
-    try:
-        category.dump(config.sources)
-    except (ValidationError, ValueError) as category_error:
-        logging.error('{0} - Failed to generate category page:\n{1}'.format(
-            category.name, category_error,
-        ))
-        sys.exit(1)
-
-proj_dir = os.path.join(config.sources, 'content/projects')
+logging.info("Generating 'categories' section...")
 try:
-    os.makedirs(proj_dir)
-except OSError as projects_dir_error:
-    logging.error("Failed to create '{0}' directory:\n{1}".format(
-        proj_dir, projects_dir_error,
+    categories = CategorySection.from_config(config.categories)
+except ValueError as categories_error:
+    logging.error("Failed to generate 'categories' section:\n{0}".format(
+        categories_error,
     ))
     sys.exit(1)
 
-news_dir = os.path.join(config.sources, 'content/news')
+logging.info("Writing 'categories' section...")
 try:
-    os.makedirs(news_dir)
-except OSError as news_dir_error:
-    logging.error("Failed to create '{0}' directory:\n{1}".format(
-        news_dir, news_dir_error,
+    categories.write(os.path.join(config.sources, 'content/categories'))
+except ValueError as categories_write_error:
+    logging.error("Failed to write 'categories' section:\n{0}".format(
+        categories_write_error,
     ))
     sys.exit(1)
 
-for project in config.projects:
-    try:
-        project.dump(os.path.join(proj_dir, '{0}.md'.format(project.id)))
-    except (ValidationError, ValueError) as project_error:
-        logging.error('{0} - Failed to generate project page:\n{1}'.format(
-            project.id, project_error,
-        ))
-        continue
+logging.info("Generating 'projects' section...")
+projects = ProjectSection.from_config(config.projects)
 
-    if project.manifest.newsfeed:
-        try:
-            newsfeed = Newsfeed.from_url(project.manifest.newsfeed, project.id)
-        except ValueError as newsfeed_error:
-            logging.error('{0} - Failed to load newsfeed:\n{1}'.format(
-                project.id, newsfeed_error,
-            ))
-            continue
+logging.info("Writing 'projects' section...")
+try:
+    projects.write(os.path.join(config.sources, 'content/projects'))
+except ValueError as projects_write_error:
+    logging.error("Failed to write 'projects' section:\n{0}".format(
+        projects_write_error,
+    ))
+    sys.exit(1)
 
-        for index, news in enumerate(newsfeed):
-            try:
-                news.dump(os.path.join(news_dir, '{0}-{1}.md'.format(
-                    project.id, index + 1,
-                )))
-            except (ValidationError, ValueError) as news_error:
-                logging.error(
-                    '{0} - Failed to generate news page:\n{1}'.format(
-                        project.id, news_error,
-                    ),
-                )
+logging.info("Generating 'news' section...")
+news = NewsSection.from_config(config.projects)
+logging.info("Writing 'news' section...")
+try:
+    news.write(os.path.join(config.sources, 'content/news'))
+except ValueError as news_write_error:
+    logging.error("Failed to write 'news' section:\n{0}".format(
+        news_write_error,
+    ))
+    sys.exit(1)

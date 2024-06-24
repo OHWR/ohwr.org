@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""Common utilities."""
+"""Pydantic schema for YAML validation."""
 
 from http import HTTPMethod, HTTPStatus
 from typing import Annotated
@@ -27,14 +27,13 @@ class BaseModelForbidExtra(BaseModel, extra='forbid'):
 
 
 AnnotatedStr = Annotated[str, StringConstraints(
-    strip_whitespace=True,
-    min_length=1,
+    strip_whitespace=True, min_length=1,
 )]
 AnnotatedStrList = Annotated[list[AnnotatedStr], Field(min_length=1)]
 
 
-class YamlSchema(BaseModelForbidExtra):
-    """Base class for loading Pydantic models from YAML."""
+class Schema(BaseModelForbidExtra):
+    """Model validation schema."""
 
     @classmethod
     @validate_call
@@ -46,22 +45,20 @@ class YamlSchema(BaseModelForbidExtra):
             yaml_str: YAML string.
 
         Returns:
-            YamlSchema: The YamlSchema object.
+            Schema: The schema object.
 
         Raises:
-            ValueError: If loading the YAML fails.
+            ValueError: If loading the model from YAML fails.
         """
         try:
             yaml_dict = yaml.safe_load(yaml_str)
         except yaml.YAMLError as yaml_error:
-            raise ValueError(
-                'Failed to load YAML:\n{0}'.format(yaml_error),
-            )
+            raise ValueError('Failed to load YAML:\n{0}'.format(yaml_error))
         try:
             return cls(**yaml_dict)
-        except (ValidationError, TypeError) as construct_error:
-            raise ValueError('Failed to initialize YamlSchema:\n{0}'.format(
-                construct_error,
+        except (ValidationError, TypeError) as cls_error:
+            raise ValueError('Failed to initialize model:\n{0}'.format(
+                cls_error,
             ))
 
 
@@ -79,7 +76,6 @@ def serialize(url: HttpUrl) -> str:
 
 
 SerializableUrl = Annotated[HttpUrl, PlainSerializer(serialize)]
-SerializableUrlList = Annotated[list[SerializableUrl], Field(min_length=1)]
 
 
 def is_reachable(url: HttpUrl) -> HttpUrl:

@@ -7,13 +7,14 @@
 
 import json
 
-from common import AnnotatedStr, BaseModelForbidExtra, SerializableUrl
-from pydantic import FilePath, ValidationError, validate_call
+from pydantic import Field, FilePath, ValidationError, validate_call
+from schema import AnnotatedStr, BaseModelForbidExtra, SerializableUrl
 
 
 class License(BaseModelForbidExtra):
     """License data."""
 
+    id: AnnotatedStr = Field(exclude=True)
     name: AnnotatedStr
     url: SerializableUrl
 
@@ -21,7 +22,7 @@ class License(BaseModelForbidExtra):
 class SpdxLicenseList:
     """SPDX license list data."""
 
-    _spdx_license_list: dict = {}
+    _spdx_license_list: list[License] = []
 
     @classmethod
     @validate_call
@@ -36,33 +37,41 @@ class SpdxLicenseList:
             ValueError: if JSON is not valid.
         """
         try:
-            cls._spdx_license_list = json.loads(licenses_json)
+            licenses_data = json.loads(licenses_json)
         except (TypeError, json.JSONDecodeError) as json_error:
-            raise ValueError('Failed to load JSON license list:\n{0}'.format(
-                json_error,
-            ))
+            raise ValueError('Failed to load JSON:\n{0}'.format(json_error))
+        for license_data in licenses_data['licenses']:
+            try:
+                license = License(
+                    id=license_data['licenseId'],
+                    name=license_data['name'],
+                    url=license_data['reference'],
+                )
+            except (ValidationError, KeyError) as license_error:
+                raise ValueError('Failed to load license data:\n{0}'.format(
+                    license_error,
+                ))
+            cls._spdx_license_list.append(license)
 
     @classmethod
     @validate_call
-    def from_file(cls, licenses: FilePath):
+    def from_file(cls, path: FilePath):
         """
         Load SPDX license list data from JSON file.
 
         Parameters:
-            licenses: SPDX license list data JSON file path.
+            path: SPDX license list data JSON file path.
 
         Raises:
             ValueError: if file is not valid.
         """
         try:
-            with open(licenses, 'r') as licenses_file:
+            with open(path, 'r') as licenses_file:
                 cls.from_json(licenses_file.read())
         except (ValueError, FileNotFoundError) as file_error:
-            raise ValueError(
-                "Failed to load license list file '{0}':\n{1}".format(
-                    licenses, file_error,
-                ),
-            )
+            raise ValueError("Failed to load file '{0}':\n{1}".format(
+                path, file_error,
+            ))
 
     @classmethod
     @validate_call
@@ -79,19 +88,7 @@ class SpdxLicenseList:
         Raises:
             ValueError: if no data was found for an SPDX license identifier.
         """
-        for spdx_license in cls._spdx_license_list['licenses']:
-            if spdx_license['licenseId'] == license_id:
-                try:
-                    return License(
-                        name=spdx_license['name'],
-                        url=spdx_license['reference'],
-                    )
-                except (ValidationError, KeyError) as license_error:
-                    raise ValueError(
-                        "Failed to load license '{0}':\n{1}".format(
-                            license_id, license_error,
-                        ),
-                    )
-        raise ValueError("Unknown SPDX license identifier '{0}'.".format(
-            license_id,
-        ))
+        for license in cls._spdx_license_list:
+            if license.id == license_id:
+                return license
+        raise ValueError("Unknown SPDX identifier '{0}'.".format(license_id))

@@ -182,6 +182,7 @@ class Project(BaseModelForbidExtra):
     featured: Optional[bool] = False
     categories: Optional[AnnotatedStrList] = None
     parents: Optional[AnnotatedStrList] = None
+    compatibles: Optional[AnnotatedStrList] = None
 
     @computed_field
     @cached_property
@@ -366,5 +367,31 @@ class Config(Schema):
                         "Project '{0}' with unknown parents: '{1}'.".format(
                             child.id, unknown,
                         ),
+                    )
+        return self
+
+    @model_validator(mode='after')
+    def check_compatibles_match(self) -> 'Config':
+        """
+        Check if compatibles in projects match the available projects.
+
+        Returns:
+            Config: The configuration object with validated compatibles.
+
+        Raises:
+            ValueError: If an unknown compatible is found in a project.
+        """
+        compatible_ids = []
+        for compatible in self.projects:
+            compatible_ids.append(compatible.id)
+
+        for project in self.projects:
+            if project.compatibles:
+                unknown = set(project.compatibles) - set(compatible_ids)
+                if unknown:
+                    raise ValueError(
+                        (
+                            "Project '{0}' with unknown compatibles: '{1}'."
+                        ).format(project.id, unknown),
                     )
         return self

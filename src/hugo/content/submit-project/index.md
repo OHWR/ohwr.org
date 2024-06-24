@@ -100,8 +100,9 @@ Open an issue on the OHWR GitHub repository specifying:
 
 * The URL of the project's git repository.
 * The name and email address of the project maintainer.
-* The categories to include the project in (optional).
-* The parent projects (optional).
+* A list of categories to include your project in (optional).
+* A list of parent projects (optional).
+* A list of projects your project is compatible with (optional).
 
 You can choose categories from the [Categories]({{< ref "categories.md" >}})
 page or propose new ones.

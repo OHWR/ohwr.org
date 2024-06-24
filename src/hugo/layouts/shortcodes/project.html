@@ -15,6 +15,7 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ $licenses := .Page.Params.licenses }}
 {{ $parents := where .Site.RegularPages "Params.id" "in" .Page.Params.parents }}
 {{ $children := (.Site.Taxonomies.parents.Get .Page.Params.id).Pages }}
+{{ $compatibles := union (.Site.Taxonomies.compatibles.Get .Page.Params.id).Pages (where .Site.RegularPages "Params.id" "in" .Page.Params.compatibles) }}
 
 <div class="card border-0 shadow-lg">
   <div class="card-body mb-0">
@@ -78,7 +79,7 @@ SPDX-License-Identifier: BSD-3-Clause
   </div>
 </div>
 
-{{ range slice (group "Parent" $parents) (group "Child" $children) }}
+{{ range slice (group "Parent" $parents) (group "Child" $children) (group "Compatible" $compatibles) }}
 {{ if .Pages }}
 <h3 class="text-center">{{ .Key }} Projects</h3>
 <div class="cards-section">

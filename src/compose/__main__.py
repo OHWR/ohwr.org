@@ -71,6 +71,7 @@ except ValueError as projects_write_error:
 
 logging.info("Generating 'news' section...")
 news = NewsSection.from_config(config.projects)
+
 logging.info("Writing 'news' section...")
 try:
     news.write(os.path.join(config.sources, 'content/news'))

@@ -28,9 +28,7 @@ class Project(Page):
         Returns:
             Project: Instance of Project class.
         """
-        front_matter = config.model_dump(
-            exclude_none=True, exclude={'manifest', 'description', 'news'},
-        )
+        front_matter = config.model_dump(exclude_none=True)
         front_matter.update(config.manifest.model_dump(
             exclude_none=True,
             by_alias=True,

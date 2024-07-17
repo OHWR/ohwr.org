@@ -50,15 +50,14 @@ class NewsSection(UserDict[str, News]):
         """
         news_section = {}
         for project in configs:
-            for index, config in enumerate(project.news):
-                page = '{0}-{1}'.format(project.id, index + 1)
-                logging.info("Generating '{0}' page...".format(page))
-                try:
-                    news_section[page] = News.from_config(config, project.id)
-                except ValueError as news_error:
-                    logging.error("Failed to generate '{0}' page:\n{1}".format(
-                        page, news_error,
-                    ))
+            try:
+                news = project.news
+            except ValueError as enumerate_error:
+                logging.error("Failed to get knews from '{0}':\n{1}".format(
+                    project.id, enumerate_error,
+                ))
+                continue
+            news_section.update(cls._from_config(news, project.id))
         return cls(news_section)
 
     def write(self, path: str) -> None:
@@ -85,3 +84,17 @@ class NewsSection(UserDict[str, News]):
                 logging.error("Failed to write '{0}' page:\n{1}".format(
                     page, write_error,
                 ))
+
+    @classmethod
+    def _from_config(cls, configs: list[Config], project_id: str):
+        news_section = {}
+        for index, config in enumerate(configs):
+            page = '{0}-{1}'.format(project_id, index + 1)
+            logging.info("Generating '{0}' page...".format(page))
+            try:
+                news_section[page] = News.from_config(config, project_id)
+            except ValueError as news_error:
+                logging.error("Failed to generate '{0}' page:\n{1}".format(
+                    page, news_error,
+                ))
+        return news_section

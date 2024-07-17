@@ -16,7 +16,7 @@ class Page():
     front_matter: dict
     markdown: str
 
-    def write(self, path: str):
+    def write(self, path: str) -> None:
         """
         Write Hugo page to a file.
 

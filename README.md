@@ -17,6 +17,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0+
 [![Python Lint](https://github.com/OHWR/ohwr.org/actions/workflows/python.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/python.yaml)
 [![Markdown Lint](https://github.com/OHWR/ohwr.org/actions/workflows/markdown.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/markdown.yaml)
 [![CodeQL](https://github.com/OHWR/ohwr.org/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/github-code-scanning/codeql)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/bb599887cc7542e1afd97cdd9f66c1f0)](https://app.codacy.com/gh/OHWR/ohwr.org/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 A new website proposal for the Open Hardware Repository.
 

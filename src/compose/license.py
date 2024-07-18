@@ -42,7 +42,7 @@ class SpdxLicenseList:
             raise ValueError('Failed to load JSON:\n{0}'.format(json_error))
         for license_data in licenses_data['licenses']:
             try:
-                license = License(
+                spdx_license = License(
                     id=license_data['licenseId'],
                     name=license_data['name'],
                     url=license_data['reference'],
@@ -51,7 +51,7 @@ class SpdxLicenseList:
                 raise ValueError('Failed to load license data:\n{0}'.format(
                     license_error,
                 ))
-            cls._spdx_license_list.append(license)
+            cls._spdx_license_list.append(spdx_license)
 
     @classmethod
     @validate_call
@@ -88,7 +88,7 @@ class SpdxLicenseList:
         Raises:
             ValueError: if no data was found for an SPDX license identifier.
         """
-        for license in cls._spdx_license_list:
-            if license.id == license_id:
-                return license
+        for spdx_license in cls._spdx_license_list:
+            if spdx_license.id == license_id:
+                return spdx_license
         raise ValueError("Unknown SPDX identifier '{0}'.".format(license_id))

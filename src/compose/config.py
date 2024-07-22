@@ -207,15 +207,16 @@ class Project(BaseModelForbidExtra):
         Raises:
             ValueError: If loading the licenses fails.
         """
-        licenses = []
-        for license_id in self.manifest.licenses:
-            try:
-                licenses.append(SpdxLicenseList.get_license(license_id))
-            except (ValidationError, ValueError) as license_error:
-                raise ValueError('Failed to load licenses:\n{0}'.format(
-                    license_error,
-                ))
-        return licenses
+        if self.manifest.licenses:
+            licenses = []
+            for license_id in self.manifest.licenses:
+                try:
+                    licenses.append(SpdxLicenseList.get_license(license_id))
+                except (ValidationError, ValueError) as license_error:
+                    raise ValueError('Failed to load licenses:\n{0}'.format(
+                        license_error,
+                    ))
+            return licenses
 
     @cached_property
     def news(self) -> list[News]:

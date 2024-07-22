@@ -25,7 +25,7 @@ description: 'https://raw.githubusercontent.com/wiki/user/project/Home.md'
 # The website of your project. Use the web page of your git repository if
 # your project doesn't have website (e.g. 'https://github.com/user/project').
 website: 'https://your.project.com'
-# The licenses of your project (SPDX IDs - https://spdx.org/licenses/).
+# (optional) The licenses of your project. SPDX IDs: https://spdx.org/licenses.
 licenses: ['CERN-OHL-W-2.0+', 'CC-BY-SA-4.0+', 'BSD-3-Clause']
 # (optional) Images of your project (maximum 5 images). The main image should
 # be the first in the list (e.g. a photo of the latest prototype).

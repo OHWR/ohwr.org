@@ -53,7 +53,7 @@ class NewsSection(UserDict[str, News]):
             try:
                 news = project.news
             except ValueError as enumerate_error:
-                logging.error("Failed to get knews from '{0}':\n{1}".format(
+                logging.error("Failed to get news from '{0}':\n{1}".format(
                     project.id, enumerate_error,
                 ))
                 continue

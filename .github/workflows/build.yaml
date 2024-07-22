@@ -15,9 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.111.3'
+          hugo-version: '0.129.0'
           extended: true
       - name: Setup Pages
         id: pages
@@ -25,7 +25,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.12.3'
       - name: Install dependencies
         run: pip install pydantic PyYAML email_validator -c requirements.txt
       - name: Build

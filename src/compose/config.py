@@ -254,11 +254,19 @@ class Project(BaseModelForbidExtra):
         return news
 
 
+class Redirect(BaseModelForbidExtra):
+    """Redirect configuration."""
+
+    source: AnnotatedStr = Field(exclude=True)
+    target: SerializableUrl
+
+
 class Config(Schema):
     """Configuration schema."""
 
     sources: DirectoryPath
     licenses: FilePath
+    redirects: Annotated[list[Redirect], Field(min_length=1)]
     categories: Annotated[list[Category], Field(min_length=1)]
     projects: Annotated[list[Project], Field(min_length=1)]
 

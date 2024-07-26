@@ -36,7 +36,7 @@ class Manifest(Schema):
     name: AnnotatedStr = Field(serialization_alias='title')
     description: HttpUrl = Field(exclude=True)
     website: ReachableUrl
-    licenses: AnnotatedStrList = Field(exclude=True)
+    licenses: Optional[AnnotatedStrList] = Field(default=None, exclude=True)
     images: Optional[ReachableUrlList] = None
     documentation: Optional[ReachableUrl] = None
     issues: Optional[ReachableUrl] = None

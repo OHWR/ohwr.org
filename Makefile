@@ -60,4 +60,4 @@ lint-markdown:
 clean:
 	rm -rf ${PUBLIC} ${HUGO}/resources ${HUGO}/.hugo_build.lock \
 		${HUGO}/content/projects ${HUGO}/content/news \
-		${HUGO}/content/categories
+		${HUGO}/content/categories ${HUGO}/content/project

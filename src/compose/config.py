@@ -207,15 +207,16 @@ class Project(BaseModelForbidExtra):
         Raises:
             ValueError: If loading the licenses fails.
         """
-        licenses = []
-        for license_id in self.manifest.licenses:
-            try:
-                licenses.append(SpdxLicenseList.get_license(license_id))
-            except (ValidationError, ValueError) as license_error:
-                raise ValueError('Failed to load licenses:\n{0}'.format(
-                    license_error,
-                ))
-        return licenses
+        if self.manifest.licenses:
+            licenses = []
+            for license_id in self.manifest.licenses:
+                try:
+                    licenses.append(SpdxLicenseList.get_license(license_id))
+                except (ValidationError, ValueError) as license_error:
+                    raise ValueError('Failed to load licenses:\n{0}'.format(
+                        license_error,
+                    ))
+            return licenses
 
     @cached_property
     def news(self) -> list[News]:
@@ -253,11 +254,19 @@ class Project(BaseModelForbidExtra):
         return news
 
 
+class Redirect(BaseModelForbidExtra):
+    """Redirect configuration."""
+
+    source: AnnotatedStr = Field(exclude=True)
+    target: SerializableUrl
+
+
 class Config(Schema):
     """Configuration schema."""
 
     sources: DirectoryPath
     licenses: FilePath
+    redirects: Annotated[list[Redirect], Field(min_length=1)]
     categories: Annotated[list[Category], Field(min_length=1)]
     projects: Annotated[list[Project], Field(min_length=1)]
 

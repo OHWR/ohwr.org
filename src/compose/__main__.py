@@ -15,6 +15,7 @@ from license import SpdxLicenseList
 from news import NewsSection
 from project import ProjectSection
 from pydantic import ValidationError
+from redirect import RedirectSection
 
 logging.basicConfig(
     level=logging.INFO,
@@ -56,6 +57,12 @@ except ValueError as categories_write_error:
         categories_write_error,
     ))
     sys.exit(1)
+
+logging.info("Generating 'redirects' section...")
+redirects = RedirectSection.from_config(config.redirects)
+
+logging.info("Writing 'redirects' section...")
+redirects.write(os.path.join(config.sources, 'content'))
 
 logging.info("Generating 'projects' section...")
 projects = ProjectSection.from_config(config.projects)

@@ -8,5 +8,5 @@ go 1.22.5
 
 require (
 	github.com/OHWR/bigspring-light-hugo v0.0.0-20231010131849-0a0f5d6a3253 // indirect
-	github.com/gethugothemes/hugo-modules/search v0.0.0-20231001043352-2e720c5b7e8b // indirect
+	github.com/gethugothemes/hugo-modules/search v0.0.0-20240711030223-49ae4a26e064 // indirect
 )

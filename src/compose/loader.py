@@ -56,8 +56,12 @@ class Loader:
             A Loader instance.
         """
         github_repo = r'^https://github\.com/.+?\.git$'
-        gitlab_repo = r'^https://(?:gitlab\.com|ohwr\.org)/.+?\.git$'
-        gitlab_wiki = r'^https://(?:gitlab\.com|ohwr\.org)/.+?/wikis/.+'
+        gitlab_repo = (
+            r'^https://(?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch)/.+?\.git$'
+        )
+        gitlab_wiki = (
+            r'^https://(?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch)/.+?/wikis/.+'
+        )
         git_repo = r'^https://.+?\.git$'
         req = request.Request(url)
         if re.search(github_repo, url):
@@ -102,7 +106,9 @@ class GitLabRepositoryLoader(Loader):
         Raises:
             ValueError: If info or branch cannot be retrieved.
         """
-        exp = r'^https://((?:gitlab\.com|ohwr\.org))/(.+?)\.git'
+        exp = (
+            r'^https://((?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch))/(.+?)\.git'
+        )
         match = re.search(exp, req.full_url)
         try:
             project = Loader.from_url('https://{0}/api/v4/projects/{1}'.format(
@@ -134,7 +140,10 @@ class GitLabWikiLoader(Loader):
         Parameters:
             req: Request for the GitLab wiki URL.
         """
-        exp = r'^https://((?:gitlab\.com|ohwr\.org))/(.+?)(?:/-)?/wikis/(.+)'
+        exp = (
+            r'^https://((?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch))/' +
+            '(.+?)(?:/-)?/wikis/(.+)'
+        )
         match = re.search(exp, req.full_url)
         super().__init__(request.Request(
             'https://{0}/api/v4/projects/{1}/wikis/{2}'.format(

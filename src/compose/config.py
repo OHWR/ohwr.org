@@ -53,6 +53,7 @@ class News(BaseModelForbidExtra):
     title: AnnotatedStr
     date: datetime.date
     images: Optional[ReachableUrlList] = None
+    topics: Optional[AnnotatedStrList] = None
     description: Optional[AnnotatedStr] = Field(default=None, exclude=True)
 
     @classmethod
@@ -243,15 +244,17 @@ class Project(BaseModelForbidExtra):
             raise ValueError('Failed to process Markdown:\n{0}'.format(
                 re_error,
             ))
-        news = []
+        news_list = []
         for match in matches:
             try:
-                news.insert(0, News.from_markdown(match))
+                news = News.from_markdown(match)
             except (ValidationError, ValueError) as news_error:
                 raise ValueError('Failed to load news:\n{0}'.format(
                     news_error,
                 ))
-        return news
+            news.topics = [self.id]
+            news_list.insert(0, news)
+        return news_list
 
 
 class Redirect(BaseModelForbidExtra):

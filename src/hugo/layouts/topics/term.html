@@ -5,7 +5,11 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ partial "page-header.html" . }}
+<section class="section pb-0">
+  <div class="container text-center">
+    <h1 class="display-3">{{ (.GetPage (path.Join "projects" .Title)).Title }} News</h1>
+  </div>
+</section>
 
 <section class="section">
   <div class="container">

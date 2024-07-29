@@ -1492,7 +1492,7 @@ projects:
   #     name: 'Javier Serrano'
   #     email: 'javier.serrano@cern.ch'
   - id: 'wr2rf-vme'
-    repository: 'https://ohwr.org/project/wr2rf-vme.git'
+    repository: 'https://gitlab.cern.ch/be-cem-edl/chronos/wr2rf-vme.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'

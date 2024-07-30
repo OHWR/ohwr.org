@@ -8,33 +8,30 @@ import logging
 import os
 from collections import UserDict
 
-from config import News as Config
-from config import Project
+from config import News, Project
 
 from hugo import Page
 
 
-class News(Page):
+class NewsPage(Page):
     """News Hugo page."""
 
     @classmethod
-    def from_config(cls, config: Config, project_id: str) -> 'News':
+    def from_config(cls, config: News) -> 'NewsPage':
         """
         Create a news page from a configuration.
 
         Parameters:
             config: News configuration.
-            project_id: Project identifier.
 
         Returns:
-            News: Instance of News class.
+            NewsPage: Instance of NewsPage class.
         """
         front_matter = config.model_dump(exclude_none=True)
-        front_matter['newsfeeds'] = [project_id]
         return cls(front_matter=front_matter, markdown=config.description)
 
 
-class NewsSection(UserDict[str, News]):
+class NewsSection(UserDict[str, NewsPage]):
     """News Hugo section."""
 
     @classmethod
@@ -57,7 +54,7 @@ class NewsSection(UserDict[str, News]):
                     project.id, enumerate_error,
                 ))
                 continue
-            news_section.update(cls._from_config(news, project.id))
+            news_section.update(cls._from_config(news))
         return cls(news_section)
 
     def write(self, path: str) -> None:
@@ -86,13 +83,13 @@ class NewsSection(UserDict[str, News]):
                 ))
 
     @classmethod
-    def _from_config(cls, configs: list[Config], project_id: str):
+    def _from_config(cls, config: list[News]):
         news_section = {}
-        for index, config in enumerate(configs):
-            page = '{0}-{1}'.format(project_id, index + 1)
+        for index, news in enumerate(config):
+            page = '{0}-{1}'.format(news.topics[0], index + 1)
             logging.info("Generating '{0}' page...".format(page))
             try:
-                news_section[page] = News.from_config(config, project_id)
+                news_section[page] = NewsPage.from_config(news)
             except ValueError as news_error:
                 logging.error("Failed to generate '{0}' page:\n{1}".format(
                     page, news_error,

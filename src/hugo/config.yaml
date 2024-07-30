@@ -17,7 +17,7 @@ markup:
     style: 'native'
 taxonomies:
   category: 'categories'
-  newsfeed: 'newsfeeds'
+  topic: 'topics'
   parent: 'parents'
   compatible: 'compatibles'
 pagination:

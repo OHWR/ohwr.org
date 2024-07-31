@@ -50,12 +50,10 @@ a.btn {
   font-size: 24px;
   color: $primary-color;
   background-color: $white;
-      &:hover {
-      color: $white;
-      background-color: $primary-color;
-    
+  &:hover {
+    color: $white;
+    background-color: $primary-color;
   }
-
 }
 
 .content .fa-ul {

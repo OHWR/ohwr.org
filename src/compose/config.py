@@ -91,9 +91,7 @@ class News(BaseModelForbidExtra):
     @validate_call
     def _parse_date(cls, md: str) -> datetime.date:
         try:
-            date = re.search(
-                r'\d{4}-\d{2}-\d{2}', md, re.MULTILINE,
-            ).group(0)
+            date = re.search(r'\d{4}-\d{2}-\d{2}', md, re.MULTILINE).group()
         except (re.error, TypeError, IndexError, AttributeError) as error:
             raise ValueError('Failed to fetch date:\n{0}'.format(error))
         return datetime.date.fromisoformat(date)
@@ -109,10 +107,9 @@ class News(BaseModelForbidExtra):
     @classmethod
     @validate_call
     def _parse_description(cls, md: str) -> str:
+        exp = r'\d{4}-\d{2}-\d{2}.*?\n(.*)'
         try:
-            description = re.search(
-                r'\d{4}-\d{2}-\d{2}.*?\n(.*)', md, re.DOTALL,
-            ).group(1)
+            description = re.search(exp, md, re.DOTALL).group(1)
         except (re.error, TypeError, IndexError) as description_error:
             raise ValueError('Failed to parse description:\n{0}'.format(
                 description_error,
@@ -183,7 +180,7 @@ class Project(BaseModelForbidExtra):
             md = re.sub(r'!\[.*?\]\(.*?\)', '', md, flags=re.DOTALL)
             if not md.startswith('#') and md:
                 return md
-        raise ValueError('Failed to parse Markdown description.')
+        raise ValueError('Failed to parse the Markdown description.')
 
     @computed_field
     @cached_property
@@ -193,8 +190,15 @@ class Project(BaseModelForbidExtra):
 
         Returns:
             str: summary string.
+
+        Raises:
+            ValueError: If parsing the summary from the description fails.
         """
-        return '{0}.'.format(self.description.split('.', 1)[0])
+        exp = r'^.*?(?=\.\s|\.\r?\n|:\r?\n|\r?\n\r?\n|\.$|$)'
+        match = re.search(exp, self.description, re.DOTALL)
+        if match:
+            return match.group()
+        raise ValueError('Failed to parse the summary from the description.')
 
     @computed_field
     @cached_property

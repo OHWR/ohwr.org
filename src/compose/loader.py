@@ -40,7 +40,7 @@ class Loader:
             with request.urlopen(req, timeout=5) as res:  # noqa: S310
                 return res.read().decode('utf-8')
         except (URLError, ValueError, TimeoutError) as urlopen_error:
-            raise ValueError("Failed to load from '{0}':\n{1}".format(
+            raise ValueError("Failed to load content from '{0}':\n{1}".format(
                 req.full_url, urlopen_error,
             ))
 
@@ -116,7 +116,7 @@ class GitLabRepositoryLoader(Loader):
                 match.group(2).replace('/', '%2F'),  # noqa: WPS323
             )).load()
         except ValueError as info_error:
-            raise ValueError('Failed to repository info:\n{0}'.format(
+            raise ValueError('Failed to load repository info:\n{0}'.format(
                 info_error,
             ))
         try:

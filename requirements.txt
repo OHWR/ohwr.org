@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 pydantic==2.8.2
-PyYAML==6.0.1
+PyYAML==6.0.2
 email_validator==2.2.0
 reuse==4.0.3
 wemake-python-styleguide==0.19.2

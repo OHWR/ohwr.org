@@ -35,7 +35,7 @@ theme.
 * [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.129.0
 * [Python](https://www.python.org/downloads) >= 3.12.3
 * [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) >= 6.0.2
-* [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.8.2
+* [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.9.0
 * [email-validator](https://github.com/JoshData/python-email-validator?tab=readme-ov-file#installation)
   \>= 2.2.0
 

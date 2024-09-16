@@ -856,6 +856,16 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
+  - id: 'ppsi'
+    repository: 'https://ohwr.org/project/ppsi.git'
+    contact:
+      name: 'Alessandro Rubini'
+      email: 'rubini@gnudd.com'
+  - id: 'wrpc-sw'
+    repository: 'https://ohwr.org/project/wrpc-sw.git'
+    contact:
+      name: 'Juan David Gonzalez Cobas'
+      email: 'dcobas@cern.ch'
   - id: 'cute-wr'
     repository: 'https://ohwr.org/project/cute-wr.git'
     contact:

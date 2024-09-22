@@ -9,7 +9,7 @@ title: Licences
 Putting files on the Web is not enough when you want to share hardware designs.
 Copyright law defaults to 'all rights reserved', and other IP rights are
 similarly restrictive, so designers need to provide certain freedoms to users
-explicitly. This is the role of licences. 
+explicitly. This is the role of licences.
 
 Please refer to the [introduction to copyright and
 licensing](https://ospo.docs.cern.ch/key-concepts/copyright-and-licensing/) page

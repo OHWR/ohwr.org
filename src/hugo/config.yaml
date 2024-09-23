@@ -36,8 +36,8 @@ menus:
     - name: 'Categories'
       url: 'categories/'
       weight: 3
-    - name: 'Licenses'
-      url: 'licenses/'
+    - name: 'Licences'
+      url: 'licences/'
       weight: 4
     - name: 'Forum'
       url: 'https://forums.ohwr.org/'
@@ -51,8 +51,8 @@ menus:
     - name: 'Projects'
       url: 'projects/'
   footer_middle:
-    - name: 'Licenses'
-      url: 'licenses/'
+    - name: 'Licences'
+      url: 'licences/'
     - name: 'Forum'
       url: 'https://forums.ohwr.org/'
   footer_right:

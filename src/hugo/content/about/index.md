@@ -4,7 +4,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 title: About OHR
-image: https://be-cem-edl.web.cern.ch/ohwr/graphics/fmc_nanofip_transparent.png
+images:
+  - https://be-cem-edl.web.cern.ch/ohwr/graphics/fmc_nanofip_transparent.png
 ---
 
 The Open Hardware Repository [ohwr.org](https://www.ohwr.org) is a place on the

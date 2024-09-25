@@ -32,7 +32,14 @@ SPDX-License-Identifier: BSD-3-Clause
     {{ with site.GetPage $page.path }}
     {{ if .IsPage }}
     <div class="row align-items-center">
-      {{ if .Params.image }}
+      {{ if .Params.images }}
+      {{if not (modBool $index 2) }}
+      <div class="col-md-6 mb-4 mb-md-0">
+        <a href="{{ .Permalink }}">
+          <img src="{{ index .Params.images 0 | relURL }}" class="img-fluid">
+        </a>
+      </div>
+      {{ end }}
       <div class="col-md-6">
       {{ end }}
         <h2><a href="{{ .Permalink }}" class="post-title">{{ $page.title | markdownify }}</a></h2>
@@ -40,13 +47,15 @@ SPDX-License-Identifier: BSD-3-Clause
         {{ if $page.button }}
         <a href="{{ .Permalink }}" class="btn btn-primary">{{ $page.button }}</a>
         {{ end }}
-      {{ if .Params.image }}
+      {{ if .Params.images }}
       </div>
-      <div class="col-md-6 mb-4 mb-md-0">
+      {{if modBool $index 2}}
+      <div class="col-md-6 mt-4 mt-md-0">
         <a href="{{ .Permalink }}">
-          <img src="{{ .Params.image | relURL }}" class="img-fluid">
+          <img src="{{ index .Params.images 0 | relURL }}" class="img-fluid">
         </a>
       </div>
+      {{ end }}
       {{ end }}
     </div>
     {{ else if .IsSection }}

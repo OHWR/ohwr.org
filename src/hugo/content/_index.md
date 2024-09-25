@@ -7,8 +7,9 @@ banner:
   title: 'Welcome to the Open Hardware Repository'
   image: 'https://ohwr.org/project/ohr-support/uploads/228f98edc6b2572d3b1a10592615a092/Tuxoid_OHWR-logo_RC_V1.png'
   content: |
-    A place on the web for electronics designers at experimental physics facilities to collaborate on open hardware
-    designs, much in the philosophy of the free software movement.
+    A easy-to-browse catalogue of open hardware designs used in experimental
+    physics facilities, with links to the designs themselves and to forums where
+    you can discuss about them.
   button:
     label: 'Submit Project'
     link: 'submit-project/'

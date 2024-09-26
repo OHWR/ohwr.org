@@ -75,3 +75,7 @@ params:
     link: 'submit-project/'
   search:
     primary_color: '#fd810d'
+    include_sections:
+      - projects
+      - news
+    include_all_sections: false

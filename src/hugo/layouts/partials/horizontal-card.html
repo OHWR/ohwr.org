@@ -20,7 +20,7 @@ SPDX-License-Identifier: BSD-3-Clause
         {{ end }}
         <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="stretched-link post-title">{{ .Title }}</a></h3>
         {{ with .Params.Date }}
-        <time>{{ .Format "Jan 2, 2006" }}</time>
+        <div class="mb-2"><time>{{ .Format "Jan 2, 2006" }}</time></div>
         {{ end }}
         <p class="card-text">{{ .Summary }}</p>
       </div>

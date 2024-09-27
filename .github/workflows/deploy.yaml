@@ -35,3 +35,19 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+  notify:
+    runs-on: ubuntu-latest
+    needs: build
+    if: needs.build.outputs.error != ''
+    steps:
+      - name: Notify Mattermost Channel
+        uses: mattermost/action-mattermost-notify@2.0.0
+        with:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+          # yamllint disable rule:line-length
+          TEXT: |
+            Some errors occured while building the ohwr.org website:
+            ```
+            ${{ needs.build.outputs.error }}
+            ```
+            Please check the [pipeline logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details.

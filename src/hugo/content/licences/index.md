@@ -33,18 +33,18 @@ convenience, links to the three variants of the [CERN Open Hardware Licence
 * The permissive variant, CERN-OHL-P-2.0
   ([txt](https://ohwr.org/cern_ohl_p_v2.txt),
   [pdf](https://ohwr.org/cern_ohl_p_v2.pdf)). User guide
-  ([odt](uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt),
-  [pdf](uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf)).
+  ([odt](https://ohwr.org/project/cernohl/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt),
+  [pdf](https://ohwr.org/project/cernohl/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf)).
 * The weakly-reciprocal variant, CERN-OHL-W-2.0
   ([txt](https://ohwr.org/cern_ohl_w_v2.txt),
   [pdf](https://ohwr.org/cern_ohl_w_v2.pdf)). User guide
-  ([odt](uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt),
-  [pdf](uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf)).
+  ([odt](https://ohwr.org/project/cernohl/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt),
+  [pdf](https://ohwr.org/project/cernohl/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf)).
 * The strongly-reciprocal variant, CERN-OHL-S-2.0
   ([txt](https://ohwr.org/cern_ohl_s_v2.txt),
   [pdf](https://ohwr.org/cern_ohl_s_v2.pdf)). User guide
-  ([txt](uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt),
-  [pdf](uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf)).
+  ([txt](https://ohwr.org/project/cernohl/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt),
+  [pdf](https://ohwr.org/project/cernohl/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf)).
 
 A good resource containing more detailed information, including licensing, is
 the [Best Practices](https://www.oshwa.org/sharing-best-practices/) document

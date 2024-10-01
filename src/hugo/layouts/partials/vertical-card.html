@@ -12,7 +12,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <img src="{{ index .Params.images 0 | relURL }}" class="mh-100 mw-100 position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
         {{ else }}
         <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg" class="mh-100 mw-100 position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
-          <circle cx="50%" cy="50%" r="100" fill="hsl({{ mod (crypto.FNV32a .Title) 360 }}, 50%, 30%)"/>
+          <circle cx="50%" cy="50%" r="100" fill="hsl({{ mod (hash.FNV32a .Title) 360 }}, 50%, 30%)"/>
           <text x="50%" y="50%" dy=".35em" text-anchor="middle" font-size="100" fill="#FFFFFF" font-family="Arial, sans-serif">{{ substr .Title 0 1 | upper }}</text>
         </svg>
         {{ end }}

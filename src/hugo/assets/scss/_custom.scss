@@ -39,6 +39,13 @@ code {
   line-height: 20px;
 }
 
+.content a {
+  color: $primary-color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 a.btn {
   color: $white;
   &:hover {

@@ -37,7 +37,7 @@ class Loader:
         if path:
             req.full_url = '{0}/{1}'.format(req.full_url, path)
         try:
-            with request.urlopen(req, timeout=5) as res:  # noqa: S310
+            with request.urlopen(req, timeout=10) as res:  # noqa: S310
                 return res.read().decode('utf-8')
         except (URLError, ValueError, TimeoutError) as urlopen_error:
             raise ValueError("Failed to load content from '{0}':\n{1}".format(

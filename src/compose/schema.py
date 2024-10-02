@@ -93,7 +93,7 @@ def is_reachable(url: HttpUrl) -> HttpUrl:
     """
     req = request.Request(url, method=HTTPMethod.HEAD)
     try:
-        with request.urlopen(req, timeout=5) as res:  # noqa: S310
+        with request.urlopen(req, timeout=10) as res:  # noqa: S310
             if res.status != HTTPStatus.OK:
                 raise ValueError("Status code: '{0}'.".format(res.status))
     except (URLError, ValueError, TimeoutError) as urlopen_error:

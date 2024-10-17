@@ -4,7 +4,7 @@
 
 module github.com/OHWR/ohwr.org
 
-go 1.22.5
+go 1.23.2
 
 require (
 	github.com/OHWR/bigspring-light-hugo v0.0.0-20231010131849-0a0f5d6a3253 // indirect

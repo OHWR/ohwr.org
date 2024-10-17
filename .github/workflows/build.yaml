@@ -34,7 +34,9 @@ jobs:
         with:
           python-version: '3.12.3'
       - name: Install dependencies
-        run: pip install pydantic PyYAML email_validator -c requirements.txt
+        run: |
+          pip install pydantic PyYAML email_validator requests \
+          -c requirements.txt
       - name: Build
         id: build
         run: |

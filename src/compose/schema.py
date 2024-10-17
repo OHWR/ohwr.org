@@ -4,11 +4,9 @@
 
 """Pydantic schema for YAML validation."""
 
-from http import HTTPMethod, HTTPStatus
 from typing import Annotated
-from urllib import request
-from urllib.error import URLError
 
+import requests
 import yaml
 from pydantic import (
     AfterValidator,
@@ -91,15 +89,14 @@ def is_reachable(url: HttpUrl) -> HttpUrl:
     Raises:
         ValueError: if the URL is not reachable.
     """
-    req = request.Request(url, method=HTTPMethod.HEAD)
     try:
-        with request.urlopen(req, timeout=10) as res:  # noqa: S310
-            if res.status != HTTPStatus.OK:
-                raise ValueError("Status code: '{0}'.".format(res.status))
-    except (URLError, ValueError, TimeoutError) as urlopen_error:
+        res = requests.head(url, timeout=10, allow_redirects=True)
+    except requests.exceptions.RequestException as requests_error:
         raise ValueError("Failed to access URL '{0}':\n{1}".format(
-            url, urlopen_error,
+            url, requests_error,
         ))
+    if res.status_code != requests.codes.ok:
+        raise ValueError("Status code: '{0}'.".format(res.status_code))
     return url
 
 

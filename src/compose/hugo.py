@@ -10,7 +10,7 @@ import yaml
 
 
 @dataclass
-class Page():
+class Page:
     """Hugo page."""
 
     front_matter: dict

@@ -6,12 +6,14 @@
 
 
 import datetime
+import json
 import re
 from functools import cached_property
 from typing import Annotated, Optional
+from urllib.parse import quote
 
+import requests
 from license import License, SpdxLicenseList
-from loader import Loader
 from manifest import Manifest
 from pydantic import (
     DirectoryPath,
@@ -163,7 +165,7 @@ class Project(BaseModelForbidExtra):
             ValueError: If loading the description fails.
         """
         try:
-            md = Loader.from_url(str(self.manifest.description)).load()
+            md = self._load_markdown(str(self.manifest.description))
         except ValueError as load_error:
             raise ValueError('Failed to load {0}:\n{1}'.format(
                 str(self.manifest.description), load_error,
@@ -237,7 +239,7 @@ class Project(BaseModelForbidExtra):
         if not self.manifest.newsfeed:
             return []
         try:
-            md = Loader.from_url(str(self.manifest.newsfeed)).load()
+            md = self._load_markdown(self.manifest.newsfeed)
         except ValueError as load_error:
             raise ValueError('Failed to load {0}:\n{1}'.format(
                 str(self.manifest.newsfeed), load_error,
@@ -259,6 +261,48 @@ class Project(BaseModelForbidExtra):
             news.topics = [self.id]
             news_list.insert(0, news)
         return news_list
+
+    @validate_call
+    def _load_markdown(self, url: str) -> str:
+        gitlab = (
+            r'^https://(?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch)/.+?/wikis/.+'
+        )
+        if re.search(gitlab, url):
+            exp = (
+                r'^https://((?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch))/' +
+                '(.+?)(?:/-)?/wikis/(.+)'
+            )
+            match = re.search(exp, url)
+            url = 'https://{0}/api/v4/projects/{1}/wikis/{2}'.format(
+                match.group(1),
+                quote(match.group(2), safe=''),
+                quote(match.group(3), safe=''),
+            )
+            try:
+                res = self._get(url)
+            except requests.exceptions.RequestException as get_gitlab_error:
+                raise ValueError("Failed to request '{0}':\n{1}".format(
+                    url, get_gitlab_error,
+                ))
+            try:
+                return res.json()['content']
+            except (TypeError, json.JSONDecodeError, KeyError) as json_error:
+                raise ValueError('Failed to load JSON:\n{0}'.format(
+                    json_error,
+                ))
+        try:
+            res = self._get(url)
+        except requests.exceptions.RequestException as get_error:
+            raise ValueError("Failed to request '{0}':\n{1}".format(
+                url, get_error,
+            ))
+        return res.text
+
+    @validate_call
+    def _get(self, url: str, headers: str = '', timeout: float = 10) -> str:
+        res = requests.get(url, headers=headers, timeout=timeout)
+        res.raise_for_status()
+        return res
 
 
 class Redirect(BaseModelForbidExtra):

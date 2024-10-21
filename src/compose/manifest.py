@@ -7,8 +7,8 @@
 
 from typing import Annotated, Literal, Optional
 
-from loader import Loader
 from pydantic import Field, HttpUrl, validate_call
+from repository import Repository
 from schema import (
     AnnotatedStr,
     AnnotatedStrList,
@@ -61,14 +61,14 @@ class Manifest(Schema):
             ValueError: If loading the manifest fails.
         """
         try:
-            loader = Loader.from_url(str(url))
+            repository = Repository.from_url(str(url))
         except ValueError as repository_error:
             raise ValueError(
                 "Failed to load repository from '{0}':\n{1}".format(
                     url, repository_error,
                 ))
         try:
-            manifest_yaml = loader.load('.ohwr.yaml')
+            manifest_yaml = repository.fetch('.ohwr.yaml')
         except ValueError as manifest_error:
             raise ValueError(
                 "Failed to fetch '.ohwr.yaml' from '{0}':\n{1}".format(

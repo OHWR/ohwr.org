@@ -8,7 +8,7 @@
 import json
 
 from pydantic import Field, FilePath, ValidationError, validate_call
-from schema import AnnotatedStr, BaseModelForbidExtra, SerializableUrl
+from schema import AnnotatedStr, BaseModelForbidExtra
 
 
 class License(BaseModelForbidExtra):
@@ -16,7 +16,7 @@ class License(BaseModelForbidExtra):
 
     id: AnnotatedStr = Field(exclude=True)
     name: AnnotatedStr
-    url: SerializableUrl
+    url: AnnotatedStr
 
 
 class SpdxLicenseList:

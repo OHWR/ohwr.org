@@ -6,14 +6,10 @@
 
 from typing import Annotated
 
-import requests
 import yaml
 from pydantic import (
-    AfterValidator,
     BaseModel,
     Field,
-    HttpUrl,
-    PlainSerializer,
     StringConstraints,
     ValidationError,
     validate_call,
@@ -58,47 +54,3 @@ class Schema(BaseModelForbidExtra):
             raise ValueError('Failed to initialize model:\n{0}'.format(
                 cls_error,
             ))
-
-
-def serialize(url: HttpUrl) -> str:
-    """
-    Serialize an HttpUrl into a string.
-
-    Parameters:
-        url: HTTP URL.
-
-    Returns:
-        URL string.
-    """
-    return str(url)
-
-
-SerializableUrl = Annotated[HttpUrl, PlainSerializer(serialize)]
-
-
-def is_reachable(url: HttpUrl) -> HttpUrl:
-    """
-    Check if the URL is reachable.
-
-    Parameters:
-        url: HTTP URL.
-
-    Returns:
-        HTTP URL.
-
-    Raises:
-        ValueError: if the URL is not reachable.
-    """
-    try:
-        res = requests.head(url, timeout=10, allow_redirects=True)
-    except requests.exceptions.RequestException as requests_error:
-        raise ValueError("Failed to access URL '{0}':\n{1}".format(
-            url, requests_error,
-        ))
-    if res.status_code != requests.codes.ok:
-        raise ValueError("Status code: '{0}'.".format(res.status_code))
-    return url
-
-
-ReachableUrl = Annotated[SerializableUrl, AfterValidator(is_reachable)]
-ReachableUrlList = Annotated[list[ReachableUrl], Field(min_length=1)]

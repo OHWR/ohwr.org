@@ -5,12 +5,9 @@
 """Fetch Git repository files."""
 
 import json
-import os
 import re
-import subprocess  # noqa: S404
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from tempfile import TemporaryDirectory
 from urllib.parse import quote
 
 import requests
@@ -49,13 +46,10 @@ class Repository(ABC):
         gitlab = (
             r'^https://(?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch)/.+?\.git$'
         )
-        generic = r'^https://.+?\.git$'
         if re.search(github, url):
             return GitHubRepository(url)
         elif re.search(gitlab, url):
             return GitLabRepository(url)
-        elif re.search(generic, url):
-            return GenericRepository(url)
         raise ValueError("Failed to create repository from '{0}'".format(url))
 
     def _get(self, url: str, headers: str = '', timeout: float = 10) -> str:
@@ -138,38 +132,3 @@ class GitLabRepository(Repository):
                 url, get_error,
             ))
         return res.text
-
-
-class GenericRepository(Repository):
-    """Generic repository."""
-
-    def fetch(self, path: str) -> str:
-        """
-        Fetch a file from the Git repository.
-
-        Parameters:
-            path: Path to the file to fetch from the GitLab repository.
-
-        Returns:
-            File contents.
-
-        Raises:
-            ValueError: If repo cannot be cloned or file not found.
-        """
-        tmpdir = TemporaryDirectory().name
-        try:
-            subprocess.check_output(  # noqa: S603, S607
-                ['git', 'clone', '--depth', '1', self.url, tmpdir],
-                stderr=subprocess.STDOUT,
-            )
-        except subprocess.CalledProcessError as clone_error:
-            raise ValueError("Failed to clone '{0}':\n{1}".format(
-                self.url, clone_error,
-            ))
-        try:
-            with open(os.path.join(tmpdir, path), 'r') as repository_file:
-                return repository_file.read()
-        except FileNotFoundError as file_error:
-            raise ValueError("File '{0}' not found in '{1}':\n{2}".format(
-                path, self.url, file_error,
-            ))

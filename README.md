@@ -18,6 +18,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0+
 [![Markdown Lint](https://github.com/OHWR/ohwr.org/actions/workflows/markdown.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/markdown.yaml)
 [![CodeQL](https://github.com/OHWR/ohwr.org/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/github-code-scanning/codeql)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/bb599887cc7542e1afd97cdd9f66c1f0)](https://app.codacy.com/gh/OHWR/ohwr.org/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Mattermost](https://img.shields.io/badge/Mattermost-Join_Channel-blue?logo=mattermost)](https://mattermost.web.cern.ch/ohr/channels/ohwrorg)
 
 A new website proposal for the Open Hardware Repository.
 
@@ -31,13 +32,14 @@ theme.
 
 ### Requirements :clipboard:
 
-* [Go](https://go.dev/doc/install) >= 1.22.5
+* [Go](https://go.dev/doc/install) >= 1.23.2
 * [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.129.0
 * [Python](https://www.python.org/downloads) >= 3.12.3
 * [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) >= 6.0.2
 * [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.9.2
 * [email-validator](https://github.com/JoshData/python-email-validator?tab=readme-ov-file#installation)
   \>= 2.2.0
+* [Requests](https://requests.readthedocs.io/en/latest/user/install) >= 2.32.3
 
 ### Steps :footprints:
 
@@ -112,6 +114,9 @@ The website is deployed to [GitHub Pages](https://pages.github.com/) with the
 
 The workflow builds and deploys the website whenever a change is pushed to the
 `master` branch.
+
+If errors are encountered while building the website, a warning is sent to the
+[ohwr.org Mattermost channel](https://mattermost.web.cern.ch/ohr/channels/ohwrorg).
 
 ## Code of Conduct :scroll:
 

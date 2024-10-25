@@ -11,7 +11,6 @@ from functools import cached_property
 from typing import Annotated, Optional
 
 from license import License, SpdxLicenseList
-from loader import Loader
 from manifest import Manifest
 from pydantic import (
     DirectoryPath,
@@ -23,14 +22,9 @@ from pydantic import (
     model_validator,
     validate_call,
 )
-from schema import (
-    AnnotatedStr,
-    AnnotatedStrList,
-    BaseModelForbidExtra,
-    ReachableUrlList,
-    Schema,
-    SerializableUrl,
-)
+from repository import Repository
+from schema import AnnotatedStr, AnnotatedStrList, BaseModelForbidExtra, Schema
+from url import Url, UrlList
 
 
 class Category(BaseModelForbidExtra):
@@ -52,7 +46,7 @@ class News(BaseModelForbidExtra):
 
     title: AnnotatedStr
     date: datetime.date
-    images: Optional[ReachableUrlList] = None
+    images: Optional[UrlList] = None
     topics: Optional[AnnotatedStrList] = None
     description: Optional[AnnotatedStr] = Field(default=None, exclude=True)
 
@@ -126,7 +120,7 @@ class Project(BaseModelForbidExtra):
     """Project configuration."""
 
     id: AnnotatedStr
-    repository: SerializableUrl
+    repository: Repository
     contact: Contact
     featured: Optional[bool] = False
     categories: Optional[AnnotatedStrList] = None
@@ -145,10 +139,18 @@ class Project(BaseModelForbidExtra):
             ValueError: If loading the manifest fails.
         """
         try:
-            return Manifest.from_url(self.repository)
+            manifest_yaml = self.repository.fetch('.ohwr.yaml')
+        except ValueError as fetch_error:
+            raise ValueError(
+                "Failed to fetch '.ohwr.yaml' from '{0}':\n{1}".format(
+                    self.repository.url, fetch_error,
+                ),
+            )
+        try:
+            return Manifest.from_yaml(manifest_yaml)
         except (ValidationError, ValueError) as manifest_error:
             raise ValueError("Failed to load manifest from '{0}':\n{1}".format(
-                self.repository, manifest_error,
+                self.repository.url, manifest_error,
             ))
 
     @cached_property
@@ -162,12 +164,7 @@ class Project(BaseModelForbidExtra):
         Raises:
             ValueError: If loading the description fails.
         """
-        try:
-            md = Loader.from_url(str(self.manifest.description)).load()
-        except ValueError as load_error:
-            raise ValueError('Failed to load {0}:\n{1}'.format(
-                str(self.manifest.description), load_error,
-            ))
+        md = self.manifest.description.text
         try:
             sections = re.split('(^#.*$)', md, flags=re.MULTILINE)
         except (re.error, TypeError) as split_error:
@@ -236,12 +233,7 @@ class Project(BaseModelForbidExtra):
         """
         if not self.manifest.newsfeed:
             return []
-        try:
-            md = Loader.from_url(str(self.manifest.newsfeed)).load()
-        except ValueError as load_error:
-            raise ValueError('Failed to load {0}:\n{1}'.format(
-                str(self.manifest.newsfeed), load_error,
-            ))
+        md = self.manifest.newsfeed.text
         try:
             matches = re.findall(r'(## .+?)(?=\n## |$)', md, re.DOTALL)
         except (re.error, TypeError) as re_error:
@@ -265,7 +257,7 @@ class Redirect(BaseModelForbidExtra):
     """Redirect configuration."""
 
     source: AnnotatedStr = Field(exclude=True)
-    target: SerializableUrl
+    target: Url
 
 
 class Config(Schema):

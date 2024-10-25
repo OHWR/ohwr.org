@@ -7,23 +7,16 @@
 
 from typing import Annotated, Literal, Optional
 
-from loader import Loader
-from pydantic import Field, HttpUrl, validate_call
-from schema import (
-    AnnotatedStr,
-    AnnotatedStrList,
-    BaseModelForbidExtra,
-    ReachableUrl,
-    ReachableUrlList,
-    Schema,
-)
+from pydantic import Field
+from schema import AnnotatedStr, AnnotatedStrList, BaseModelForbidExtra, Schema
+from url import Url, UrlContent, UrlList
 
 
 class Link(BaseModelForbidExtra):
     """Link configuration."""
 
     name: AnnotatedStr
-    url: ReachableUrl
+    url: Url
 
 
 LinkList = Annotated[list[Link], Field(min_length=1)]
@@ -34,45 +27,13 @@ class Manifest(Schema):
 
     version: Literal['1.0.0'] = Field(exclude=True)
     name: AnnotatedStr = Field(serialization_alias='title')
-    description: HttpUrl = Field(exclude=True)
-    website: ReachableUrl
+    description: UrlContent = Field(exclude=True)
+    website: Url
     licenses: Optional[AnnotatedStrList] = Field(default=None, exclude=True)
-    images: Optional[ReachableUrlList] = None
-    documentation: Optional[ReachableUrl] = None
-    issues: Optional[ReachableUrl] = None
-    latest_release: Optional[ReachableUrl] = None
-    forum: Optional[ReachableUrl] = None
-    newsfeed: Optional[HttpUrl] = Field(default=None, exclude=True)
+    images: Optional[UrlList] = None
+    documentation: Optional[Url] = None
+    issues: Optional[Url] = None
+    latest_release: Optional[Url] = None
+    forum: Optional[Url] = None
+    newsfeed: Optional[UrlContent] = Field(default=None, exclude=True)
     links: Optional[LinkList] = None
-
-    @classmethod
-    @validate_call
-    def from_url(cls, url: HttpUrl):
-        """
-        Load the manifest from Git repository.
-
-        Parameters:
-            url: Git repository url.
-
-        Returns:
-            Manifest: The manifest object.
-
-        Raises:
-            ValueError: If loading the manifest fails.
-        """
-        try:
-            loader = Loader.from_url(str(url))
-        except ValueError as repository_error:
-            raise ValueError(
-                "Failed to load repository from '{0}':\n{1}".format(
-                    url, repository_error,
-                ))
-        try:
-            manifest_yaml = loader.load('.ohwr.yaml')
-        except ValueError as manifest_error:
-            raise ValueError(
-                "Failed to fetch '.ohwr.yaml' from '{0}':\n{1}".format(
-                    url, manifest_error,
-                ),
-            )
-        return cls.from_yaml(manifest_yaml)

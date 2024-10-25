@@ -3,8 +3,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-# yamllint disable rule:line-length
-
 sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
 categories:
@@ -13,18 +11,30 @@ categories:
   - name: 'FMC Modules'
     description: 'FPGA Mezzanine Cards'
 redirects:
-  - source: 'project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt'
-    target: 'https://ohwr.org/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt'
-  - source: 'project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf'
-    target: 'https://ohwr.org/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf'
-  - source: 'project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt'
-    target: 'https://ohwr.org/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt'
-  - source: 'project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf'
-    target: 'https://ohwr.org/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf'
-  - source: 'project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt'
-    target: 'https://ohwr.org/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt'
-  - source: 'project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf'
-    target: 'https://ohwr.org/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf'
+  - source: |
+      project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
+    target: |
+      https://ohwr.org/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
+  - source: |
+      project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
+    target: |
+      https://ohwr.org/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
+  - source: |
+      project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
+    target: |
+      https://ohwr.org/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
+  - source: |
+      project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
+    target: |
+      https://ohwr.org/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
+  - source: |
+      project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
+    target: |
+      https://ohwr.org/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
+  - source: |
+      project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
+    target: |
+      https://ohwr.org/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
 projects:
   - id: 'fmc-adc-210m-16b-4cha'
     repository: 'https://ohwr.org/project/fmc-adc-210m-16b-4cha.git'
@@ -902,7 +912,8 @@ projects:
       name: 'Germano Postal'
       email: 'germanopostal@gmail.com'
   - id: 'usb-adc2k12b4ch-dac2k10b2ch-dio8ch'
-    repository: 'https://ohwr.org/project/usb-adc2k12b4ch-dac2k10b2ch-dio8ch.git'
+    repository: |
+      https://ohwr.org/project/usb-adc2k12b4ch-dac2k10b2ch-dio8ch.git
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'

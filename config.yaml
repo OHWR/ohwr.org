@@ -407,6 +407,7 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
+    featured: true
   - id: 'ctr-fmc-5chttla'
     repository: 'https://ohwr.org/project/ctr-fmc-5chttla.git'
     contact:
@@ -881,7 +882,6 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    featured: true
     categories:
       - 'FMC Carriers'
     compatibles:
@@ -938,7 +938,6 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    featured: true
     categories:
       - 'FMC Carriers'
     compatibles:
@@ -967,6 +966,7 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
+    featured: true
   - id: 'wrtd'
     repository: 'https://ohwr.org/project/wrtd.git'
     contact:

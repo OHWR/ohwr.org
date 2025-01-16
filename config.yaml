@@ -988,7 +988,6 @@ projects:
     contact:
       name: 'Christos Gentsos'
       email: 'christos.gentsos@cern.ch'
-# propose to recover
   - id: '10G-wr-nic'
     repository: 'https://ohwr.org/project/10G-wr-nic.git'
     contact:

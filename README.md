@@ -78,7 +78,7 @@ theme.
 * [reuse](https://reuse.readthedocs.io/en/v1.0.0/readme.html#install)
   \>= 4.0.3
 * [wemake-python-styleguide](https://wemake-python-styleguide.readthedocs.io/en/latest/#quickstart)
-  \>= 0.19.2
+  \>= 1.0.0
 * [yamllint](https://yamllint.readthedocs.io/en/stable/quickstart.html#installing-yamllint)
   \>= 1.35.1
 * [checkmake](https://github.com/mrtazz/checkmake#installation)

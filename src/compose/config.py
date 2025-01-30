@@ -86,7 +86,7 @@ class News(BaseModelForbidExtra):
     def _parse_date(cls, md: str) -> datetime.date:
         try:
             date = re.search(r'\d{4}-\d{2}-\d{2}', md, re.MULTILINE).group()
-        except (re.error, TypeError, IndexError, AttributeError) as error:
+        except (re.error, TypeError, AttributeError) as error:
             raise ValueError('Failed to fetch date:\n{0}'.format(error))
         return datetime.date.fromisoformat(date)
 

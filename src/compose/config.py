@@ -234,6 +234,7 @@ class Project(BaseModelForbidExtra):
         if not self.manifest.newsfeed:
             return []
         md = self.manifest.newsfeed.text
+        md = re.sub('<!--(.*?)-->', '', md, flags=re.DOTALL).strip()
         try:
             matches = re.findall(r'(## .+?)(?=\n## |$)', md, re.DOTALL)
         except (re.error, TypeError) as re_error:

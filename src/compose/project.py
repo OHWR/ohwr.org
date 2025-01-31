@@ -33,10 +33,7 @@ class Project(Page):
             exclude_none=True,
             by_alias=True,
         ))
-        markdown = '{{{{< project >}}}}\n{0}\n{{{{< /project >}}}}'.format(
-            config.description,
-        )
-        return cls(front_matter=front_matter, markdown=markdown)
+        return cls(front_matter=front_matter, markdown=config.description)
 
 
 class ProjectSection(UserDict[str, Project]):

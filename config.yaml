@@ -5,29 +5,18 @@
 
 sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
-categories:
-  - name: 'FMC Carriers'
-    description: 'Boards that connect FMC Modules'
-  - name: 'FMC Modules'
-    description: 'FPGA Mezzanine Cards'
-  - name: 'WR Switch'
-    description: 'White Rabbit Switch - multiport WR L2 Ethernet switch'
-  - name: 'WR Node'
-    description: 'White Rabbit Node - single (or double) port WR L2 end station'
-  - name: 'WR Switch v3'
-    description: 'Hardware Version 3 of WR Switch'
-  - name: 'WR Switch v4'
-    description: 'Hardware Version 4 of WR Switch'
-  - name: 'Software applicable to WR Switch'
-    description: 'Software that can be used with WR Switch'
-  - name: 'Software applicable to WR Node'
-    description: 'Software that can be used with WR Node'
-  - name: 'Gateware applicable to WR Switch'
-    description: 'Gateware that can be used with WR Switch'
-  - name: 'Gateware applicable to WR Node'
-    description: 'Gateware that can be used with WR Node'
-  - name: 'WR documentation'
-    description: 'Documentation applicable to WR'
+tags:
+  - 'FMC Carriers'
+  - 'FMC Modules'
+  - 'WR Switch'
+  - 'WR Node'
+  - 'WR Switch v3'
+  - 'WR Switch v4'
+  - 'Software applicable to WR Switch'
+  - 'Software applicable to WR Node'
+  - 'Gateware applicable to WR Switch'
+  - 'Gateware applicable to WR Node'
+  - 'WR documentation'
 redirects:
   - source: |
       project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
@@ -86,14 +75,14 @@ projects:
     contact:
       name: 'Mathieu Saccani'
       email: 'mathieu.saccani@cern.ch'
-    categories:
+    tags:
       - 'FMC Carriers'
   - id: 'fmc-mfe'
     repository: 'https://ohwr.org/project/fmc-mfe.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'afcku'
     repository: 'https://ohwr.org/project/afcku.git'
@@ -120,7 +109,7 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Carriers'
   - id: 'sis1160-pci-io'
     repository: 'https://ohwr.org/project/sis1160-pci-io.git'
@@ -132,7 +121,7 @@ projects:
     contact:
       name: 'Philipp Foedisch'
       email: 'philipp.foedisch@iamelectronic.com'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'rf-att-4cha'
     repository: 'https://ohwr.org/project/rf-att-4cha.git'
@@ -146,7 +135,7 @@ projects:
       email: 'lihm.thu@foxmail.com'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
       - 'FMC Modules'
   - id: 'wrs-lj-hw'
@@ -156,7 +145,7 @@ projects:
       email: 'jose.lopez@nav-timing.safrangroup.com'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Switch'
       - 'WR Switch v3'
   - id: 'faceshield'
@@ -210,7 +199,7 @@ projects:
     compatibles:
       - 'diot-crate-hw'
       - 'diot-sb-zu'
-    categories:
+    tags:
       - 'FMC Carriers'
       - 'WR Node'
   - id: 'profip'
@@ -239,7 +228,7 @@ projects:
       email: 'bernard.guncic@cern.ch'
     compatibles:
       - 'spec'
-    categories:
+    tags:
       - 'FMC Carriers'
   - id: 'microstepper'
     repository: 'https://ohwr.org/project/microstepper.git'
@@ -253,7 +242,7 @@ projects:
       email: 'javier.serrano@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'svec7'
     repository: 'https://ohwr.org/project/svec7.git'
@@ -262,7 +251,7 @@ projects:
       email: 'tomasz.wlostowski@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'hpsec'
     repository: 'https://ohwr.org/project/hpsec.git'
@@ -271,7 +260,7 @@ projects:
       email: 'erik.van.der.bij@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'roe-protocol'
     repository: 'https://ohwr.org/project/roe-protocol.git'
@@ -280,7 +269,7 @@ projects:
       email: 'javier.serrano@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR documentation'
   - id: 'fpga-dev-id'
     repository: 'https://ohwr.org/project/fpga-dev-id.git'
@@ -318,7 +307,7 @@ projects:
       email: 'dev_public@wujek.eu'
     parents:
       - 'diot'
-    categories:
+    tags:
       - 'FMC Carriers'
       - 'WR Node'
   - id: 'luvi'
@@ -372,7 +361,7 @@ projects:
       email: 'maciej.lipinski@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Switch v4'
       - 'WR Switch'
   - id: 'fmc-dtxrx-4cha'
@@ -380,7 +369,7 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'rf-mux-8ch'
     repository: 'https://ohwr.org/project/rf-mux-8ch.git'
@@ -425,7 +414,7 @@ projects:
       email: 'javier.serrano@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'wrs-fl-hw'
     repository: 'https://ohwr.org/project/wrs-fl-hw.git'
@@ -435,7 +424,7 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wr-switch-sw'
-    categories:
+    tags:
       - 'WR Switch'
       - 'WR Switch v3'
   - id: 'spec7'
@@ -445,7 +434,7 @@ projects:
       email: 'peterj@nikhef.nl'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'ertm15-llrf-wr'
     repository: 'https://ohwr.org/project/ertm15-llrf-wr.git'
@@ -454,7 +443,7 @@ projects:
       email: 'tomasz.wlostowski@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'pda-8ch-fda-8ch'
     repository: 'https://ohwr.org/project/pda-8ch-fda-8ch.git'
@@ -476,7 +465,7 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'atfc'
     repository: 'https://ohwr.org/project/atfc.git'
@@ -496,14 +485,14 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wr-switch-hw'
-    categories:
+    tags:
       - 'WR Switch v3'
   - id: 'fmc-adc-subsamp125m14b4cha'
     repository: 'https://ohwr.org/project/fmc-adc-subsamp125m14b4cha.git'
     contact:
       name: 'Eva Calvo Giraldo'
       email: 'eva.calvo.giraldo@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'eez-psu'
     repository: 'https://ohwr.org/project/eez-psu.git'
@@ -525,7 +514,7 @@ projects:
     contact:
       name: 'Grzegorz Daniluk'
       email: 'gkasprow@gmail.com'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'r19-tdc-del-a'
     repository: 'https://ohwr.org/project/r19-tdc-del-a.git'
@@ -542,7 +531,7 @@ projects:
     contact:
       name: 'Jan Pospisil'
       email: 'j.pospisil@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fasec'
     repository: 'https://ohwr.org/project/fasec.git'
@@ -551,7 +540,7 @@ projects:
       email: 'pieter.van.trappen@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'fmc-sfp-4cha'
     repository: 'https://ohwr.org/project/fmc-sfp-4cha.git'
@@ -578,7 +567,7 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'urv-core'
     repository: 'https://ohwr.org/project/urv-core.git'
@@ -588,7 +577,7 @@ projects:
     parents:
       - 'wrpc-sw'
       - 'white-rabbit'
-    categories:
+    tags:
       - 'Software applicable to WR Node'
   - id: 'mock-turtle'
     repository: 'https://ohwr.org/project/mock-turtle.git'
@@ -597,7 +586,7 @@ projects:
       email: 'federico.vaga@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'Software applicable to WR Node'
   - id: 'mrpc-25x18-24strip'
     repository: 'https://ohwr.org/project/mrpc-25x18-24strip.git'
@@ -629,14 +618,14 @@ projects:
     contact:
       name: 'Tom Levens'
       email: 'tom.levens@cern.ch'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'fmc-masterfip'
     repository: 'https://ohwr.org/project/fmc-masterfip.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'tr-pmc'
     repository: 'https://ohwr.org/project/tr-pmc.git'
@@ -648,7 +637,7 @@ projects:
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fr_pcb_mm'
     repository: 'https://ohwr.org/project/fr_pcb_mm.git'
@@ -671,7 +660,7 @@ projects:
     contact:
       name: 'Dimitris Lampridis'
       email: 'Dimitris.Lampridis@cern.ch'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'conv-ttl-rs485-hw'
     repository: 'https://ohwr.org/project/conv-ttl-rs485-hw.git'
@@ -688,49 +677,49 @@ projects:
     contact:
       name: 'Evangelia Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-pof-10m-r3ch-t1ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r3ch-t1ch.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-pof-10m-r4ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r4ch.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-adc-100m14b4cha-hw'
     repository: 'https://ohwr.org/project/fmc-adc-100m14b4cha-hw.git'
     contact:
       name: 'Javier Serrano'
       email: 'Javier.Serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'afck'
     repository: 'https://ohwr.org/project/afck.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'gkasprow@gmail.com'
-    categories:
+    tags:
       - 'FMC Carriers'
   - id: 'fmc-dtrx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtrx-4cha.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-dtx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtx-4cha.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'utca-rtm-8-sfp'
     repository: 'https://ohwr.org/project/utca-rtm-8-sfp.git'
@@ -752,7 +741,7 @@ projects:
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
-    categories:
+    tags:
       - 'WR Node'
   - id: 'usb-relay-box1'
     repository: 'https://ohwr.org/project/usb-relay-box1.git'
@@ -774,14 +763,14 @@ projects:
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-dac-600m-12b-1cha-dds'
     repository: 'https://ohwr.org/project/fmc-dac-600m-12b-1cha-dds.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'gkasprow@gmail.com'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'afc'
     repository: 'https://ohwr.org/project/afc.git'
@@ -793,14 +782,14 @@ projects:
     contact:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-adc-130m-16b-4cha'
     repository: 'https://ohwr.org/project/fmc-adc-130m-16b-4cha.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'gkasprow@gmail.com'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'timex3'
     repository: 'https://ohwr.org/project/timex3.git'
@@ -812,7 +801,7 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'wr-switch-hw'
     repository: 'https://ohwr.org/project/wr-switch-hw.git'
@@ -822,7 +811,7 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wr-switch-sw'
-    categories:
+    tags:
       - 'WR Switch v3'
   - id: 'bpm-rffe'
     repository: 'https://ohwr.org/project/bpm-rffe.git'
@@ -844,14 +833,14 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'spexi'
     repository: 'https://ohwr.org/project/spexi.git'
     contact:
       name: 'Francisco Juan'
       email: 'fjuan@splendeo.es'
-    categories:
+    tags:
       - 'FMC Carriers'
   - id: 'conv-ttl-rs485'
     repository: 'https://ohwr.org/project/conv-ttl-rs485.git'
@@ -863,7 +852,7 @@ projects:
     contact:
       name: 'Kasun Sameera Mannatunga'
       email: 'ksm@sjp.ac.lk'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'lpcfmc12pexp'
     repository: 'https://ohwr.org/project/lpcfmc12pexp.git'
@@ -875,14 +864,14 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'svec'
     repository: 'https://ohwr.org/project/svec.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    categories:
+    tags:
       - 'FMC Carriers'
     compatibles:
       - 'fmc-adc-100m14b4cha'
@@ -900,14 +889,14 @@ projects:
       - 'spec'
       - 'svec'
       - 'diot-sb-zu'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-dac-250m16b4cha'
     repository: 'https://ohwr.org/project/fmc-dac-250m16b4cha.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'fmc-conn-tester'
     repository: 'https://ohwr.org/project/fmc-conn-tester.git'
@@ -919,14 +908,14 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'vxs-dsp-fmc-carrier'
     repository: 'https://ohwr.org/project/vxs-dsp-fmc-carrier.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    categories:
+    tags:
       - 'FMC Carriers'
   - id: 'conv-ttl-nim-3i-30o'
     repository: 'https://ohwr.org/project/conv-ttl-nim-3i-30o.git'
@@ -938,7 +927,7 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    categories:
+    tags:
       - 'FMC Carriers'
     compatibles:
       - 'fmc-tdc'
@@ -949,7 +938,7 @@ projects:
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
     compatibles:
       - 'spec'
@@ -959,7 +948,7 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    categories:
+    tags:
       - 'FMC Modules'
   - id: 'white-rabbit'
     repository: 'https://ohwr.org/project/white-rabbit.git'
@@ -972,7 +961,7 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    categories:
+    tags:
       - 'Gateware applicable to WR Node'
       - 'Software applicable to WR Node'
     parents:
@@ -995,7 +984,7 @@ projects:
       email: '25434476+hdlved@users.noreply.github.com'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'Gateware applicable to WR Node'
       - 'Gateware applicable to WR Switch'
   - id: 'wr-switch-hdl-usp-eval'
@@ -1006,7 +995,7 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wr-switch-hw-v4'
-    categories:
+    tags:
       - 'WR Switch v4'
   - id: 'wr-compliance-tests'
     repository: 'https://ohwr.org/project/wr-compliance-tests.git'
@@ -1016,7 +1005,7 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wr-switch-sw'
-    categories:
+    tags:
       - 'Software applicable to WR Switch'
   - id: 'wr-fixed-point-calculations'
     repository: 'https://ohwr.org/project/wr-fixed-point-calculations.git'
@@ -1026,7 +1015,7 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wr-switch-sw'
-    categories:
+    tags:
       - 'Software applicable to WR Node'
       - 'Software applicable to WR Switch'
   - id: 'wr-calibration'
@@ -1036,7 +1025,7 @@ projects:
       email: 'peterj@nikhef.nl'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'WR documentation'
   - id: 'soft-cpu-toolchains'
     repository: 'https://ohwr.org/project/soft-cpu-toolchains.git'
@@ -1046,7 +1035,7 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wrpc-sw'
-    categories:
+    tags:
       - 'Software applicable to WR Node'
   - id: 'wr-switch-sw'
     repository: 'https://ohwr.org/project/wr-switch-sw.git'
@@ -1055,7 +1044,7 @@ projects:
       email: 'adam.wujek@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'Software applicable to WR Switch'
   - id: 'wrpc-sw'
     repository: 'https://ohwr.org/project/wrpc-sw.git'
@@ -1064,7 +1053,7 @@ projects:
       email: 'tristan.gingold@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'Software applicable to WR Switch'
       - 'Software applicable to WR Node'
   - id: 'wr-cores'
@@ -1074,7 +1063,7 @@ projects:
       email: 'tristan.gingold@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'Gateware applicable to WR Switch'
       - 'Gateware applicable to WR Node'
   - id: 'general-cores'
@@ -1085,7 +1074,7 @@ projects:
     parents:
       - 'white-rabbit'
       - 'wr-cores'
-    categories:
+    tags:
       - 'Gateware applicable to WR Switch'
       - 'Gateware applicable to WR Node'
   - id: 'wr-switch-hdl'
@@ -1095,5 +1084,5 @@ projects:
       email: 'maciej.lipinski@cern.ch'
     parents:
       - 'white-rabbit'
-    categories:
+    tags:
       - 'Gateware applicable to WR Switch'

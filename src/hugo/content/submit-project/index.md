@@ -101,8 +101,7 @@ Open an issue on the OHWR GitHub repository specifying:
 * The URL of the project's git repository.
 * The name and email address of the project maintainer.
 * A list of tags (optional).
-* A list of parent projects (optional).
-* A list of projects your project is compatible with (optional).
+* A list of projects that are compatible with your project (optional).
 
 Our team will review your submission and add your project to the OHWR website.
 

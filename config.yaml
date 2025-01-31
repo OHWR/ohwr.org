@@ -58,8 +58,6 @@ projects:
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
-    parents:
-      - 'white-rabbit'
   - id: 'diot-pb-lbk'
     repository: 'https://ohwr.org/project/diot-pb-lbk.git'
     contact:
@@ -99,8 +97,6 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    parents:
-      - 'diot'
     compatibles:
       - 'diot-crate-hw'
       - 'diot-sb-zu'
@@ -133,8 +129,6 @@ projects:
     contact:
       name: 'Li Hongming'
       email: 'lihm.thu@foxmail.com'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
       - 'FMC Modules'
@@ -143,8 +137,6 @@ projects:
     contact:
       name: 'Jose Lopez Jimenez'
       email: 'jose.lopez@nav-timing.safrangroup.com'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Switch'
       - 'WR Switch v3'
@@ -193,9 +185,6 @@ projects:
     contact:
       name: 'Paul Peronnard'
       email: 'paul.peronnard@cern.ch'
-    parents:
-      - 'white-rabbit'
-      - 'diot'
     compatibles:
       - 'diot-crate-hw'
       - 'diot-sb-zu'
@@ -217,8 +206,6 @@ projects:
     contact:
       name: 'Christos Gentsos'
       email: 'christos.gentsos@cern.ch'
-    parents:
-      - 'diot'
     compatibles:
       - 'diot-crate-hw'
   - id: 'fmc-profinet'
@@ -240,8 +227,6 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
   - id: 'svec7'
@@ -249,8 +234,6 @@ projects:
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
   - id: 'hpsec'
@@ -258,8 +241,6 @@ projects:
     contact:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
   - id: 'roe-protocol'
@@ -267,8 +248,6 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR documentation'
   - id: 'fpga-dev-id'
@@ -291,22 +270,16 @@ projects:
     contact:
       name: 'Michal Gaska'
       email: 'michalgaska2@gmail.com'
-    parents:
-      - 'diot'
   - id: 'diot-monimod'
     repository: 'https://ohwr.org/project/diot-monimod.git'
     contact:
       name: 'Christos Gentsos'
       email: 'christos.gentsos@cern.ch'
-    parents:
-      - 'diot'
   - id: 'diot-sb-zu'
     repository: 'https://ohwr.org/project/diot-sb-zu.git'
     contact:
       name: 'Adam Wujek'
       email: 'dev_public@wujek.eu'
-    parents:
-      - 'diot'
     tags:
       - 'FMC Carriers'
       - 'WR Node'
@@ -320,8 +293,6 @@ projects:
     contact:
       name: 'Lalit Patnaik'
       email: 'lalit.patnaik@cern.ch'
-    parents:
-      - 'diot'
     compatibles:
       - 'diot-crate-hw'
   - id: 'pxie-ctl-comexpress'
@@ -359,8 +330,6 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Switch v4'
       - 'WR Switch'
@@ -412,8 +381,6 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
   - id: 'wrs-fl-hw'
@@ -421,9 +388,6 @@ projects:
     contact:
       name: 'Li Hongming'
       email: 'lihm.thu@gmail.com'
-    parents:
-      - 'white-rabbit'
-      - 'wr-switch-sw'
     tags:
       - 'WR Switch'
       - 'WR Switch v3'
@@ -432,8 +396,6 @@ projects:
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
   - id: 'ertm15-llrf-wr'
@@ -441,8 +403,6 @@ projects:
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
   - id: 'pda-8ch-fda-8ch'
@@ -482,9 +442,6 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    parents:
-      - 'white-rabbit'
-      - 'wr-switch-hw'
     tags:
       - 'WR Switch v3'
   - id: 'fmc-adc-subsamp125m14b4cha'
@@ -538,8 +495,6 @@ projects:
     contact:
       name: 'Pieter Van Trappen'
       email: 'pieter.van.trappen@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR Node'
   - id: 'fmc-sfp-4cha'
@@ -574,9 +529,6 @@ projects:
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
-    parents:
-      - 'wrpc-sw'
-      - 'white-rabbit'
     tags:
       - 'Software applicable to WR Node'
   - id: 'mock-turtle'
@@ -584,8 +536,6 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'Software applicable to WR Node'
   - id: 'mrpc-25x18-24strip'
@@ -808,9 +758,6 @@ projects:
     contact:
       name: 'José Gabriel Ramírez'
       email: 'jgabriel@sevensols.com'
-    parents:
-      - 'white-rabbit'
-      - 'wr-switch-sw'
     tags:
       - 'WR Switch v3'
   - id: 'bpm-rffe'
@@ -964,8 +911,6 @@ projects:
     tags:
       - 'Gateware applicable to WR Node'
       - 'Software applicable to WR Node'
-    parents:
-      - 'white-rabbit'
   - id: 'f-watch'
     repository: 'https://ohwr.org/project/f-watch.git'
     contact:
@@ -982,8 +927,6 @@ projects:
     contact:
       name: 'hdlved'
       email: '25434476+hdlved@users.noreply.github.com'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'Gateware applicable to WR Node'
       - 'Gateware applicable to WR Switch'
@@ -992,9 +935,6 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    parents:
-      - 'white-rabbit'
-      - 'wr-switch-hw-v4'
     tags:
       - 'WR Switch v4'
   - id: 'wr-compliance-tests'
@@ -1002,9 +942,6 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    parents:
-      - 'white-rabbit'
-      - 'wr-switch-sw'
     tags:
       - 'Software applicable to WR Switch'
   - id: 'wr-fixed-point-calculations'
@@ -1012,9 +949,6 @@ projects:
     contact:
       name: 'Rens Roosenstein'
       email: 'rens.roosenstein@cern.ch'
-    parents:
-      - 'white-rabbit'
-      - 'wr-switch-sw'
     tags:
       - 'Software applicable to WR Node'
       - 'Software applicable to WR Switch'
@@ -1023,8 +957,6 @@ projects:
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'WR documentation'
   - id: 'soft-cpu-toolchains'
@@ -1032,9 +964,6 @@ projects:
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
-    parents:
-      - 'white-rabbit'
-      - 'wrpc-sw'
     tags:
       - 'Software applicable to WR Node'
   - id: 'wr-switch-sw'
@@ -1042,8 +971,6 @@ projects:
     contact:
       name: 'Adam Wujek'
       email: 'adam.wujek@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'Software applicable to WR Switch'
   - id: 'wrpc-sw'
@@ -1051,8 +978,6 @@ projects:
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'Software applicable to WR Switch'
       - 'Software applicable to WR Node'
@@ -1061,8 +986,6 @@ projects:
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'Gateware applicable to WR Switch'
       - 'Gateware applicable to WR Node'
@@ -1071,9 +994,6 @@ projects:
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
-    parents:
-      - 'white-rabbit'
-      - 'wr-cores'
     tags:
       - 'Gateware applicable to WR Switch'
       - 'Gateware applicable to WR Node'
@@ -1082,7 +1002,5 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    parents:
-      - 'white-rabbit'
     tags:
       - 'Gateware applicable to WR Switch'

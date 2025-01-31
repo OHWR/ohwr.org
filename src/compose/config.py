@@ -117,7 +117,6 @@ class Project(BaseModelForbidExtra):
     contact: Contact
     featured: Optional[bool] = False
     tags: Optional[AnnotatedStrList] = None
-    parents: Optional[AnnotatedStrList] = None
     compatibles: Optional[AnnotatedStrList] = None
 
     @cached_property
@@ -281,32 +280,6 @@ class Config(Schema):
                     raise ValueError(
                         "Project '{0}' with unknown tags: '{1}'.".format(
                             project.id, unknown,
-                        ),
-                    )
-        return self
-
-    @model_validator(mode='after')
-    def check_parents_match(self) -> 'Config':
-        """
-        Check if parents in projects match the available projects.
-
-        Returns:
-            Config: The configuration object with validated parents.
-
-        Raises:
-            ValueError: If an unknown parent is found in a project.
-        """
-        parent_ids = []
-        for parent in self.projects:
-            parent_ids.append(parent.id)
-
-        for child in self.projects:
-            if child.parents:
-                unknown = set(child.parents) - set(parent_ids)
-                if unknown:
-                    raise ValueError(
-                        "Project '{0}' with unknown parents: '{1}'.".format(
-                            child.id, unknown,
                         ),
                     )
         return self

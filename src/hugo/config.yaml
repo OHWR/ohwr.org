@@ -13,7 +13,6 @@ markup:
     style: 'native'
 taxonomies:
   topic: 'topics'
-  parent: 'parents'
   compatible: 'compatibles'
 pagination:
   pagerSize: 9

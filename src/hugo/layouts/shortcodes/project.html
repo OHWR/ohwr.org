@@ -13,8 +13,6 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ $links := .Page.Params.links }}
 {{ $contact := .Page.Params.contact }}
 {{ $licenses := .Page.Params.licenses }}
-{{ $parents := where .Site.RegularPages "Params.id" "in" .Page.Params.parents }}
-{{ $children := (.Site.Taxonomies.parents.Get .Page.Params.id).Pages }}
 {{ $compatibles := union (.Site.Taxonomies.compatibles.Get .Page.Params.id).Pages (where .Site.RegularPages "Params.id" "in" .Page.Params.compatibles) }}
 
 <div class="card border-0 shadow-lg">
@@ -66,7 +64,7 @@ SPDX-License-Identifier: BSD-3-Clause
     {{ end }}
     {{ with $contact }}
     <h3 class="section-title">Contact</h3>
-    <pt><a href="mailto:{{ .email }}">{{ .name }}</a></p>
+    <p><a href="mailto:{{ .email }}">{{ .name }}</a></p>
     {{ end }}
     {{ with $licenses }}
     <h3 class="section-title">Licences</h3>
@@ -79,11 +77,10 @@ SPDX-License-Identifier: BSD-3-Clause
   </div>
 </div>
 
-{{ range slice (group "Parent" $parents) (group "Child" $children) (group "Compatible" $compatibles) }}
-{{ if .Pages }}
-<h3 class="text-center">{{ .Key }} Projects</h3>
+{{ with $compatibles }}
+<h3 class="text-center">Compatible Projects</h3>
 <div class="cards-section">
-  {{ range .Pages }}
+  {{ range . }}
   <div class="card interactive-card border-0 shadow-lg mb-4">
     {{ if .Params.images }}
     <div class="row">
@@ -103,7 +100,6 @@ SPDX-License-Identifier: BSD-3-Clause
   </div>
   {{ end }}
 </div>
-{{ end }}
 {{ end }}
 
 {{ with .Site.Taxonomies.topics.Get .Page.Params.id }}

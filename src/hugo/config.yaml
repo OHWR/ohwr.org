@@ -36,6 +36,9 @@ menus:
     - name: 'News'
       url: 'news/'
       weight: 5
+    - name: 'Submit Project'
+      url: 'submit-project/'
+      weight: 6
   footer_left:
     - name: 'About'
       url: 'about/'
@@ -60,7 +63,3 @@ params:
     text_color_dark: '#022b3a'
     primary_color: '#fd810d'
     light: '#f5faf6'
-  navigation_button:
-    enable: true
-    label: 'Submit Project'
-    link: 'submit-project/'

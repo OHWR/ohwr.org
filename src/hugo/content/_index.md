@@ -10,9 +10,6 @@ banner:
     A easy-to-browse catalogue of open hardware designs used in experimental
     physics facilities, with links to the designs themselves and to forums where
     you can discuss about them.
-  button:
-    label: 'Submit Project'
-    link: 'submit-project/'
 summaries:
   - title: 'About OHWR'
     path: 'about'

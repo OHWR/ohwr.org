@@ -11,6 +11,11 @@ markup:
     codeFences: true
     noClasses: true
     style: 'native'
+disableKinds:
+  - 'home'
+permalinks:
+  section:
+    projects: '/'
 taxonomies:
   topic: 'topics'
   compatible: 'compatibles'
@@ -23,22 +28,14 @@ menus:
   main:
     - name: 'About'
       url: 'about/'
-      weight: 1
-    - name: 'Projects'
-      url: 'projects/'
-      weight: 2
     - name: 'Licences'
       url: 'licences/'
-      weight: 3
     - name: 'Forum'
       url: 'https://forums.ohwr.org/'
-      weight: 4
     - name: 'News'
       url: 'news/'
-      weight: 5
     - name: 'Submit Project'
       url: 'submit-project/'
-      weight: 6
   footer_left:
     - name: 'About'
       url: 'about/'

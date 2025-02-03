@@ -12,9 +12,7 @@ markup:
     noClasses: true
     style: 'native'
 taxonomies:
-  category: 'categories'
   topic: 'topics'
-  parent: 'parents'
   compatible: 'compatibles'
 pagination:
   pagerSize: 9
@@ -29,18 +27,15 @@ menus:
     - name: 'Projects'
       url: 'projects/'
       weight: 2
-    - name: 'Categories'
-      url: 'categories/'
-      weight: 3
     - name: 'Licences'
       url: 'licences/'
-      weight: 4
+      weight: 3
     - name: 'Forum'
       url: 'https://forums.ohwr.org/'
-      weight: 5
+      weight: 4
     - name: 'News'
       url: 'news/'
-      weight: 6
+      weight: 5
   footer_left:
     - name: 'About'
       url: 'about/'

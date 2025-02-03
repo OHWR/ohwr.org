@@ -14,5 +14,4 @@ __pycache__/
 # Composer
 /src/hugo/content/projects/
 /src/hugo/content/news/
-/src/hugo/content/categories/
 /src/hugo/content/project/

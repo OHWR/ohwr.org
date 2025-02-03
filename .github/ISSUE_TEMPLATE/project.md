@@ -19,7 +19,7 @@ assignees: vascoguita
 - **Name:** Your Name
 - **Email:** <your.email@example.com>
 
-## Categories
+## Tags
 
-- Category A
-- Category B (New): Description of the new category.
+- Tag A
+- Tag B

@@ -9,7 +9,6 @@ import logging
 import os
 import sys
 
-from category import CategorySection
 from config import Config
 from license import SpdxLicenseList
 from news import NewsSection
@@ -38,24 +37,6 @@ try:
     SpdxLicenseList.from_file(config.licenses)
 except (ValidationError, ValueError) as spdx_error:
     logging.error('Failed to load SPDX license list:\n{0}'.format(spdx_error))
-    sys.exit(1)
-
-logging.info("Generating 'categories' section...")
-try:
-    categories = CategorySection.from_config(config.categories)
-except ValueError as categories_error:
-    logging.error("Failed to generate 'categories' section:\n{0}".format(
-        categories_error,
-    ))
-    sys.exit(1)
-
-logging.info("Writing 'categories' section...")
-try:
-    categories.write(os.path.join(config.sources, 'content/categories'))
-except ValueError as categories_write_error:
-    logging.error("Failed to write 'categories' section:\n{0}".format(
-        categories_write_error,
-    ))
     sys.exit(1)
 
 logging.info("Generating 'redirects' section...")

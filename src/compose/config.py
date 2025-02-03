@@ -27,13 +27,6 @@ from schema import AnnotatedStr, AnnotatedStrList, BaseModelForbidExtra, Schema
 from url import Url, UrlList
 
 
-class Category(BaseModelForbidExtra):
-    """Project category."""
-
-    name: AnnotatedStr
-    description: AnnotatedStr
-
-
 class Contact(BaseModelForbidExtra):
     """Contact configuration."""
 
@@ -123,8 +116,7 @@ class Project(BaseModelForbidExtra):
     repository: Repository
     contact: Contact
     featured: Optional[bool] = False
-    categories: Optional[AnnotatedStrList] = None
-    parents: Optional[AnnotatedStrList] = None
+    tags: Optional[AnnotatedStrList] = None
     compatibles: Optional[AnnotatedStrList] = None
 
     @cached_property
@@ -267,57 +259,27 @@ class Config(Schema):
     sources: DirectoryPath
     licenses: FilePath
     redirects: Annotated[list[Redirect], Field(min_length=1)]
-    categories: Annotated[list[Category], Field(min_length=1)]
+    tags: AnnotatedStrList
     projects: Annotated[list[Project], Field(min_length=1)]
 
     @model_validator(mode='after')
-    def check_categories_match(self) -> 'Config':
+    def check_tags_match(self) -> 'Config':
         """
-        Check if categories in projects match the available categories.
+        Check if tags in projects match the available tags.
 
         Returns:
-            Config: The configuration object with validated category names.
+            Config: The configuration object with validated tags.
 
         Raises:
-            ValueError: If an unknown category is found in a project.
+            ValueError: If an unknown tag is found in a project.
         """
-        categories = []
-        for category in self.categories:
-            categories.append(category.name)
-
         for project in self.projects:
-            if project.categories:
-                unknown = set(project.categories) - set(categories)
+            if project.tags:
+                unknown = set(project.tags) - set(self.tags)
                 if unknown:
                     raise ValueError(
-                        "Project '{0}' with unknown categories: '{1}'.".format(
+                        "Project '{0}' with unknown tags: '{1}'.".format(
                             project.id, unknown,
-                        ),
-                    )
-        return self
-
-    @model_validator(mode='after')
-    def check_parents_match(self) -> 'Config':
-        """
-        Check if parents in projects match the available projects.
-
-        Returns:
-            Config: The configuration object with validated parents.
-
-        Raises:
-            ValueError: If an unknown parent is found in a project.
-        """
-        parent_ids = []
-        for parent in self.projects:
-            parent_ids.append(parent.id)
-
-        for child in self.projects:
-            if child.parents:
-                unknown = set(child.parents) - set(parent_ids)
-                if unknown:
-                    raise ValueError(
-                        "Project '{0}' with unknown parents: '{1}'.".format(
-                            child.id, unknown,
                         ),
                     )
         return self

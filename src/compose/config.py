@@ -115,7 +115,7 @@ class Project(BaseModelForbidExtra):
     id: AnnotatedStr
     repository: Repository
     contact: Contact
-    featured: Optional[bool] = False
+    weight: Optional[Annotated[int, Field(gt=0)]] = None
     tags: Optional[AnnotatedStrList] = None
     compatibles: Optional[AnnotatedStrList] = None
 

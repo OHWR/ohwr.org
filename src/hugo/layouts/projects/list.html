@@ -6,13 +6,8 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ partial "page-header.html" . }}
-
 <section class="section">
   <div class="container">
-    {{ with where .Data.Pages "Params.featured" true }}
-    {{ partial "featured.html" . }}
-    {{ end }}
     <div class="row">
       {{ range (.Paginate .Data.Pages).Pages }}
       {{ partial "vertical-card.html" . }}

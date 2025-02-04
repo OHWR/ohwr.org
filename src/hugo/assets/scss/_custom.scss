@@ -102,3 +102,33 @@ ul li {
     transform: scale(1.1);
   }
 }
+
+.search-button {
+  color: $white;
+  background-color: $primary-color;
+  border: 0;
+  font-size: 16px;
+  padding-inline: 30px;
+  border-radius: 0 8px 8px 0;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.filter-button {
+  color: $white;
+  background-color: $secondary-color;
+  border: 0;
+  font-size: 16px;
+  padding-inline: 30px;
+  border-radius: 8px 0 0 8px;
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}

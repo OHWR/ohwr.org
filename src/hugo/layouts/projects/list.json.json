@@ -4,6 +4,7 @@
     "title" .Title
     "content" .Plain
     "tags" .Params.tags
+    "weight" .Params.weight
     "card" (partial "vertical-card.html" . | base64Encode))
   -}}
 {{- end -}}

@@ -12,6 +12,7 @@ __pycache__/
 .venv/
 
 # Composer
-/src/hugo/content/projects/
+/src/hugo/content/projects/*.md
+!/src/hugo/content/projects/_index.md
 /src/hugo/content/news/
 /src/hugo/content/project/

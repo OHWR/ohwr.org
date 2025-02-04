@@ -6,6 +6,13 @@
 baseURL: 'https://ohwr.org/'
 title: 'Open Hardware Repository'
 summaryLength: 30
+outputs:
+  section:
+    - 'html'
+  taxonomy:
+    - 'html'
+  term:
+    - 'html'
 markup:
   highlight:
     codeFences: true
@@ -13,6 +20,7 @@ markup:
     style: 'native'
 disableKinds:
   - 'home'
+  - 'sitemap'
 permalinks:
   section:
     projects: '/'

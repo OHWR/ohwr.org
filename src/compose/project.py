@@ -69,16 +69,7 @@ class ProjectSection(UserDict[str, Project]):
 
         Parameters:
             path: Projects content directory path.
-
-        Raises:
-            ValueError: If writing the projects section to files fails.
         """
-        try:
-            os.makedirs(path)
-        except OSError as makedirs_error:
-            raise ValueError("Failed to create '{0}' directory:\n{1}".format(
-                path, makedirs_error,
-            ))
         for page, project in self.data.items():
             logging.info("Writing '{0}' page...".format(page))
             try:

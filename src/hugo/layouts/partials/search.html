@@ -1,0 +1,37 @@
+<!--
+SPDX-FileCopyrightText: 2024 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<section class="section p-0 mt-4">
+  <div class="container">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button
+          class="search-filter-menu-button"
+          data-toggle="collapse"
+          href="#search-filter-menu" role="button"
+          aria-expanded="false"
+          aria-controls="search-filter-menu">
+          <i class="fas fa-filter"></i>
+        </button>
+      </div>
+      <input id="search-input" class="form-control search-input" placeholder="{{ .placeholder }}">
+      <div class="input-group-append">
+        <button id="search-button" class="search-button" type="button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="collapse" id="search-filter-menu"></div>
+  </div>
+</section>
+
+<script
+  id="search-script"
+  src="{{ (resources.Get `js/search.js`).RelPermalink }}"
+  type="module"
+  data-keys="{{ .keys }}"
+  data-filter="{{ .filter }}">
+</script>

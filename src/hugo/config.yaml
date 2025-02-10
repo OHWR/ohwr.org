@@ -25,7 +25,6 @@ permalinks:
   section:
     projects: '/'
 taxonomies:
-  topic: 'topics'
   compatible: 'compatibles'
 pagination:
   pagerSize: 9

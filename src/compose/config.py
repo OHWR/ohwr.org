@@ -40,7 +40,7 @@ class News(BaseModelForbidExtra):
     title: AnnotatedStr
     date: datetime.date
     images: Optional[UrlList] = None
-    topics: Optional[AnnotatedStrList] = None
+    project: Optional['Project'] = Field(default=None, exclude=True)
     description: Optional[AnnotatedStr] = Field(default=None, exclude=True)
 
     @classmethod
@@ -241,7 +241,7 @@ class Project(BaseModelForbidExtra):
                 raise ValueError('Failed to load news:\n{0}'.format(
                     news_error,
                 ))
-            news.topics = [self.id]
+            news.project = self
             news_list.insert(0, news)
         return news_list
 

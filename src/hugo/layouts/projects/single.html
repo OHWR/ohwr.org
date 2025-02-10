@@ -46,8 +46,8 @@ SPDX-License-Identifier: BSD-3-Clause
           <time>{{ .Params.Date.Format "Jan 2, 2006" }}</time>
         </div>
         <div class="col-auto">
-          {{ if .Params.topics }}
-          {{ with .GetPage (path.Join "projects" .Params.topics) }}
+          {{ if .Params.project }}
+          {{ with .GetPage (path.Join "projects" .Params.project) }}
           <a href="{{ .Permalink }}"><h5><i class="fas fa-rss"></i><span class="ml-1">{{ .Title }}</span></h5></a>
           {{ end }}
           {{ end }}
@@ -139,10 +139,10 @@ SPDX-License-Identifier: BSD-3-Clause
           {{ end }}
         </div>
         {{ end }}
-        {{ with .Site.Taxonomies.topics.Get .Params.id }}
+        {{ if $news := where (where .Site.RegularPages "Section" "news") "Params.project" .Title }}
         <h3 class="text-center">Latest News</h3>
         <div class="cards-section">
-          {{ range (first 3 .Pages) }}
+          {{ range (first 3 $news) }}
           <div class="card interactive-card border-0 shadow-lg mb-4">
             {{ if .Params.images }}
             <div class="row">
@@ -162,7 +162,7 @@ SPDX-License-Identifier: BSD-3-Clause
             {{ end }}
           </div>
           {{ end }}
-          <div class="text-center"><a href="{{ .Page.Permalink }}" class="btn btn-primary btn-sm">See All News</a></div>
+          <div class="text-center"><a href="{{ (.Site.GetPage `/news`).Permalink }}?f={{ urlquery .Title }}" class="btn btn-primary btn-sm">See All News</a></div>
         </div>
         {{ end }}
       </div>

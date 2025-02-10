@@ -3,9 +3,9 @@
   {{- $index = $index | append (dict
     "title" .Title
     "content" .Plain
-    "tags" .Params.tags
+    "project" (slice .Params.project)
     "weight" .Params.weight
-    "card" (partial "project-card.html" . | base64Encode))
+    "card" (partial "news-card.html" . | base64Encode))
   -}}
 {{- end -}}
 {{- $index | jsonify -}}

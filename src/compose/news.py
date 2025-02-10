@@ -28,6 +28,7 @@ class NewsPage(Page):
             NewsPage: Instance of NewsPage class.
         """
         front_matter = config.model_dump(exclude_none=True)
+        front_matter['project'] = config.project.manifest.name
         return cls(front_matter=front_matter, markdown=config.description)
 
 
@@ -67,12 +68,6 @@ class NewsSection(UserDict[str, NewsPage]):
         Raises:
             ValueError: If writing the news section to files fails.
         """
-        try:
-            os.makedirs(path)
-        except OSError as makedirs_error:
-            raise ValueError("Failed to create '{0}' directory:\n{1}".format(
-                path, makedirs_error,
-            ))
         for page, news in self.data.items():
             logging.info("Writing '{0}' page...".format(page))
             try:
@@ -86,7 +81,7 @@ class NewsSection(UserDict[str, NewsPage]):
     def _from_config(cls, config: list[News]):
         news_section = {}
         for index, news in enumerate(config):
-            page = '{0}-{1}'.format(news.topics[0], index + 1)
+            page = '{0}-{1}'.format(news.project.id, index + 1)
             logging.info("Generating '{0}' page...".format(page))
             try:
                 news_section[page] = NewsPage.from_config(news)

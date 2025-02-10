@@ -24,3 +24,9 @@ path = "src/hugo/layouts/projects/list.json.json"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 CERN (home.cern)"
 SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = "src/hugo/layouts/news/list.json.json"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 CERN (home.cern)"
+SPDX-License-Identifier = "BSD-3-Clause"

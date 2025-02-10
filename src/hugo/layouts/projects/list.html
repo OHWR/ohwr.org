@@ -6,24 +6,16 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-<section class="section p-0 mb-5 mt-4">
+{{ partial "search.html" (dict
+  "placeholder" .Params.search.placeholder
+  "keys" (.Params.search.keys | jsonify)
+  "filter" .Page.Params.search.filter)
+}}
+
+<section class="section p-3">
   <div class="container">
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <button class="filter-button" type="button" id="filterButton"><i class="fas fa-filter"></i></button>
-      </div>
-      <input class="form-control" type="text" id="searchInput" placeholder="Search for a project">
-      <div class="input-group-append">
-        <button class="search-button" type="button" id="searchButton"><i class="fas fa-search"></i></button>
-      </div>
-    </div>
+    <div class="row" id="search-results"></div>
   </div>
 </section>
-<section class="section p-0">
-  <div class="container">
-    <div class="row" id="searchResults"></div>
-  </div>
-</section>
-<script src="{{ (resources.Get `js/search.js`).RelPermalink }}" type="module"></script>
 
 {{ end }}

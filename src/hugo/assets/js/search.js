@@ -6,71 +6,147 @@ SPDX-License-Identifier: BSD-3-Clause
 
 import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs';
 
-const fuseOptions = {
-  useExtendedSearch: true,
-  ignoreLocation: true,
-  threshold: 0,
-  keys: [
-    { name: 'title', weight: 3 },
-    { name: 'tags', weight:2 },
-    { name: 'content', weight: 1 }
-  ]
-};
+const searchScriptElement = document.getElementById('search-script');
+const searchInputElement = document.getElementById('search-input');
+const searchButtonElement = document.getElementById('search-button');
+const searchFilterMenuElement = document.getElementById('search-filter-menu');
+const searchResultsElement = document.getElementById('search-results');
 
 let fuse;
 
-initializeSearch();
+document.addEventListener('DOMContentLoaded', initializeSearch);
 
-function initializeSearch() {
-  const searchInput = document.getElementById('searchInput');
-  const searchButton = document.getElementById('searchButton');
-  const urlParams = new URLSearchParams(window.location.search);
-
-  searchInput.addEventListener('keypress', event => event.key === "Enter" && search());
-  searchButton.addEventListener('click', search);
-  searchInput.value = urlParams.get('q');
-
-  fetchData()
-    .then(data => {
-      fuse = new Fuse(data, fuseOptions);
-      search();
-    })
-    .catch(error => console.error("Error loading JSON:", error));
-}
-
-async function fetchData() {
-  const response = await fetch(new URL('index.json', window.location.href).href);
+async function initializeSearch() {
+  const url = new URL('index.json', window.location.href);
+  const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error(`HTTP error! Status: ${response.status}`);
+    throw new Error(`Failed to fetch data: ${response.status}`);
   }
-  return await response.json();
+
+  const data = await response.json();
+
+  fuse = new Fuse(data, {
+    useExtendedSearch: true,
+    ignoreLocation: true,
+    threshold: 0,
+    keys: JSON.parse(searchScriptElement.dataset.keys),
+  });
+
+  searchInputElement.addEventListener('input', handleSearchInput);
+  searchButtonElement.addEventListener('click', handleSearchButton);
+
+  performSearch();
 }
 
-function search() {
-  const searchQuery = document.getElementById('searchInput').value.trim();
+function performSearch() {
   const url = new URL(window.location);
+  const query = url.searchParams.get('q');
+  const filters = url.searchParams.getAll('f');
 
-  let searchResults;
+  displaySearchInput(query);
 
-  if (searchQuery) {
-    searchResults = fuse.search(searchQuery).map(result => result.item);
-    url.searchParams.set('q', searchQuery);
-  } else {
-    searchResults = fuse._docs;
-    url.searchParams.delete('q');
+  let results = query ? fuse.search(query).map(({ item }) => item) : fuse._docs;
+
+  if (filters.length) {
+    results = results.filter(result =>
+      result[searchScriptElement.dataset.filter] &&
+      filters.every(filter =>
+        result[searchScriptElement.dataset.filter].includes(filter)
+      )
+    );
   }
 
-  window.history.pushState({}, '', url);
-  displayResults([...searchResults].sort((a, b) => b.weight - a.weight));
+  displaySearchResults([...results].sort((a, b) => b.weight - a.weight));
+
+  displaySearchFilters(
+    filters,
+    results.flatMap(result =>
+      result[searchScriptElement.dataset.filter] || []
+    ).filter(filter => !filters.includes(filter))
+  );
 }
 
-function displayResults(results) {
-  const resultsContainer = document.getElementById('searchResults');
+function displaySearchInput(query) {
+  searchInputElement.value = query;
+}
 
-  resultsContainer.innerHTML = results.length ? '' : '<p>No results found.</p>';
+
+function displaySearchResults(results) {
+  searchResultsElement.innerHTML = results.length ? '' : '<p>No results found.</p>';
 
   results.forEach(item => {
-    resultsContainer.innerHTML += atob(item.card);
+    searchResultsElement.innerHTML += atob(item.card);
   });
+}
+
+function displaySearchFilters(activeFilters, inactiveFilters) {
+  searchFilterMenuElement.innerHTML = '';
+
+  activeFilters.forEach(item => {
+    const button = Object.assign(document.createElement('button'), {
+      type: 'button',
+      className: 'search-filter-button',
+      value: item,
+      innerHTML: `<i class="fas fa-times mr-1"></i>${item}`
+    });
+    button.dataset.state = 'active';
+    button.addEventListener('click', handleFilterButton);
+    searchFilterMenuElement.appendChild(button);
+  });
+
+  inactiveFilters = Object.values(
+    inactiveFilters.reduce((acc, filter) => {
+      acc[filter] = acc[filter] || { filter, count: 0 };
+      acc[filter].count++;
+      return acc;
+    }, {})
+  ).sort((a, b) => b.count - a.count);
+
+  inactiveFilters.forEach(item => {
+    const button = Object.assign(document.createElement('button'), {
+      type: 'button',
+      className: 'search-filter-button',
+      value: item.filter,
+      innerHTML: `${item.filter}
+        <span class="badge badge-primary ml-1">${item.count}</span>`
+    });
+    button.addEventListener('click', handleFilterButton);
+    searchFilterMenuElement.appendChild(button);
+  });
+}
+
+function handleSearchInput(event) {
+  if (event.key === "Enter") {
+    updateQuery(event.target.value.trim());
+  }
+}
+
+function handleSearchButton(event) {
+  updateQuery(searchInputElement.value.trim());
+}
+
+function updateQuery(query) {
+  const url = new URL(window.location);
+
+  if (query) {
+    url.searchParams.set('q', query);
+  } else {
+    url.searchParams.delete('q');
+  }
+  window.history.pushState({}, '', url);
+  performSearch();
+}
+
+function handleFilterButton(event) {
+  const filter = event.currentTarget.value;
+  const url = new URL(window.location);
+
+  if (event.currentTarget.dataset.state === 'active') {
+    url.searchParams.delete('f', filter);
+  } else {
+    url.searchParams.append('f', filter);
+  }
+  window.history.pushState({}, '', url);
+  performSearch();
 }

@@ -19,30 +19,16 @@ const fuseOptions = {
 
 let fuse;
 
-document.addEventListener('DOMContentLoaded', () => {
-  initializeSearch();
-});
-
-async function fetchData() {
-  const response = await fetch(new URL('index.json', window.location.href).href);
-  if (!response.ok) {
-    throw new Error(`HTTP error! Status: ${response.status}`);
-  }
-  return await response.json();
-}
+initializeSearch();
 
 function initializeSearch() {
-  const filterButton = document.getElementById('filterButton');
   const searchInput = document.getElementById('searchInput');
   const searchButton = document.getElementById('searchButton');
+  const urlParams = new URLSearchParams(window.location.search);
 
-  filterButton.addEventListener('click', search);
-  searchInput.addEventListener('keypress', event => {
-    if (event.key === "Enter") {
-      search();
-    }
-  });
+  searchInput.addEventListener('keypress', event => event.key === "Enter" && search());
   searchButton.addEventListener('click', search);
+  searchInput.value = urlParams.get('q');
 
   fetchData()
     .then(data => {
@@ -52,15 +38,36 @@ function initializeSearch() {
     .catch(error => console.error("Error loading JSON:", error));
 }
 
+async function fetchData() {
+  const response = await fetch(new URL('index.json', window.location.href).href);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return await response.json();
+}
+
 function search() {
   const searchQuery = document.getElementById('searchInput').value.trim();
-  const searchResults = searchQuery ? fuse.search(searchQuery).map(result => result.item) : fuse._docs;
-  const sortedResults = [...searchResults].sort((a, b) => b.weight - a.weight);
-  displayResults(sortedResults);
+  const url = new URL(window.location);
+
+  let searchResults;
+
+  if (searchQuery) {
+    searchResults = fuse.search(searchQuery).map(result => result.item);
+    url.searchParams.set('q', searchQuery);
+  } else {
+    searchResults = fuse._docs;
+    url.searchParams.delete('q');
+  }
+
+  window.history.pushState({}, '', url);
+  displayResults([...searchResults].sort((a, b) => b.weight - a.weight));
 }
 
 function displayResults(results) {
   const resultsContainer = document.getElementById('searchResults');
+
   resultsContainer.innerHTML = results.length ? '' : '<p>No results found.</p>';
 
   results.forEach(item => {

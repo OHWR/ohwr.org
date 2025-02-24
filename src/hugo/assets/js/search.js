@@ -4,20 +4,20 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 */
 
-import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs';
+import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs";
 
-const searchScriptElement = document.getElementById('search-script');
-const searchInputElement = document.getElementById('search-input');
-const searchButtonElement = document.getElementById('search-button');
-const searchFilterMenuElement = document.getElementById('search-filter-menu');
-const searchResultsElement = document.getElementById('search-results');
+const searchScriptElement = document.getElementById("search-script");
+const searchInputElement = document.getElementById("search-input");
+const searchButtonElement = document.getElementById("search-button");
+const searchFilterMenuElement = document.getElementById("search-filter-menu");
+const searchResultsElement = document.getElementById("search-results");
 
 let fuse;
 
-document.addEventListener('DOMContentLoaded', initializeSearch);
+document.addEventListener("DOMContentLoaded", initializeSearch);
 
 async function initializeSearch() {
-  const url = new URL('index.json', window.location.href);
+  const url = new URL("index.json", window.location.href);
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -33,16 +33,16 @@ async function initializeSearch() {
     keys: JSON.parse(searchScriptElement.dataset.keys),
   });
 
-  searchInputElement.addEventListener('input', handleSearchInput);
-  searchButtonElement.addEventListener('click', handleSearchButton);
+  searchInputElement.addEventListener("input", handleSearchInput);
+  searchButtonElement.addEventListener("click", handleSearchButton);
 
   performSearch();
 }
 
 function performSearch() {
   const url = new URL(window.location);
-  const query = url.searchParams.get('q');
-  const filters = url.searchParams.getAll('f');
+  const query = url.searchParams.get("q");
+  const filters = url.searchParams.getAll("f");
 
   displaySearchInput(query);
 
@@ -73,7 +73,7 @@ function displaySearchInput(query) {
 
 
 function displaySearchResults(results) {
-  searchResultsElement.innerHTML = results.length ? '' : '<p>No results found.</p>';
+  searchResultsElement.innerHTML = results.length ? "" : "<p>No results found.</p>";
 
   results.forEach(item => {
     searchResultsElement.innerHTML += atob(item.card);
@@ -81,17 +81,17 @@ function displaySearchResults(results) {
 }
 
 function displaySearchFilters(activeFilters, inactiveFilters) {
-  searchFilterMenuElement.innerHTML = '';
+  searchFilterMenuElement.innerHTML = "";
 
   activeFilters.forEach(item => {
-    const button = Object.assign(document.createElement('button'), {
-      type: 'button',
-      className: 'search-filter-button',
+    const button = Object.assign(document.createElement("button"), {
+      type: "button",
+      className: "search-filter-button",
       value: item,
       innerHTML: `<i class="fas fa-times mr-1"></i>${item}`
     });
-    button.dataset.state = 'active';
-    button.addEventListener('click', handleFilterButton);
+    button.dataset.state = "active";
+    button.addEventListener("click", handleFilterButton);
     searchFilterMenuElement.appendChild(button);
   });
 
@@ -104,14 +104,14 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
   ).sort((a, b) => b.count - a.count);
 
   inactiveFilters.forEach(item => {
-    const button = Object.assign(document.createElement('button'), {
-      type: 'button',
-      className: 'search-filter-button',
+    const button = Object.assign(document.createElement("button"), {
+      type: "button",
+      className: "search-filter-button",
       value: item.filter,
       innerHTML: `${item.filter}
         <span class="badge badge-primary ml-1">${item.count}</span>`
     });
-    button.addEventListener('click', handleFilterButton);
+    button.addEventListener("click", handleFilterButton);
     searchFilterMenuElement.appendChild(button);
   });
 }
@@ -122,7 +122,7 @@ function handleSearchInput(event) {
   }
 }
 
-function handleSearchButton(event) {
+function handleSearchButton() {
   updateQuery(searchInputElement.value.trim());
 }
 
@@ -130,11 +130,11 @@ function updateQuery(query) {
   const url = new URL(window.location);
 
   if (query) {
-    url.searchParams.set('q', query);
+    url.searchParams.set("q", query);
   } else {
-    url.searchParams.delete('q');
+    url.searchParams.delete("q");
   }
-  window.history.pushState({}, '', url);
+  window.history.pushState({}, "", url);
   performSearch();
 }
 
@@ -142,11 +142,11 @@ function handleFilterButton(event) {
   const filter = event.currentTarget.value;
   const url = new URL(window.location);
 
-  if (event.currentTarget.dataset.state === 'active') {
-    url.searchParams.delete('f', filter);
+  if (event.currentTarget.dataset.state === "active") {
+    url.searchParams.delete("f", filter);
   } else {
-    url.searchParams.append('f', filter);
+    url.searchParams.append("f", filter);
   }
-  window.history.pushState({}, '', url);
+  window.history.pushState({}, "", url);
   performSearch();
 }

@@ -1,0 +1,11 @@
+{{- $index := slice -}}
+{{- range .Pages -}}
+  {{- $index = $index | append (dict
+    "title" .Title
+    "content" .Plain
+    "tags" .Params.tags
+    "weight" .Params.weight
+    "card" (partial "project-card.html" . | base64Encode))
+  -}}
+{{- end -}}
+{{- $index | jsonify -}}

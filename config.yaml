@@ -365,7 +365,7 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
-    weight: 2
+    weight: 1
   - id: 'ctr-fmc-5chttla'
     repository: 'https://ohwr.org/project/ctr-fmc-5chttla.git'
     contact:
@@ -902,7 +902,7 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    weight: 1
+    weight: 2
   - id: 'wrtd'
     repository: 'https://ohwr.org/project/wrtd.git'
     contact:

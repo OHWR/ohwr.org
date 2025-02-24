@@ -46,16 +46,14 @@ menus:
   footer_left:
     - name: 'About'
       url: 'about/'
-    - name: 'Projects'
-      url: 'projects/'
+    - name: 'Forum'
+      url: 'https://forums.ohwr.org/'
   footer_middle:
     - name: 'Licences'
       url: 'licences/'
-    - name: 'Forum'
-      url: 'https://forums.ohwr.org/'
-  footer_right:
     - name: 'News'
       url: 'news/'
+  footer_right:
     - name: 'Submit Project'
       url: 'submit-project/'
 params:

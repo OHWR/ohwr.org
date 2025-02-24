@@ -107,11 +107,17 @@ SPDX-License-Identifier: BSD-3-Clause
             {{ end }}
             {{ with .Params.licenses }}
             <h3 class="section-title">Licences</h3>
-            <ul class="fa-ul mb-0">
+            <ul class="fa-ul">
               {{ range . }}
               <li><i class="fa-li fa fa-balance-scale"></i><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
               {{ end }}
             </ul>
+            {{ end }}
+            {{ with .Params.tags }}
+            <h3 class="section-title">Tags</h3>
+            {{ range . }}
+            <a href="{{ site.BaseURL }}?f={{ urlquery . }}" class="search-filter-button" data-state="active"></i>{{ . }}</a>
+            {{ end }}
             {{ end }}
           </div>
         </div>

@@ -109,7 +109,7 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
       className: "search-filter-button",
       value: item.filter,
       innerHTML: `${item.filter}
-        <span class="badge badge-primary ml-1">${item.count}</span>`
+        <span class="badge badge-filter ml-1">${item.count}</span>`
     });
     button.addEventListener("click", handleFilterButton);
     searchFilterMenuElement.appendChild(button);

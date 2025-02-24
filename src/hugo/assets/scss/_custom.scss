@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
 $secondary-color: #4dab54;
-$filter-color: #007bff;
 
 .cards-section {
   a.post-title {
@@ -16,7 +15,7 @@ $filter-color: #007bff;
     margin-bottom: 0;
   }
   h1, h2, h3, h4, h5, h6 {
-    margin-bottom:.5rem;
+    margin-bottom: .5rem;
   }
   p {
     margin-bottom: 1rem;
@@ -136,25 +135,33 @@ ul li {
 
 .search-filter-button {
   background-color: $white;
-  border: 1px solid $filter-color;
+  border-bottom: 1px solid $secondary-color !important;
+  color: $text-color !important;
+  border: 1px solid $secondary-color;
   border-radius: 8px;
   margin: 2px;
   padding: .375rem .75rem;
   &:hover {
-    background-color: $filter-color;
-    color: $white;
-    .badge-primary {
+    background-color: $secondary-color;
+    color: $white !important;
+    text-decoration: none !important;
+    .badge-filter {
       background-color: $white;
-      color: $filter-color;
+      color: $secondary-color;
     }
   }
 }
 
 .search-filter-button[data-state="active"] {
-  background-color: $filter-color;
-  color: $white;
+  background-color: $secondary-color;
+  color: $white !important;
   border: 0;
   &:hover {
-    background-color: darken($filter-color, 10%);
+    background-color: darken($secondary-color, 10%);
   }
+}
+
+.badge-filter {
+  background-color: $secondary-color;
+  color: $white;
 }

@@ -161,6 +161,10 @@ ul li {
   }
 }
 
+a.search-filter-button[data-state="active"] {
+  line-height: 40px;
+}
+
 .badge-filter {
   background-color: $secondary-color;
   color: $white;

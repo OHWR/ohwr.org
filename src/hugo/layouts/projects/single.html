@@ -116,7 +116,7 @@ SPDX-License-Identifier: BSD-3-Clause
             {{ with .Params.tags }}
             <h3 class="section-title">Tags</h3>
             {{ range . }}
-            <a href="{{ site.BaseURL }}?f={{ urlquery . }}" class="search-filter-button" data-state="active"></i>{{ . }}</a>
+            <a href="{{ site.BaseURL }}?f={{ urlquery . }}" class="search-filter-button text-truncate" data-state="active"></i>{{ . }}</a>
             {{ end }}
             {{ end }}
           </div>

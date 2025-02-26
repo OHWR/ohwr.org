@@ -80,7 +80,7 @@ function displaySearchInput(query) {
 
 function displaySearchResults() {
   const url = new URL(window.location);
-  const page = parseInt(url.searchParams.get("p")) || 1;
+  const page = parseInt(url.searchParams.get("p"), 10) || 1;
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
   const paginatedResults = results.slice(startIndex, endIndex);

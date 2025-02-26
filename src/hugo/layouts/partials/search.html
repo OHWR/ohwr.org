@@ -17,14 +17,23 @@ SPDX-License-Identifier: BSD-3-Clause
           <i class="fas fa-filter"></i>
         </button>
       </div>
-      <input id="search-input" class="form-control search-input" placeholder="{{ .placeholder }}">
+      <div class="col">
+        <div class="row">
+          <input id="search-input" class="form-control search-input row m-0" placeholder="{{ .placeholder }}">
+        </div>
+        <div class="row">
+          <div id="search-suggestions" class="col position-absolute search-suggestions p-0">
+            <div class="bg-white text-muted pl-1"><small>Suggested filters:</small></div>
+          </div>
+        </div>
+      </div>
       <div class="input-group-append">
         <button id="search-button" class="search-button" type="button">
           <i class="fas fa-search"></i>
         </button>
       </div>
     </div>
-    <div class="collapse" id="search-filter-menu"></div>
+    <div id="search-filter-menu" class="collapse"></div>
   </div>
 </section>
 

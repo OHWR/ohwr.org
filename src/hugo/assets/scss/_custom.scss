@@ -169,3 +169,23 @@ a.search-filter-button[data-state="active"] {
   background-color: $secondary-color;
   color: $white;
 }
+
+.search-suggestions {
+  z-index: 10;
+  border: 1px solid #ced4da;
+  overflow: hidden;
+}
+
+.search-suggestion-item {
+  border: 0;
+  background-color: $white;
+  &:hover {
+    background-color: $secondary-color;
+    color: $white;
+  }
+}
+
+.search-suggestion-item[data-state="active"] {
+  background-color: $secondary-color;
+  color: $white;
+}

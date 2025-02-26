@@ -64,9 +64,6 @@ class NewsSection(UserDict[str, NewsPage]):
 
         Parameters:
             path: news content directory path.
-
-        Raises:
-            ValueError: If writing the news section to files fails.
         """
         for page, news in self.data.items():
             logging.info("Writing '{0}' page...".format(page))

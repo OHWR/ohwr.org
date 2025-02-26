@@ -11,8 +11,11 @@ const searchInputElement = document.getElementById("search-input");
 const searchButtonElement = document.getElementById("search-button");
 const searchFilterMenuElement = document.getElementById("search-filter-menu");
 const searchResultsElement = document.getElementById("search-results");
+const searchPaginationElement = document.getElementById("search-pagination");
 
 let fuse;
+let results;
+const perPage = 9;
 
 document.addEventListener("DOMContentLoaded", initializeSearch);
 
@@ -33,7 +36,7 @@ async function initializeSearch() {
     keys: JSON.parse(searchScriptElement.dataset.keys),
   });
 
-  searchInputElement.addEventListener("input", handleSearchInput);
+  searchInputElement.addEventListener("keypress", handleSearchInput);
   searchButtonElement.addEventListener("click", handleSearchButton);
 
   performSearch();
@@ -46,7 +49,7 @@ function performSearch() {
 
   displaySearchInput(query);
 
-  let results = query ? fuse.search(query).map(({ item }) => item) : fuse._docs;
+  results = query ? fuse.search(query).map(({ item }) => item) : fuse._docs;
 
   if (filters.length) {
     results = results.filter(result =>
@@ -57,7 +60,9 @@ function performSearch() {
     );
   }
 
-  displaySearchResults([...results].sort((a, b) => b.weight - a.weight));
+  results = [...results].sort((a, b) => b.weight - a.weight);
+
+  displaySearchResults(results);
 
   displaySearchFilters(
     filters,
@@ -65,17 +70,24 @@ function performSearch() {
       result[searchScriptElement.dataset.filter] || []
     ).filter(filter => !filters.includes(filter))
   );
+
+  displayPagination();
 }
 
 function displaySearchInput(query) {
   searchInputElement.value = query;
 }
 
+function displaySearchResults() {
+  const url = new URL(window.location);
+  const page = parseInt(url.searchParams.get("p"), 10) || 1;
+  const startIndex = (page - 1) * perPage;
+  const endIndex = startIndex + perPage;
+  const paginatedResults = results.slice(startIndex, endIndex);
 
-function displaySearchResults(results) {
-  searchResultsElement.innerHTML = results.length ? "" : "<p>No results found.</p>";
+  searchResultsElement.innerHTML = paginatedResults.length ? "" : "<p>No results found.</p>";
 
-  results.forEach(item => {
+  paginatedResults.forEach(item => {
     searchResultsElement.innerHTML += atob(item.card);
   });
 }
@@ -116,6 +128,98 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
   });
 }
 
+
+function displayPagination() {
+  const url = new URL(window.location);
+  const page = parseInt(url.searchParams.get("p")) || 1;
+  const total = Math.ceil(results.length / perPage);
+  searchPaginationElement.innerHTML = "";
+
+  if (total > 1) {
+    if (page > 1) {
+      const startLi = Object.assign(document.createElement("li"), {
+        className: "page-item",
+      });
+      const startButton = Object.assign(document.createElement("button"), {
+        type: "button",
+        className: "page-link",
+        value: 1,
+        innerHTML: "&laquo;&laquo;",
+      });
+      startButton.addEventListener("click", handlePaginationButton);
+      startLi.appendChild(startButton);
+      searchPaginationElement.appendChild(startLi);
+      const previousLi = Object.assign(document.createElement("li"), {
+        className: "page-item",
+      });
+      const previousButton = Object.assign(document.createElement("button"), {
+        type: "button",
+        className: "page-link",
+        value: page - 1,
+        innerHTML: "&laquo;",
+      });
+      previousButton.addEventListener("click", handlePaginationButton);
+      previousLi.appendChild(previousButton);
+      searchPaginationElement.appendChild(previousLi);
+    }
+
+    let startPage = Math.max(1, page - 2);
+    let endPage = Math.min(total, page + 2);
+
+    if (endPage - startPage < 4) {
+      if (startPage === 1) {
+        endPage = Math.min(total, startPage + 4);
+      } else if (endPage === total) {
+        startPage = Math.max(1, endPage - 4);
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      const li = Object.assign(document.createElement("li"), {
+        className: "page-item",
+      });
+      if (i === page) {
+        li.classList.add("active");
+      }
+      const button = Object.assign(document.createElement("button"), {
+        type: "button",
+        className: "page-link",
+        value: i,
+        innerText: i,
+      });
+      button.addEventListener("click", handlePaginationButton);
+      li.appendChild(button);
+      searchPaginationElement.appendChild(li);
+    }
+    if (page < total) {
+      const nextLi = Object.assign(document.createElement("li"), {
+        className: "page-item",
+      });
+      const nextButton = Object.assign(document.createElement("button"), {
+        type: "button",
+        className: "page-link",
+        value: page + 1,
+        innerHTML: "&raquo;",
+      });
+      nextButton.addEventListener("click", handlePaginationButton);
+      nextLi.appendChild(nextButton);
+      searchPaginationElement.appendChild(nextLi);
+      const endLi = Object.assign(document.createElement("li"), {
+        className: "page-item",
+      });
+      const endButton = Object.assign(document.createElement("button"), {
+        type: "button",
+        className: "page-link",
+        value: total,
+        innerHTML: "&raquo;&raquo;",
+      });
+      endButton.addEventListener("click", handlePaginationButton);
+      endLi.appendChild(endButton);
+      searchPaginationElement.appendChild(endLi);
+    }
+  }
+}
+
 function handleSearchInput(event) {
   if (event.key === "Enter") {
     updateQuery(event.target.value.trim());
@@ -134,6 +238,7 @@ function updateQuery(query) {
   } else {
     url.searchParams.delete("q");
   }
+  url.searchParams.delete("p");
   window.history.pushState({}, "", url);
   performSearch();
 }
@@ -147,6 +252,17 @@ function handleFilterButton(event) {
   } else {
     url.searchParams.append("f", filter);
   }
+  url.searchParams.delete("p");
   window.history.pushState({}, "", url);
   performSearch();
+}
+
+function handlePaginationButton(event) {
+  const page = event.currentTarget.value;
+  const url = new URL(window.location);
+
+  url.searchParams.set("p", page);
+  window.history.pushState({}, "", url);
+  displaySearchResults();
+  displayPagination();
 }

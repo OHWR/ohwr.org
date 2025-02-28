@@ -106,6 +106,10 @@ function displaySearchResults() {
 function displaySearchFilters(activeFilters, inactiveFilters) {
   searchFilterMenuElement.innerHTML = "";
 
+  if (activeFilters.length) {
+    searchFilterMenuElement.classList.add("show");
+  }
+
   activeFilters.forEach(item => {
     const button = Object.assign(document.createElement("button"), {
       type: "button",

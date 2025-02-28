@@ -7,7 +7,6 @@ SPDX-License-Identifier: BSD-3-Clause
 {{ "<!-- navigation -->" | safeHTML }}
 <header class="navigation">
   <div class="container">
-    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
       <a class="navbar-brand" href="{{ site.BaseURL | absLangURL }}">
         {{ with site.Params.logo}}
@@ -17,7 +16,6 @@ SPDX-License-Identifier: BSD-3-Clause
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation" aria-label="menu">
         <i class="fas fa-bars"></i>
       </button>
-
       <div class="collapse navbar-collapse text-center" id="navigation">
         <ul class="navbar-nav mx-auto">
           {{ range site.Menus.main }}
@@ -38,30 +36,7 @@ SPDX-License-Identifier: BSD-3-Clause
           </li>
           {{ end }}
           {{ end }}
-
-          <!-- Language List -->
-        {{ if .IsTranslated }}
-        <select class="m-2 border-0" id="select-language" onchange="location = this.value;">
-          {{ $siteLanguages := site.Languages}}
-          {{ $pageLang := .Page.Lang}}
-          {{ range .Page.AllTranslations }}
-          {{ $translation := .}}
-          {{ range $siteLanguages }}
-          {{ if eq $translation.Lang .Lang }}
-          {{ $selected := false }}
-          {{ if eq $pageLang .Lang}}
-          <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
-          </option>
-          {{ else }}
-          <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
-          {{ end }}
-          {{ end }}
-          {{ end }}
-          {{ end }}
-        </select>
-        {{ end }}
         </ul>
-
         {{ if site.Params.navigation_button.enable }}
         {{ with site.Params.navigation_button }}
         <a href="{{ .link | relLangURL }}" {{ if strings.HasPrefix .URL `http` }}target="_blank" rel="noopener noreferrer"{{ end }} title="{{ .label }}" class="btn btn-sm btn-primary ml-3">{{ .label }}</a>

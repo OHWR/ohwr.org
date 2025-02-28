@@ -145,7 +145,7 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
 
 function displayPagination() {
   const url = new URL(window.location);
-  const page = parseInt(url.searchParams.get("p")) || 1;
+  const page = parseInt(url.searchParams.get("p"), 10) || 1;
   const total = Math.ceil(results.length / perPage);
   searchPaginationElement.innerHTML = "";
 

@@ -17,6 +17,7 @@ const searchPaginationElement = document.getElementById("search-pagination");
 let fuse;
 let filterFuse;
 let results;
+let suggestions;
 let selectedSuggestionIndex = -1;
 const perPage = 9;
 
@@ -43,9 +44,10 @@ async function initializeSearch() {
     item[searchScriptElement.dataset.filter] || []
   ))];
 
-  filterFuse = new Fuse(filterData);
+  filterFuse = new Fuse(filterData, {minMatchCharLength: 2});
 
-  searchInputElement.addEventListener("keyup", handleSearchInput);
+  searchInputElement.addEventListener("input", handleSearchInput);
+  searchInputElement.addEventListener("keydown", handleSearchKeydown);
   searchButtonElement.addEventListener("click", handleSearchButton);
 
   performSearch();
@@ -106,6 +108,10 @@ function displaySearchResults() {
 function displaySearchFilters(activeFilters, inactiveFilters) {
   searchFilterMenuElement.innerHTML = "";
 
+  if (activeFilters.length) {
+    searchFilterMenuElement.classList.add("show");
+  }
+
   activeFilters.forEach(item => {
     const button = Object.assign(document.createElement("button"), {
       type: "button",
@@ -141,7 +147,7 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
 
 function displayPagination() {
   const url = new URL(window.location);
-  const page = parseInt(url.searchParams.get("p")) || 1;
+  const page = parseInt(url.searchParams.get("p"), 10) || 1;
   const total = Math.ceil(results.length / perPage);
   searchPaginationElement.innerHTML = "";
 
@@ -231,8 +237,16 @@ function displayPagination() {
 }
 
 function handleSearchInput(event) {
+  const url = new URL(window.location);
+  const filters = url.searchParams.getAll("f");
   const inputValue = event.target.value.trim();
-  const suggestions = inputValue ? filterFuse.search(inputValue).map(({ item }) => item) : [];
+  suggestions = inputValue ? filterFuse.search(inputValue).map(({ item }) => item) : [];
+  suggestions = suggestions.filter(filter => !filters.includes(filter)).slice(0, 8);
+  displaySuggestions(suggestions);
+}
+
+function handleSearchKeydown(event) {
+  const inputValue = event.target.value.trim();
   if (event.key === "Enter") {
     if (selectedSuggestionIndex >= 0) {
       updateFilter(suggestions[selectedSuggestionIndex]);
@@ -245,8 +259,6 @@ function handleSearchInput(event) {
   } else if (event.key === "ArrowUp") {
     selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestions.length) % suggestions.length;
     highlightSuggestion(selectedSuggestionIndex);
-  } else {
-    displaySuggestions(suggestions);
   }
 }
 
@@ -272,7 +284,7 @@ function displaySuggestions(suggestions) {
   searchSuggestionsElement.querySelectorAll(".search-suggestion-item").forEach(item => item.remove());
   suggestions.forEach(suggestion => {
     const button = document.createElement("button");
-    button.className = "search-suggestion-item row w-100 m-0";
+    button.className = "search-suggestion-item text-muted pl-3 row w-100 m-0";
     button.innerText = suggestion;
     button.value = suggestion;
     button.addEventListener("click", handleSuggestionButton);

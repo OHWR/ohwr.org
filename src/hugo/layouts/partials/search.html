@@ -4,34 +4,33 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-<section class="section p-0 mt-4">
+<section class="section p-0">
   <div class="container">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <button
-          class="search-filter-menu-button"
-          data-toggle="collapse"
-          href="#search-filter-menu" role="button"
-          aria-expanded="false"
-          aria-controls="search-filter-menu">
-          <i class="fas fa-filter"></i>
-        </button>
-      </div>
-      <div class="col">
-        <div class="row">
-          <input id="search-input" class="form-control search-input row m-0" placeholder="{{ .placeholder }}">
-        </div>
-        <div class="row">
-          <div id="search-suggestions" class="col position-absolute search-suggestions p-0">
-            <div class="bg-white text-muted pl-1"><small>Suggested filters:</small></div>
+    <div class="row justify-content-center py-3">
+      <button
+        class="search-filter-menu-button col-1 rounded-left border-0 text-white"
+        data-toggle="collapse"
+        href="#search-filter-menu">
+        <i class="fas fa-filter"></i>
+      </button>
+      <div class="col-6 p-0">
+        <input
+          id="search-input"
+          class="search-input form-control row m-0 rounded-0"
+          placeholder="{{ .placeholder }}">
+        <div
+          id="search-suggestions"
+          class="search-suggestions position-absolute w-100">
+          <div class="bg-light pl-1">
+            <small class="font-italic text-muted">Suggested filters:</small>
           </div>
         </div>
       </div>
-      <div class="input-group-append">
-        <button id="search-button" class="search-button" type="button">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+      <button
+        id="search-button"
+        class="search-button col-1 rounded-right border-0 text-white">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
     <div id="search-filter-menu" class="collapse"></div>
   </div>

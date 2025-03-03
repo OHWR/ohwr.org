@@ -9,12 +9,16 @@ import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs";
 const searchScriptElement = document.getElementById("search-script");
 const searchInputElement = document.getElementById("search-input");
 const searchButtonElement = document.getElementById("search-button");
+const searchSuggestionsElement = document.getElementById('search-suggestions');
 const searchFilterMenuElement = document.getElementById("search-filter-menu");
 const searchResultsElement = document.getElementById("search-results");
 const searchPaginationElement = document.getElementById("search-pagination");
 
 let fuse;
+let filterFuse;
 let results;
+let suggestions;
+let selectedSuggestionIndex = -1;
 const perPage = 9;
 
 document.addEventListener("DOMContentLoaded", initializeSearch);
@@ -36,7 +40,14 @@ async function initializeSearch() {
     keys: JSON.parse(searchScriptElement.dataset.keys),
   });
 
-  searchInputElement.addEventListener("keypress", handleSearchInput);
+  const filterData = [...new Set(data.flatMap(item =>
+    item[searchScriptElement.dataset.filter] || []
+  ))];
+
+  filterFuse = new Fuse(filterData, {minMatchCharLength: 2});
+
+  searchInputElement.addEventListener("input", handleSearchInput);
+  searchInputElement.addEventListener("keydown", handleSearchKeydown);
   searchButtonElement.addEventListener("click", handleSearchButton);
 
   performSearch();
@@ -48,6 +59,8 @@ function performSearch() {
   const filters = url.searchParams.getAll("f");
 
   displaySearchInput(query);
+
+  hideSuggestions();
 
   results = query ? fuse.search(query).map(({ item }) => item) : fuse._docs;
 
@@ -95,6 +108,10 @@ function displaySearchResults() {
 function displaySearchFilters(activeFilters, inactiveFilters) {
   searchFilterMenuElement.innerHTML = "";
 
+  if (activeFilters.length) {
+    searchFilterMenuElement.classList.add("show");
+  }
+
   activeFilters.forEach(item => {
     const button = Object.assign(document.createElement("button"), {
       type: "button",
@@ -128,10 +145,9 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
   });
 }
 
-
 function displayPagination() {
   const url = new URL(window.location);
-  const page = parseInt(url.searchParams.get("p")) || 1;
+  const page = parseInt(url.searchParams.get("p"), 10) || 1;
   const total = Math.ceil(results.length / perPage);
   searchPaginationElement.innerHTML = "";
 
@@ -221,8 +237,28 @@ function displayPagination() {
 }
 
 function handleSearchInput(event) {
+  const url = new URL(window.location);
+  const filters = url.searchParams.getAll("f");
+  const inputValue = event.target.value.trim();
+  suggestions = inputValue ? filterFuse.search(inputValue).map(({ item }) => item) : [];
+  suggestions = suggestions.filter(filter => !filters.includes(filter)).slice(0, 8);
+  displaySuggestions(suggestions);
+}
+
+function handleSearchKeydown(event) {
+  const inputValue = event.target.value.trim();
   if (event.key === "Enter") {
-    updateQuery(event.target.value.trim());
+    if (selectedSuggestionIndex >= 0) {
+      updateFilter(suggestions[selectedSuggestionIndex]);
+    } else {
+      updateQuery(inputValue);
+    }
+  } else if (event.key === "ArrowDown") {
+    selectedSuggestionIndex = (selectedSuggestionIndex + 1) % suggestions.length;
+    highlightSuggestion(selectedSuggestionIndex);
+  } else if (event.key === "ArrowUp") {
+    selectedSuggestionIndex = (selectedSuggestionIndex - 1 + suggestions.length) % suggestions.length;
+    highlightSuggestion(selectedSuggestionIndex);
   }
 }
 
@@ -238,6 +274,34 @@ function updateQuery(query) {
   } else {
     url.searchParams.delete("q");
   }
+  url.searchParams.delete("p");
+  window.history.pushState({}, "", url);
+  performSearch();
+}
+
+function displaySuggestions(suggestions) {
+  selectedSuggestionIndex = -1;
+  searchSuggestionsElement.querySelectorAll(".search-suggestion-item").forEach(item => item.remove());
+  suggestions.forEach(suggestion => {
+    const button = document.createElement("button");
+    button.className = "search-suggestion-item text-muted pl-3 row w-100 m-0";
+    button.innerText = suggestion;
+    button.value = suggestion;
+    button.addEventListener("click", handleSuggestionButton);
+    searchSuggestionsElement.appendChild(button);
+  });
+  if (suggestions.length) {
+    searchSuggestionsElement.style.display = "block";
+  } else {
+    searchSuggestionsElement.style.display = "none";
+  }
+}
+
+function updateFilter(filter) {
+  const url = new URL(window.location);
+
+  url.searchParams.append("f", filter);
+  url.searchParams.delete("q");
   url.searchParams.delete("p");
   window.history.pushState({}, "", url);
   performSearch();
@@ -265,4 +329,23 @@ function handlePaginationButton(event) {
   window.history.pushState({}, "", url);
   displaySearchResults();
   displayPagination();
+}
+
+function handleSuggestionButton(event) {
+  updateFilter(event.currentTarget.value);
+}
+
+function hideSuggestions() {
+  searchSuggestionsElement.style.display = "none";
+}
+
+function highlightSuggestion(index) {
+  const suggestionButtons = searchSuggestionsElement.querySelectorAll(".search-suggestion-item");
+  suggestionButtons.forEach((button, i) => {
+    if (i === index) {
+      button.dataset.state = "active";
+    } else {
+      button.dataset.state = "";
+    }
+  });
 }

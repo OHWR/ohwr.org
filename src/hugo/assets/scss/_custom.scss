@@ -104,12 +104,7 @@ ul li {
 }
 
 .search-filter-menu-button {
-  color: $white;
   background-color: $secondary-color;
-  border: 0;
-  font-size: 16px;
-  padding-inline: 30px;
-  border-radius: 8px 0 0 8px;
   &:hover {
     background-color: darken($secondary-color, 10%);
   }
@@ -119,12 +114,7 @@ ul li {
 }
 
 .search-button {
-  color: $white;
   background-color: $primary-color;
-  border: 0;
-  font-size: 16px;
-  padding-inline: 30px;
-  border-radius: 0 8px 8px 0;
   &:hover {
     background-color: darken($primary-color, 10%);
   }
@@ -168,4 +158,24 @@ a.search-filter-button[data-state="active"] {
 .badge-filter {
   background-color: $secondary-color;
   color: $white;
+}
+
+.search-suggestions {
+  z-index: 10;
+  border: 1px solid #ced4da;
+  overflow: hidden;
+}
+
+.search-suggestion-item {
+  border: 0;
+  background-color: $white;
+  &:hover {
+    background-color: $secondary-color;
+    color: $white !important;
+  }
+}
+
+.search-suggestion-item[data-state="active"] {
+  background-color: $secondary-color;
+  color: $white !important;
 }

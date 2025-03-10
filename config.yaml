@@ -360,6 +360,7 @@ projects:
       - 'spec7'
     tags:
       - 'Timing'
+      - '19 inch'
   - id: 'roe-protocol'
     repository: 'https://ohwr.org/project/roe-protocol.git'
     contact:

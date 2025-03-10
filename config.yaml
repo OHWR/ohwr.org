@@ -7,9 +7,7 @@ sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
 tags:
   - 'FMC Carriers'
-  - 'FMC Modules'
   - 'WR Switch'
-  - 'WR Node'
   - 'WR Switch v3'
   - 'WR Switch v4'
   - 'Software applicable to WR Switch'
@@ -18,6 +16,11 @@ tags:
   - 'Gateware applicable to WR Node'
   - 'WR documentation'
   - 'DI/OT'
+  - 'Digital I/O'
+  - 'FMC Module'
+  - 'High Voltage'
+  - 'White Rabbit'
+  - 'WR Node'
 redirects:
   - source: |
       project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
@@ -50,43 +53,68 @@ projects:
       name: 'Pieter Van Trappen'
       email: 'pieter.van.trappen@cern.ch'
     compatibles:
+      - 'diot-crate-hw'
       - 'diot-pfc-ku'
     tags:
       - 'DI/OT'
+      - 'Digital I/O'
   - id: 'giraph32'
     repository: 'https://ohwr.org/project/giraph32.git'
     contact:
       name: 'Lea Strobino'
       email: 'lea.strobino@cern.ch'
+    tags:
+      - 'Digital I/O'
   - id: 'babywr'
     repository: 'https://ohwr.org/project/babywr.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
   - id: 'diot-pb-lbk'
     repository: 'https://ohwr.org/project/diot-pb-lbk.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+      - 'diot-sb-igl'
+      - 'diot-sb-zu'
+    tags:
+      - 'DI/OT'
   - id: 'pz-tio'
     repository: 'https://ohwr.org/project/pz-tio.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Wolfgang Hennig'
+      email: 'whennig@xia.com'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'Digital I/O'
   - id: 'fmc-hv-2ch'
     repository: 'https://ohwr.org/project/fmc-hv-2ch.git'
     contact:
-      name: 'Mathieu Saccani'
-      email: 'mathieu.saccani@cern.ch'
+      name: 'William Viganò'
+      email: 'William.Vigano@cern.ch'
+    compatibles:
+      - 'vfc-hd'
+      - 'vfc-hs'
     tags:
-      - 'FMC Carriers'
+      - 'FMC Module'
+      - 'High Voltage'
   - id: 'fmc-mfe'
     repository: 'https://ohwr.org/project/fmc-mfe.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'afcku'
     repository: 'https://ohwr.org/project/afcku.git'
     contact:
@@ -123,7 +151,7 @@ projects:
       name: 'Philipp Foedisch'
       email: 'philipp.foedisch@iamelectronic.com'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'rf-att-4cha'
     repository: 'https://ohwr.org/project/rf-att-4cha.git'
     contact:
@@ -136,7 +164,7 @@ projects:
       email: 'lihm.thu@foxmail.com'
     tags:
       - 'WR Node'
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'wrs-lj-hw'
     repository: 'https://ohwr.org/project/wrs-lj-hw.git'
     contact:
@@ -344,7 +372,7 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'rf-mux-8ch'
     repository: 'https://ohwr.org/project/rf-mux-8ch.git'
     contact:
@@ -431,7 +459,7 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'atfc'
     repository: 'https://ohwr.org/project/atfc.git'
     contact:
@@ -455,7 +483,7 @@ projects:
       name: 'Eva Calvo Giraldo'
       email: 'eva.calvo.giraldo@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'eez-psu'
     repository: 'https://ohwr.org/project/eez-psu.git'
     contact:
@@ -477,7 +505,7 @@ projects:
       name: 'Grzegorz Daniluk'
       email: 'gkasprow@gmail.com'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'r19-tdc-del-a'
     repository: 'https://ohwr.org/project/r19-tdc-del-a.git'
     contact:
@@ -494,7 +522,7 @@ projects:
       name: 'Jan Pospisil'
       email: 'j.pospisil@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fasec'
     repository: 'https://ohwr.org/project/fasec.git'
     contact:
@@ -528,7 +556,7 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'urv-core'
     repository: 'https://ohwr.org/project/urv-core.git'
     contact:
@@ -581,7 +609,7 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'tr-pmc'
     repository: 'https://ohwr.org/project/tr-pmc.git'
     contact:
@@ -593,7 +621,7 @@ projects:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fr_pcb_mm'
     repository: 'https://ohwr.org/project/fr_pcb_mm.git'
     contact:
@@ -633,28 +661,28 @@ projects:
       name: 'Evangelia Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-pof-10m-r3ch-t1ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r3ch-t1ch.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-pof-10m-r4ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r4ch.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-adc-100m14b4cha-hw'
     repository: 'https://ohwr.org/project/fmc-adc-100m14b4cha-hw.git'
     contact:
       name: 'Javier Serrano'
       email: 'Javier.Serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'afck'
     repository: 'https://ohwr.org/project/afck.git'
     contact:
@@ -668,14 +696,14 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-dtx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtx-4cha.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'utca-rtm-8-sfp'
     repository: 'https://ohwr.org/project/utca-rtm-8-sfp.git'
     contact:
@@ -719,14 +747,14 @@ projects:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-dac-600m-12b-1cha-dds'
     repository: 'https://ohwr.org/project/fmc-dac-600m-12b-1cha-dds.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'gkasprow@gmail.com'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'afc'
     repository: 'https://ohwr.org/project/afc.git'
     contact:
@@ -738,14 +766,14 @@ projects:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-adc-130m-16b-4cha'
     repository: 'https://ohwr.org/project/fmc-adc-130m-16b-4cha.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'gkasprow@gmail.com'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'timex3'
     repository: 'https://ohwr.org/project/timex3.git'
     contact:
@@ -757,7 +785,7 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'wr-switch-hw'
     repository: 'https://ohwr.org/project/wr-switch-hw.git'
     contact:
@@ -786,7 +814,7 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'spexi'
     repository: 'https://ohwr.org/project/spexi.git'
     contact:
@@ -805,7 +833,7 @@ projects:
       name: 'Kasun Sameera Mannatunga'
       email: 'ksm@sjp.ac.lk'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'lpcfmc12pexp'
     repository: 'https://ohwr.org/project/lpcfmc12pexp.git'
     contact:
@@ -817,7 +845,7 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'svec'
     repository: 'https://ohwr.org/project/svec.git'
     contact:
@@ -842,14 +870,14 @@ projects:
       - 'svec'
       - 'diot-sb-zu'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-dac-250m16b4cha'
     repository: 'https://ohwr.org/project/fmc-dac-250m16b4cha.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'fmc-conn-tester'
     repository: 'https://ohwr.org/project/fmc-conn-tester.git'
     contact:
@@ -861,7 +889,7 @@ projects:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'vxs-dsp-fmc-carrier'
     repository: 'https://ohwr.org/project/vxs-dsp-fmc-carrier.git'
     contact:
@@ -891,7 +919,7 @@ projects:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
     compatibles:
       - 'spec'
       - 'svec'
@@ -901,7 +929,7 @@ projects:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC Module'
   - id: 'white-rabbit'
     repository: 'https://ohwr.org/project/white-rabbit.git'
     contact:

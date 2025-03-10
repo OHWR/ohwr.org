@@ -140,15 +140,6 @@ projects:
     tags:
       - 'FMC Carrier'
       - 'MTCA'
-  - id: 'pxct'
-    repository: 'https://ohwr.org/project/pxct.git'
-    contact:
-      name: 'Erik Van Der Bij'
-      email: 'Erik.van.der.Bij@cern.ch'
-    compatibles:
-      - 'pxie-ctl-comexpress'
-    tags:
-      - 'PXIe'
   - id: 'diot-fsi-det-8ch'
     repository: 'https://ohwr.org/project/diot-fsi-det-8ch.git'
     contact:

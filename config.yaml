@@ -246,8 +246,14 @@ projects:
   - id: 'diot-pfc-ku'
     repository: 'https://ohwr.org/project/diot-pfc-ku.git'
     contact:
-      name: 'Pawel Kulik'
-      email: 'marmeladapk@users.noreply.github.com'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+      - 'diot-sb-zu'
+    tags:
+      - 'DI/OT'
+      - 'FMC Carrier'
   - id: 'cern-elmb2'
     repository: 'https://ohwr.org/project/cern-elmb2.git'
     contact:

@@ -17,6 +17,7 @@ tags:
   - 'Gateware applicable to WR Switch'
   - 'Gateware applicable to WR Node'
   - 'WR documentation'
+  - 'DI/OT'
 redirects:
   - source: |
       project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
@@ -47,7 +48,11 @@ projects:
     repository: 'https://ohwr.org/project/mdior.git'
     contact:
       name: 'Pieter Van Trappen'
-      email: 'vtpieter@gmail.com'
+      email: 'pieter.van.trappen@cern.ch'
+    compatibles:
+      - 'diot-pfc-ku'
+    tags:
+      - 'DI/OT'
   - id: 'giraph32'
     repository: 'https://ohwr.org/project/giraph32.git'
     contact:

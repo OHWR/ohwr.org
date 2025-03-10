@@ -25,12 +25,15 @@ tags:
   - 'PCIe'
   - 'Profinet'
   - 'PXIe'
+  - 'Rad-tol'
   - 'Reliability'
   - 'RISC-V'
   - 'RF'
   - 'SAMbuCa'
   - 'Soft Core'
   - 'Software'
+  - 'Timing'
+  - 'VME'
   - 'White Rabbit'
   - 'WorldFIP'
   - 'WR Node'
@@ -312,50 +315,56 @@ projects:
   - id: 'diot-sb-igl'
     repository: 'https://ohwr.org/project/diot-sb-igl.git'
     contact:
-      name: 'Christos Gentsos'
-      email: 'christos.gentsos@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     compatibles:
       - 'diot-crate-hw'
+      - 'hydra'
+      - 'fmc-nanofip-pcb'
+    tags:
+      - 'DI/OT'
+      - 'Rad-tol'
   - id: 'fmc-profinet'
     repository: 'https://ohwr.org/project/fmc-profinet.git'
     contact:
-      name: 'Bernard'
+      name: 'Bernard Guncic'
       email: 'bernard.guncic@cern.ch'
     compatibles:
-      - 'spec'
+      - 'svec'
     tags:
-      - 'FMC Carrier'
+      - 'FMC Module'
+      - 'Profinet'
   - id: 'microstepper'
     repository: 'https://ohwr.org/project/microstepper.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
+    tags:
+      - 'Timing'
   - id: 'spec150'
     repository: 'https://ohwr.org/project/spec150.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Erik Van Der Bij'
+      email: 'Erik.van.der.Bij@cern.ch'
     tags:
       - 'WR Node'
-  - id: 'svec7'
-    repository: 'https://ohwr.org/project/svec7.git'
-    contact:
-      name: 'Tomasz Wlostowski'
-      email: 'tomasz.wlostowski@cern.ch'
-    tags:
-      - 'WR Node'
+      - 'PCIe'
+      - 'FMC Carrier'
+      - 'White Rabbit'
   - id: 'hpsec'
     repository: 'https://ohwr.org/project/hpsec.git'
     contact:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
+    compatibles:
+      - 'spec7'
     tags:
-      - 'WR Node'
+      - 'Timing'
   - id: 'roe-protocol'
     repository: 'https://ohwr.org/project/roe-protocol.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Maciej Lipinski'
+      email: 'maciej.marek.lipinski@cern.ch'
     tags:
       - 'Documentation'
       - 'White Rabbit'

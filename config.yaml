@@ -30,6 +30,7 @@ tags:
   - 'RISC-V'
   - 'RF'
   - 'SAMbuCa'
+  - 'SoC'
   - 'Soft Core'
   - 'Software'
   - 'Timing'
@@ -117,6 +118,7 @@ projects:
       - 'White Rabbit'
       - 'WR Node'
       - 'Digital I/O'
+      - 'SoC'
   - id: 'fmc-hv-2ch'
     repository: 'https://ohwr.org/project/fmc-hv-2ch.git'
     contact:
@@ -165,6 +167,7 @@ projects:
     tags:
       - 'FMC Carrier'
       - 'MTCA'
+      - 'SoC'
   - id: 'sis1160-pci-io'
     repository: 'https://ohwr.org/project/sis1160-pci-io.git'
     contact:
@@ -225,6 +228,7 @@ projects:
     tags:
       - 'DI/OT'
       - 'Reliability'
+      - 'Documentation'
   - id: '3dmask'
     repository: 'https://ohwr.org/project/3dmask.git'
     contact:
@@ -243,6 +247,8 @@ projects:
       - 'Gateware'
       - 'DI/OT'
       - 'Reliability'
+      - 'SoC'
+      - 'Rad-tol'
   - id: 'soc-course'
     repository: 'https://ohwr.org/project/soc-course.git'
     contact:
@@ -250,6 +256,7 @@ projects:
       email: 'jgarcia@gl-research.com'
     tags:
       - 'Course'
+      - 'SoC'
   - id: 'diot-pfc-ku'
     repository: 'https://ohwr.org/project/diot-pfc-ku.git'
     contact:
@@ -293,6 +300,7 @@ projects:
       - 'White Rabbit'
       - 'WR Node'
       - 'PXIe'
+      - 'SoC'
   - id: 'profip'
     repository: 'https://ohwr.org/project/profip.git'
     contact:
@@ -374,18 +382,37 @@ projects:
   - id: 'fpga-dev-id'
     repository: 'https://ohwr.org/project/fpga-dev-id.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'Javier.Serrano@cern.ch'
+      name: 'Federico Vaga'
+      email: 'federico.vaga@cern.ch'
+    compatibles:
+      - 'spec'
+      - 'svec'
+    tags:
+      - 'Documentation'
   - id: 'tr-pexp'
     repository: 'https://ohwr.org/project/tr-pexp.git'
     contact:
-      name: 'Marko Levicnik'
-      email: 'marko.levicnik@cosylab.com'
+      name: 'Alexander Hahn'
+      email: 'a.hahn@gsi.de'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'PCIe'
   - id: 'city'
     repository: 'https://ohwr.org/project/city.git'
     contact:
       name: 'Antonin Broquet'
-      email: 'antonin.broquet@esrf.fr'
+      email: 'broquet.antonin@gmail.com'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'SoC'
+      - '19 inch'
+      - 'FMC Carrier'
+      - 'White Rabbit'
+      - 'WR Node'
   - id: 'diot-crate-hw'
     repository: 'https://ohwr.org/project/diot-crate-hw.git'
     contact:

@@ -480,6 +480,9 @@ projects:
     contact:
       name: 'Jean-Paul Ricaud'
       email: 'jean-paul.ricaud@synchrotron-soleil.fr'
+    tags:
+      - 'Timing'
+      - '19 inch'
   - id: 'array-hardware'
     repository: 'https://ohwr.org/project/array/array-hardware.git'
     contact:

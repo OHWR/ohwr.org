@@ -9,6 +9,7 @@ tags:
   - '19 inch'
   - 'Attenuator'
   - 'ADC'
+  - 'COM Express'
   - 'Course'
   - 'COVID-19'
   - 'DI/OT'
@@ -23,6 +24,7 @@ tags:
   - 'Motor Control'
   - 'MTCA'
   - 'PCIe'
+  - 'Power'
   - 'Profinet'
   - 'PXIe'
   - 'Rad-tol'
@@ -455,15 +457,24 @@ projects:
   - id: 'psu-rad-acdc-230v-12v5v-110w'
     repository: 'https://ohwr.org/project/psu-rad-acdc-230v-12v5v-110w.git'
     contact:
-      name: 'Lalit Patnaik'
-      email: 'lalit.patnaik@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     compatibles:
       - 'diot-crate-hw'
+    tags:
+      - 'Power'
+      - 'DI/OT'
+      - 'Rad-tol'
   - id: 'pxie-ctl-comexpress'
     repository: 'https://ohwr.org/project/pxie-ctl-comexpress.git'
     contact:
-      name: 'Paul Peronnard'
-      email: 'paul.peronnard@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'spexi7u'
+    tags:
+      - 'PXIe'
+      - 'COM Express'
   - id: 'timiq-hw'
     repository: 'https://ohwr.org/project/timiq/timiq-hw.git'
     contact:

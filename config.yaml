@@ -35,6 +35,7 @@ tags:
   - 'SoC'
   - 'Soft Core'
   - 'Software'
+  - 'TDC'
   - 'Timing'
   - 'VME'
   - 'White Rabbit'
@@ -483,21 +484,25 @@ projects:
     tags:
       - 'Timing'
       - '19 inch'
-  - id: 'array-hardware'
-    repository: 'https://ohwr.org/project/array/array-hardware.git'
-    contact:
-      name: 'Eva Sicking'
-      email: 'eva.sicking@cern.ch'
   - id: 'euro-adc-65m-14b-40cha'
     repository: 'https://ohwr.org/project/euro-adc-65m-14b-40cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'David Cussans'
+      email: 'david.cussans@bristol.ac.uk'
+    tags:
+      - 'ADC'
   - id: 'spec-ticks'
     repository: 'https://ohwr.org/project/spec-ticks.git'
     contact:
       name: 'Cedric Champion'
       email: 'cedric.champion@apc.univ-paris7.fr'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'FMC Carrier'
+      - 'TDC'
   - id: 'wrs-ljdprep-hw'
     repository: 'https://ohwr.org/project/wrs-ljdprep-hw.git'
     contact:

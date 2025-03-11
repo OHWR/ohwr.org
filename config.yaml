@@ -416,21 +416,37 @@ projects:
   - id: 'diot-crate-hw'
     repository: 'https://ohwr.org/project/diot-crate-hw.git'
     contact:
-      name: 'Michal Gaska'
-      email: 'michalgaska2@gmail.com'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'DI/OT'
+      - '19 inch'
+      - 'Rad-tol'
+      - 'Documentation'
   - id: 'diot-monimod'
     repository: 'https://ohwr.org/project/diot-monimod.git'
     contact:
-      name: 'Christos Gentsos'
-      email: 'christos.gentsos@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+    tags:
+      - 'Microcontroller'
+      - 'Rad-tol'
+      - 'DI/OT'
   - id: 'diot-sb-zu'
     repository: 'https://ohwr.org/project/diot-sb-zu.git'
     contact:
-      name: 'Adam Wujek'
-      email: 'dev_public@wujek.eu'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
     tags:
       - 'FMC Carrier'
       - 'WR Node'
+      - 'White Rabbit'
+      - 'DI/OT'
+      - 'SoC'
   - id: 'luvi'
     repository: 'https://ohwr.org/project/luvi.git'
     contact:

@@ -540,7 +540,7 @@ projects:
     repository: 'https://ohwr.org/project/fmc-dtxrx-4cha.git'
     contact:
       name: 'Ben Woolley'
-      email: 'benjamin.woolley@cern.ch"'
+      email: 'benjamin.woolley@cern.ch'
     tags:
       - 'FMC'
       - 'FMC Module'

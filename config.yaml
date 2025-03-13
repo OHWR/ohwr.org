@@ -21,6 +21,7 @@ tags:
   - 'FMC Module'
   - 'Gateware'
   - 'High Voltage'
+  - 'Lighting'
   - 'Microcontroller'
   - 'Motor Control'
   - 'MTCA'
@@ -522,8 +523,11 @@ projects:
   - id: 'wrs-ljdprep-hw'
     repository: 'https://ohwr.org/project/wrs-ljdprep-hw.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Switch'
   - id: 'wr-switch-hw-v4'
     repository: 'https://ohwr.org/project/wr-switch-hw-v4.git'
     contact:
@@ -535,59 +539,87 @@ projects:
   - id: 'fmc-dtxrx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtxrx-4cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Woolley'
+      email: 'benjamin.woolley@cern.ch"'
     tags:
+      - 'FMC'
       - 'FMC Module'
   - id: 'rf-mux-8ch'
     repository: 'https://ohwr.org/project/rf-mux-8ch.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
+    tags:
+      - '19 inch'
+      - 'Timing'
   - id: 'vfc-hs'
     repository: 'https://ohwr.org/project/vfc-hs.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Andrea Boccardi'
+      email: 'andrea.boccardi@cern.ch'
+    tags:
+      - 'VME'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'White Rabbit'
+      - 'WR Node'
   - id: 'opt-adc-10k-32b-1cha'
     repository: 'https://ohwr.org/project/opt-adc-10k-32b-1cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Nikolai Beev'
+      email: 'nikolai.beev@cern.ch'
+    tags:
+      - '19 inch'
+      - 'ADC'
   - id: 'diot-dio-16ch-opt-24v'
     repository: 'https://ohwr.org/project/diot-dio-16ch-opt-24v.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+      - 'diot-sb-igl'
+    tags:
+      - 'Digital I/O'
+      - 'DI/OT'
+      - 'Rad-tol'
   - id: 'diot'
     repository: 'https://ohwr.org/project/diot.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     weight: 1
+    tags:
+      - 'Documentation'
+      - 'DI/OT'
   - id: 'ctr-fmc-5chttla'
     repository: 'https://ohwr.org/project/ctr-fmc-5chttla.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Eva Gousiou'
+      email: 'Evangelia.Gousiou@cern.ch'
+    compatibles:
+      - 'afc'
+      - 'spec'
+    tags:
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'radtol-led-luminaire'
     repository: 'https://ohwr.org/project/radtol-led-luminaire.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-  - id: 'mini-wr'
-    repository: 'https://ohwr.org/project/mini-wr.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'James Devine'
+      email: 'jdevine@cern.ch'
     tags:
-      - 'WR Node'
+      - 'Power'
+      - 'Lighting'
+      - 'Rad-tol'
   - id: 'wrs-fl-hw'
     repository: 'https://ohwr.org/project/wrs-fl-hw.git'
     contact:
-      name: 'Li Hongming'
-      email: 'lihm.thu@gmail.com'
+      name: 'Guanghua Gong'
+      email: 'ggh@tsinghua.edu.cn'
     tags:
+      - 'White Rabbit'
       - 'WR Switch'
       - 'WR Switch v3'
   - id: 'spec7'
@@ -797,8 +829,7 @@ projects:
       name: 'Germano Postal'
       email: 'germanopostal@gmail.com'
   - id: 'usb-adc2k12b4ch-dac2k10b2ch-dio8ch'
-    repository: |
-      https://ohwr.org/project/usb-adc2k12b4ch-dac2k10b2ch-dio8ch.git
+    repository: 'https://ohwr.org/project/usb-adc2k12b4ch-dac2k10b2ch-dio8ch.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'

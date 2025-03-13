@@ -16,6 +16,7 @@ tags:
   - 'Documentation'
   - 'Digital I/O'
   - 'Ethernet'
+  - 'FMC'
   - 'FMC Carrier'
   - 'FMC Module'
   - 'Gateware'
@@ -131,6 +132,7 @@ projects:
       - 'vfc-hd'
       - 'vfc-hs'
     tags:
+      - 'FMC'
       - 'FMC Module'
       - 'High Voltage'
   - id: 'fmc-mfe'
@@ -141,6 +143,7 @@ projects:
     compatibles:
       - 'spexi7u'
     tags:
+      - 'FMC'
       - 'FMC Module'
       - 'SAMbuCa'
       - 'Motor Control'
@@ -150,6 +153,7 @@ projects:
       name: 'Filip Świtakowski'
       email: 'switakowski.filip@gmail.com'
     tags:
+      - 'FMC'
       - 'FMC Carrier'
       - 'MTCA'
   - id: 'diot-fsi-det-8ch'
@@ -168,6 +172,7 @@ projects:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
+      - 'FMC'
       - 'FMC Carrier'
       - 'MTCA'
       - 'SoC'
@@ -188,6 +193,7 @@ projects:
       - 'vfc-hd'
       - 'vfc-hs'
     tags:
+      - 'FMC'
       - 'FMC Module'
       - 'ADC'
   - id: 'rf-att-4cha'
@@ -204,6 +210,7 @@ projects:
       name: 'Guanghua Gong'
       email: 'ggh@tsinghua.edu.cn'
     tags:
+      - 'FMC'
       - 'WR Node'
       - 'White Rabbit'
       - 'FMC Module'
@@ -269,6 +276,7 @@ projects:
       - 'diot-crate-hw'
       - 'diot-sb-zu'
     tags:
+      - 'FMC'
       - 'DI/OT'
       - 'FMC Carrier'
   - id: 'cern-elmb2'
@@ -299,6 +307,7 @@ projects:
       - 'pxie-ctl-comexpress'
       - 'fmc-mfe'
     tags:
+      - 'FMC'
       - 'FMC Carrier'
       - 'White Rabbit'
       - 'WR Node'
@@ -333,6 +342,8 @@ projects:
       - 'hydra'
       - 'fmc-nanofip-pcb'
     tags:
+      - 'FMC'
+      - 'FMC Carrier'
       - 'DI/OT'
       - 'Rad-tol'
   - id: 'fmc-profinet'
@@ -343,6 +354,7 @@ projects:
     compatibles:
       - 'svec'
     tags:
+      - 'FMC'
       - 'FMC Module'
       - 'Profinet'
   - id: 'microstepper'
@@ -358,6 +370,7 @@ projects:
       name: 'Erik Van Der Bij'
       email: 'Erik.van.der.Bij@cern.ch'
     tags:
+      - 'FMC'
       - 'WR Node'
       - 'PCIe'
       - 'FMC Carrier'
@@ -411,6 +424,7 @@ projects:
     compatibles:
       - 'wr-switch-hw'
     tags:
+      - 'FMC'
       - 'SoC'
       - '19 inch'
       - 'FMC Carrier'
@@ -445,6 +459,7 @@ projects:
     compatibles:
       - 'diot-crate-hw'
     tags:
+      - 'FMC'
       - 'FMC Carrier'
       - 'WR Node'
       - 'White Rabbit'
@@ -499,6 +514,7 @@ projects:
     compatibles:
       - 'wr-switch-hw'
     tags:
+      - 'FMC'
       - 'White Rabbit'
       - 'WR Node'
       - 'FMC Carrier'

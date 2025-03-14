@@ -4,44 +4,35 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ "<!-- navigation -->" | safeHTML }}
 <header class="navigation">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
       <a class="navbar-brand" href="{{ site.BaseURL | absLangURL }}">
-        {{ with site.Params.logo}}
-        <img width="{{site.Params.logo_width}}" class="img-fluid" src="{{ . | relURL }}" alt="{{ site.Title }}">
-        {{ else }}{{site.Title}}{{end}}
+        <img 
+          width="{{ site.Params.logo_width }}"
+          class="img-fluid"
+          src="{{ site.Params.logo | relURL }}">
       </a>
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation" aria-label="menu">
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navigation"
+        aria-label="menu">
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse text-center" id="navigation">
         <ul class="navbar-nav mx-auto">
           {{ range site.Menus.main }}
-          {{ if .HasChildren }}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-              {{ .Name }}
-            </a>
-            <div class="dropdown-menu">
-              {{ range .Children }}
-              <a class="dropdown-item" href="{{ .URL | relLangURL }}" {{ if strings.HasPrefix .URL `http` }}target="_blank" rel="noopener noreferrer"{{ end }} title="{{ .Name }}">{{ .Name }}</a>
-              {{ end }}
-            </div>
-          </li>
-          {{ else }}
           <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | relLangURL }}" {{ if strings.HasPrefix .URL `http` }}target="_blank" rel="noopener noreferrer"{{ end }} title="{{ .Name }}">{{ .Name }}</a>
+            {{ partial "link.html" (dict
+              "href" (.URL | relLangURL)
+              "text" .Name
+              "class" "nav-link")
+            }}
           </li>
-          {{ end }}
           {{ end }}
         </ul>
-        {{ if site.Params.navigation_button.enable }}
-        {{ with site.Params.navigation_button }}
-        <a href="{{ .link | relLangURL }}" {{ if strings.HasPrefix .URL `http` }}target="_blank" rel="noopener noreferrer"{{ end }} title="{{ .label }}" class="btn btn-sm btn-primary ml-3">{{ .label }}</a>
-        {{ end }}
-        {{ end }}
       </div>
     </nav>
     {{ if .IsSection }}
@@ -49,7 +40,7 @@ SPDX-License-Identifier: BSD-3-Clause
       <button
         class="secondary-button col-1 rounded-left border-0 text-white p-0"
         data-toggle="collapse"
-        href="#search-filter-menu">
+        href="#search-filters">
         <i class="fas fa-filter"></i>
       </button>
       <div class="col-6 p-0">
@@ -73,8 +64,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <i class="fas fa-search"></i>
       </button>
     </div>
-    <div id="search-filter-menu" class="collapse"></div>
+    <div id="search-filters" class="collapse"></div>
     {{ end }}
   </div>
 </header>
-{{ "<!-- /navigation -->" | safeHTML }}

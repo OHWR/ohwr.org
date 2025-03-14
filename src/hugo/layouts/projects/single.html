@@ -9,86 +9,36 @@ SPDX-License-Identifier: BSD-3-Clause
 <section class="section">
   <div class="container">
     <div class="col-lg-8 mx-auto">
-      {{ if .Params.images }}
-      {{ if eq (len .Params.images) 1 }}
-      <img src="{{ index .Params.images 0 | relURL }}" class="img-fluid w-100 rounded mb-4">
-      {{ else }}
-      <div class="row justify-content-center flex-nowrap">
-        <div class="col-auto">
-          <a class="carousel-control-prev w-100" href="#gallery" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </div>
-        <div class="col-10">
-          <div id="gallery" class="carousel slide mb-4" data-ride="carousel">
-            <div class="carousel-inner d-flex align-items-center" style="aspect-ratio: 4 / 3;">
-              {{ range $index, $image := .Params.images }}
-              <div class="carousel-item text-center {{ if (eq $index 0) }}active{{ end }}">
-                <img src="{{ $image }}" class="mh-100 mw-100">
-              </div>
-              {{ end }}
-            </div>
-          </div>
-        </div>
-        <div class="col-auto">
-          <a class="carousel-control-next w-100" href="#gallery" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-      {{ end }}
-      {{ end }}
+      {{ partial "gallery.html" .Params.images }}
       <h2 class="mb-4 text-center">{{ .Title }}</h2>
-      <div class="row justify-content-between">
-        <div class="col-auto">
-          <time>{{ .Params.Date.Format "Jan 2, 2006" }}</time>
-        </div>
-        <div class="col-auto">
-          {{ if .Params.project }}
-          {{ with .GetPage (path.Join "projects" .Params.project) }}
-          <a href="{{ .Permalink }}"><h5><i class="fas fa-rss"></i><span class="ml-1">{{ .Title }}</span></h5></a>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
       <div class="content text-left">
         <div class="card border-0 shadow-lg">
           <div class="card-body mb-0">
             <div class="row justify-content-between project-banner">
               <div class="col-auto mb-1">
                 {{ with .Params.website }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge btn-primary mb-0">
-                  <i class="fas fa-globe mb-0"></i> Project Website
-                </a>
+                {{ partial "link.html" (dict
+                  "href" .
+                  "text" `<i class="fas fa-globe mb-0"></i> Project Website`
+                  "class" "badge btn-primary mb-0")
+                }}
                 {{ end }}
               </div>
               <div class="col-auto mb-1">
-                {{ with .Params.latest_release }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Latest Release">
-                  <i class="fas fa-rocket mb-0"></i>
-                </a>
+                {{ range $icon, $href := dict
+                  "fas fa-rocket" .Params.latest_release
+                  "fas fa-book-open" .Params.documentation
+                  "fab fa-git-alt" .Params.repository
+                  "fas fa-bug" .Params.issues
+                  "fas fa-comments" .Params.forum
+                }}
+                {{ with $href }}
+                {{ partial "link.html" (dict
+                  "href" .
+                  "text" (printf `<i class="%s mb-0"></i>` $icon)
+                  "class" "badge mb-0")
+                }}
                 {{ end }}
-                {{ with .Params.documentation }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Documentation">
-                  <i class="fas fa-book-open mb-0"></i>
-                </a>
-                {{ end }}
-                {{ with .Params.repository }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Repository">
-                  <i class="fab fa-git-alt mb-0"></i>
-                </a>
-                {{ end }}
-                {{ with .Params.issues }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Issues">
-                  <i class="fas fa-bug mb-0"></i>
-                </a>
-                {{ end }}
-                {{ with .Params.forum }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="badge mb-0" title="Forum">
-                  <i class="fas fa-comments mb-0"></i>
-                </a>
                 {{ end }}
               </div>
             </div>
@@ -97,7 +47,9 @@ SPDX-License-Identifier: BSD-3-Clause
             <h3 class="section-title">Links</h3>
             <ul>
               {{ range . }}
-              <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
+              <li>
+                {{ partial "link.html" (dict "href" .url "text" .name) }}
+              </li>
               {{ end }}
             </ul>
             {{ end }}
@@ -109,7 +61,10 @@ SPDX-License-Identifier: BSD-3-Clause
             <h3 class="section-title">Licences</h3>
             <ul class="fa-ul">
               {{ range . }}
-              <li><i class="fa-li fa fa-balance-scale"></i><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
+              <li>
+                <i class="fa-li fa fa-balance-scale"></i>
+                {{ partial "link.html" (dict "href" .url "text" .name) }}
+              </li>
               {{ end }}
             </ul>
             {{ end }}

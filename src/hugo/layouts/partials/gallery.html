@@ -1,0 +1,35 @@
+<!--
+SPDX-FileCopyrightText: 2024 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+{{ with . }}
+{{ if eq (len .) 1 }}
+<img src="{{ index . 0 | relURL }}" class="img-fluid w-100 rounded mb-4">
+{{ else }}
+<div class="row justify-content-center flex-nowrap">
+  <div class="col-auto">
+    <a class="carousel-control-prev w-100" href="#gallery" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="col-10">
+    <div id="gallery" class="carousel slide mb-4" data-ride="carousel">
+      <div class="carousel-inner d-flex align-items-center" style="aspect-ratio: 4 / 3;">
+        {{ range $index, $image := . }}
+        <div class="carousel-item text-center {{ if (eq $index 0) }}active{{ end }}">
+          <img src="{{ $image }}" class="mh-100 mw-100">
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="col-auto">
+    <a class="carousel-control-next w-100" href="#gallery" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+  </div>
+</div>
+{{ end }}
+{{ end }}

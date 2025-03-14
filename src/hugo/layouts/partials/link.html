@@ -1,0 +1,17 @@
+<!--
+SPDX-FileCopyrightText: 2024 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<a
+  href="{{ .href }}"
+  {{ if strings.HasPrefix .href `http` }}
+  target="_blank"
+  rel="noopener noreferrer"
+  {{ end }}
+  {{ with .class }}
+  class="{{ . }}"
+  {{ end }}>
+  {{ .text | safeHTML }}
+</a>

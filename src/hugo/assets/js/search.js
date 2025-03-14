@@ -8,8 +8,8 @@ import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs";
 
 const searchInputElement = document.getElementById("search-input");
 const searchButtonElement = document.getElementById("search-button");
-const searchSuggestionsElement = document.getElementById('search-suggestions');
-const searchFilterMenuElement = document.getElementById("search-filter-menu");
+const searchSuggestionsElement = document.getElementById("search-suggestions");
+const searchFilterMenuElement = document.getElementById("search-filters");
 const searchResultsElement = document.getElementById("search-results");
 const searchPaginationElement = document.getElementById("search-pagination");
 

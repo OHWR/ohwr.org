@@ -96,7 +96,8 @@ information or updates.
 
 ### Create an issue
 
-Open an issue on the OHWR GitHub repository specifying:
+Open an [issue on the OHWR GitHub repository](https://github.com/OHWR/ohwr.org/issues/new?assignees=vascoguita&labels=project&projects=&template=project.md&title=%5BPROJ%5D+)
+specifying:
 
 * The URL of the project's git repository.
 * The name and email address of the project maintainer.
@@ -106,5 +107,3 @@ Open an issue on the OHWR GitHub repository specifying:
 Our team will review your submission and add your project to the OHWR website.
 
 Thank you for contributing to the open-source hardware community through OHWR!
-
-{{< button link="https://github.com/OHWR/ohwr.org/issues/new?assignees=vascoguita&labels=project&projects=&template=project.md&title=%5BPROJ%5D+" label="New Issue" >}} <!-- markdownlint-disable-line MD013 MD034 -->

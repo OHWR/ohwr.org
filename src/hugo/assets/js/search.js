@@ -6,7 +6,6 @@ SPDX-License-Identifier: BSD-3-Clause
 
 import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs";
 
-const searchScriptElement = document.getElementById("search-script");
 const searchInputElement = document.getElementById("search-input");
 const searchButtonElement = document.getElementById("search-button");
 const searchSuggestionsElement = document.getElementById('search-suggestions');
@@ -19,6 +18,7 @@ let filterFuse;
 let results;
 let suggestions;
 let selectedSuggestionIndex = -1;
+let config;
 const perPage = 9;
 
 document.addEventListener("DOMContentLoaded", initializeSearch);
@@ -31,17 +31,17 @@ async function initializeSearch() {
     throw new Error(`Failed to fetch data: ${response.status}`);
   }
 
-  const data = await response.json();
+  config = await response.json();
 
-  fuse = new Fuse(data, {
+  fuse = new Fuse(config.index, {
     useExtendedSearch: true,
     ignoreLocation: true,
     threshold: 0,
-    keys: JSON.parse(searchScriptElement.dataset.keys),
+    keys: config.keys,
   });
 
-  const filterData = [...new Set(data.flatMap(item =>
-    item[searchScriptElement.dataset.filter] || []
+  const filterData = [...new Set(config.index.flatMap(item =>
+    item[config.filter] || []
   ))];
 
   filterFuse = new Fuse(filterData, {minMatchCharLength: 2});
@@ -66,9 +66,9 @@ function performSearch() {
 
   if (filters.length) {
     results = results.filter(result =>
-      result[searchScriptElement.dataset.filter] &&
+      result[config.filter] &&
       filters.every(filter =>
-        result[searchScriptElement.dataset.filter].includes(filter)
+        result[config.filter].includes(filter)
       )
     );
   }
@@ -80,7 +80,7 @@ function performSearch() {
   displaySearchFilters(
     filters,
     results.flatMap(result =>
-      result[searchScriptElement.dataset.filter] || []
+      result[config.filter] || []
     ).filter(filter => !filters.includes(filter))
   );
 
@@ -100,8 +100,21 @@ function displaySearchResults() {
 
   searchResultsElement.innerHTML = paginatedResults.length ? "" : "<p>No results found.</p>";
 
+  if (config.view === "grid") {
+    searchResultsElement.classList.add("row");
+  }
+
   paginatedResults.forEach(item => {
-    searchResultsElement.innerHTML += atob(item.card);
+    const card = Card.create(
+      config.view,
+      item.image,
+      item.project,
+      item.title,
+      item.date,
+      item.text,
+      item.url
+    );
+    searchResultsElement.appendChild(card.element);
   });
 }
 
@@ -348,4 +361,161 @@ function highlightSuggestion(index) {
       button.dataset.state = "";
     }
   });
+}
+
+class Card {
+  constructor(image, project, title, date, text, url) {
+    this.image = image;
+    this.project = project;
+    this.title = title;
+    this.date = date;
+    this.text = text;
+    this.url = url;
+  }
+
+  static create(type, image, project, title, date, text, url) {
+    switch (type) {
+      case "grid":
+        return new GridCard(image, project, title, date, text, url);
+      case "list":
+        return new ListCard(image, project, title, date, text, url);
+      default:
+        throw new Error(`Invalid card type: ${type}`);
+    }
+  }
+}
+
+class GridCard extends Card {
+  get element () {
+    const frame = document.createElement("div")
+    frame.classList.add(
+      "mb-3", "position-relative", "embed-responsive", "embed-responsive-4by3"
+    );
+    if (this.image) {
+      const img = document.createElement("img");
+      img.classList.add(
+        "mh-100", "mw-100", "position-absolute", "grid-card-image"
+      );
+      img.src = this.image;
+      frame.appendChild(img);
+    } else {
+      const svg = document.createElementNS(
+        "http://www.w3.org/2000/svg", "svg"
+      );
+      svg.setAttribute("width", "400");
+      svg.setAttribute("height", "300");
+      svg.classList.add(
+        "mh-100", "mw-100", "position-absolute", "grid-card-image"
+      );
+      const circle = document.createElementNS(
+        "http://www.w3.org/2000/svg", "circle"
+      );
+      circle.setAttribute("cx", "50%");
+      circle.setAttribute("cy", "50%");
+      circle.setAttribute("r", "100");
+      circle.setAttribute(
+        "fill",
+        `hsl(${this.title.split("").reduce(
+          (acc, char) => acc + char.charCodeAt(0), 0
+        ) % 360}, 50%, 30%)`
+      );
+      svg.appendChild(circle);
+      const text = document.createElementNS(
+        "http://www.w3.org/2000/svg", "text"
+      );
+      text.setAttribute("x", "50%");
+      text.setAttribute("y", "50%");
+      text.setAttribute("dy", "0.35em");
+      text.setAttribute("text-anchor", "middle");
+      text.setAttribute("fill", "white");
+      text.setAttribute("font-size", "100");
+      text.setAttribute("font-family", "Arial, sans-serif");
+      text.appendChild(document.createTextNode(this.title[0].toUpperCase()));
+      svg.appendChild(text);
+      frame.appendChild(svg);
+    }
+    const body = document.createElement("div");
+    body.classList.add("card-body", "d-flex", "flex-column");
+    body.appendChild(frame);
+    const link = document.createElement("a");
+    link.href = this.url;
+    link.classList.add("stretched-link", "post-title");
+    link.innerText = this.title;
+    const title = document.createElement("h3");
+    title.appendChild(link);
+    body.appendChild(title);
+    const summary = document.createElement("p");
+    summary.classList.add("card-text");
+    summary.innerText = this.text;
+    body.appendChild(summary);
+    const card = document.createElement("div");
+    card.classList.add(
+      "card", "interactive-card", "shadow-lg", "border-0", "h-100"
+    );
+    card.appendChild(body);
+    const element = document.createElement("div");
+    element.classList.add("col-lg-4", "col-sm-6", "mb-5");
+    element.appendChild(card);
+    return element;
+  }
+}
+
+class ListCard extends Card {
+  get element() {
+    const body = document.createElement("div");
+    body.classList.add("card-body");
+    if (this.project) {
+      const project = document.createElement("h6");
+      const icon = document.createElement("i");
+      icon.classList.add("fas", "fa-rss");
+      project.appendChild(icon);
+      const text = document.createElement("small");
+      text.classList.add("ml-1");
+      text.innerText = this.project;
+      project.appendChild(text);
+      body.appendChild(project);
+    }
+    const title = document.createElement("h3");
+    const link = document.createElement("a");
+    link.href = this.url;
+    link.classList.add("stretched-link", "post-title");
+    link.innerText = this.title;
+    title.appendChild(link);
+    body.appendChild(title);
+    if (this.date) {
+      const date = document.createElement("div");
+      date.classList.add("mb-2");
+      const time = document.createElement("time");
+      time.innerText = this.date;
+      date.appendChild(time);
+      body.appendChild(date);
+    }
+    const text = document.createElement("p"); 
+    text.classList.add("card-text");
+    text.innerText = this.text;
+    body.appendChild(text);
+    const element = document.createElement("div");
+    element.classList.add(
+      "card", "interactive-card", "border-0", "shadow-lg", "mb-4"
+    );
+    if (this.image) {
+      const img = document.createElement("img")
+      img.classList.add("m-3", "w-100", "mh-100", "rounded");
+      img.src = this.image;
+      const frame = document.createElement("div");
+      frame.classList.add("col-md-3");
+      frame.appendChild(img);
+      const row = document.createElement("div");
+      row.classList.add("row");
+      row.appendChild(frame);
+      const column = document.createElement("div");
+      column.classList.add("col-md-9", "p-0", "position-static");
+      column.appendChild(body);
+      row.appendChild(column);
+      element.appendChild(row);
+    } else {
+      element.appendChild(body);
+    }
+    return element;
+  }
 }

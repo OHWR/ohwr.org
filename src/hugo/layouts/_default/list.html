@@ -6,15 +6,9 @@ SPDX-FileCopyrightText: 2024 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{ partial "search.html" (dict
-  "placeholder" .Params.search.placeholder
-  "keys" (.Params.search.keys | jsonify)
-  "filter" .Page.Params.search.filter)
-}}
-
 <section class="section p-3">
   <div class="container">
-    <div class="row" id="search-results"></div>
+    <div id="search-results"></div>
     <ul class="pagination" id="search-pagination"></ul>
   </div>
 </section>

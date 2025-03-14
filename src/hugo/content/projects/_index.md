@@ -8,13 +8,6 @@ outputs:
   - 'json'
 
 search:
-  keys:
-    - name: 'title'
-      weight: 3
-    - name: 'tags'
-      weight: 2
-    - name: 'content'
-      weight: 1
   filter: 'tags'
   placeholder: 'Search for a project'
 ---

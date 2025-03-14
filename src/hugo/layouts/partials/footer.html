@@ -58,3 +58,11 @@ SPDX-License-Identifier: BSD-3-Clause
     </div>
   </div>
 </footer>
+
+{{ if .IsSection }}
+<script
+  id="search-script"
+  src="{{ (resources.Get `js/search.js`).RelPermalink }}"
+  type="module">
+</script>
+{{ end }}

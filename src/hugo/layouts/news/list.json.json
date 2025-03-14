@@ -1,11 +1,31 @@
 {{- $index := slice -}}
 {{- range .Pages -}}
-  {{- $index = $index | append (dict
+  {{- $item := dict
     "title" .Title
     "content" .Plain
-    "project" (slice .Params.project)
-    "weight" .Params.weight
-    "card" (partial "news-card.html" . | base64Encode))
+    "project" .Params.project
+    "text" (.Summary | plainify | htmlUnescape)
+    "url" .Permalink
   -}}
+  {{- with .Params.images -}}
+  {{- $item = merge $item (dict 
+    "image" (index . 0 | relURL))
+  -}}
+  {{- end -}}
+  {{- with .Params.Date -}}
+  {{- $item = merge $item (dict 
+    "date" (.Format "Jan 2, 2006"))
+  -}}
+  {{- end -}}
+  {{- $index = $index | append $item -}}
 {{- end -}}
-{{- $index | jsonify -}}
+{{- $config := dict
+  "keys" (slice
+    (dict "name" "title" "weight" 3)
+    (dict "name" "project" "weight" 2)
+    (dict "name" "content" "weight" 1))
+  "filter" "project"
+  "view" "list"
+  "index" $index
+-}}
+{{- $config | jsonify -}}

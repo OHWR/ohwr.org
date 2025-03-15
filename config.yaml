@@ -912,17 +912,16 @@ projects:
     contact:
       name: 'Germano Postal'
       email: 'germanopostal@gmail.com'
-  - id: 'usb-adc2k12b4ch-dac2k10b2ch-dio8ch'
-    repository: |
-      https://ohwr.org/project/usb-adc2k12b4ch-dac2k10b2ch-dio8ch.git
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
   - id: 'svec-3v3'
     repository: 'https://ohwr.org/project/svec-3v3.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
+    compatibles:
+      - 'svec'
+    tags:
+      - 'VME'
+      - 'Power'
   - id: 'crio-wr'
     repository: 'https://ohwr.org/project/crio-wr.git'
     contact:

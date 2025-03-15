@@ -28,6 +28,7 @@ tags:
   - 'MTCA'
   - 'PCIe'
   - 'PCIe/104'
+  - 'PMC'
   - 'Power'
   - 'Profinet'
   - 'PXIe'
@@ -612,7 +613,6 @@ projects:
       name: 'James Devine'
       email: 'jdevine@cern.ch'
     tags:
-      - 'Power'
       - 'Lighting'
       - 'Rad-tol'
   - id: 'wrs-fl-hw'
@@ -837,21 +837,22 @@ projects:
       - 'Software'
       - 'Soft Core'
       - 'RISC-V'
-  - id: 'mrpc-25x18-24strip'
-    repository: 'https://ohwr.org/project/mrpc-25x18-24strip.git'
-    contact:
-      name: 'Tim Brooks'
-      email: 'brooks@cern.ch'
+      - 'SoC'
   - id: 'cosmic-pi'
     repository: 'https://ohwr.org/project/cosmic-pi.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'James Devine'
+      email: 'jdevine@cern.ch'
   - id: 'radtol-led-psu'
     repository: 'https://ohwr.org/project/radtol-led-psu.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'James Devine'
+      email: 'jdevine@cern.ch'
+    tags:
+      - 'Rad-tol'
+      - 'Power'
+    compatibles:
+      - 'radtol-led-luminaire'
   - id: 'maroc_csa'
     repository: 'https://ohwr.org/project/maroc_csa.git'
     contact:
@@ -860,34 +861,52 @@ projects:
   - id: 'gefe'
     repository: 'https://ohwr.org/project/gefe.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Manoel Barros Marin'
+      email: 'manoel.barros.marin@cern.ch'
+    tags:
+      - 'Rad-tol'
+      - 'FMC'
+      - 'FMC Carrier'
   - id: 'vfc-hd'
     repository: 'https://ohwr.org/project/vfc-hd.git'
     contact:
-      name: 'Tom Levens'
-      email: 'tom.levens@cern.ch'
+      name: 'Andrea Boccardi'
+      email: 'andrea.boccardi@cern.ch'
     tags:
+      - 'VME'
+      - 'White Rabbit'
       - 'WR Node'
+      - 'FMC'
+      - 'FMC Carrier'
   - id: 'fmc-masterfip'
     repository: 'https://ohwr.org/project/fmc-masterfip.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Eva Gousiou'
+      email: 'Eva.Gousiou@cern.ch'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'WorldFIP'
+    compatibles:
+      - 'spec'
   - id: 'tr-pmc'
     repository: 'https://ohwr.org/project/tr-pmc.git'
     contact:
       name: 'A. Hahn'
       email: 'a.hahn@gsi.de'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'PMC'
   - id: 'fmc-dio-16ch-lvds-a'
     repository: 'https://ohwr.org/project/fmc-dio-16ch-lvds-a.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fr_pcb_mm'
     repository: 'https://ohwr.org/project/fr_pcb_mm.git'
     contact:

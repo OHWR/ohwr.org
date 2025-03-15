@@ -26,6 +26,7 @@ tags:
   - 'Motor Control'
   - 'MTCA'
   - 'PCIe'
+  - 'PCIe/104'
   - 'Power'
   - 'Profinet'
   - 'PXIe'
@@ -628,29 +629,47 @@ projects:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
     tags:
+      - 'White Rabbit'
       - 'WR Node'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'PCIe'
+      - 'SoC'
   - id: 'ertm15-llrf-wr'
     repository: 'https://ohwr.org/project/ertm15-llrf-wr.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
     tags:
+      - 'White Rabbit'
       - 'WR Node'
+      - 'MTCA'
   - id: 'pda-8ch-fda-8ch'
     repository: 'https://ohwr.org/project/pda-8ch-fda-8ch.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
+    tags:
+      - 'Timing'
+      - '19 inch'
   - id: 'conv-rs485-opt-rtm'
     repository: 'https://ohwr.org/project/conv-rs485-opt-rtm.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
+    tags:
+      - 'VME'
+      - 'Timing'
+    compatibles:
+      - 'conv-ttl-rs485-hw'
   - id: 'emc2-dp'
     repository: 'https://ohwr.org/project/emc2-dp.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Lovell'
+      email: 'ben.l@sundance.com'
+    tags:
+      - 'PCIe/104'
+      - 'SoC'
   - id: 'fmc-vhdci'
     repository: 'https://ohwr.org/project/fmc-vhdci.git'
     contact:

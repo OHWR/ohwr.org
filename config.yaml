@@ -1204,7 +1204,7 @@ projects:
       - 'Documentation'
     compatibles:
       - 'conv-rs485-opt-rtm'
-      - 'cont-ttl-rs485-hw'
+      - 'conv-ttl-rs485-hw'
   - id: 'svec'
     repository: 'https://ohwr.org/project/svec.git'
     contact:

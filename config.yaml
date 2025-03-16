@@ -10,6 +10,7 @@ tags:
   - 'Attenuator'
   - 'ADC'
   - 'COM Express'
+  - 'CompactRIO'
   - 'Course'
   - 'COVID-19'
   - 'DI/OT'
@@ -42,6 +43,7 @@ tags:
   - 'Software'
   - 'TDC'
   - 'Timing'
+  - 'USB'
   - 'VME'
   - 'White Rabbit'
   - 'WorldFIP'
@@ -208,6 +210,7 @@ projects:
     tags:
       - 'Attenuator'
       - '19 inch'
+      - 'USB'
   - id: 'cute-wr-a7'
     repository: 'https://ohwr.org/project/cute-wr-a7.git'
     contact:
@@ -645,6 +648,7 @@ projects:
       - 'White Rabbit'
       - 'WR Node'
       - 'MTCA'
+      - 'USB'
   - id: 'pda-8ch-fda-8ch'
     repository: 'https://ohwr.org/project/pda-8ch-fda-8ch.git'
     contact:
@@ -925,74 +929,107 @@ projects:
   - id: 'crio-wr'
     repository: 'https://ohwr.org/project/crio-wr.git'
     contact:
-      name: 'Dimitris Lampridis'
-      email: 'Dimitris.Lampridis@cern.ch'
+      name: 'Achim Vollhardt'
+      email: 'avollhar@physik.uzh.ch'
     tags:
+      - 'White Rabbit'
       - 'WR Node'
+      - 'CompactRIO'
+    compatibles:
+      - 'wr-switch-hw'
   - id: 'conv-ttl-rs485-hw'
     repository: 'https://ohwr.org/project/conv-ttl-rs485-hw.git'
     contact:
-      name: 'Theodor Stana'
-      email: 't.stana@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'VME'
   - id: 'conv-ttl-blo-hw'
     repository: 'https://ohwr.org/project/conv-ttl-blo-hw.git'
     contact:
-      name: 'Denia Bouhired'
-      email: 'denia.bouhired@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'VME'
   - id: 'fmc-tdc-1ns-5cha-hw'
     repository: 'https://ohwr.org/project/fmc-tdc-1ns-5cha-hw.git'
     contact:
       name: 'Evangelia Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'TDC'
+    compatibles:
+      - 'spec'
+      - 'svec'
   - id: 'fmc-pof-10m-r3ch-t1ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r3ch-t1ch.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Todd'
+      email: 'benjamin.todd@cern.ch'
     tags:
+      - 'FMC'
       - 'FMC Module'
   - id: 'fmc-pof-10m-r4ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r4ch.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Todd'
+      email: 'benjamin.todd@cern.ch'
     tags:
+      - 'FMC'
       - 'FMC Module'
   - id: 'fmc-adc-100m14b4cha-hw'
     repository: 'https://ohwr.org/project/fmc-adc-100m14b4cha-hw.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'Javier.Serrano@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'ADC'
+    compatibles:
+      - 'svec'
+      - 'spec'
   - id: 'afck'
     repository: 'https://ohwr.org/project/afck.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
     tags:
+      - 'FMC'
       - 'FMC Carrier'
+      - 'MTCA'
   - id: 'fmc-dtrx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtrx-4cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Magnus Sundal'
+      email: 'magnusvsun@hotmail.com'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fmc-dtx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtx-4cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Magnus Sundal'
+      email: 'magnusvsun@hotmail.com'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'Digital I/O'
   - id: 'utca-rtm-8-sfp'
     repository: 'https://ohwr.org/project/utca-rtm-8-sfp.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'MTCA'
+    compatibles:
+      - 'afc'
+      - 'afcz'
+      - 'afck'
+      - 'afcku'
   - id: 'video-fpga-hdmi-dvi-ethernet'
     repository: 'https://ohwr.org/project/video-fpga-hdmi-dvi-ethernet.git'
     contact:

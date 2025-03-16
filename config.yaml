@@ -1333,8 +1333,8 @@ projects:
   - id: '10G-wr-nic'
     repository: 'https://ohwr.org/project/10G-wr-nic.git'
     contact:
-      name: 'hdlved'
-      email: '25434476+hdlved@users.noreply.github.com'
+      name: 'Phil Clarke'
+      email: 'phil@phil-clarke.net '
     tags:
       - 'WR Node'
       - 'WR Switch'
@@ -1346,7 +1346,10 @@ projects:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
     tags:
+      - 'White Rabbit'
+      - 'WR Switch'
       - 'WR Switch v4'
+      - 'Documentation'
   - id: 'wr-compliance-tests'
     repository: 'https://ohwr.org/project/wr-compliance-tests.git'
     contact:
@@ -1359,8 +1362,8 @@ projects:
   - id: 'wr-fixed-point-calculations'
     repository: 'https://ohwr.org/project/wr-fixed-point-calculations.git'
     contact:
-      name: 'Rens Roosenstein'
-      email: 'rens.roosenstein@cern.ch'
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
     tags:
       - 'Software'
       - 'WR Switch'
@@ -1382,6 +1385,7 @@ projects:
     tags:
       - 'Software'
       - 'Soft Core'
+      - 'RISC-V'
   - id: 'wr-switch-sw'
     repository: 'https://ohwr.org/project/wr-switch-sw.git'
     contact:
@@ -1391,6 +1395,8 @@ projects:
       - 'Software'
       - 'White Rabbit'
       - 'WR Switch'
+    compatibles:
+      - 'wr-switch-hw'
   - id: 'wrpc-sw'
     repository: 'https://ohwr.org/project/wrpc-sw.git'
     contact:
@@ -1401,6 +1407,8 @@ projects:
       - 'WR Node'
       - 'Software'
       - 'White Rabbit'
+    compatibles:
+      - 'soft-cpu-toolchains'
   - id: 'wr-cores'
     repository: 'https://ohwr.org/project/wr-cores.git'
     contact:
@@ -1411,16 +1419,22 @@ projects:
       - 'WR Node'
       - 'Gateware'
       - 'White Rabbit'
+    compatibles:
+      - 'wrpc-sw'
+      - 'wr-switch-hdl'
   - id: 'general-cores'
     repository: 'https://ohwr.org/project/general-cores.git'
     contact:
-      name: 'Tomasz Wlostowski'
-      email: 'tomasz.wlostowski@cern.ch'
+      name: 'Tristan Gingold'
+      email: 'tristan.gingold@cern.ch'
     tags:
       - 'WR Switch'
       - 'WR Node'
       - 'Gateware'
       - 'White Rabbit'
+    compatibles:
+      - 'wr-switch-hdl'
+      - 'wr-cores'
   - id: 'wr-switch-hdl'
     repository: 'https://ohwr.org/project/wr-switch-hdl.git'
     contact:
@@ -1430,3 +1444,5 @@ projects:
       - 'Gateware'
       - 'WR Switch'
       - 'White Rabbit'
+    compatibles:
+      - 'wr-switch-hw'

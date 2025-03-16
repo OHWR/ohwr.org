@@ -13,6 +13,9 @@ tags:
   - 'CompactRIO'
   - 'Course'
   - 'COVID-19'
+  - 'cPCI'
+  - 'DAC'
+  - 'DDS'
   - 'DI/OT'
   - 'Documentation'
   - 'Digital I/O'
@@ -38,12 +41,14 @@ tags:
   - 'RISC-V'
   - 'RF'
   - 'SAMbuCa'
+  - 'Signal Conditioning'
   - 'SoC'
   - 'Soft Core'
   - 'Software'
   - 'TDC'
   - 'Timing'
   - 'USB'
+  - 'Video'
   - 'VME'
   - 'White Rabbit'
   - 'WorldFIP'
@@ -371,6 +376,7 @@ projects:
       email: 'anders.e.e.wallin@gmail.com'
     tags:
       - 'Timing'
+      - 'DDS'
   - id: 'spec150'
     repository: 'https://ohwr.org/project/spec150.git'
     contact:
@@ -1033,116 +1039,163 @@ projects:
   - id: 'video-fpga-hdmi-dvi-ethernet'
     repository: 'https://ohwr.org/project/video-fpga-hdmi-dvi-ethernet.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'Video'
   - id: 'amc-cpu-com6'
     repository: 'https://ohwr.org/project/amc-cpu-com6.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'MTCA'
+      - 'COM Express'
   - id: 'wr-d3s'
     repository: 'https://ohwr.org/project/wr-d3s.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
     tags:
+      - 'White Rabbit'
+      - 'Documentation'
       - 'WR Node'
+    compatibles:
+      - 'fmc-dac-600m-12b-1cha-dds'
   - id: 'usb-relay-box1'
     repository: 'https://ohwr.org/project/usb-relay-box1.git'
     contact:
-      name: 'Matthieu Cattin'
-      email: 'matthieu.cattin@cern.ch'
-  - id: 'cern-elmb'
-    repository: 'https://ohwr.org/project/cern-elmb.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'USB'
   - id: 'vme-adc-250k-16b-36cha'
     repository: 'https://ohwr.org/project/vme-adc-250k-16b-36cha.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'VME'
+      - 'ADC'
   - id: 'fmc-dio-32chttla'
     repository: 'https://ohwr.org/project/fmc-dio-32chttla.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fmc-dac-600m-12b-1cha-dds'
     repository: 'https://ohwr.org/project/fmc-dac-600m-12b-1cha-dds.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Tomasz Wlostowski'
+      email: 'tomasz.wlostowski@cern.ch'
     tags:
+      - 'FMC'
+      - 'DAC'
+      - 'DDS'
       - 'FMC Module'
+    compatibles:
+      - 'spec'
   - id: 'afc'
     repository: 'https://ohwr.org/project/afc.git'
     contact:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
+    tags:
+      - 'MTCA'
+      - 'FMC'
+      - 'FMC Carrier'
+    compatibles:
+      - 'fmc-adc-130m-16b-4cha'
+      - 'fmc-adc-250m-16b-4cha'
   - id: 'fmc-adc-250m-16b-4cha'
     repository: 'https://ohwr.org/project/fmc-adc-250m-16b-4cha.git'
     contact:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'ADC'
   - id: 'fmc-adc-130m-16b-4cha'
     repository: 'https://ohwr.org/project/fmc-adc-130m-16b-4cha.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'ADC'
   - id: 'timex3'
     repository: 'https://ohwr.org/project/timex3.git'
     contact:
       name: 'Jean-Paul Ricaud'
       email: 'jean-paul.ricaud@synchrotron-soleil.fr'
+    tags:
+      - 'cPCI'
+      - 'Digital I/O'
   - id: 'fmc-adc2m18b2ch-dac500k20b1ch'
     repository: 'https://ohwr.org/project/fmc-adc2m18b2ch-dac500k20b1ch.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'David Giloteaux'
+      email: 'david.giloteaux@cern.ch'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'ADC'
+      - 'DAC'
+      - 'Digital I/O'
   - id: 'wr-switch-hw'
     repository: 'https://ohwr.org/project/wr-switch-hw.git'
     contact:
-      name: 'José Gabriel Ramírez'
-      email: 'jgabriel@sevensols.com'
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
     tags:
+      - 'White Rabbit'
+      - 'WR Switch'
       - 'WR Switch v3'
   - id: 'bpm-rffe'
     repository: 'https://ohwr.org/project/bpm-rffe.git'
     contact:
       name: 'Rafael Antonio Baron'
       email: 'rafael.baron@lnls.br'
+    compatibles:
+      - 'fmc-adc-130m-16b-4cha'
+      - 'fmc-adc-250m-16b-4cha'
+    tags:
+      - 'Signal Conditioning'
   - id: 'bpm'
     repository: 'https://ohwr.org/project/bpm.git'
     contact:
       name: 'Daniel Tavares'
       email: 'daniel.tavares@lnls.br'
-  - id: 'hmt-3cha'
-    repository: 'https://ohwr.org/project/hmt-3cha.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+    tags:
+      - 'Documentation'
+    compatibles:
+      - 'fmc-adc-130m-16b-4cha'
+      - 'fmc-adc-250m-16b-4cha'
+      - 'afc'
+      - 'bpm-rffe'
   - id: 'fmc-adc-250m12b2cha'
     repository: 'https://ohwr.org/project/fmc-adc-250m12b2cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Daniel Florin'
+      email: 'florin@physik.uzh.ch'
     tags:
+      - 'FMC'
       - 'FMC Module'
+      - 'ADC'
   - id: 'spexi'
     repository: 'https://ohwr.org/project/spexi.git'
     contact:
-      name: 'Francisco Juan'
-      email: 'fjuan@splendeo.es'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     tags:
+      - 'FMC'
       - 'FMC Carrier'
+      - 'PXIe'
   - id: 'conv-ttl-rs485'
     repository: 'https://ohwr.org/project/conv-ttl-rs485.git'
     contact:

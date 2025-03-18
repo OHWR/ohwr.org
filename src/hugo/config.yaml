@@ -31,6 +31,8 @@ module:
     - path: 'github.com/gethugothemes/bigspring-light-hugo'
 menus:
   main:
+    - name: 'Projects'
+      url: '/'
     - name: 'About'
       url: 'about/'
     - name: 'Licences'

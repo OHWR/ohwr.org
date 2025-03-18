@@ -6,17 +6,56 @@
 sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
 tags:
-  - 'FMC Carriers'
-  - 'FMC Modules'
-  - 'WR Switch'
+  - '19 inch'
+  - 'Attenuator'
+  - 'ADC'
+  - 'COM Express'
+  - 'CompactRIO'
+  - 'Course'
+  - 'COVID-19'
+  - 'cPCI'
+  - 'DAC'
+  - 'DDS'
+  - 'DI/OT'
+  - 'Documentation'
+  - 'Digital I/O'
+  - 'Ethernet'
+  - 'Fine Delay'
+  - 'FMC'
+  - 'FMC Carrier'
+  - 'FMC Module'
+  - 'Gateware'
+  - 'High Voltage'
+  - 'Lighting'
+  - 'Microcontroller'
+  - 'Motor Control'
+  - 'MTCA'
+  - 'PCIe'
+  - 'PCIe/104'
+  - 'PMC'
+  - 'Power'
+  - 'Profinet'
+  - 'PXIe'
+  - 'Rad-tol'
+  - 'Reliability'
+  - 'RISC-V'
+  - 'RF'
+  - 'SAMbuCa'
+  - 'Signal Conditioning'
+  - 'SoC'
+  - 'Soft Core'
+  - 'Software'
+  - 'TDC'
+  - 'Timing'
+  - 'USB'
+  - 'Video'
+  - 'VME'
+  - 'White Rabbit'
+  - 'WorldFIP'
   - 'WR Node'
+  - 'WR Switch'
   - 'WR Switch v3'
   - 'WR Switch v4'
-  - 'Software applicable to WR Switch'
-  - 'Software applicable to WR Node'
-  - 'Gateware applicable to WR Switch'
-  - 'Gateware applicable to WR Node'
-  - 'WR documentation'
 redirects:
   - source: |
       project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
@@ -47,51 +86,87 @@ projects:
     repository: 'https://ohwr.org/project/mdior.git'
     contact:
       name: 'Pieter Van Trappen'
-      email: 'vtpieter@gmail.com'
+      email: 'pieter.van.trappen@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+      - 'diot-pfc-ku'
+    tags:
+      - 'DI/OT'
+      - 'Digital I/O'
   - id: 'giraph32'
     repository: 'https://ohwr.org/project/giraph32.git'
     contact:
       name: 'Lea Strobino'
       email: 'lea.strobino@cern.ch'
+    tags:
+      - 'Digital I/O'
+      - '19 inch'
   - id: 'babywr'
     repository: 'https://ohwr.org/project/babywr.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
   - id: 'diot-pb-lbk'
     repository: 'https://ohwr.org/project/diot-pb-lbk.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+      - 'diot-sb-igl'
+      - 'diot-sb-zu'
+    tags:
+      - 'DI/OT'
   - id: 'pz-tio'
     repository: 'https://ohwr.org/project/pz-tio.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Wolfgang Hennig'
+      email: 'whennig@xia.com'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'Digital I/O'
+      - 'SoC'
   - id: 'fmc-hv-2ch'
     repository: 'https://ohwr.org/project/fmc-hv-2ch.git'
     contact:
-      name: 'Mathieu Saccani'
-      email: 'mathieu.saccani@cern.ch'
+      name: 'William Viganò'
+      email: 'William.Vigano@cern.ch'
+    compatibles:
+      - 'vfc-hd'
+      - 'vfc-hs'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'FMC Module'
+      - 'High Voltage'
   - id: 'fmc-mfe'
     repository: 'https://ohwr.org/project/fmc-mfe.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Bernard Guncic'
+      email: 'bernard.guncic@cern.ch'
+    compatibles:
+      - 'spexi7u'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'SAMbuCa'
+      - 'Motor Control'
   - id: 'afcku'
     repository: 'https://ohwr.org/project/afcku.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'switakowski.filip@gmail.com'
-  - id: 'pxct'
-    repository: 'https://ohwr.org/project/pxct.git'
-    contact:
-      name: 'Juan David Gonzalez Cobas'
-      email: 'dcobas@cern.ch'
+    tags:
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'MTCA'
   - id: 'diot-fsi-det-8ch'
     repository: 'https://ohwr.org/project/diot-fsi-det-8ch.git'
     contact:
@@ -100,189 +175,309 @@ projects:
     compatibles:
       - 'diot-crate-hw'
       - 'diot-sb-zu'
+    tags:
+      - 'DI/OT'
   - id: 'afcz'
     repository: 'https://ohwr.org/project/afcz.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'MTCA'
+      - 'SoC'
   - id: 'sis1160-pci-io'
     repository: 'https://ohwr.org/project/sis1160-pci-io.git'
     contact:
       name: 'Fernando Hueso González'
-      email: 'ferdymercury@users.noreply.github.com'
+      email: 'Fernando.Hueso@uv.es'
+    tags:
+      - 'Digital I/O'
+      - 'PCIe'
   - id: 'fmc-adc-500m14b4cha'
     repository: 'https://ohwr.org/project/fmc-adc-500m14b4cha.git'
     contact:
       name: 'Philipp Foedisch'
       email: 'philipp.foedisch@iamelectronic.com'
+    compatibles:
+      - 'vfc-hd'
+      - 'vfc-hs'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'ADC'
   - id: 'rf-att-4cha'
     repository: 'https://ohwr.org/project/rf-att-4cha.git'
     contact:
-      name: 'Juan David Gonzalez Cobas'
-      email: 'dcobas@cern.ch'
+      name: 'Erik Van Der Bij'
+      email: 'Erik.van.der.Bij@cern.ch'
+    tags:
+      - 'Attenuator'
+      - '19 inch'
+      - 'USB'
   - id: 'cute-wr-a7'
     repository: 'https://ohwr.org/project/cute-wr-a7.git'
     contact:
-      name: 'Li Hongming'
-      email: 'lihm.thu@foxmail.com'
+      name: 'Guanghua Gong'
+      email: 'ggh@tsinghua.edu.cn'
     tags:
+      - 'FMC'
       - 'WR Node'
-      - 'FMC Modules'
+      - 'White Rabbit'
+      - 'FMC Module'
   - id: 'wrs-lj-hw'
     repository: 'https://ohwr.org/project/wrs-lj-hw.git'
     contact:
       name: 'Jose Lopez Jimenez'
       email: 'jose.lopez@nav-timing.safrangroup.com'
     tags:
+      - 'White Rabbit'
       - 'WR Switch'
       - 'WR Switch v3'
   - id: 'faceshield'
     repository: 'https://ohwr.org/project/faceshield.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Alessandro Dallocchio'
+      email: 'Alessandro.Dallocchio@cern.ch'
+    tags:
+      - 'COVID-19'
   - id: 'diot-reliability'
     repository: 'https://ohwr.org/project/diot-reliability.git'
     contact:
       name: 'Alén Arias Vázquez'
       email: 'alen.arias.vazquez@cern.ch'
+    tags:
+      - 'DI/OT'
+      - 'Reliability'
+      - 'Documentation'
   - id: '3dmask'
     repository: 'https://ohwr.org/project/3dmask.git'
     contact:
       name: 'Jaroslava Schovancova'
       email: 'jaroslava.schovancova@cern.ch'
+    tags:
+      - 'COVID-19'
   - id: 'hydra'
     repository: 'https://ohwr.org/project/hydra.git'
     contact:
-      name: 'Mattia Rizzi'
-      email: 'mattia.rizzi@cern.ch'
+      name: 'Tristan Gingold'
+      email: 'Tristan.Gingold@cern.ch'
+    compatibles:
+      - 'diot-sb-igl'
+    tags:
+      - 'Gateware'
+      - 'DI/OT'
+      - 'Reliability'
+      - 'SoC'
+      - 'Rad-tol'
   - id: 'soc-course'
     repository: 'https://ohwr.org/project/soc-course.git'
     contact:
-      name: 'Javier Garcia'
+      name: 'Javier García Lasheras'
       email: 'jgarcia@gl-research.com'
+    tags:
+      - 'Course'
+      - 'SoC'
   - id: 'diot-pfc-ku'
     repository: 'https://ohwr.org/project/diot-pfc-ku.git'
     contact:
-      name: 'Pawel Kulik'
-      email: 'marmeladapk@users.noreply.github.com'
-  - id: 'cern-elmb2'
-    repository: 'https://ohwr.org/project/cern-elmb2.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-  - id: 'sambuca'
-    repository: 'https://ohwr.org/project/sambuca.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-  - id: 'spexi7u'
-    repository: 'https://ohwr.org/project/spexi7u.git'
-    contact:
-      name: 'Paul Peronnard'
-      email: 'paul.peronnard@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     compatibles:
       - 'diot-crate-hw'
       - 'diot-sb-zu'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'DI/OT'
+      - 'FMC Carrier'
+  - id: 'cern-elmb2'
+    repository: 'https://ohwr.org/project/cern-elmb2.git'
+    contact:
+      name: 'Vladimir Ryjov'
+      email: 'Vladimir.Ryjov@cern.ch'
+    tags:
+      - 'Microcontroller'
+      - 'ADC'
+  - id: 'sambuca'
+    repository: 'https://ohwr.org/project/sambuca.git'
+    contact:
+      name: 'Dimitris Lampridis'
+      email: 'dimitris.lampridis@cern.ch'
+    compatibles:
+      - 'spexi7u'
+      - 'fmc-mfe'
+    tags:
+      - 'Motor Control'
+      - 'SAMbuCa'
+  - id: 'spexi7u'
+    repository: 'https://ohwr.org/project/spexi7u.git'
+    contact:
+      name: 'Dimitris Lampridis'
+      email: 'dimitris.lampridis@cern.ch'
+    compatibles:
+      - 'pxie-ctl-comexpress'
+      - 'fmc-mfe'
+    tags:
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'White Rabbit'
       - 'WR Node'
+      - 'PXIe'
+      - 'SoC'
   - id: 'profip'
     repository: 'https://ohwr.org/project/profip.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'svec'
+      - 'fmc-masterfip'
+      - 'fmc-profinet'
+    tags:
+      - 'WorldFIP'
+      - 'Profinet'
   - id: 'ventilatorpal'
     repository: 'https://ohwr.org/project/ventilatorpal.git'
     contact:
       name: 'Aubert Dupont'
       email: 'aubert@stogger.com'
+    tags:
+      - 'COVID-19'
   - id: 'diot-sb-igl'
     repository: 'https://ohwr.org/project/diot-sb-igl.git'
     contact:
-      name: 'Christos Gentsos'
-      email: 'christos.gentsos@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     compatibles:
       - 'diot-crate-hw'
+      - 'hydra'
+      - 'fmc-nanofip-pcb'
+    tags:
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'DI/OT'
+      - 'Rad-tol'
   - id: 'fmc-profinet'
     repository: 'https://ohwr.org/project/fmc-profinet.git'
     contact:
-      name: 'Bernard'
+      name: 'Bernard Guncic'
       email: 'bernard.guncic@cern.ch'
     compatibles:
-      - 'spec'
+      - 'svec'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Profinet'
   - id: 'microstepper'
     repository: 'https://ohwr.org/project/microstepper.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
+    tags:
+      - 'Timing'
+      - 'DDS'
   - id: 'spec150'
     repository: 'https://ohwr.org/project/spec150.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Erik Van Der Bij'
+      email: 'Erik.van.der.Bij@cern.ch'
     tags:
+      - 'FMC'
       - 'WR Node'
-  - id: 'svec7'
-    repository: 'https://ohwr.org/project/svec7.git'
-    contact:
-      name: 'Tomasz Wlostowski'
-      email: 'tomasz.wlostowski@cern.ch'
-    tags:
-      - 'WR Node'
+      - 'PCIe'
+      - 'FMC Carrier'
+      - 'White Rabbit'
   - id: 'hpsec'
     repository: 'https://ohwr.org/project/hpsec.git'
     contact:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
+    compatibles:
+      - 'spec7'
     tags:
-      - 'WR Node'
+      - 'Timing'
+      - '19 inch'
   - id: 'roe-protocol'
     repository: 'https://ohwr.org/project/roe-protocol.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Maciej Lipinski'
+      email: 'maciej.marek.lipinski@cern.ch'
     tags:
-      - 'WR documentation'
+      - 'Documentation'
+      - 'White Rabbit'
+      - 'Ethernet'
+      - 'RF'
   - id: 'fpga-dev-id'
     repository: 'https://ohwr.org/project/fpga-dev-id.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'Javier.Serrano@cern.ch'
+      name: 'Federico Vaga'
+      email: 'federico.vaga@cern.ch'
+    compatibles:
+      - 'spec'
+      - 'svec'
+    tags:
+      - 'Documentation'
   - id: 'tr-pexp'
     repository: 'https://ohwr.org/project/tr-pexp.git'
     contact:
-      name: 'Marko Levicnik'
-      email: 'marko.levicnik@cosylab.com'
+      name: 'Alexander Hahn'
+      email: 'a.hahn@gsi.de'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'PCIe'
   - id: 'city'
     repository: 'https://ohwr.org/project/city.git'
     contact:
       name: 'Antonin Broquet'
-      email: 'antonin.broquet@esrf.fr'
+      email: 'broquet.antonin@gmail.com'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'FMC'
+      - 'SoC'
+      - '19 inch'
+      - 'FMC Carrier'
+      - 'White Rabbit'
+      - 'WR Node'
   - id: 'diot-crate-hw'
     repository: 'https://ohwr.org/project/diot-crate-hw.git'
     contact:
-      name: 'Michal Gaska'
-      email: 'michalgaska2@gmail.com'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'DI/OT'
+      - '19 inch'
+      - 'Rad-tol'
+      - 'Documentation'
   - id: 'diot-monimod'
     repository: 'https://ohwr.org/project/diot-monimod.git'
     contact:
-      name: 'Christos Gentsos'
-      email: 'christos.gentsos@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+    tags:
+      - 'Microcontroller'
+      - 'Rad-tol'
+      - 'DI/OT'
   - id: 'diot-sb-zu'
     repository: 'https://ohwr.org/project/diot-sb-zu.git'
     contact:
-      name: 'Adam Wujek'
-      email: 'dev_public@wujek.eu'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'FMC Carrier'
       - 'WR Node'
+      - 'White Rabbit'
+      - 'DI/OT'
+      - 'SoC'
   - id: 'luvi'
     repository: 'https://ohwr.org/project/luvi.git'
     contact:
@@ -291,40 +486,60 @@ projects:
   - id: 'psu-rad-acdc-230v-12v5v-110w'
     repository: 'https://ohwr.org/project/psu-rad-acdc-230v-12v5v-110w.git'
     contact:
-      name: 'Lalit Patnaik'
-      email: 'lalit.patnaik@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     compatibles:
       - 'diot-crate-hw'
+    tags:
+      - 'Power'
+      - 'DI/OT'
+      - 'Rad-tol'
   - id: 'pxie-ctl-comexpress'
     repository: 'https://ohwr.org/project/pxie-ctl-comexpress.git'
     contact:
-      name: 'Paul Peronnard'
-      email: 'paul.peronnard@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'spexi7u'
+    tags:
+      - 'PXIe'
+      - 'COM Express'
   - id: 'timiq-hw'
     repository: 'https://ohwr.org/project/timiq/timiq-hw.git'
     contact:
       name: 'Jean-Paul Ricaud'
       email: 'jean-paul.ricaud@synchrotron-soleil.fr'
-  - id: 'array-hardware'
-    repository: 'https://ohwr.org/project/array/array-hardware.git'
-    contact:
-      name: 'Eva Sicking'
-      email: 'eva.sicking@cern.ch'
+    tags:
+      - 'Timing'
+      - '19 inch'
   - id: 'euro-adc-65m-14b-40cha'
     repository: 'https://ohwr.org/project/euro-adc-65m-14b-40cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'David Cussans'
+      email: 'david.cussans@bristol.ac.uk'
+    tags:
+      - 'ADC'
   - id: 'spec-ticks'
     repository: 'https://ohwr.org/project/spec-ticks.git'
     contact:
       name: 'Cedric Champion'
       email: 'cedric.champion@apc.univ-paris7.fr'
+    compatibles:
+      - 'wr-switch-hw'
+    tags:
+      - 'FMC'
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'FMC Carrier'
+      - 'TDC'
   - id: 'wrs-ljdprep-hw'
     repository: 'https://ohwr.org/project/wrs-ljdprep-hw.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Switch'
   - id: 'wr-switch-hw-v4'
     repository: 'https://ohwr.org/project/wr-switch-hw-v4.git'
     contact:
@@ -336,59 +551,86 @@ projects:
   - id: 'fmc-dtxrx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtxrx-4cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Woolley'
+      email: 'benjamin.woolley@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
   - id: 'rf-mux-8ch'
     repository: 'https://ohwr.org/project/rf-mux-8ch.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
+    tags:
+      - '19 inch'
+      - 'Timing'
   - id: 'vfc-hs'
     repository: 'https://ohwr.org/project/vfc-hs.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Andrea Boccardi'
+      email: 'andrea.boccardi@cern.ch'
+    tags:
+      - 'VME'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'White Rabbit'
+      - 'WR Node'
   - id: 'opt-adc-10k-32b-1cha'
     repository: 'https://ohwr.org/project/opt-adc-10k-32b-1cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Nikolai Beev'
+      email: 'nikolai.beev@cern.ch'
+    tags:
+      - '19 inch'
+      - 'ADC'
   - id: 'diot-dio-16ch-opt-24v'
     repository: 'https://ohwr.org/project/diot-dio-16ch-opt-24v.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    compatibles:
+      - 'diot-crate-hw'
+      - 'diot-sb-igl'
+    tags:
+      - 'Digital I/O'
+      - 'DI/OT'
+      - 'Rad-tol'
   - id: 'diot'
     repository: 'https://ohwr.org/project/diot.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Greg Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     weight: 1
+    tags:
+      - 'Documentation'
+      - 'DI/OT'
   - id: 'ctr-fmc-5chttla'
     repository: 'https://ohwr.org/project/ctr-fmc-5chttla.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Eva Gousiou'
+      email: 'Evangelia.Gousiou@cern.ch'
+    compatibles:
+      - 'afc'
+      - 'spec'
+    tags:
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'radtol-led-luminaire'
     repository: 'https://ohwr.org/project/radtol-led-luminaire.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-  - id: 'mini-wr'
-    repository: 'https://ohwr.org/project/mini-wr.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'James Devine'
+      email: 'jdevine@cern.ch'
     tags:
-      - 'WR Node'
+      - 'Lighting'
+      - 'Rad-tol'
   - id: 'wrs-fl-hw'
     repository: 'https://ohwr.org/project/wrs-fl-hw.git'
     contact:
-      name: 'Li Hongming'
-      email: 'lihm.thu@gmail.com'
+      name: 'Guanghua Gong'
+      email: 'ggh@tsinghua.edu.cn'
     tags:
+      - 'White Rabbit'
       - 'WR Switch'
       - 'WR Switch v3'
   - id: 'spec7'
@@ -397,111 +639,168 @@ projects:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
     tags:
+      - 'White Rabbit'
       - 'WR Node'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'PCIe'
+      - 'SoC'
   - id: 'ertm15-llrf-wr'
     repository: 'https://ohwr.org/project/ertm15-llrf-wr.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
     tags:
+      - 'White Rabbit'
       - 'WR Node'
+      - 'MTCA'
+      - 'USB'
   - id: 'pda-8ch-fda-8ch'
     repository: 'https://ohwr.org/project/pda-8ch-fda-8ch.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
+    tags:
+      - 'Timing'
+      - '19 inch'
   - id: 'conv-rs485-opt-rtm'
     repository: 'https://ohwr.org/project/conv-rs485-opt-rtm.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
+    tags:
+      - 'VME'
+    compatibles:
+      - 'conv-ttl-rs485-hw'
   - id: 'emc2-dp'
     repository: 'https://ohwr.org/project/emc2-dp.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Lovell'
+      email: 'ben.l@sundance.com'
+    tags:
+      - 'PCIe/104'
+      - 'SoC'
   - id: 'fmc-vhdci'
     repository: 'https://ohwr.org/project/fmc-vhdci.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Timon Heim'
+      email: 'timon.heim@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
   - id: 'atfc'
     repository: 'https://ohwr.org/project/atfc.git'
     contact:
-      name: 'Samer Kilani'
-      email: 'smkilani@gmail.com'
-  - id: 'conv-diff-se-cable-driver'
-    repository: 'https://ohwr.org/project/conv-diff-se-cable-driver.git'
-    contact:
-      name: 'Dimitris Lampridis'
-      email: 'Dimitris.Lampridis@cern.ch'
+      name: 'David Cussans'
+      email: 'David.Cussans@bristol.ac.uk'
+    tags:
+      - 'FMC'
+      - 'FMC Carrier'
   - id: 'wrs-low-jitter'
     repository: 'https://ohwr.org/project/wrs-low-jitter.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
+      - 'White Rabbit'
+      - 'WR Switch'
       - 'WR Switch v3'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wrs-fl-hw'
   - id: 'fmc-adc-subsamp125m14b4cha'
     repository: 'https://ohwr.org/project/fmc-adc-subsamp125m14b4cha.git'
     contact:
       name: 'Eva Calvo Giraldo'
       email: 'eva.calvo.giraldo@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'ADC'
   - id: 'eez-psu'
     repository: 'https://ohwr.org/project/eez-psu.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Denis Kotlar'
+      email: 'denis@envox.hr'
+    tags:
+      - 'Power'
   - id: 'pandabox'
     repository: 'https://ohwr.org/project/pandabox.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Yves-Marie Abiven'
+      email: 'yves-marie.abiven@synchrotron-soleil.fr'
+    tags:
+      - '19 inch'
+      - 'SoC'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'Motor Control'
   - id: 'tr-amc'
     repository: 'https://ohwr.org/project/tr-amc.git'
     contact:
-      name: 'Dusan Slavinec'
-      email: 'dusan.slavinec@cosylab.com'
+      name: 'Alexander Hahn'
+      email: 'a.hahn@gsi.de'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'MTCA'
+    compatibles:
+      - 'wr-switch-hw'
   - id: 'fmc-dio-32chlvdsa'
     repository: 'https://ohwr.org/project/fmc-dio-32chlvdsa.git'
     contact:
-      name: 'Grzegorz Daniluk'
+      name: 'Grzegorz Kasprowicz'
       email: 'gkasprow@gmail.com'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'r19-tdc-del-a'
     repository: 'https://ohwr.org/project/r19-tdc-del-a.git'
     contact:
-      name: 'Nicolas'
-      email: 'nicolas.boucquey@cern.ch'
+      name: 'Javier Serrano'
+      email: 'Javier.Serrano@cern.ch'
+    tags:
+      - 'SoC'
+      - 'TDC'
+      - '19 inch'
   - id: 'amc-carrier-2-sl'
     repository: 'https://ohwr.org/project/amc-carrier-2-sl.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'MTCA'
   - id: 'fmc-del-1ns-2cha'
     repository: 'https://ohwr.org/project/fmc-del-1ns-2cha.git'
     contact:
-      name: 'Jan Pospisil'
-      email: 'j.pospisil@cern.ch'
+      name: 'Tom Levens'
+      email: 'tom.levens@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Fine Delay'
   - id: 'fasec'
     repository: 'https://ohwr.org/project/fasec.git'
     contact:
       name: 'Pieter Van Trappen'
       email: 'pieter.van.trappen@cern.ch'
     tags:
+      - 'White Rabbit'
       - 'WR Node'
+      - 'FMC'
+      - 'FMC Carrier'
+      - '19 inch'
+      - 'SoC'
   - id: 'fmc-sfp-4cha'
     repository: 'https://ohwr.org/project/fmc-sfp-4cha.git'
     contact:
-      name: 'Grzegorz Daniluk'
+      name: 'Grzegorz Kasprowicz'
       email: 'gkasprow@gmail.com'
+    tags:
+      - 'FMC'
+      - 'FMC Module'
   - id: 'dces-dtrhf-ser1ch-v1'
     repository: 'https://ohwr.org/project/dces-dtrhf-ser1ch-v1.git'
     contact:
@@ -512,47 +811,57 @@ projects:
     contact:
       name: 'Fabien Le Mentec'
       email: 'fabien.lementec@gmail.com'
+    tags:
+      - 'Motor Control'
+      - 'Gateware'
   - id: 'uv-mask'
     repository: 'https://ohwr.org/project/uv-mask.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Andy Butterworth'
+      email: 'Andrew.Butterworth@cern.ch'
   - id: 'fmc-dio-10i-8o'
     repository: 'https://ohwr.org/project/fmc-dio-10i-8o.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Pieter Van Trappen'
+      email: 'pieter.van.trappen@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'urv-core'
     repository: 'https://ohwr.org/project/urv-core.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
     tags:
-      - 'Software applicable to WR Node'
+      - 'Gateware'
+      - 'Soft Core'
+      - 'RISC-V'
   - id: 'mock-turtle'
     repository: 'https://ohwr.org/project/mock-turtle.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
     tags:
-      - 'Software applicable to WR Node'
-  - id: 'mrpc-25x18-24strip'
-    repository: 'https://ohwr.org/project/mrpc-25x18-24strip.git'
-    contact:
-      name: 'Tim Brooks'
-      email: 'brooks@cern.ch'
+      - 'Software'
+      - 'Soft Core'
+      - 'RISC-V'
+      - 'SoC'
   - id: 'cosmic-pi'
     repository: 'https://ohwr.org/project/cosmic-pi.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'James Devine'
+      email: 'jdevine@cern.ch'
   - id: 'radtol-led-psu'
     repository: 'https://ohwr.org/project/radtol-led-psu.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'James Devine'
+      email: 'jdevine@cern.ch'
+    tags:
+      - 'Rad-tol'
+      - 'Power'
+    compatibles:
+      - 'radtol-led-luminaire'
   - id: 'maroc_csa'
     repository: 'https://ohwr.org/project/maroc_csa.git'
     contact:
@@ -561,332 +870,418 @@ projects:
   - id: 'gefe'
     repository: 'https://ohwr.org/project/gefe.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Manoel Barros Marin'
+      email: 'manoel.barros.marin@cern.ch'
+    tags:
+      - 'Rad-tol'
+      - 'FMC'
+      - 'FMC Carrier'
   - id: 'vfc-hd'
     repository: 'https://ohwr.org/project/vfc-hd.git'
     contact:
-      name: 'Tom Levens'
-      email: 'tom.levens@cern.ch'
+      name: 'Andrea Boccardi'
+      email: 'andrea.boccardi@cern.ch'
     tags:
+      - 'VME'
+      - 'White Rabbit'
       - 'WR Node'
+      - 'FMC'
+      - 'FMC Carrier'
   - id: 'fmc-masterfip'
     repository: 'https://ohwr.org/project/fmc-masterfip.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Eva Gousiou'
+      email: 'Eva.Gousiou@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'WorldFIP'
+    compatibles:
+      - 'spec'
   - id: 'tr-pmc'
     repository: 'https://ohwr.org/project/tr-pmc.git'
     contact:
       name: 'A. Hahn'
       email: 'a.hahn@gsi.de'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'PMC'
   - id: 'fmc-dio-16ch-lvds-a'
     repository: 'https://ohwr.org/project/fmc-dio-16ch-lvds-a.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fr_pcb_mm'
     repository: 'https://ohwr.org/project/fr_pcb_mm.git'
     contact:
       name: 'Germano Postal'
       email: 'germanopostal@gmail.com'
-  - id: 'usb-adc2k12b4ch-dac2k10b2ch-dio8ch'
-    repository: |
-      https://ohwr.org/project/usb-adc2k12b4ch-dac2k10b2ch-dio8ch.git
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
   - id: 'svec-3v3'
     repository: 'https://ohwr.org/project/svec-3v3.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
+    compatibles:
+      - 'svec'
+    tags:
+      - 'VME'
+      - 'Power'
   - id: 'crio-wr'
     repository: 'https://ohwr.org/project/crio-wr.git'
     contact:
-      name: 'Dimitris Lampridis'
-      email: 'Dimitris.Lampridis@cern.ch'
+      name: 'Achim Vollhardt'
+      email: 'avollhar@physik.uzh.ch'
     tags:
+      - 'White Rabbit'
       - 'WR Node'
+      - 'CompactRIO'
+    compatibles:
+      - 'wr-switch-hw'
   - id: 'conv-ttl-rs485-hw'
     repository: 'https://ohwr.org/project/conv-ttl-rs485-hw.git'
     contact:
-      name: 'Theodor Stana'
-      email: 't.stana@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'VME'
   - id: 'conv-ttl-blo-hw'
     repository: 'https://ohwr.org/project/conv-ttl-blo-hw.git'
     contact:
-      name: 'Denia Bouhired'
-      email: 'denia.bouhired@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'VME'
   - id: 'fmc-tdc-1ns-5cha-hw'
     repository: 'https://ohwr.org/project/fmc-tdc-1ns-5cha-hw.git'
     contact:
       name: 'Evangelia Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'TDC'
+    compatibles:
+      - 'spec'
+      - 'svec'
   - id: 'fmc-pof-10m-r3ch-t1ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r3ch-t1ch.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Todd'
+      email: 'benjamin.todd@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
   - id: 'fmc-pof-10m-r4ch'
     repository: 'https://ohwr.org/project/fmc-pof-10m-r4ch.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Ben Todd'
+      email: 'benjamin.todd@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
   - id: 'fmc-adc-100m14b4cha-hw'
     repository: 'https://ohwr.org/project/fmc-adc-100m14b4cha-hw.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'Javier.Serrano@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'ADC'
+    compatibles:
+      - 'svec'
+      - 'spec'
   - id: 'afck'
     repository: 'https://ohwr.org/project/afck.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'MTCA'
   - id: 'fmc-dtrx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtrx-4cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Magnus Sundal'
+      email: 'magnusvsun@hotmail.com'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fmc-dtx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtx-4cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Magnus Sundal'
+      email: 'magnusvsun@hotmail.com'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'utca-rtm-8-sfp'
     repository: 'https://ohwr.org/project/utca-rtm-8-sfp.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'MTCA'
+    compatibles:
+      - 'afc'
+      - 'afcz'
+      - 'afck'
+      - 'afcku'
   - id: 'video-fpga-hdmi-dvi-ethernet'
     repository: 'https://ohwr.org/project/video-fpga-hdmi-dvi-ethernet.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'Video'
   - id: 'amc-cpu-com6'
     repository: 'https://ohwr.org/project/amc-cpu-com6.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'MTCA'
+      - 'COM Express'
   - id: 'wr-d3s'
     repository: 'https://ohwr.org/project/wr-d3s.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
     tags:
+      - 'White Rabbit'
+      - 'Documentation'
       - 'WR Node'
+    compatibles:
+      - 'fmc-dac-600m-12b-1cha-dds'
   - id: 'usb-relay-box1'
     repository: 'https://ohwr.org/project/usb-relay-box1.git'
     contact:
-      name: 'Matthieu Cattin'
-      email: 'matthieu.cattin@cern.ch'
-  - id: 'cern-elmb'
-    repository: 'https://ohwr.org/project/cern-elmb.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'USB'
   - id: 'vme-adc-250k-16b-36cha'
     repository: 'https://ohwr.org/project/vme-adc-250k-16b-36cha.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'VME'
+      - 'ADC'
   - id: 'fmc-dio-32chttla'
     repository: 'https://ohwr.org/project/fmc-dio-32chttla.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fmc-dac-600m-12b-1cha-dds'
     repository: 'https://ohwr.org/project/fmc-dac-600m-12b-1cha-dds.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Tomasz Wlostowski'
+      email: 'tomasz.wlostowski@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'DAC'
+      - 'DDS'
+      - 'FMC Module'
+    compatibles:
+      - 'spec'
   - id: 'afc'
     repository: 'https://ohwr.org/project/afc.git'
     contact:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
+    tags:
+      - 'MTCA'
+      - 'FMC'
+      - 'FMC Carrier'
+    compatibles:
+      - 'fmc-adc-130m-16b-4cha'
+      - 'fmc-adc-250m-16b-4cha'
   - id: 'fmc-adc-250m-16b-4cha'
     repository: 'https://ohwr.org/project/fmc-adc-250m-16b-4cha.git'
     contact:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'ADC'
   - id: 'fmc-adc-130m-16b-4cha'
     repository: 'https://ohwr.org/project/fmc-adc-130m-16b-4cha.git'
     contact:
-      name: 'Grzegorz Daniluk'
-      email: 'gkasprow@gmail.com'
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'ADC'
   - id: 'timex3'
     repository: 'https://ohwr.org/project/timex3.git'
     contact:
       name: 'Jean-Paul Ricaud'
       email: 'jean-paul.ricaud@synchrotron-soleil.fr'
+    tags:
+      - 'cPCI'
+      - 'Digital I/O'
   - id: 'fmc-adc2m18b2ch-dac500k20b1ch'
     repository: 'https://ohwr.org/project/fmc-adc2m18b2ch-dac500k20b1ch.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'David Giloteaux'
+      email: 'david.giloteaux@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'ADC'
+      - 'DAC'
+      - 'Digital I/O'
   - id: 'wr-switch-hw'
     repository: 'https://ohwr.org/project/wr-switch-hw.git'
     contact:
-      name: 'José Gabriel Ramírez'
-      email: 'jgabriel@sevensols.com'
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
     tags:
+      - 'White Rabbit'
+      - 'WR Switch'
       - 'WR Switch v3'
   - id: 'bpm-rffe'
     repository: 'https://ohwr.org/project/bpm-rffe.git'
     contact:
       name: 'Rafael Antonio Baron'
       email: 'rafael.baron@lnls.br'
+    compatibles:
+      - 'fmc-adc-130m-16b-4cha'
+      - 'fmc-adc-250m-16b-4cha'
+    tags:
+      - 'Signal Conditioning'
   - id: 'bpm'
     repository: 'https://ohwr.org/project/bpm.git'
     contact:
       name: 'Daniel Tavares'
       email: 'daniel.tavares@lnls.br'
-  - id: 'hmt-3cha'
-    repository: 'https://ohwr.org/project/hmt-3cha.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+    tags:
+      - 'Documentation'
+    compatibles:
+      - 'fmc-adc-130m-16b-4cha'
+      - 'fmc-adc-250m-16b-4cha'
+      - 'afc'
+      - 'bpm-rffe'
   - id: 'fmc-adc-250m12b2cha'
     repository: 'https://ohwr.org/project/fmc-adc-250m12b2cha.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Daniel Florin'
+      email: 'florin@physik.uzh.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'ADC'
   - id: 'spexi'
     repository: 'https://ohwr.org/project/spexi.git'
     contact:
-      name: 'Francisco Juan'
-      email: 'fjuan@splendeo.es'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'PXIe'
   - id: 'conv-ttl-rs485'
     repository: 'https://ohwr.org/project/conv-ttl-rs485.git'
     contact:
-      name: 'Theodor Stana'
-      email: 't.stana@cern.ch'
-  - id: 'hicce-fmc-128'
-    repository: 'https://ohwr.org/project/hicce-fmc-128.git'
-    contact:
-      name: 'Kasun Sameera Mannatunga'
-      email: 'ksm@sjp.ac.lk'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     tags:
-      - 'FMC Modules'
-  - id: 'lpcfmc12pexp'
-    repository: 'https://ohwr.org/project/lpcfmc12pexp.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-  - id: 'optical-cdr-fmc'
-    repository: 'https://ohwr.org/project/optical-cdr-fmc.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-    tags:
-      - 'FMC Modules'
+      - 'Documentation'
+    compatibles:
+      - 'conv-rs485-opt-rtm'
+      - 'conv-ttl-rs485-hw'
   - id: 'svec'
     repository: 'https://ohwr.org/project/svec.git'
     contact:
-      name: 'Federico Vaga'
-      email: 'federico.vaga@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     tags:
-      - 'FMC Carriers'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'VME'
     compatibles:
-      - 'fmc-adc-100m14b4cha'
+      - 'fmc-adc-100m14b4cha-hw'
   - id: 'conv-ttl-blo'
     repository: 'https://ohwr.org/project/conv-ttl-blo.git'
     contact:
-      name: 'Theodor Stana'
-      email: 't.stana@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'Documentation'
+    compatibles:
+      - 'conv-ttl-blo-hw'
   - id: 'fmc-dio-5chttla'
     repository: 'https://ohwr.org/project/fmc-dio-5chttla.git'
     contact:
-      name: 'Miguel Jimenez Lopez'
-      email: 'miguel.jimenez@sevensols.com'
+      name: 'Tomasz Wlostowski'
+      email: 'tomasz.wlostowski@cern.ch'
     compatibles:
       - 'spec'
       - 'svec'
       - 'diot-sb-zu'
     tags:
-      - 'FMC Modules'
-  - id: 'fmc-dac-250m16b4cha'
-    repository: 'https://ohwr.org/project/fmc-dac-250m16b4cha.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-    tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fmc-conn-tester'
     repository: 'https://ohwr.org/project/fmc-conn-tester.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
+    tags:
+      - 'FMC'
+      - 'FMC Module'
+      - 'Digital I/O'
   - id: 'fmc-tdc'
     repository: 'https://ohwr.org/project/fmc-tdc.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
     tags:
-      - 'FMC Modules'
-  - id: 'vxs-dsp-fmc-carrier'
-    repository: 'https://ohwr.org/project/vxs-dsp-fmc-carrier.git'
-    contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
-    tags:
-      - 'FMC Carriers'
-  - id: 'conv-ttl-nim-3i-30o'
-    repository: 'https://ohwr.org/project/conv-ttl-nim-3i-30o.git'
-    contact:
-      name: 'Matthieu Cattin'
-      email: 'matthieu.cattin@cern.ch'
+      - 'Documentation'
+      - 'Software'
+      - 'Gateware'
+    compatibles:
+      - 'fmc-tdc-1ns-5cha-hw'
   - id: 'spec'
     repository: 'https://ohwr.org/project/spec.git'
     contact:
-      name: 'Federico Vaga'
-      email: 'federico.vaga@cern.ch'
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
     tags:
-      - 'FMC Carriers'
+      - 'PCIe'
+      - 'FMC'
+      - 'FMC Carrier'
+      - 'White Rabbit'
+      - 'WR Node'
     compatibles:
-      - 'fmc-tdc'
+      - 'fmc-tdc-1ns-5cha-hw'
       - 'fmc-delay-1ns-8cha'
-      - 'fmc-adc-100m14b4cha'
+      - 'fmc-adc-100m14b4cha-hw'
   - id: 'fmc-delay-1ns-8cha'
     repository: 'https://ohwr.org/project/fmc-delay-1ns-8cha.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'FMC'
+      - 'FMC Module'
+      - 'Fine Delay'
     compatibles:
       - 'spec'
       - 'svec'
@@ -896,7 +1291,11 @@ projects:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
     tags:
-      - 'FMC Modules'
+      - 'Documentation'
+      - 'Software'
+      - 'Gateware'
+    compatibles:
+      - 'fmc-adc-100m14b4cha-hw'
   - id: 'white-rabbit'
     repository: 'https://ohwr.org/project/white-rabbit.git'
     contact:
@@ -906,101 +1305,144 @@ projects:
   - id: 'wrtd'
     repository: 'https://ohwr.org/project/wrtd.git'
     contact:
-      name: 'Federico Vaga'
-      email: 'federico.vaga@cern.ch'
+      name: 'Dimitris Lampridis'
+      email: 'dimitris.lampridis@cern.ch'
     tags:
-      - 'Gateware applicable to WR Node'
-      - 'Software applicable to WR Node'
+      - 'Gateware'
+      - 'Software'
+      - 'White Rabbit'
+      - 'WR Node'
   - id: 'f-watch'
     repository: 'https://ohwr.org/project/f-watch.git'
     contact:
-      name: 'Matthieu Cattin'
-      email: 'matthieu.cattin@cern.ch'
+      name: 'Javier Serrano'
+      email: 'javier.serrano@cern.ch'
   - id: 'fmc-nanofip-pcb'
     repository: |
       https://gitlab.cern.ch/be-cem-edl/diot/FMC-nanoFIP/fmc-nanofip-pcb.git
     contact:
       name: 'Christos Gentsos'
       email: 'christos.gentsos@cern.ch'
+    tags:
+      - 'FMC'
+      - 'FMC Module'
+      - 'Rad-tol'
+      - 'WorldFIP'
+    compatibles:
+      - 'diot-sb-igl'
   - id: '10G-wr-nic'
     repository: 'https://ohwr.org/project/10G-wr-nic.git'
     contact:
-      name: 'hdlved'
-      email: '25434476+hdlved@users.noreply.github.com'
+      name: 'Phil Clarke'
+      email: 'phil@phil-clarke.net '
     tags:
-      - 'Gateware applicable to WR Node'
-      - 'Gateware applicable to WR Switch'
+      - 'WR Node'
+      - 'WR Switch'
+      - 'Gateware'
+      - 'White Rabbit'
   - id: 'wr-switch-hdl-usp-eval'
     repository: 'https://ohwr.org/project/wr-switch-hdl-usp-eval.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
     tags:
+      - 'White Rabbit'
+      - 'WR Switch'
       - 'WR Switch v4'
+      - 'Documentation'
   - id: 'wr-compliance-tests'
     repository: 'https://ohwr.org/project/wr-compliance-tests.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
     tags:
-      - 'Software applicable to WR Switch'
+      - 'Software'
+      - 'White Rabbit'
+      - 'WR Switch'
   - id: 'wr-fixed-point-calculations'
     repository: 'https://ohwr.org/project/wr-fixed-point-calculations.git'
     contact:
-      name: 'Rens Roosenstein'
-      email: 'rens.roosenstein@cern.ch'
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
     tags:
-      - 'Software applicable to WR Node'
-      - 'Software applicable to WR Switch'
+      - 'Software'
+      - 'WR Switch'
+      - 'WR Node'
+      - 'White Rabbit'
   - id: 'wr-calibration'
     repository: 'https://ohwr.org/project/wr-calibration.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
     tags:
-      - 'WR documentation'
+      - 'Documentation'
+      - 'White Rabbit'
   - id: 'soft-cpu-toolchains'
     repository: 'https://ohwr.org/project/soft-cpu-toolchains.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
     tags:
-      - 'Software applicable to WR Node'
+      - 'Software'
+      - 'Soft Core'
+      - 'RISC-V'
   - id: 'wr-switch-sw'
     repository: 'https://ohwr.org/project/wr-switch-sw.git'
     contact:
       name: 'Adam Wujek'
       email: 'adam.wujek@cern.ch'
     tags:
-      - 'Software applicable to WR Switch'
+      - 'Software'
+      - 'White Rabbit'
+      - 'WR Switch'
+    compatibles:
+      - 'wr-switch-hw'
   - id: 'wrpc-sw'
     repository: 'https://ohwr.org/project/wrpc-sw.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
     tags:
-      - 'Software applicable to WR Switch'
-      - 'Software applicable to WR Node'
+      - 'WR Switch'
+      - 'WR Node'
+      - 'Software'
+      - 'White Rabbit'
+    compatibles:
+      - 'soft-cpu-toolchains'
   - id: 'wr-cores'
     repository: 'https://ohwr.org/project/wr-cores.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
     tags:
-      - 'Gateware applicable to WR Switch'
-      - 'Gateware applicable to WR Node'
+      - 'WR Switch'
+      - 'WR Node'
+      - 'Gateware'
+      - 'White Rabbit'
+    compatibles:
+      - 'wrpc-sw'
+      - 'wr-switch-hdl'
   - id: 'general-cores'
     repository: 'https://ohwr.org/project/general-cores.git'
     contact:
-      name: 'Tomasz Wlostowski'
-      email: 'tomasz.wlostowski@cern.ch'
+      name: 'Tristan Gingold'
+      email: 'tristan.gingold@cern.ch'
     tags:
-      - 'Gateware applicable to WR Switch'
-      - 'Gateware applicable to WR Node'
+      - 'WR Switch'
+      - 'WR Node'
+      - 'Gateware'
+      - 'White Rabbit'
+    compatibles:
+      - 'wr-switch-hdl'
+      - 'wr-cores'
   - id: 'wr-switch-hdl'
     repository: 'https://ohwr.org/project/wr-switch-hdl.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
     tags:
-      - 'Gateware applicable to WR Switch'
+      - 'Gateware'
+      - 'WR Switch'
+      - 'White Rabbit'
+    compatibles:
+      - 'wr-switch-hw'

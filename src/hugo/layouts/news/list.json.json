@@ -3,7 +3,7 @@
   {{- $index = $index | append (dict
     "title" .Title
     "content" .Plain
-    "project" (slice .Params.project)
+    "projects" (slice .Params.project)
     "weight" .Params.weight
     "card" (partial "news-card.html" . | base64Encode))
   -}}

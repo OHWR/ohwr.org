@@ -1446,3 +1446,18 @@ projects:
       - 'White Rabbit'
     compatibles:
       - 'wr-switch-hw'
+  - id: 'wren'
+    repository: 'https://ohwr.org/project/wren.git'
+    contact:
+      name: 'Eva Gousiou'
+      email: 'Evangelia.Gousiou@cern.ch'
+    tags:
+      - 'Gateware'
+      - 'WR Node'
+      - 'White Rabbit'
+      - 'SoC'
+      - 'PCIe'
+      - 'PXIe'
+      - 'VME'
+    compatibles:
+      - 'wr-switch-hw'

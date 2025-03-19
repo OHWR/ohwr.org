@@ -179,3 +179,39 @@ a.search-filter-button[data-state="active"] {
   background-color: $secondary-color;
   color: $white !important;
 }
+
+.info-tooltip {
+  visibility: hidden;
+  text-align: left;
+  border-radius: 4px;
+  padding: 12px;
+  position: absolute;
+  z-index: 9999;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  background-color: $white;
+  a {
+    color: $primary-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  code {
+    background-color: #f8f9fa;
+    padding: 4px;
+    border-radius: 3px;
+    border: 1px solid #e9ecef;
+    color: $text-color;
+  }
+}
+
+.info-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #ced4da transparent;
+}

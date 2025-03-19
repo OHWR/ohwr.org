@@ -13,11 +13,19 @@ SPDX-License-Identifier: BSD-3-Clause
         href="#search-filter-menu">
         <i class="fas fa-filter"></i>
       </button>
-      <div class="col-6 p-0">
+      <div class="col-6 p-0 position-relative">
         <input
           id="search-input"
           class="search-input form-control row m-0 rounded-0"
           placeholder="{{ .placeholder }}">
+        <div class="info-icon-container position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%);">
+          <i
+            id="search-info-icon"
+            class="fas fa-info-circle text-muted"
+            style="cursor: pointer;"
+            aria-label="Search syntax info">
+          </i>
+        </div>
         <div
           id="search-suggestions"
           class="search-suggestions position-absolute w-100 collapse">
@@ -35,6 +43,19 @@ SPDX-License-Identifier: BSD-3-Clause
     <div id="search-filter-menu" class="collapse"></div>
   </div>
 </section>
+
+<div id="info-tooltip" class="info-tooltip shadow-lg">
+  <strong>Search Syntax:</strong>
+  <ul class="list-unstyled mb-0">
+    <li><code>whitespace</code> = <strong>AND</strong> (e.g., <code>apple banana</code>)</li>
+    <li><code>|</code> = <strong>OR</strong> (e.g., <code>apple | banana</code>)</li>
+    <li><code>"..."</code> = <strong>Exact Phrase</strong> (e.g., <code>"apple pie"</code>)</li>
+    <li><code>!</code> = <strong>Exclude</strong> (e.g., <code>!orange</code>)</li>
+    <li><code>^</code> = <strong>Starts With</strong> (e.g., <code>^app</code>)</li>
+    <li><code>$</code> = <strong>Ends With</strong> (e.g., <code>.txt$</code>)</li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.fusejs.io/examples.html#extended-search">Learn More</a></li>
+  </ul>
+</div>
 
 <script
   id="search-script"

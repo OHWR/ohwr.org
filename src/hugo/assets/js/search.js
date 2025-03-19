@@ -13,6 +13,8 @@ const searchSuggestionsElement = document.getElementById('search-suggestions');
 const searchFilterMenuElement = document.getElementById("search-filter-menu");
 const searchResultsElement = document.getElementById("search-results");
 const searchPaginationElement = document.getElementById("search-pagination");
+const infoIconElement = document.getElementById('search-info-icon');
+const tooltipElement = document.getElementById('info-tooltip');
 
 let fuse;
 let filterFuse;
@@ -50,7 +52,28 @@ async function initializeSearch() {
   searchInputElement.addEventListener("keydown", handleSearchKeydown);
   searchButtonElement.addEventListener("click", handleSearchButton);
 
+  initializeInfo();
   performSearch();
+}
+
+function initializeInfo() {
+  infoIconElement.addEventListener('click', function (e) {
+    e.stopPropagation();
+    tooltipElement.classList.toggle('visible');
+
+    const iconRect = infoIconElement.getBoundingClientRect();
+    const tooltipWidth = tooltipElement.offsetWidth;
+    const leftPosition = iconRect.left + (iconRect.width / 2) - (tooltipWidth / 2);
+
+    tooltipElement.style.left = `${leftPosition}px`;
+    tooltipElement.style.top = `${iconRect.bottom + window.scrollY + 8}px`;
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!tooltipElement.contains(e.target) && !infoIconElement.contains(e.target)) {
+      tooltipElement.classList.remove('visible');
+    }
+  });
 }
 
 function performSearch() {

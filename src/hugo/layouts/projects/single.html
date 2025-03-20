@@ -124,7 +124,7 @@ SPDX-License-Identifier: BSD-3-Clause
         {{ with union (.Site.Taxonomies.compatibles.Get .Page.Params.id).Pages (where .Site.RegularPages "Params.id" "in" .Page.Params.compatibles) }}
         <h3 class="text-center">Compatible Projects</h3>
         <div class="cards-section">
-          {{ range . }}
+          {{ range first 3 . }}
           <div class="card interactive-card border-0 shadow-lg mb-4">
             {{ if .Params.images }}
             <div class="row">
@@ -143,6 +143,34 @@ SPDX-License-Identifier: BSD-3-Clause
             {{ end }}
           </div>
           {{ end }}
+          <input type="checkbox" id="showAllProjects" class="toggle-checkbox">
+          <div class="additional-projects">
+            {{ range after 3 . }}
+            <div class="card interactive-card border-0 shadow-lg mb-4">
+              {{ if .Params.images }}
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="{{ index .Params.images 0 | relURL }}" class="m-3 w-100 mh-100 rounded">
+                </div>
+                <div class="col-md-9 p-0">
+              {{ end }}
+                  <div class="card-body">
+                    <h4><a href="{{ .Permalink }}" title="{{ .Title }}" class="stretched-link post-title">{{ .Title }}</a></h4>
+                    <p class="card-text">{{ .Params.summary }}</p>
+                  </div>
+              {{ if .Params.images }}
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          <div class="text-center">
+            <label for="showAllProjects" class="btn btn-primary btn-sm">
+              <span class="see-all">See All Compatible Projects</span>
+              <span class="show-less">Show Less Compatible Projects</span>
+            </label>
+          </div>
         </div>
         {{ end }}
         {{ if $news := where (where .Site.RegularPages "Section" "news") "Params.project" .Title }}

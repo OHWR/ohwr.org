@@ -215,3 +215,27 @@ a.search-filter-button[data-state="active"] {
   border-style: solid;
   border-color: transparent transparent #ced4da transparent;
 }
+
+.toggle-checkbox {
+  display: none;
+}
+
+.additional-projects {
+  display: none;
+}
+
+.toggle-checkbox:checked ~ .additional-projects {
+  display: block;
+}
+
+.show-less {
+  display: none;
+}
+
+.toggle-checkbox:checked ~ .text-center .see-all {
+  display: none;
+}
+
+.toggle-checkbox:checked ~ .text-center .show-less {
+  display: inline;
+}

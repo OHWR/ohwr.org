@@ -11,6 +11,8 @@ const searchInputElement = document.getElementById("search-input");
 const searchButtonElement = document.getElementById("search-button");
 const searchSuggestionsElement = document.getElementById('search-suggestions');
 const searchFilterMenuElement = document.getElementById("search-filter-menu");
+const searchActiveFiltersElement = document.getElementById("search-active-filters");
+const searchAvailableFiltersElement = document.getElementById("search-available-filters");
 const searchResultsElement = document.getElementById("search-results");
 const searchPaginationElement = document.getElementById("search-pagination");
 const infoIconElement = document.getElementById('search-info-icon');
@@ -100,12 +102,10 @@ function performSearch() {
 
   displaySearchResults(results);
 
-  displaySearchFilters(
-    filters,
-    results.flatMap(result =>
-      result[searchScriptElement.dataset.filter] || []
-    ).filter(filter => !filters.includes(filter))
-  );
+  displayActiveFilters(filters);
+  displayAvailableFilters(results.flatMap(result =>
+    result[searchScriptElement.dataset.filter] || []
+    ).filter(filter => !filters.includes(filter)));
 
   displayPagination();
 }
@@ -128,14 +128,12 @@ function displaySearchResults() {
   });
 }
 
-function displaySearchFilters(activeFilters, inactiveFilters) {
-  searchFilterMenuElement.innerHTML = "";
-
-  if (activeFilters.length) {
+function displayActiveFilters(filters) {
+  searchActiveFiltersElement.innerHTML = "";
+  if (filters.length) {
     searchFilterMenuElement.classList.add("show");
   }
-
-  activeFilters.forEach(item => {
+  filters.forEach(item => {
     const button = Object.assign(document.createElement("button"), {
       type: "button",
       className: "search-filter-button",
@@ -144,18 +142,22 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
     });
     button.dataset.state = "active";
     button.addEventListener("click", handleFilterButton);
-    searchFilterMenuElement.appendChild(button);
+    searchActiveFiltersElement.appendChild(button);
   });
+}
 
-  inactiveFilters = Object.values(
-    inactiveFilters.reduce((acc, filter) => {
+function displayAvailableFilters(filters) {
+  searchAvailableFiltersElement.innerHTML = "";
+
+  filters = Object.values(
+    filters.reduce((acc, filter) => {
       acc[filter] = acc[filter] || { filter, count: 0 };
       acc[filter].count++;
       return acc;
     }, {})
   ).sort((a, b) => b.count - a.count);
 
-  inactiveFilters.forEach(item => {
+  filters.forEach(item => {
     const button = Object.assign(document.createElement("button"), {
       type: "button",
       className: "search-filter-button",
@@ -164,7 +166,7 @@ function displaySearchFilters(activeFilters, inactiveFilters) {
         <span class="badge badge-filter ml-1">${item.count}</span>`
     });
     button.addEventListener("click", handleFilterButton);
-    searchFilterMenuElement.appendChild(button);
+    searchAvailableFiltersElement.appendChild(button);
   });
 }
 

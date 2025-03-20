@@ -231,6 +231,7 @@ projects:
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
+    weight: 60
     tags:
       - 'FMC'
       - 'FMC Carrier'
@@ -312,6 +313,7 @@ projects:
     contact:
       name: 'Tristan Gingold'
       email: 'Tristan.Gingold@cern.ch'
+    weight: 50
     compatibles:
       - 'diot-sb-igl'
     tags:
@@ -364,6 +366,7 @@ projects:
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
+    weight: 70
     compatibles:
       - 'pxie-ctl-comexpress'
       - 'fmc-mfe'
@@ -462,6 +465,7 @@ projects:
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
+    weight: 35
     compatibles:
       - 'spec'
       - 'svec'
@@ -518,6 +522,7 @@ projects:
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
+    weight: 40
     compatibles:
       - 'diot-crate-hw'
     tags:
@@ -548,6 +553,7 @@ projects:
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
+    weight: 45
     compatibles:
       - 'spexi7u'
     tags:
@@ -629,6 +635,7 @@ projects:
     contact:
       name: 'Nikolai Beev'
       email: 'nikolai.beev@cern.ch'
+    weight: 75
     tags:
       - '19 inch'
       - 'ADC'
@@ -649,7 +656,7 @@ projects:
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
-    weight: 1
+    weight: 95
     tags:
       - 'Documentation'
       - 'DI/OT'
@@ -670,6 +677,7 @@ projects:
     contact:
       name: 'James Devine'
       email: 'jdevine@cern.ch'
+    weight: 65
     tags:
       - 'Lighting'
       - 'Rad-tol'
@@ -779,6 +787,7 @@ projects:
     contact:
       name: 'Yves-Marie Abiven'
       email: 'yves-marie.abiven@synchrotron-soleil.fr'
+    weight: 55
     tags:
       - '19 inch'
       - 'SoC'
@@ -1200,6 +1209,7 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
+    weight: 30
     tags:
       - 'White Rabbit'
       - 'WR Switch'
@@ -1259,6 +1269,7 @@ projects:
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
+    weight: 85
     tags:
       - 'FMC'
       - 'FMC Carrier'
@@ -1312,6 +1323,7 @@ projects:
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
+    weight: 90
     tags:
       - 'PCIe'
       - 'FMC'
@@ -1350,7 +1362,7 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    weight: 2
+    weight: 100
   - id: 'wrtd'
     repository: 'https://ohwr.org/project/wrtd.git'
     contact:
@@ -1500,6 +1512,7 @@ projects:
     contact:
       name: 'Eva Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
+    weight: 80
     tags:
       - 'Gateware'
       - 'WR Node'

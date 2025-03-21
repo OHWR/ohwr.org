@@ -59,6 +59,6 @@ lint-markdown:
 .PHONY: clean
 clean:
 	rm -rf ${HUGO}/resources ${HUGO}/content/project ${HUGO}/.hugo_build.lock \
-		 ${PUBLIC}
+		 ${PUBLIC} ${HUGO}/content/cern_ohl_*_v2.*
 	find ${HUGO}/content/projects ! -name _index.md -type f -exec rm -f {} +
 	find ${HUGO}/content/news ! -name _index.md -type f -exec rm -f {} +

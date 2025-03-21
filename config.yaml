@@ -1527,7 +1527,7 @@ projects:
     compatibles:
       - 'wr-switch-hw'
   - id: 'sfp-plus-i2c'
-    repository: 'https://ohwr.org/project/sfp-plus-i2c'
+    repository: 'https://ohwr.org/project/sfp-plus-i2c.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'

@@ -18,7 +18,7 @@ SPDX-License-Identifier: BSD-3-Clause
         {{ end }}
       </div>
       <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="stretched-link post-title">{{ .Title }}</a></h3>
-      <p class="card-text">{{ .Summary }}</p>
+      <p class="card-text">{{ transform.Plainify .Summary }}</p>
     </div>
   </div>
 </div>

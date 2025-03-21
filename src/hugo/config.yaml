@@ -54,6 +54,8 @@ menus:
     - name: 'News'
       url: 'news/'
   footer_right:
+    - name: 'Projects'
+      url: '/'
     - name: 'Submit Project'
       url: 'submit-project/'
 params:

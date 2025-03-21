@@ -41,6 +41,7 @@ tags:
   - 'RISC-V'
   - 'RF'
   - 'SAMbuCa'
+  - 'SFP'
   - 'Signal Conditioning'
   - 'SoC'
   - 'Soft Core'
@@ -859,6 +860,7 @@ projects:
     tags:
       - 'FMC'
       - 'FMC Module'
+      - 'SFP'
   - id: 'dces-dtrhf-ser1ch-v1'
     repository: 'https://ohwr.org/project/dces-dtrhf-ser1ch-v1.git'
     contact:
@@ -1088,6 +1090,7 @@ projects:
       email: 'filip.switakowski@creotech.pl'
     tags:
       - 'MTCA'
+      - 'SFP'
     compatibles:
       - 'afc'
       - 'afcz'
@@ -1523,3 +1526,14 @@ projects:
       - 'VME'
     compatibles:
       - 'wr-switch-hw'
+  - id: 'sfp-plus-i2c'
+    repository: 'https://ohwr.org/project/sfp-plus-i2c.git'
+    contact:
+      name: 'Peter Jansweijer'
+      email: 'peterj@nikhef.nl'
+    tags:
+      - 'Software'
+      - 'SFP'
+      - 'White Rabbit'
+    compatibles:
+      - 'wr-calibration'

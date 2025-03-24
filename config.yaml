@@ -57,6 +57,7 @@ tags:
   - 'WR Switch'
   - 'WR Switch v3'
   - 'WR Switch v4'
+  - 'WR Starting Kit'
 redirects:
   - source: |
       project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
@@ -1599,6 +1600,7 @@ projects:
       - 'wrs-fl-hw'
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
+      - 'ppsi'
   - id: 'wrpc-sw'
     repository: 'https://ohwr.org/project/wrpc-sw.git'
     contact:
@@ -1613,6 +1615,7 @@ projects:
       - 'soft-cpu-toolchains'
       - 'wr-switch-sw'
       - 'wr-cores'
+      - 'ppsi'
   - id: 'wr-cores'
     repository: 'https://ohwr.org/project/wr-cores.git'
     contact:
@@ -1688,3 +1691,99 @@ projects:
       - 'White Rabbit'
     compatibles:
       - 'wr-calibration'
+  - id: 'ppsi'
+    repository: 'https://ohwr.org/project/ppsi.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Switch'
+      - 'WR Switch v3'
+      - 'WR Switch v4'
+      - 'WR Node'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'wrpc-sw'
+  - id: 'wr-std'
+    repository: 'https://ohwr.org/project/wr-std.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'Documentation'
+    compatibles:
+      - 'ppsi'
+  - id: 'wr-switch-testing'
+    repository: 'https://ohwr.org/project/wr-switch-testing.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'Documentation'
+  - id: 'wr-nic'
+    repository: 'https://ohwr.org/project/wr-nic.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'WR Starting Kit'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'spec'
+  - id: 'wr-starting-kit'
+    repository: 'https://ohwr.org/project/wr-starting-kit.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'WR Starting Kit'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'spec'
+  - id: 'cute-wr'
+    repository: 'https://ohwr.org/project/cute-wr.git'
+    contact:
+      name: 'Guanghua Gong'
+      email: 'ggh@tsinghua.edu.cn'
+    tags:
+      - 'FMC'
+      - 'WR Node'
+      - 'White Rabbit'
+      - 'FMC Module'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'spec'
+  - id: 'etherbone-core'
+    repository: 'https://ohwr.org/project/etherbone-core.git'
+    contact:
+      name: 'Alexander Hahn'
+      email: 'a.hahn@gsi.de'
+    tags:
+      - 'WR Node'
+      - 'White Rabbit'
+    compatibles:
+      - 'wrpc-sw'
+      - 'wr-cores'

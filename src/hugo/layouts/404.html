@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<!--
+SPDX-FileCopyrightText: 2024 CERN (home.cern)
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<section class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <h1 class="mb-3">404</h1>
+        <p class="mb-4">{{ i18n "error404" }}</p>
+        <p class="font-weight-bold">
+          As of April 2025, all Open Hardware Repository projects have been
+          migrated to GitLab:
+          <a href="https://gitlab.com/ohwr" target="_blank" rel="noopener noreferrer">https://gitlab.com/ohwr</a>.
+        </p>
+        <p class="font-weight-bold">
+          The page you're looking for may have moved to
+          <a id="gitlab-link" href="https://gitlab.com/ohwr" target="_blank" rel="noopener noreferrer">GitLab</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const gitlabUrl = `https://gitlab.com/ohwr${window.location.pathname}`;
+  const gitlabLink = document.getElementById("gitlab-link");
+  gitlabLink.href = gitlabUrl;
+  gitlabLink.textContent = gitlabUrl;
+</script>
+{{ end }}

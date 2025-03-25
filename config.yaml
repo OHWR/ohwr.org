@@ -26,6 +26,7 @@ tags:
   - 'FMC Module'
   - 'Gateware'
   - 'High Voltage'
+  - 'Hobby'
   - 'Lighting'
   - 'Microcontroller'
   - 'Motor Control'
@@ -57,6 +58,7 @@ tags:
   - 'WR Switch'
   - 'WR Switch v3'
   - 'WR Switch v4'
+  - 'WR Starting Kit'
 redirects:
   - source: |
       project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
@@ -158,6 +160,10 @@ projects:
       email: 'peterj@nikhef.nl'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
     tags:
       - 'White Rabbit'
       - 'WR Node'
@@ -179,6 +185,10 @@ projects:
       email: 'whennig@xia.com'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
     tags:
       - 'White Rabbit'
       - 'WR Node'
@@ -238,6 +248,14 @@ projects:
       - 'FMC Carrier'
       - 'MTCA'
       - 'SoC'
+      - 'White Rabbit'
+      - 'WR Node'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'sis1160-pci-io'
     repository: 'https://ohwr.org/project/sis1160-pci-io.git'
     contact:
@@ -277,6 +295,12 @@ projects:
       - 'WR Node'
       - 'White Rabbit'
       - 'FMC Module'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'wrs-lj-hw'
     repository: 'https://ohwr.org/project/wrs-lj-hw.git'
     contact:
@@ -286,6 +310,11 @@ projects:
       - 'White Rabbit'
       - 'WR Switch'
       - 'WR Switch v3'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'faceshield'
     repository: 'https://ohwr.org/project/faceshield.git'
     contact:
@@ -330,6 +359,7 @@ projects:
       email: 'jgarcia@gl-research.com'
     tags:
       - 'Course'
+      - 'Documentation'
       - 'SoC'
   - id: 'diot-pfc-ku'
     repository: 'https://ohwr.org/project/diot-pfc-ku.git'
@@ -371,6 +401,11 @@ projects:
     compatibles:
       - 'pxie-ctl-comexpress'
       - 'fmc-mfe'
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
     tags:
       - 'FMC'
       - 'FMC Carrier'
@@ -441,6 +476,12 @@ projects:
       - 'PCIe'
       - 'FMC Carrier'
       - 'White Rabbit'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'hpsec'
     repository: 'https://ohwr.org/project/hpsec.git'
     contact:
@@ -479,6 +520,10 @@ projects:
       email: 'a.hahn@gsi.de'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
     tags:
       - 'White Rabbit'
       - 'WR Node'
@@ -490,6 +535,10 @@ projects:
       email: 'broquet.antonin@gmail.com'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
     tags:
       - 'FMC'
       - 'SoC'
@@ -526,6 +575,11 @@ projects:
     weight: 40
     compatibles:
       - 'diot-crate-hw'
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
     tags:
       - 'FMC'
       - 'FMC Carrier'
@@ -582,6 +636,10 @@ projects:
       email: 'cedric.champion@apc.univ-paris7.fr'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
     tags:
       - 'FMC'
       - 'White Rabbit'
@@ -596,6 +654,13 @@ projects:
     tags:
       - 'White Rabbit'
       - 'WR Switch'
+      - 'WR Switch v3'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-low-jitter'
+      - 'wr-switch-hw-v4'
   - id: 'wr-switch-hw-v4'
     repository: 'https://ohwr.org/project/wr-switch-hw-v4.git'
     contact:
@@ -604,6 +669,12 @@ projects:
     tags:
       - 'WR Switch v4'
       - 'WR Switch'
+      - 'SoC'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
   - id: 'fmc-dtxrx-4cha'
     repository: 'https://ohwr.org/project/fmc-dtxrx-4cha.git'
     contact:
@@ -631,6 +702,12 @@ projects:
       - 'FMC Carrier'
       - 'White Rabbit'
       - 'WR Node'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'opt-adc-10k-32b-1cha'
     repository: 'https://ohwr.org/project/opt-adc-10k-32b-1cha.git'
     contact:
@@ -691,6 +768,11 @@ projects:
       - 'White Rabbit'
       - 'WR Switch'
       - 'WR Switch v3'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'spec7'
     repository: 'https://ohwr.org/project/spec7.git'
     contact:
@@ -703,6 +785,12 @@ projects:
       - 'FMC Carrier'
       - 'PCIe'
       - 'SoC'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'ertm15-llrf-wr'
     repository: 'https://ohwr.org/project/ertm15-llrf-wr.git'
     contact:
@@ -713,6 +801,12 @@ projects:
       - 'WR Node'
       - 'MTCA'
       - 'USB'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'pda-8ch-fda-8ch'
     repository: 'https://ohwr.org/project/pda-8ch-fda-8ch.git'
     contact:
@@ -766,7 +860,6 @@ projects:
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-ljdprep-hw'
-      - 'wrs-fl-hw'
   - id: 'fmc-adc-subsamp125m14b4cha'
     repository: 'https://ohwr.org/project/fmc-adc-subsamp125m14b4cha.git'
     contact:
@@ -806,6 +899,10 @@ projects:
       - 'MTCA'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'fmc-dio-32chlvdsa'
     repository: 'https://ohwr.org/project/fmc-dio-32chlvdsa.git'
     contact:
@@ -852,6 +949,12 @@ projects:
       - 'FMC Carrier'
       - '19 inch'
       - 'SoC'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'fmc-sfp-4cha'
     repository: 'https://ohwr.org/project/fmc-sfp-4cha.git'
     contact:
@@ -897,6 +1000,9 @@ projects:
       - 'Gateware'
       - 'Soft Core'
       - 'RISC-V'
+    compatibles:
+      - 'wrpc-sw'
+      - 'mock-turtle'
   - id: 'mock-turtle'
     repository: 'https://ohwr.org/project/mock-turtle.git'
     contact:
@@ -907,11 +1013,20 @@ projects:
       - 'Soft Core'
       - 'RISC-V'
       - 'SoC'
+      - 'White Rabbit'
+    compatibles:
+      - 'wrpc-sw'
+      - 'spec'
+      - 'svec'
+      - 'urv-core'
   - id: 'cosmic-pi'
     repository: 'https://ohwr.org/project/cosmic-pi.git'
     contact:
       name: 'James Devine'
       email: 'jdevine@cern.ch'
+    tags:
+      - 'Documentation'
+      - 'Hobby'
   - id: 'radtol-led-psu'
     repository: 'https://ohwr.org/project/radtol-led-psu.git'
     contact:
@@ -947,6 +1062,12 @@ projects:
       - 'WR Node'
       - 'FMC'
       - 'FMC Carrier'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'fmc-masterfip'
     repository: 'https://ohwr.org/project/fmc-masterfip.git'
     contact:
@@ -967,6 +1088,12 @@ projects:
       - 'White Rabbit'
       - 'WR Node'
       - 'PMC'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'fmc-dio-16ch-lvds-a'
     repository: 'https://ohwr.org/project/fmc-dio-16ch-lvds-a.git'
     contact:
@@ -1002,6 +1129,10 @@ projects:
       - 'CompactRIO'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'conv-ttl-rs485-hw'
     repository: 'https://ohwr.org/project/conv-ttl-rs485-hw.git'
     contact:
@@ -1122,6 +1253,11 @@ projects:
       - 'WR Node'
     compatibles:
       - 'fmc-dac-600m-12b-1cha-dds'
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'usb-relay-box1'
     repository: 'https://ohwr.org/project/usb-relay-box1.git'
     contact:
@@ -1212,7 +1348,7 @@ projects:
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
-    weight: 30
+    weight: 78
     tags:
       - 'White Rabbit'
       - 'WR Switch'
@@ -1257,6 +1393,14 @@ projects:
       - 'FMC'
       - 'FMC Carrier'
       - 'PXIe'
+      - 'White Rabbit'
+      - 'WR Node'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'conv-ttl-rs485'
     repository: 'https://ohwr.org/project/conv-ttl-rs485.git'
     contact:
@@ -1277,8 +1421,15 @@ projects:
       - 'FMC'
       - 'FMC Carrier'
       - 'VME'
+      - 'White Rabbit'
+      - 'WR Node'
     compatibles:
       - 'fmc-adc-100m14b4cha-hw'
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'conv-ttl-blo'
     repository: 'https://ohwr.org/project/conv-ttl-blo.git'
     contact:
@@ -1337,6 +1488,11 @@ projects:
       - 'fmc-tdc-1ns-5cha-hw'
       - 'fmc-delay-1ns-8cha'
       - 'fmc-adc-100m14b4cha-hw'
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'fmc-delay-1ns-8cha'
     repository: 'https://ohwr.org/project/fmc-delay-1ns-8cha.git'
     contact:
@@ -1366,6 +1522,9 @@ projects:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
     weight: 100
+    tags:
+      - 'Documentation'
+      - 'White Rabbit'
   - id: 'wrtd'
     repository: 'https://ohwr.org/project/wrtd.git'
     contact:
@@ -1376,6 +1535,12 @@ projects:
       - 'Software'
       - 'White Rabbit'
       - 'WR Node'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'f-watch'
     repository: 'https://ohwr.org/project/f-watch.git'
     contact:
@@ -1404,6 +1569,12 @@ projects:
       - 'WR Switch'
       - 'Gateware'
       - 'White Rabbit'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'wr-switch-hdl-usp-eval'
     repository: 'https://ohwr.org/project/wr-switch-hdl-usp-eval.git'
     contact:
@@ -1414,6 +1585,7 @@ projects:
       - 'WR Switch'
       - 'WR Switch v4'
       - 'Documentation'
+      - 'Gateware'
   - id: 'wr-compliance-tests'
     repository: 'https://ohwr.org/project/wr-compliance-tests.git'
     contact:
@@ -1421,8 +1593,14 @@ projects:
       email: 'maciej.lipinski@cern.ch'
     tags:
       - 'Software'
+      - 'Documentation'
       - 'White Rabbit'
       - 'WR Switch'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
   - id: 'wr-fixed-point-calculations'
     repository: 'https://ohwr.org/project/wr-fixed-point-calculations.git'
     contact:
@@ -1450,6 +1628,9 @@ projects:
       - 'Software'
       - 'Soft Core'
       - 'RISC-V'
+    compatibles:
+      - 'wr-switch-sw'
+      - 'wrpc-sw'
   - id: 'wr-switch-sw'
     repository: 'https://ohwr.org/project/wr-switch-sw.git'
     contact:
@@ -1459,8 +1640,15 @@ projects:
       - 'Software'
       - 'White Rabbit'
       - 'WR Switch'
+      - 'WR Switch v3'
+      - 'WR Switch v4'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'ppsi'
   - id: 'wrpc-sw'
     repository: 'https://ohwr.org/project/wrpc-sw.git'
     contact:
@@ -1471,8 +1659,13 @@ projects:
       - 'WR Node'
       - 'Software'
       - 'White Rabbit'
+      - 'Software'
+      - 'RISC-V'
     compatibles:
       - 'soft-cpu-toolchains'
+      - 'wr-switch-sw'
+      - 'wr-cores'
+      - 'ppsi'
   - id: 'wr-cores'
     repository: 'https://ohwr.org/project/wr-cores.git'
     contact:
@@ -1508,8 +1701,15 @@ projects:
       - 'Gateware'
       - 'WR Switch'
       - 'White Rabbit'
+      - 'WR Switch v3'
+      - 'WR Switch v4'
     compatibles:
+      - 'wr-switch-sw'
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'wren'
     repository: 'https://ohwr.org/project/wren.git'
     contact:
@@ -1526,6 +1726,10 @@ projects:
       - 'VME'
     compatibles:
       - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
   - id: 'sfp-plus-i2c'
     repository: 'https://ohwr.org/project/sfp-plus-i2c.git'
     contact:
@@ -1537,3 +1741,104 @@ projects:
       - 'White Rabbit'
     compatibles:
       - 'wr-calibration'
+  - id: 'ppsi'
+    repository: 'https://ohwr.org/project/ppsi.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Switch'
+      - 'WR Switch v3'
+      - 'WR Switch v4'
+      - 'WR Node'
+      - 'Software'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'wrpc-sw'
+  - id: 'wr-std'
+    repository: 'https://ohwr.org/project/wr-std.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'Documentation'
+    compatibles:
+      - 'ppsi'
+  - id: 'wr-switch-testing'
+    repository: 'https://ohwr.org/project/wr-switch-testing.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Switch'
+      - 'Documentation'
+  - id: 'wr-nic'
+    repository: 'https://ohwr.org/project/wr-nic.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'WR Starting Kit'
+      - 'Gateware'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'spec'
+  - id: 'wr-starting-kit'
+    repository: 'https://ohwr.org/project/wr-starting-kit.git'
+    contact:
+      name: 'Maciej Lipinski'
+      email: 'maciej.lipinski@cern.ch'
+    tags:
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'WR Starting Kit'
+      - 'Gateware'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'spec'
+  - id: 'cute-wr'
+    repository: 'https://ohwr.org/project/cute-wr.git'
+    contact:
+      name: 'Guanghua Gong'
+      email: 'ggh@tsinghua.edu.cn'
+    tags:
+      - 'FMC'
+      - 'WR Node'
+      - 'White Rabbit'
+      - 'FMC Module'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+      - 'spec'
+  - id: 'etherbone-core'
+    repository: 'https://ohwr.org/project/etherbone-core.git'
+    contact:
+      name: 'Alexander Hahn'
+      email: 'a.hahn@gsi.de'
+    tags:
+      - 'WR Node'
+      - 'White Rabbit'
+      - 'Gateware'
+    compatibles:
+      - 'wrpc-sw'
+      - 'wr-cores'

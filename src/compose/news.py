@@ -5,12 +5,9 @@
 """Load news."""
 
 import logging
-import os
-from collections import UserDict
 
 from config import News, Project
-
-from hugo import Page
+from hugo import Page, Section
 
 
 class NewsPage(Page):
@@ -32,7 +29,7 @@ class NewsPage(Page):
         return cls(front_matter=front_matter, markdown=config.description)
 
 
-class NewsSection(UserDict[str, NewsPage]):
+class NewsSection(Section):
     """News Hugo section."""
 
     @classmethod
@@ -57,22 +54,6 @@ class NewsSection(UserDict[str, NewsPage]):
                 continue
             news_section.update(cls._from_config(news))
         return cls(news_section)
-
-    def write(self, path: str) -> None:
-        """
-        Write the news section to files.
-
-        Parameters:
-            path: news content directory path.
-        """
-        for page, news in self.data.items():
-            logging.info("Writing '{0}' page...".format(page))
-            try:
-                news.write(os.path.join(path, '{0}.md'.format(page)))
-            except ValueError as write_error:
-                logging.error("Failed to write '{0}' page:\n{1}".format(
-                    page, write_error,
-                ))
 
     @classmethod
     def _from_config(cls, config: list[News]):

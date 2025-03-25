@@ -4,7 +4,10 @@
 
 """Generate Hugo content."""
 
+from collections import UserDict
 from dataclasses import dataclass
+import logging
+import os
 
 import yaml
 
@@ -40,3 +43,36 @@ class Page:
             raise ValueError("Failed to write Hugo page to '{0}':\n{1}".format(
                 path, write_error,
             ))
+
+
+class Section(UserDict[str, Page]):
+    """Hugo section."""
+
+    def write(self, path: str) -> None:
+        """
+        Write the section to files.
+
+        Parameters:
+            path: Content directory path.
+        """
+        for name, page in self.data.items():
+            logging.info("Writing '{0}' page...".format(name))
+            try:
+                page.write(self._page_path(path, name))
+            except ValueError as write_error:
+                logging.error("Failed to write '{0}' page:\n{1}".format(
+                    name, write_error,
+                ))
+
+    def _page_path(self, path: str, name: str) -> str:
+        """
+        Get page path.
+
+        Parameters:
+            path: Base path.
+            name: Page name.
+
+        Returns:
+            Page path.
+        """
+        return os.path.join(path, '{0}.md'.format(name))

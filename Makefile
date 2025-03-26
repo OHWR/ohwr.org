@@ -3,7 +3,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 HUGO	= ${CURDIR}/src/hugo
+COMPOSE	= ${CURDIR}/src/compose
 PUBLIC	= ${CURDIR}/public
+TEST	= ${CURDIR}/test
 
 .PHONY: all
 all: test build
@@ -14,7 +16,7 @@ all: test build
 
 .PHONY: build
 build:
-	python ${CURDIR}/src/compose ${CURDIR}/config.yaml
+	python ${COMPOSE} ${CURDIR}/config.yaml
 	hugo --gc --minify --source ${HUGO} --destination ${PUBLIC}
 
 ###############################################################################
@@ -30,7 +32,7 @@ run:
 ###############################################################################
 
 .PHONY: test
-test: lint-reuse lint-yaml lint-makefile lint-python lint-markdown
+test: lint-reuse lint-yaml lint-makefile lint-python lint-markdown test-pytest
 
 .PHONY: lint-reuse
 lint-reuse:
@@ -52,6 +54,9 @@ lint-python:
 lint-markdown:
 	markdownlint-cli2 '${CURDIR}/**/*.md' '#${CURDIR}/.venv'
 
+test-pytest:
+	pytest ${TEST}
+
 ###############################################################################
 # Clean
 ###############################################################################
@@ -59,6 +64,7 @@ lint-markdown:
 .PHONY: clean
 clean:
 	rm -rf ${HUGO}/resources ${HUGO}/content/project ${HUGO}/.hugo_build.lock \
-		 ${PUBLIC} ${HUGO}/content/cern_ohl_*_v2.*
+		 ${PUBLIC} ${HUGO}/content/cern_ohl_*_v2.* ${COMPOSE}/__pycache__ \
+		 ${TEST}/__pycache__ ${TEST}/.pytest_cache
 	find ${HUGO}/content/projects ! -name _index.md -type f -exec rm -f {} +
 	find ${HUGO}/content/news ! -name _index.md -type f -exec rm -f {} +

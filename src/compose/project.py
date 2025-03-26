@@ -6,19 +6,16 @@
 
 
 import logging
-import os
-from collections import UserDict
 
-from config import Project as Config
-
-from hugo import Page
+from config import Project
+from hugo import Page, Section
 
 
-class Project(Page):
+class ProjectPage(Page):
     """Project Hugo page."""
 
     @classmethod
-    def from_config(cls, config: Config) -> 'Project':
+    def from_config(cls, config: Project) -> 'Project':
         """
         Create a project page from a configuration.
 
@@ -36,11 +33,11 @@ class Project(Page):
         return cls(front_matter=front_matter, markdown=config.description)
 
 
-class ProjectSection(UserDict[str, Project]):
+class ProjectSection(Section):
     """Projects Hugo section."""
 
     @classmethod
-    def from_config(cls, configs: list[Config]) -> 'ProjectSection':
+    def from_config(cls, configs: list[Project]) -> 'ProjectSection':
         """
         Create a projects section from a list of configurations.
 
@@ -54,7 +51,7 @@ class ProjectSection(UserDict[str, Project]):
         for config in configs:
             logging.info("Generating '{0}' page...".format(config.id))
             try:
-                project = Project.from_config(config)
+                project = ProjectPage.from_config(config)
             except ValueError as project_error:
                 logging.error("Failed to generate '{0}' page:\n{1}".format(
                     config.id, project_error,
@@ -62,19 +59,3 @@ class ProjectSection(UserDict[str, Project]):
                 continue
             projects[config.id] = project
         return cls(projects)
-
-    def write(self, path: str) -> None:
-        """
-        Write the projects section to files.
-
-        Parameters:
-            path: Projects content directory path.
-        """
-        for page, project in self.data.items():
-            logging.info("Writing '{0}' page...".format(page))
-            try:
-                project.write(os.path.join(path, '{0}.md'.format(page)))
-            except ValueError as write_error:
-                logging.error("Failed to write '{0}' page:\n{1}".format(
-                    page, write_error,
-                ))

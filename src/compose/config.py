@@ -166,7 +166,7 @@ class Project(BaseModelForbidExtra):
         for section in sections:
             md = re.sub('<!--(.*?)-->', '', section, flags=re.DOTALL).strip()
             md = re.sub(r'^\s*-{3,}\s*$', '', md, flags=re.MULTILINE).strip()
-            md = re.sub(r'!\[.*?\]\(.*?\)', '', md, flags=re.DOTALL)
+            md = re.sub(r'!\[.*?\]\(.*?\)', '', md, flags=re.DOTALL).strip()
             if not md.startswith('#') and md:
                 return md
         raise ValueError('Failed to parse the Markdown description.')

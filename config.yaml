@@ -48,17 +48,19 @@ tags:
   - 'Soft Core'
   - 'Software'
   - 'TDC'
+  - 'Testing'
   - 'Timing'
+  - 'Tools'
   - 'USB'
   - 'Video'
   - 'VME'
   - 'White Rabbit'
   - 'WorldFIP'
   - 'WR Node'
+  - 'WR Starting Kit'
   - 'WR Switch'
   - 'WR Switch v3'
   - 'WR Switch v4'
-  - 'WR Starting Kit'
 redirects:
   - source: |
       project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
@@ -1461,6 +1463,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'Digital I/O'
+      - 'Testing'
   - id: 'fmc-tdc'
     repository: 'https://ohwr.org/project/fmc-tdc.git'
     contact:
@@ -1596,6 +1599,7 @@ projects:
       - 'Documentation'
       - 'White Rabbit'
       - 'WR Switch'
+      - 'Testing'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1628,6 +1632,7 @@ projects:
       - 'Software'
       - 'Soft Core'
       - 'RISC-V'
+      - 'Tools'
     compatibles:
       - 'wr-switch-sw'
       - 'wrpc-sw'
@@ -1779,6 +1784,7 @@ projects:
       - 'White Rabbit'
       - 'WR Switch'
       - 'Documentation'
+      - 'Testing'
   - id: 'wr-nic'
     repository: 'https://ohwr.org/project/wr-nic.git'
     contact:
@@ -1829,7 +1835,6 @@ projects:
       - 'wrs-fl-hw'
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
-      - 'spec'
   - id: 'etherbone-core'
     repository: 'https://ohwr.org/project/etherbone-core.git'
     contact:
@@ -1842,3 +1847,235 @@ projects:
     compatibles:
       - 'wrpc-sw'
       - 'wr-cores'
+  - id: 'spec7-ps-sw'
+    repository: 'https://ohwr.org/project/spec7-ps-sw.git'
+    contact:
+      name: 'Javier Garcia'
+      email: 'jgarcia@gl-research.com'
+    tags:
+      - 'Software'
+    compatibles:
+      - 'spec7'
+  - id: 'distributed-oscilloscope'
+    repository: 'https://ohwr.org/project/distributed-oscilloscope.git'
+    contact:
+      name: 'Dimitris Lampridis'
+      email: 'dimitris.lampridis@cern.ch'
+    tags:
+      - 'Software'
+      - 'Documentation'
+      - 'White Rabbit'
+    compatibles:
+      - 'spec'
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+  - id: 'ohw-research'
+    repository: 'https://ohwr.org/project/ohw-research.git'
+    contact:
+      name: 'L. F. R. Murillo'
+      email: 'luisfelipe@ucla.edu'
+    tags:
+      - 'Documentation'
+      - 'White Rabbit'
+  - id: 'timiq-sw'
+    repository: 'https://ohwr.org/project/timiq/timiq-sw.git'
+    contact:
+      name: 'Jean-Paul Ricaud'
+      email: 'jean-paul.ricaud@maxiv.lu.se'
+    tags:
+      - 'Timing'
+      - '19 inch'
+  - id: 'hdlmaker'
+    repository: 'https://ohwr.org/garcialasheras/hdlmaker.git'
+    contact:
+      name: 'Javier D. Garcia-Lasheras'
+      email: 'javier@garcialasheras.com'
+    tags:
+      - 'Tools'
+      - 'Software'
+  - id: 'list'
+    repository: 'https://ohwr.org/project/list.git'
+    contact:
+      name: 'Federico Vaga'
+      email: 'federico.vaga@cern.ch'
+    tags:
+      - 'White Rabbit'
+    compatibles:
+      - 'svec'
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+      - 'wr-switch-hw-v4'
+  - id: 'vhdl-style'
+    repository: 'https://ohwr.org/project/vhdl-style.git'
+    contact:
+      name: 'Tristan Gingold'
+      email: 'tristan.gingold@cern.ch'
+    tags:
+      - 'Documentation'
+  - id: 'vme-sbc-a25-pcie-vme-bridge'
+    repository: 'https://ohwr.org/project/vme-sbc-a25-pcie-vme-bridge.git'
+    contact:
+      name: 'Grzegorz Daniluk'
+      email: 'grzegorz.daniluk@cern.ch'
+    tags:
+      - 'Gateware'
+      - 'VME'
+  - id: 'sdb'
+    repository: 'https://ohwr.org/project/sdb.git'
+    contact:
+      name: 'Alessandro Rubini'
+      email: 'rubini@gnudd.com'
+    tags:
+      - 'Software'
+      - 'Documentation'
+  - id: 'fmc-dac100m14b16cha-adc2m14b4cha'
+    repository: 'https://ohwr.org/project/fmc-dac100m14b16cha-adc2m14b4cha.git'
+    contact:
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'FMC'
+      - 'ADC'
+  - id: 'fmc-adc100m14b16cha-dac2m14b4cha'
+    repository: 'https://ohwr.org/project/fmc-adc100m14b16cha-dac2m14b4cha.git'
+    contact:
+      name: 'Filip Świtakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'FMC'
+      - 'ADC'
+  - id: 'fmc-adc-2k24b8cha'
+    repository: 'https://ohwr.org/project/fmc-adc-2k24b8cha.git'
+    contact:
+      name: 'Switakowski'
+      email: 'filip.switakowski@creotech.pl'
+    tags:
+      - 'FMC'
+      - 'ADC'
+  - id: 'masterfip'
+    repository: 'https://ohwr.org/project/masterfip.git'
+    contact:
+      name: 'Javier Serrano'
+      email: 'javier.serrano@cern.ch'
+    tags:
+      - 'Documentation'
+      - 'WorldFIP'
+  - id: 'pts-base'
+    repository: 'https://ohwr.org/project/pts-base.git'
+    contact:
+      name: 'Juan David Gonzalez Cobas'
+      email: 'dcobas@cern.ch'
+    tags:
+      - 'Documentation'
+      - 'Testing'
+  - id: 'pts'
+    repository: 'https://ohwr.org/project/pts.git'
+    contact:
+      name: 'Juan David Gonzalez Cobas'
+      email: 'dcobas@cern.ch'
+    tags:
+      - 'Documentation'
+      - 'Testing'
+  - id: 'cute-wr-dp'
+    repository: 'https://ohwr.org/project/cute-wr-dp.git'
+    contact:
+      name: 'Li Hongming'
+      email: 'lihm.thu@gmail.com'
+    tags:
+      - 'FMC'
+      - 'WR Node'
+      - 'White Rabbit'
+      - 'FMC Module'
+    compatibles:
+      - 'wr-switch-hw'
+      - 'wrs-lj-hw'
+      - 'wrs-fl-hw'
+      - 'wrs-ljdprep-hw'
+  - id: 'cern-kicad'
+    repository: 'https://ohwr.org/project/cern-kicad.git'
+    contact:
+      name: 'Javier Serrano'
+      email: 'javier.serrano@cern.ch'
+    tags:
+      - 'Tools'
+      - 'Documentation'
+      - 'Software'
+  - id: 'ed'
+    repository: 'https://ohwr.org/project/ed.git'
+    contact:
+      name: 'Javier Serrano'
+      email: 'javier.serrano@cern.ch'
+    tags:
+      - 'Documentation'
+  - id: 'tdc-core'
+    repository: 'https://ohwr.org/project/tdc-core.git'
+    contact:
+      name: 'Sebastien Bourdeauducq'
+      email: 'sebastien@milkymist.org'
+    tags:
+      - 'Gateware'
+  - id: 'fpga-config-space'
+    repository: 'https://ohwr.org/project/fpga-config-space.git'
+    contact:
+      name: 'Alexander Hahn'
+      email: 'a.hahn@gsi.de'
+    tags:
+      - 'Gateware'
+  - id: 'hdl-make'
+    repository: 'https://ohwr.org/project/hdl-make.git'
+    contact:
+      name: 'Tristan Gingold'
+      email: 'tristan.gingold@cern.ch'
+    tags:
+      - 'Tools'
+      - 'Software'
+  - id: 'gn4124-core'
+    repository: 'https://ohwr.org/project/gn4124-core.git'
+    contact:
+      name: 'Tristan Gingold'
+      email: 'tristan.gingold@cern.ch'
+    tags:
+      - 'Gateware'
+      - 'PCIe'
+    compatibles:
+      - 'spec'
+  - id: 'vme64x-core'
+    repository: 'https://ohwr.org/project/vme64x-core.git'
+    contact:
+      name: 'Tristan Gingold'
+      email: 'tristan.gingold@cern.ch'
+    tags:
+      - 'Gateware'
+      - 'VME'
+    compatibles:
+      - 'svec'
+  - id: 'wishbone-gen'
+    repository: 'https://ohwr.org/project/wishbone-gen.git'
+    contact:
+      name: 'Tomasz Włostowski'
+      email: 'tomasz.wlostowski@cern.ch'
+    tags:
+      - 'Software'
+      - 'Tools'
+  - id: 'cern-fip'
+    repository: 'https://ohwr.org/project/cern-fip.git'
+    contact:
+      name: 'Eva Gousiou'
+      email: 'Evangelia.Gousiou@cern.ch'
+    weight: 69
+    tags:
+      - 'WorldFIP'
+      - 'Documentation'
+  - id: 'extract-cap-voltage-rating'
+    repository: 'https://ohwr.org/project/extract-cap-voltage-rating.git'
+    contact:
+      name: 'Christos Gentsos'
+      email: 'christos.gentsos@cern.ch'
+    tags:
+      - 'Tools'
+      - 'Software'

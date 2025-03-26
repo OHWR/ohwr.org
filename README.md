@@ -10,6 +10,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0+
 [![License BSD 3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](.github/CODE_OF_CONDUCT.md)
 [![Build](https://github.com/OHWR/ohwr.org/actions/workflows/build.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/build.yaml)
+[![Test](https://github.com/OHWR/ohwr.org/actions/workflows/test.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/test.yaml)
 [![Deploy to GitHub Pages](https://github.com/OHWR/ohwr.org/actions/workflows/deploy.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/deploy.yaml)
 [![REUSE Compliance Check](https://github.com/OHWR/ohwr.org/actions/workflows/reuse.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/reuse.yaml)
 [![YAML Lint](https://github.com/OHWR/ohwr.org/actions/workflows/yaml.yaml/badge.svg)](https://github.com/OHWR/ohwr.org/actions/workflows/yaml.yaml)
@@ -85,6 +86,10 @@ theme.
   \>= 0.2.2
 * [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2#install)
   \>= 0.10.0
+* [pytest](https://docs.pytest.org/en/stable/getting-started.html#install-pytest)
+  \>= 8.3.5
+* [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/#install)
+  \>=3.14.0
 
 ### Steps :footprints: <!-- markdownlint-disable-line MD024 -->
 

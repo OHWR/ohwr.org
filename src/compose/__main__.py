@@ -49,22 +49,10 @@ logging.info("Generating 'projects' section...")
 projects = ProjectSection.from_config(config.projects)
 
 logging.info("Writing 'projects' section...")
-try:
-    projects.write(os.path.join(config.sources, 'content/projects'))
-except ValueError as projects_write_error:
-    logging.error("Failed to write 'projects' section:\n{0}".format(
-        projects_write_error,
-    ))
-    sys.exit(1)
+projects.write(os.path.join(config.sources, 'content/projects'))
 
 logging.info("Generating 'news' section...")
 news = NewsSection.from_config(config.projects)
 
 logging.info("Writing 'news' section...")
-try:
-    news.write(os.path.join(config.sources, 'content/news'))
-except ValueError as news_write_error:
-    logging.error("Failed to write 'news' section:\n{0}".format(
-        news_write_error,
-    ))
-    sys.exit(1)
+news.write(os.path.join(config.sources, 'content/news'))

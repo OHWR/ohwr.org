@@ -1,0 +1,26 @@
+---
+# SPDX-FileCopyrightText: 2024 CERN (home.cern)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+name: Test
+
+on: [push, pull_request, workflow_dispatch]  # yamllint disable-line rule:truthy
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.3'
+      - name: Install dependencies
+        run: |
+          pip install pydantic PyYAML email_validator requests pytest \
+          pytest-mock -c requirements.txt
+      - name: Python Test
+        id: build
+        run: make test-pytest

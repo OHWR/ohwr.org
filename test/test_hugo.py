@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""Tests for Hugo content generation with pytest-mock."""
+"""Tests for Hugo content generation."""
 
 import pytest
 import yaml

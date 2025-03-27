@@ -10,7 +10,6 @@ import pytest
 from urllib.parse import quote
 from repository import Repository, GitHubRepository, GitLabRepository
 
-# Test data
 TEST_GITHUB_URL = "https://github.com/owner/repo.git"
 TEST_GITLAB_URL = "https://gitlab.com/group/subgroup/repo.git"
 TEST_OHWR_URL = "https://ohwr.org/project/repo.git"

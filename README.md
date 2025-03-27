@@ -33,8 +33,8 @@ theme.
 
 ### Requirements :clipboard:
 
-* [Go](https://go.dev/doc/install) >= 1.23.2
-* [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.129.0
+* [Go](https://go.dev/doc/install) >= 1.24.0
+* [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.145.0
 * [Python](https://www.python.org/downloads) >= 3.12.3
 * [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) >= 6.0.2
 * [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.10.6

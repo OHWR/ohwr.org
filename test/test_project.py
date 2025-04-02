@@ -106,30 +106,3 @@ class TestProjectSection:
         assert PROJ_ID in section
         assert BAD_ID not in section
         assert all(msg in log_msg for msg in expected_logs)
-
-
-class TestProjectErrorCases:
-    """Tests for error cases in Project dependencies."""
-
-    def test_manifest_fetch_error(self, mocker):
-        """Test manifest property when fetch fails."""
-        mock_project = mocker.Mock(spec=Project)
-        mock_project.repository = mocker.Mock()
-        mock_project.repository.fetch.side_effect = ValueError("Fetch error")
-
-        type(mock_project).manifest = mocker.PropertyMock(
-            side_effect=ValueError("Failed to fetch")
-        )
-        with pytest.raises(ValueError, match="Failed to fetch"):
-            mock_project.manifest
-
-    def test_description_parse_error(self, mocker):
-        """Test description property when parsing fails."""
-        mock_project = mocker.Mock(spec=Project)
-
-        type(mock_project).description = mocker.PropertyMock(
-            side_effect=ValueError("Failed to split")
-        )
-
-        with pytest.raises(ValueError, match="Failed to split"):
-            mock_project.description

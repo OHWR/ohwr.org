@@ -122,17 +122,3 @@ class TestNewsSection:
         assert len(section) == 1
         assert NEWS_PAGE_FORMAT.format(PROJ_ID) in section
         assert isinstance(section[NEWS_PAGE_FORMAT.format(PROJ_ID)], NewsPage)
-
-
-class TestNewsErrorCases:
-    """Tests for error cases in News dependencies."""
-
-    def test_project_news_error(self, mocker):
-        """Test news property when fetch fails."""
-        mock_project = mocker.Mock(spec=Project)
-        type(mock_project).news = mocker.PropertyMock(
-            side_effect=ValueError("News fetch error")
-        )
-
-        with pytest.raises(ValueError, match="News fetch error"):
-            mock_project.news

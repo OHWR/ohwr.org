@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 CERN (home.cern)
+# SPDX-FileCopyrightText: 2025 CERN (home.cern)
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -13,7 +13,7 @@ from hugo import Page, Section
 def sample_page():
     """Fixture providing a sample Page instance."""
     return Page(
-        front_matter={"title": "Test Page", "date": "2024-01-01"},
+        front_matter={"title": "Test Page", "date": "2025-01-01"},
         markdown="# Test Page\n\nThis is a test page."
     )
 

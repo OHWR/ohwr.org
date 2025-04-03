@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024
+# SPDX-FileCopyrightText: 2025
 #
 # SPDX-License-Identifier: BSD-3-Clause
 

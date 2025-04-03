@@ -9,10 +9,6 @@ summaryLength: 30
 outputs:
   section:
     - 'html'
-  taxonomy:
-    - 'html'
-  term:
-    - 'html'
 markup:
   highlight:
     codeFences: true
@@ -21,11 +17,11 @@ markup:
 disableKinds:
   - 'home'
   - 'sitemap'
+  - 'taxonomy'
+  - 'term'
 permalinks:
   section:
     projects: '/'
-taxonomies:
-  compatible: 'compatibles'
 module:
   imports:
     - path: 'github.com/gethugothemes/bigspring-light-hugo'

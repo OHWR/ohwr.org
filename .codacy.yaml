@@ -1,0 +1,10 @@
+---
+# SPDX-FileCopyrightText: 2025 CERN (home.cern)
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+engines:
+  jacksonlinter:
+    exclude_paths:
+      - 'src/hugo/layouts/projects/list.json.json'
+      - 'src/hugo/layouts/news/list.json.json'

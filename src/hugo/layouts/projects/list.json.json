@@ -5,6 +5,7 @@
     "content" .Plain
     "tags" .Params.tags
     "weight" .Params.weight
+    "id" .Params.id
     "card" (partial "project-card.html" . | base64Encode))
   -}}
 {{- end -}}

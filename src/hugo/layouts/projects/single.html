@@ -121,7 +121,7 @@ SPDX-License-Identifier: BSD-3-Clause
             {{ end }}
           </div>
         </div>
-        {{ with union (.Site.Taxonomies.compatibles.Get .Page.Params.id).Pages (where .Site.RegularPages "Params.id" "in" .Page.Params.compatibles) }}
+        {{ with union (where .Site.RegularPages "Params.compatibles" "intersect" (slice .Page.Params.id)) (where .Site.RegularPages "Params.id" "in" .Page.Params.compatibles) }}
         <h3 class="text-center">Compatible Projects</h3>
         <div class="cards-section">
           {{ range first 3 . }}

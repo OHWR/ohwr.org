@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 CERN (home.cern)
+# SPDX-FileCopyrightText: 2025 CERN (home.cern)
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -24,7 +24,7 @@ def sample_news_config(mocker):
     mock_news = mocker.Mock(spec=News)
     mock_news.model_dump.return_value = {
         "title": "Test News",
-        "date": "2024-01-01",
+        "date": "2025-01-01",
         "description": "Test news description"
     }
 

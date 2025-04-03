@@ -1,5 +1,5 @@
 ---
-# SPDX-FileCopyrightText: 2024 CERN (home.cern)
+# SPDX-FileCopyrightText: 2025 CERN (home.cern)
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -69,7 +69,7 @@ Here is an example of a Markdown newsfeed file:
 ```markdown
 ## Important Update on Website
 
-2024-04-03
+2025-04-03
 
 ![Homepage Screenshot](https://example.com/homepage.png)
 ![New Feature Preview](https://example.com/feature.png)
@@ -79,7 +79,7 @@ information or updates.
 
 ## Special Event Coming Up!
 
-2024-04-02
+2025-04-02
 
 ![Event Poster](https://example.com/event.png)
 
@@ -88,7 +88,7 @@ information or updates.
 
 ## Meet Our Team
 
-2024-04-01
+2025-04-01
 
 This is the content of the third news item. It can contain any relevant
 information or updates.

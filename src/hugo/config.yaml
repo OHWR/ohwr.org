@@ -1,5 +1,5 @@
 ---
-# SPDX-FileCopyrightText: 2024 CERN (home.cern)
+# SPDX-FileCopyrightText: 2025 CERN (home.cern)
 #
 # SPDX-License-Identifier: BSD-3-Clause
 

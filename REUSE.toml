@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 CERN (home.cern)
+# SPDX-FileCopyrightText: 2025 CERN (home.cern)
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -10,23 +10,23 @@ SPDX-PackageDownloadLocation = "https://github.com/OHWR/ohwr.org"
 [[annotations]]
 path = "src/hugo/go.sum"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 CERN (home.cern)"
+SPDX-FileCopyrightText = "2025 CERN (home.cern)"
 SPDX-License-Identifier = "BSD-3-Clause"
 
 [[annotations]]
 path = "third_party/spdx/license-list-data/json/licenses.json"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 CERN (home.cern)"
+SPDX-FileCopyrightText = "2025 CERN (home.cern)"
 SPDX-License-Identifier = "CC-BY-SA-4.0+"
 
 [[annotations]]
 path = "src/hugo/layouts/projects/list.json.json"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 CERN (home.cern)"
+SPDX-FileCopyrightText = "2025 CERN (home.cern)"
 SPDX-License-Identifier = "BSD-3-Clause"
 
 [[annotations]]
 path = "src/hugo/layouts/news/list.json.json"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 CERN (home.cern)"
+SPDX-FileCopyrightText = "2025 CERN (home.cern)"
 SPDX-License-Identifier = "BSD-3-Clause"

@@ -103,6 +103,12 @@ ul li {
   }
 }
 
+.grid-card-image {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .search-filter-menu-button {
   background-color: $secondary-color;
   &:hover {

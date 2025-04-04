@@ -6,7 +6,6 @@ SPDX-License-Identifier: BSD-3-Clause
 
 import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs";
 
-const searchScriptElement = document.getElementById("search-script");
 const searchInputElement = document.getElementById("search-input");
 const searchButtonElement = document.getElementById("search-button");
 const searchSuggestionsElement = document.getElementById('search-suggestions');
@@ -18,6 +17,8 @@ const searchPaginationElement = document.getElementById("search-pagination");
 const infoIconElement = document.getElementById('search-info-icon');
 const tooltipElement = document.getElementById('info-tooltip');
 
+let searchView;
+let searchFilter;
 let fuse;
 let filterFuse;
 let results;
@@ -37,15 +38,18 @@ async function initializeSearch() {
 
   const data = await response.json();
 
-  fuse = new Fuse(data, {
+  fuse = new Fuse(data['index'], {
     useExtendedSearch: true,
     ignoreLocation: true,
     threshold: 0,
-    keys: JSON.parse(searchScriptElement.dataset.keys),
+    keys: data['keys'],
   });
 
-  const filterData = [...new Set(data.flatMap(item =>
-    item[searchScriptElement.dataset.filter] || []
+  searchView = data['view'];
+  searchFilter = data['filter'];
+
+  const filterData = [...new Set(data['index'].flatMap(item =>
+    item[searchFilter] || []
   ))];
 
   filterFuse = new Fuse(filterData, {minMatchCharLength: 2});
@@ -91,9 +95,9 @@ function performSearch() {
 
   if (filters.length) {
     results = results.filter(result =>
-      result[searchScriptElement.dataset.filter] &&
+      result[searchFilter] &&
       filters.every(filter =>
-        result[searchScriptElement.dataset.filter].includes(filter)
+        result[searchFilter].includes(filter)
       )
     );
   }
@@ -104,7 +108,7 @@ function performSearch() {
 
   displayActiveFilters(filters);
   displayAvailableFilters(results.flatMap(result =>
-    result[searchScriptElement.dataset.filter] || []
+    result[searchFilter] || []
     ).filter(filter => !filters.includes(filter)));
 
   displayPagination();
@@ -121,11 +125,38 @@ function displaySearchResults() {
   const endIndex = startIndex + perPage;
   const paginatedResults = results.slice(startIndex, endIndex);
 
-  searchResultsElement.innerHTML = paginatedResults.length ? "" : "<p>No results found.</p>";
-
-  paginatedResults.forEach(item => {
-    searchResultsElement.innerHTML += atob(item.card);
-  });
+  if (paginatedResults.length) {
+    let cards;
+    if (searchView === "grid") {
+      searchResultsElement.classList.add("row");
+      cards = paginatedResults.map(item => {
+        return gridViewElement(
+          item.image,
+          item.title,
+          item.text,
+          item.url
+        );
+      });
+    } else if (searchView === "list") {
+      searchResultsElement.classList.remove("row");
+      cards = paginatedResults.map(item => {
+        return listViewElement(
+          item.project,
+          item.url,
+          item.title,
+          item.date,
+          item.text,
+          item.image
+        );
+      });
+    }
+    searchResultsElement.replaceChildren(...cards);
+  } else {
+    searchResultsElement.classList.remove("row");
+    const textElement = document.createElement("p");
+    textElement.innerText = "No results found.";
+    searchResultsElement.replaceChildren(textElement);
+  }
 }
 
 function displayActiveFilters(filters) {
@@ -373,4 +404,135 @@ function highlightSuggestion(index) {
       button.dataset.state = "";
     }
   });
+}
+
+function gridViewElement(image, title, text, url) {
+  const frameElement = document.createElement("div")
+  frameElement.classList.add(
+    "mb-3", "position-relative", "embed-responsive", "embed-responsive-4by3"
+  );
+  if (image) {
+    const imgElement = document.createElement("img");
+    imgElement.classList.add(
+      "mh-100", "mw-100", "position-absolute", "grid-card-image"
+    );
+    imgElement.src = image;
+    frameElement.appendChild(imgElement);
+  } else {
+    const svgElement = document.createElementNS(
+      "http://www.w3.org/2000/svg", "svg"
+    );
+    svgElement.setAttribute("width", "400");
+    svgElement.setAttribute("height", "300");
+    svgElement.classList.add(
+      "mh-100", "mw-100", "position-absolute", "grid-card-image"
+    );
+    const circleElement = document.createElementNS(
+      "http://www.w3.org/2000/svg", "circle"
+    );
+    circleElement.setAttribute("cx", "50%");
+    circleElement.setAttribute("cy", "50%");
+    circleElement.setAttribute("r", "100");
+    circleElement.setAttribute(
+      "fill",
+      `hsl(${title.split("").reduce(
+        (acc, char) => acc + char.charCodeAt(0), 0
+      ) % 360}, 50%, 30%)`
+    );
+    svgElement.appendChild(circleElement);
+    const textElement = document.createElementNS(
+      "http://www.w3.org/2000/svg", "text"
+    );
+    textElement.setAttribute("x", "50%");
+    textElement.setAttribute("y", "50%");
+    textElement.setAttribute("dy", "0.35em");
+    textElement.setAttribute("text-anchor", "middle");
+    textElement.setAttribute("fill", "white");
+    textElement.setAttribute("font-size", "100");
+    textElement.setAttribute("font-family", "Arial, sans-serif");
+    textElement.appendChild(document.createTextNode(title[0].toUpperCase()));
+    svgElement.appendChild(textElement);
+    frameElement.appendChild(svgElement);
+  }
+  const bodyElement = document.createElement("div");
+  bodyElement.classList.add("card-body", "d-flex", "flex-column");
+  bodyElement.appendChild(frameElement);
+  const linkElement = document.createElement("a");
+  linkElement.href = url;
+  linkElement.classList.add("stretched-link", "post-title");
+  linkElement.innerText = title;
+  const titleElement = document.createElement("h3");
+  titleElement.appendChild(linkElement);
+  bodyElement.appendChild(titleElement);
+  const summaryElement = document.createElement("p");
+  summaryElement.classList.add("card-text");
+  summaryElement.innerText = text;
+  bodyElement.appendChild(summaryElement);
+  const cardElement = document.createElement("div");
+  cardElement.classList.add(
+    "card", "interactive-card", "shadow-lg", "border-0", "h-100"
+  );
+  cardElement.appendChild(bodyElement);
+  const colElement = document.createElement("div");
+  colElement.classList.add("col-lg-4", "col-sm-6", "mb-5");
+  colElement.appendChild(cardElement);
+  return colElement;
+}
+
+function listViewElement(project, url, title, date, text, image) {
+  const bodyElement = document.createElement("div");
+  bodyElement.classList.add("card-body");
+  if (project) {
+    const projectElement = document.createElement("h6");
+    const iconElement = document.createElement("i");
+    iconElement.classList.add("fas", "fa-rss");
+    projectElement.appendChild(iconElement);
+    const textElement = document.createElement("small");
+    textElement.classList.add("ml-1");
+    textElement.innerText = project;
+    projectElement.appendChild(textElement);
+    bodyElement.appendChild(projectElement);
+  }
+  const titleElement = document.createElement("h3");
+  const linkElement = document.createElement("a");
+  linkElement.href = url;
+  linkElement.classList.add("stretched-link", "post-title");
+  linkElement.innerText = title;
+  titleElement.appendChild(linkElement);
+  bodyElement.appendChild(titleElement);
+  if (date) {
+    const dateElement = document.createElement("div");
+    dateElement.classList.add("mb-2");
+    const timeElement = document.createElement("time");
+    timeElement.innerText = date;
+    dateElement.appendChild(timeElement);
+    bodyElement.appendChild(dateElement);
+  }
+  const textElement = document.createElement("p");
+  textElement.classList.add("card-text");
+  textElement.innerText = text;
+  bodyElement.appendChild(textElement);
+  const cardElement = document.createElement("div");
+  cardElement.classList.add(
+    "card", "interactive-card", "border-0", "shadow-lg", "mb-4"
+  );
+  if (image) {
+    const imgElement = document.createElement("img")
+    imgElement.classList.add("m-3", "w-100", "mh-100", "rounded");
+    imgElement.src = image;
+    const frameElement = document.createElement("div");
+    frameElement.classList.add("col-md-3");
+    frameElement.appendChild(imgElement);
+    const rowElement = document.createElement("div");
+    rowElement.classList.add("row");
+    rowElement.appendChild(frameElement);
+    const columnElement = document.createElement("div");
+    columnElement.classList.add("col-md-9", "p-0", "position-static");
+    columnElement.appendChild(bodyElement);
+    rowElement.appendChild(columnElement);
+    cardElement.appendChild(rowElement);
+  } else {
+    cardElement.appendChild(bodyElement);
+  }
+  return cardElement;
 }

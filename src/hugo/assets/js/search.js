@@ -177,16 +177,18 @@ function displayActiveFilters(filters) {
 
 function displayAvailableFilters(filters) {
   searchAvailableFiltersElement.innerHTML = "";
+  const filterMap = filters.reduce((acc, filter) => {
+    const existing = acc.get(filter);
+    if (existing) {
+      existing.count++;
+    } else {
+      acc.set(filter, { filter, count: 1 });
+    }
+    return acc;
+  }, new Map());
+  const sortedFilters = Array.from(filterMap.values()).sort((a, b) => b.count - a.count);
 
-  filters = Object.values(
-    filters.reduce((acc, filter) => {
-      acc[filter] = acc[filter] || { filter, count: 0 };
-      acc[filter].count++;
-      return acc;
-    }, {})
-  ).sort((a, b) => b.count - a.count);
-
-  filters.forEach(item => {
+  sortedFilters.forEach(item => {
     const button = Object.assign(document.createElement("button"), {
       type: "button",
       className: "search-filter-button",
@@ -303,7 +305,7 @@ function handleSearchKeydown(event) {
   const inputValue = event.target.value.trim();
   if (event.key === "Enter") {
     if (selectedSuggestionIndex >= 0) {
-      updateFilter(suggestions[selectedSuggestionIndex]);
+      updateFilter(suggestions.at(selectedSuggestionIndex));
     } else {
       updateQuery(inputValue);
     }

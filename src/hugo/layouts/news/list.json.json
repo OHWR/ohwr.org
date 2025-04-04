@@ -3,7 +3,7 @@
   {{- $item := dict
     "title" .Title
     "content" .Plain
-    "project" .Params.project
+    "filter" .Params.project
     "text" (transform.Plainify .Summary)
     "url" .Permalink
   -}}
@@ -22,9 +22,8 @@
 {{- $config := dict
   "keys" (slice
     (dict "name" "title" "weight" 3)
-    (dict "name" "project" "weight" 2)
+    (dict "name" "filter" "weight" 2)
     (dict "name" "content" "weight" 1))
-  "filter" "project"
   "view" "list"
   "index" $index
 -}}

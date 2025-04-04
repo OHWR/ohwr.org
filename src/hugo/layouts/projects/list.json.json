@@ -9,7 +9,7 @@
   -}}
   {{- with .Params.tags -}}
     {{- $item = merge $item (dict 
-      "tags" .)
+      "filter" .)
     -}}
   {{- end -}}
   {{- with .Params.weight -}}
@@ -28,9 +28,8 @@
   "keys" (slice
     (dict "name" "title" "weight" 3)
     (dict "name" "id" "weight" 3)
-    (dict "name" "tags" "weight" 2)
+    (dict "name" "filter" "weight" 2)
     (dict "name" "content" "weight" 1))
-  "filter" "tags"
   "view" "grid"
   "index" $index
 -}}

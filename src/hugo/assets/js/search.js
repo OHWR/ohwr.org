@@ -18,7 +18,6 @@ const infoIconElement = document.getElementById('search-info-icon');
 const tooltipElement = document.getElementById('info-tooltip');
 
 let searchView;
-let searchFilter;
 let fuse;
 let filterFuse;
 let results;
@@ -46,10 +45,9 @@ async function initializeSearch() {
   });
 
   searchView = data['view'];
-  searchFilter = data['filter'];
 
   const filterData = [...new Set(data['index'].flatMap(item =>
-    item[searchFilter] || []
+    item['filter'] || []
   ))];
 
   filterFuse = new Fuse(filterData, {minMatchCharLength: 2});
@@ -95,9 +93,9 @@ function performSearch() {
 
   if (filters.length) {
     results = results.filter(result =>
-      result[searchFilter] &&
+      result['filter'] &&
       filters.every(filter =>
-        result[searchFilter].includes(filter)
+        result['filter'].includes(filter)
       )
     );
   }
@@ -108,7 +106,7 @@ function performSearch() {
 
   displayActiveFilters(filters);
   displayAvailableFilters(results.flatMap(result =>
-    result[searchFilter] || []
+    result['filter'] || []
     ).filter(filter => !filters.includes(filter)));
 
   displayPagination();
@@ -141,7 +139,7 @@ function displaySearchResults() {
       searchResultsElement.classList.remove("row");
       cards = paginatedResults.map(item => {
         return listViewElement(
-          item.project,
+          item.filter,
           item.url,
           item.title,
           item.date,

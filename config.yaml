@@ -593,6 +593,7 @@ projects:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
   - id: 'psu-rad-acdc-230v-12v5v-110w'
+    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/psu-rad-acdc-230v-12v5v-110w.git'
     contact:
       name: 'Greg Daniluk'
@@ -1228,6 +1229,7 @@ projects:
       - 'afck'
       - 'afcku'
   - id: 'video-fpga-hdmi-dvi-ethernet'
+    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/video-fpga-hdmi-dvi-ethernet.git'
     contact:
       name: 'Filip Świtakowski'
@@ -1333,6 +1335,7 @@ projects:
       - 'cPCI'
       - 'Digital I/O'
   - id: 'fmc-adc2m18b2ch-dac500k20b1ch'
+    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/fmc-adc2m18b2ch-dac500k20b1ch.git'
     contact:
       name: 'David Giloteaux'
@@ -1604,6 +1607,7 @@ projects:
       - 'wrs-fl-hw'
       - 'wrs-ljdprep-hw'
   - id: 'wr-fixed-point-calculations'
+    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/wr-fixed-point-calculations.git'
     contact:
       name: 'Maciej Lipinski'
@@ -1916,6 +1920,7 @@ projects:
     tags:
       - 'Documentation'
   - id: 'vme-sbc-a25-pcie-vme-bridge'
+    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/vme-sbc-a25-pcie-vme-bridge.git'
     contact:
       name: 'Grzegorz Daniluk'
@@ -1932,6 +1937,7 @@ projects:
       - 'Software'
       - 'Documentation'
   - id: 'fmc-dac100m14b16cha-adc2m14b4cha'
+    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/fmc-dac100m14b16cha-adc2m14b4cha.git'
     contact:
       name: 'Filip Świtakowski'
@@ -1940,6 +1946,7 @@ projects:
       - 'FMC'
       - 'ADC'
   - id: 'fmc-adc100m14b16cha-dac2m14b4cha'
+    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/fmc-adc100m14b16cha-dac2m14b4cha.git'
     contact:
       name: 'Filip Świtakowski'

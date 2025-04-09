@@ -12,7 +12,6 @@ from repository import Repository, GitHubRepository, GitLabRepository
 
 TEST_GITHUB_URL = "https://github.com/owner/repo.git"
 TEST_GITLAB_URL = "https://gitlab.com/group/subgroup/repo.git"
-TEST_OHWR_URL = "https://ohwr.org/project/repo.git"
 TEST_CERN_URL = "https://gitlab.cern.ch/group/repo.git"
 TEST_INVALID_URL = "https://unsupported.com/repo.git"
 TEST_FILE_PATH = "path/to/file.txt"
@@ -29,7 +28,6 @@ class TestRepository:
         [
             (TEST_GITHUB_URL, GitHubRepository),
             (TEST_GITLAB_URL, GitLabRepository),
-            (TEST_OHWR_URL, GitLabRepository),
             (TEST_CERN_URL, GitLabRepository),
         ],
     )
@@ -89,7 +87,7 @@ class TestGitLabRepository:
     """Test GitLabRepository functionality."""
     @pytest.mark.parametrize(
         "repo_url",
-        [TEST_GITLAB_URL, TEST_OHWR_URL, TEST_CERN_URL],
+        [TEST_GITLAB_URL, TEST_CERN_URL],
     )
     def test_fetch_file(self, mocker, repo_url):
         """Test fetching a file from GitLab instances."""

@@ -109,9 +109,7 @@ class GitLabRepository(Repository):
         Raises:
             ValueError: If requesting the file fails.
         """
-        exp = (
-            r'^https://((?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch))/(.+?)\.git'
-        )
+        exp = (r'^https://((?:gitlab\.com|gitlab\.cern\.ch))/(.+?)\.git')
         match = re.search(exp, self.url)
         url = 'https://{0}/api/v4/projects/{1}'.format(
             match.group(1),

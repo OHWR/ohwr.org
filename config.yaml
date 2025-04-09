@@ -135,7 +135,7 @@ redirects:
     target: https://gitlab.com/ohwr/project/cernohl/wikis/faq
 projects:
   - id: 'mdior'
-    repository: 'https://ohwr.org/project/mdior.git'
+    repository: 'https://gitlab.com/ohwr/project/mdior.git'
     contact:
       name: 'Pieter Van Trappen'
       email: 'pieter.van.trappen@cern.ch'
@@ -146,7 +146,7 @@ projects:
       - 'DI/OT'
       - 'Digital I/O'
   - id: 'giraph32'
-    repository: 'https://ohwr.org/project/giraph32.git'
+    repository: 'https://gitlab.com/ohwr/project/giraph32.git'
     contact:
       name: 'Lea Strobino'
       email: 'lea.strobino@cern.ch'
@@ -154,7 +154,7 @@ projects:
       - 'Digital I/O'
       - '19 inch'
   - id: 'babywr'
-    repository: 'https://ohwr.org/project/babywr.git'
+    repository: 'https://gitlab.com/ohwr/project/babywr.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
@@ -168,7 +168,7 @@ projects:
       - 'White Rabbit'
       - 'WR Node'
   - id: 'diot-pb-lbk'
-    repository: 'https://ohwr.org/project/diot-pb-lbk.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-pb-lbk.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -179,7 +179,7 @@ projects:
     tags:
       - 'DI/OT'
   - id: 'pz-tio'
-    repository: 'https://ohwr.org/project/pz-tio.git'
+    repository: 'https://gitlab.com/ohwr/project/pz-tio.git'
     contact:
       name: 'Wolfgang Hennig'
       email: 'whennig@xia.com'
@@ -195,7 +195,7 @@ projects:
       - 'Digital I/O'
       - 'SoC'
   - id: 'fmc-hv-2ch'
-    repository: 'https://ohwr.org/project/fmc-hv-2ch.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-hv-2ch.git'
     contact:
       name: 'William Viganò'
       email: 'William.Vigano@cern.ch'
@@ -207,7 +207,7 @@ projects:
       - 'FMC Module'
       - 'High Voltage'
   - id: 'fmc-mfe'
-    repository: 'https://ohwr.org/project/fmc-mfe.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-mfe.git'
     contact:
       name: 'Bernard Guncic'
       email: 'bernard.guncic@cern.ch'
@@ -219,7 +219,7 @@ projects:
       - 'SAMbuCa'
       - 'Motor Control'
   - id: 'afcku'
-    repository: 'https://ohwr.org/project/afcku.git'
+    repository: 'https://gitlab.com/ohwr/project/afcku.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'switakowski.filip@gmail.com'
@@ -228,7 +228,7 @@ projects:
       - 'FMC Carrier'
       - 'MTCA'
   - id: 'diot-fsi-det-8ch'
-    repository: 'https://ohwr.org/project/diot-fsi-det-8ch.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-fsi-det-8ch.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -238,7 +238,7 @@ projects:
     tags:
       - 'DI/OT'
   - id: 'afcz'
-    repository: 'https://ohwr.org/project/afcz.git'
+    repository: 'https://gitlab.com/ohwr/project/afcz.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -257,7 +257,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'sis1160-pci-io'
-    repository: 'https://ohwr.org/project/sis1160-pci-io.git'
+    repository: 'https://gitlab.com/ohwr/project/sis1160-pci-io.git'
     contact:
       name: 'Fernando Hueso González'
       email: 'Fernando.Hueso@uv.es'
@@ -265,7 +265,7 @@ projects:
       - 'Digital I/O'
       - 'PCIe'
   - id: 'fmc-adc-500m14b4cha'
-    repository: 'https://ohwr.org/project/fmc-adc-500m14b4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-500m14b4cha.git'
     contact:
       name: 'Philipp Foedisch'
       email: 'philipp.foedisch@iamelectronic.com'
@@ -277,7 +277,7 @@ projects:
       - 'FMC Module'
       - 'ADC'
   - id: 'rf-att-4cha'
-    repository: 'https://ohwr.org/project/rf-att-4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/rf-att-4cha.git'
     contact:
       name: 'Erik Van Der Bij'
       email: 'Erik.van.der.Bij@cern.ch'
@@ -286,7 +286,7 @@ projects:
       - '19 inch'
       - 'USB'
   - id: 'cute-wr-a7'
-    repository: 'https://ohwr.org/project/cute-wr-a7.git'
+    repository: 'https://gitlab.com/ohwr/project/cute-wr-a7.git'
     contact:
       name: 'Guanghua Gong'
       email: 'ggh@tsinghua.edu.cn'
@@ -302,7 +302,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'wrs-lj-hw'
-    repository: 'https://ohwr.org/project/wrs-lj-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/wrs-lj-hw.git'
     contact:
       name: 'Jose Lopez Jimenez'
       email: 'jose.lopez@nav-timing.safrangroup.com'
@@ -316,14 +316,14 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'faceshield'
-    repository: 'https://ohwr.org/project/faceshield.git'
+    repository: 'https://gitlab.com/ohwr/project/faceshield.git'
     contact:
       name: 'Alessandro Dallocchio'
       email: 'Alessandro.Dallocchio@cern.ch'
     tags:
       - 'COVID-19'
   - id: 'diot-reliability'
-    repository: 'https://ohwr.org/project/diot-reliability.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-reliability.git'
     contact:
       name: 'Alén Arias Vázquez'
       email: 'alen.arias.vazquez@cern.ch'
@@ -332,14 +332,14 @@ projects:
       - 'Reliability'
       - 'Documentation'
   - id: '3dmask'
-    repository: 'https://ohwr.org/project/3dmask.git'
+    repository: 'https://gitlab.com/ohwr/project/3dmask.git'
     contact:
       name: 'Jaroslava Schovancova'
       email: 'jaroslava.schovancova@cern.ch'
     tags:
       - 'COVID-19'
   - id: 'hydra'
-    repository: 'https://ohwr.org/project/hydra.git'
+    repository: 'https://gitlab.com/ohwr/project/hydra.git'
     contact:
       name: 'Tristan Gingold'
       email: 'Tristan.Gingold@cern.ch'
@@ -353,7 +353,7 @@ projects:
       - 'SoC'
       - 'Rad-tol'
   - id: 'soc-course'
-    repository: 'https://ohwr.org/project/soc-course.git'
+    repository: 'https://gitlab.com/ohwr/project/soc-course.git'
     contact:
       name: 'Javier García Lasheras'
       email: 'jgarcia@gl-research.com'
@@ -362,7 +362,7 @@ projects:
       - 'Documentation'
       - 'SoC'
   - id: 'diot-pfc-ku'
-    repository: 'https://ohwr.org/project/diot-pfc-ku.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-pfc-ku.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -374,7 +374,7 @@ projects:
       - 'DI/OT'
       - 'FMC Carrier'
   - id: 'cern-elmb2'
-    repository: 'https://ohwr.org/project/cern-elmb2.git'
+    repository: 'https://gitlab.com/ohwr/project/cern-elmb2.git'
     contact:
       name: 'Vladimir Ryjov'
       email: 'Vladimir.Ryjov@cern.ch'
@@ -382,7 +382,7 @@ projects:
       - 'Microcontroller'
       - 'ADC'
   - id: 'sambuca'
-    repository: 'https://ohwr.org/project/sambuca.git'
+    repository: 'https://gitlab.com/ohwr/project/sambuca.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
@@ -393,7 +393,7 @@ projects:
       - 'Motor Control'
       - 'SAMbuCa'
   - id: 'spexi7u'
-    repository: 'https://ohwr.org/project/spexi7u.git'
+    repository: 'https://gitlab.com/ohwr/project/spexi7u.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
@@ -414,7 +414,7 @@ projects:
       - 'PXIe'
       - 'SoC'
   - id: 'profip'
-    repository: 'https://ohwr.org/project/profip.git'
+    repository: 'https://gitlab.com/ohwr/project/profip.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -426,14 +426,14 @@ projects:
       - 'WorldFIP'
       - 'Profinet'
   - id: 'ventilatorpal'
-    repository: 'https://ohwr.org/project/ventilatorpal.git'
+    repository: 'https://gitlab.com/ohwr/project/ventilatorpal.git'
     contact:
       name: 'Aubert Dupont'
       email: 'aubert@stogger.com'
     tags:
       - 'COVID-19'
   - id: 'diot-sb-igl'
-    repository: 'https://ohwr.org/project/diot-sb-igl.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-sb-igl.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -447,7 +447,7 @@ projects:
       - 'DI/OT'
       - 'Rad-tol'
   - id: 'fmc-profinet'
-    repository: 'https://ohwr.org/project/fmc-profinet.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-profinet.git'
     contact:
       name: 'Bernard Guncic'
       email: 'bernard.guncic@cern.ch'
@@ -458,7 +458,7 @@ projects:
       - 'FMC Module'
       - 'Profinet'
   - id: 'microstepper'
-    repository: 'https://ohwr.org/project/microstepper.git'
+    repository: 'https://gitlab.com/ohwr/project/microstepper.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
@@ -466,7 +466,7 @@ projects:
       - 'Timing'
       - 'DDS'
   - id: 'spec150'
-    repository: 'https://ohwr.org/project/spec150.git'
+    repository: 'https://gitlab.com/ohwr/project/spec150.git'
     contact:
       name: 'Erik Van Der Bij'
       email: 'Erik.van.der.Bij@cern.ch'
@@ -483,7 +483,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'hpsec'
-    repository: 'https://ohwr.org/project/hpsec.git'
+    repository: 'https://gitlab.com/ohwr/project/hpsec.git'
     contact:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
@@ -493,7 +493,7 @@ projects:
       - 'Timing'
       - '19 inch'
   - id: 'roe-protocol'
-    repository: 'https://ohwr.org/project/roe-protocol.git'
+    repository: 'https://gitlab.com/ohwr/project/roe-protocol.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.marek.lipinski@cern.ch'
@@ -503,7 +503,7 @@ projects:
       - 'Ethernet'
       - 'RF'
   - id: 'fpga-dev-id'
-    repository: 'https://ohwr.org/project/fpga-dev-id.git'
+    repository: 'https://gitlab.com/ohwr/project/fpga-dev-id.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
@@ -514,7 +514,7 @@ projects:
     tags:
       - 'Documentation'
   - id: 'tr-pexp'
-    repository: 'https://ohwr.org/project/tr-pexp.git'
+    repository: 'https://gitlab.com/ohwr/project/tr-pexp.git'
     contact:
       name: 'Alexander Hahn'
       email: 'a.hahn@gsi.de'
@@ -529,7 +529,7 @@ projects:
       - 'WR Node'
       - 'PCIe'
   - id: 'city'
-    repository: 'https://ohwr.org/project/city.git'
+    repository: 'https://gitlab.com/ohwr/project/city.git'
     contact:
       name: 'Antonin Broquet'
       email: 'broquet.antonin@gmail.com'
@@ -547,7 +547,7 @@ projects:
       - 'White Rabbit'
       - 'WR Node'
   - id: 'diot-crate-hw'
-    repository: 'https://ohwr.org/project/diot-crate-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-crate-hw.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -557,7 +557,7 @@ projects:
       - 'Rad-tol'
       - 'Documentation'
   - id: 'diot-monimod'
-    repository: 'https://ohwr.org/project/diot-monimod.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-monimod.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -568,7 +568,7 @@ projects:
       - 'Rad-tol'
       - 'DI/OT'
   - id: 'diot-sb-zu'
-    repository: 'https://ohwr.org/project/diot-sb-zu.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-sb-zu.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -588,12 +588,12 @@ projects:
       - 'DI/OT'
       - 'SoC'
   - id: 'luvi'
-    repository: 'https://ohwr.org/project/luvi.git'
+    repository: 'https://gitlab.com/ohwr/project/luvi.git'
     contact:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
   - id: 'psu-rad-acdc-230v-12v5v-110w'
-    repository: 'https://ohwr.org/project/psu-rad-acdc-230v-12v5v-110w.git'
+    repository: 'https://gitlab.com/ohwr/project/psu-rad-acdc-230v-12v5v-110w.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -604,7 +604,7 @@ projects:
       - 'DI/OT'
       - 'Rad-tol'
   - id: 'pxie-ctl-comexpress'
-    repository: 'https://ohwr.org/project/pxie-ctl-comexpress.git'
+    repository: 'https://gitlab.com/ohwr/project/pxie-ctl-comexpress.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -615,7 +615,7 @@ projects:
       - 'PXIe'
       - 'COM Express'
   - id: 'timiq-hw'
-    repository: 'https://ohwr.org/project/timiq/timiq-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/timiq/timiq-hw.git'
     contact:
       name: 'Jean-Paul Ricaud'
       email: 'jean-paul.ricaud@synchrotron-soleil.fr'
@@ -623,14 +623,14 @@ projects:
       - 'Timing'
       - '19 inch'
   - id: 'euro-adc-65m-14b-40cha'
-    repository: 'https://ohwr.org/project/euro-adc-65m-14b-40cha.git'
+    repository: 'https://gitlab.com/ohwr/project/euro-adc-65m-14b-40cha.git'
     contact:
       name: 'David Cussans'
       email: 'david.cussans@bristol.ac.uk'
     tags:
       - 'ADC'
   - id: 'spec-ticks'
-    repository: 'https://ohwr.org/project/spec-ticks.git'
+    repository: 'https://gitlab.com/ohwr/project/spec-ticks.git'
     contact:
       name: 'Cedric Champion'
       email: 'cedric.champion@apc.univ-paris7.fr'
@@ -647,7 +647,7 @@ projects:
       - 'FMC Carrier'
       - 'TDC'
   - id: 'wrs-ljdprep-hw'
-    repository: 'https://ohwr.org/project/wrs-ljdprep-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/wrs-ljdprep-hw.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -662,7 +662,7 @@ projects:
       - 'wrs-low-jitter'
       - 'wr-switch-hw-v4'
   - id: 'wr-switch-hw-v4'
-    repository: 'https://ohwr.org/project/wr-switch-hw-v4.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-switch-hw-v4.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -676,7 +676,7 @@ projects:
       - 'wrs-fl-hw'
       - 'wrs-ljdprep-hw'
   - id: 'fmc-dtxrx-4cha'
-    repository: 'https://ohwr.org/project/fmc-dtxrx-4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dtxrx-4cha.git'
     contact:
       name: 'Ben Woolley'
       email: 'benjamin.woolley@cern.ch'
@@ -684,7 +684,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
   - id: 'rf-mux-8ch'
-    repository: 'https://ohwr.org/project/rf-mux-8ch.git'
+    repository: 'https://gitlab.com/ohwr/project/rf-mux-8ch.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
@@ -692,7 +692,7 @@ projects:
       - '19 inch'
       - 'Timing'
   - id: 'vfc-hs'
-    repository: 'https://ohwr.org/project/vfc-hs.git'
+    repository: 'https://gitlab.com/ohwr/project/vfc-hs.git'
     contact:
       name: 'Andrea Boccardi'
       email: 'andrea.boccardi@cern.ch'
@@ -709,7 +709,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'opt-adc-10k-32b-1cha'
-    repository: 'https://ohwr.org/project/opt-adc-10k-32b-1cha.git'
+    repository: 'https://gitlab.com/ohwr/project/opt-adc-10k-32b-1cha.git'
     contact:
       name: 'Nikolai Beev'
       email: 'nikolai.beev@cern.ch'
@@ -718,7 +718,7 @@ projects:
       - '19 inch'
       - 'ADC'
   - id: 'diot-dio-16ch-opt-24v'
-    repository: 'https://ohwr.org/project/diot-dio-16ch-opt-24v.git'
+    repository: 'https://gitlab.com/ohwr/project/diot-dio-16ch-opt-24v.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -730,7 +730,7 @@ projects:
       - 'DI/OT'
       - 'Rad-tol'
   - id: 'diot'
-    repository: 'https://ohwr.org/project/diot.git'
+    repository: 'https://gitlab.com/ohwr/project/diot.git'
     contact:
       name: 'Greg Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -739,7 +739,7 @@ projects:
       - 'Documentation'
       - 'DI/OT'
   - id: 'ctr-fmc-5chttla'
-    repository: 'https://ohwr.org/project/ctr-fmc-5chttla.git'
+    repository: 'https://gitlab.com/ohwr/project/ctr-fmc-5chttla.git'
     contact:
       name: 'Eva Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
@@ -751,7 +751,7 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'radtol-led-luminaire'
-    repository: 'https://ohwr.org/project/radtol-led-luminaire.git'
+    repository: 'https://gitlab.com/ohwr/project/radtol-led-luminaire.git'
     contact:
       name: 'James Devine'
       email: 'jdevine@cern.ch'
@@ -760,7 +760,7 @@ projects:
       - 'Lighting'
       - 'Rad-tol'
   - id: 'wrs-fl-hw'
-    repository: 'https://ohwr.org/project/wrs-fl-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/wrs-fl-hw.git'
     contact:
       name: 'Guanghua Gong'
       email: 'ggh@tsinghua.edu.cn'
@@ -774,7 +774,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'spec7'
-    repository: 'https://ohwr.org/project/spec7.git'
+    repository: 'https://gitlab.com/ohwr/project/spec7.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
@@ -792,7 +792,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'ertm15-llrf-wr'
-    repository: 'https://ohwr.org/project/ertm15-llrf-wr.git'
+    repository: 'https://gitlab.com/ohwr/project/ertm15-llrf-wr.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
@@ -808,7 +808,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'pda-8ch-fda-8ch'
-    repository: 'https://ohwr.org/project/pda-8ch-fda-8ch.git'
+    repository: 'https://gitlab.com/ohwr/project/pda-8ch-fda-8ch.git'
     contact:
       name: 'Anders Wallin'
       email: 'anders.e.e.wallin@gmail.com'
@@ -816,7 +816,7 @@ projects:
       - 'Timing'
       - '19 inch'
   - id: 'conv-rs485-opt-rtm'
-    repository: 'https://ohwr.org/project/conv-rs485-opt-rtm.git'
+    repository: 'https://gitlab.com/ohwr/project/conv-rs485-opt-rtm.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
@@ -825,7 +825,7 @@ projects:
     compatibles:
       - 'conv-ttl-rs485-hw'
   - id: 'emc2-dp'
-    repository: 'https://ohwr.org/project/emc2-dp.git'
+    repository: 'https://gitlab.com/ohwr/project/emc2-dp.git'
     contact:
       name: 'Ben Lovell'
       email: 'ben.l@sundance.com'
@@ -833,7 +833,7 @@ projects:
       - 'PCIe/104'
       - 'SoC'
   - id: 'fmc-vhdci'
-    repository: 'https://ohwr.org/project/fmc-vhdci.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-vhdci.git'
     contact:
       name: 'Timon Heim'
       email: 'timon.heim@cern.ch'
@@ -841,7 +841,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
   - id: 'atfc'
-    repository: 'https://ohwr.org/project/atfc.git'
+    repository: 'https://gitlab.com/ohwr/project/atfc.git'
     contact:
       name: 'David Cussans'
       email: 'David.Cussans@bristol.ac.uk'
@@ -849,7 +849,7 @@ projects:
       - 'FMC'
       - 'FMC Carrier'
   - id: 'wrs-low-jitter'
-    repository: 'https://ohwr.org/project/wrs-low-jitter.git'
+    repository: 'https://gitlab.com/ohwr/project/wrs-low-jitter.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
@@ -861,7 +861,7 @@ projects:
       - 'wr-switch-hw'
       - 'wrs-ljdprep-hw'
   - id: 'fmc-adc-subsamp125m14b4cha'
-    repository: 'https://ohwr.org/project/fmc-adc-subsamp125m14b4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-subsamp125m14b4cha.git'
     contact:
       name: 'Eva Calvo Giraldo'
       email: 'eva.calvo.giraldo@cern.ch'
@@ -870,14 +870,14 @@ projects:
       - 'FMC Module'
       - 'ADC'
   - id: 'eez-psu'
-    repository: 'https://ohwr.org/project/eez-psu.git'
+    repository: 'https://gitlab.com/ohwr/project/eez-psu.git'
     contact:
       name: 'Denis Kotlar'
       email: 'denis@envox.hr'
     tags:
       - 'Power'
   - id: 'pandabox'
-    repository: 'https://ohwr.org/project/pandabox.git'
+    repository: 'https://gitlab.com/ohwr/project/pandabox.git'
     contact:
       name: 'Yves-Marie Abiven'
       email: 'yves-marie.abiven@synchrotron-soleil.fr'
@@ -889,7 +889,7 @@ projects:
       - 'FMC Carrier'
       - 'Motor Control'
   - id: 'tr-amc'
-    repository: 'https://ohwr.org/project/tr-amc.git'
+    repository: 'https://gitlab.com/ohwr/project/tr-amc.git'
     contact:
       name: 'Alexander Hahn'
       email: 'a.hahn@gsi.de'
@@ -904,7 +904,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'fmc-dio-32chlvdsa'
-    repository: 'https://ohwr.org/project/fmc-dio-32chlvdsa.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dio-32chlvdsa.git'
     contact:
       name: 'Grzegorz Kasprowicz'
       email: 'gkasprow@gmail.com'
@@ -913,7 +913,7 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'r19-tdc-del-a'
-    repository: 'https://ohwr.org/project/r19-tdc-del-a.git'
+    repository: 'https://gitlab.com/ohwr/project/r19-tdc-del-a.git'
     contact:
       name: 'Javier Serrano'
       email: 'Javier.Serrano@cern.ch'
@@ -922,14 +922,14 @@ projects:
       - 'TDC'
       - '19 inch'
   - id: 'amc-carrier-2-sl'
-    repository: 'https://ohwr.org/project/amc-carrier-2-sl.git'
+    repository: 'https://gitlab.com/ohwr/project/amc-carrier-2-sl.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
       - 'MTCA'
   - id: 'fmc-del-1ns-2cha'
-    repository: 'https://ohwr.org/project/fmc-del-1ns-2cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-del-1ns-2cha.git'
     contact:
       name: 'Tom Levens'
       email: 'tom.levens@cern.ch'
@@ -938,7 +938,7 @@ projects:
       - 'FMC Module'
       - 'Fine Delay'
   - id: 'fasec'
-    repository: 'https://ohwr.org/project/fasec.git'
+    repository: 'https://gitlab.com/ohwr/project/fasec.git'
     contact:
       name: 'Pieter Van Trappen'
       email: 'pieter.van.trappen@cern.ch'
@@ -956,7 +956,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'fmc-sfp-4cha'
-    repository: 'https://ohwr.org/project/fmc-sfp-4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-sfp-4cha.git'
     contact:
       name: 'Grzegorz Kasprowicz'
       email: 'gkasprow@gmail.com'
@@ -965,12 +965,12 @@ projects:
       - 'FMC Module'
       - 'SFP'
   - id: 'dces-dtrhf-ser1ch-v1'
-    repository: 'https://ohwr.org/project/dces-dtrhf-ser1ch-v1.git'
+    repository: 'https://gitlab.com/ohwr/project/dces-dtrhf-ser1ch-v1.git'
     contact:
       name: 'Julien Leduc'
       email: 'julien.leduc@cern.ch'
   - id: 'absenc'
-    repository: 'https://ohwr.org/project/absenc.git'
+    repository: 'https://gitlab.com/ohwr/project/absenc.git'
     contact:
       name: 'Fabien Le Mentec'
       email: 'fabien.lementec@gmail.com'
@@ -978,12 +978,12 @@ projects:
       - 'Motor Control'
       - 'Gateware'
   - id: 'uv-mask'
-    repository: 'https://ohwr.org/project/uv-mask.git'
+    repository: 'https://gitlab.com/ohwr/project/uv-mask.git'
     contact:
       name: 'Andy Butterworth'
       email: 'Andrew.Butterworth@cern.ch'
   - id: 'fmc-dio-10i-8o'
-    repository: 'https://ohwr.org/project/fmc-dio-10i-8o.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dio-10i-8o.git'
     contact:
       name: 'Pieter Van Trappen'
       email: 'pieter.van.trappen@cern.ch'
@@ -992,7 +992,7 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'urv-core'
-    repository: 'https://ohwr.org/project/urv-core.git'
+    repository: 'https://gitlab.com/ohwr/project/urv-core.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
@@ -1004,7 +1004,7 @@ projects:
       - 'wrpc-sw'
       - 'mock-turtle'
   - id: 'mock-turtle'
-    repository: 'https://ohwr.org/project/mock-turtle.git'
+    repository: 'https://gitlab.com/ohwr/project/mock-turtle.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
@@ -1020,7 +1020,7 @@ projects:
       - 'svec'
       - 'urv-core'
   - id: 'cosmic-pi'
-    repository: 'https://ohwr.org/project/cosmic-pi.git'
+    repository: 'https://gitlab.com/ohwr/project/cosmic-pi.git'
     contact:
       name: 'James Devine'
       email: 'jdevine@cern.ch'
@@ -1028,7 +1028,7 @@ projects:
       - 'Documentation'
       - 'Hobby'
   - id: 'radtol-led-psu'
-    repository: 'https://ohwr.org/project/radtol-led-psu.git'
+    repository: 'https://gitlab.com/ohwr/project/radtol-led-psu.git'
     contact:
       name: 'James Devine'
       email: 'jdevine@cern.ch'
@@ -1038,12 +1038,12 @@ projects:
     compatibles:
       - 'radtol-led-luminaire'
   - id: 'maroc_csa'
-    repository: 'https://ohwr.org/project/maroc_csa.git'
+    repository: 'https://gitlab.com/ohwr/project/maroc_csa.git'
     contact:
       name: 'David Cussans'
       email: 'David.Cussans@bristol.ac.uk'
   - id: 'gefe'
-    repository: 'https://ohwr.org/project/gefe.git'
+    repository: 'https://gitlab.com/ohwr/project/gefe.git'
     contact:
       name: 'Manoel Barros Marin'
       email: 'manoel.barros.marin@cern.ch'
@@ -1052,7 +1052,7 @@ projects:
       - 'FMC'
       - 'FMC Carrier'
   - id: 'vfc-hd'
-    repository: 'https://ohwr.org/project/vfc-hd.git'
+    repository: 'https://gitlab.com/ohwr/project/vfc-hd.git'
     contact:
       name: 'Andrea Boccardi'
       email: 'andrea.boccardi@cern.ch'
@@ -1069,7 +1069,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'fmc-masterfip'
-    repository: 'https://ohwr.org/project/fmc-masterfip.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-masterfip.git'
     contact:
       name: 'Eva Gousiou'
       email: 'Eva.Gousiou@cern.ch'
@@ -1080,7 +1080,7 @@ projects:
     compatibles:
       - 'spec'
   - id: 'tr-pmc'
-    repository: 'https://ohwr.org/project/tr-pmc.git'
+    repository: 'https://gitlab.com/ohwr/project/tr-pmc.git'
     contact:
       name: 'A. Hahn'
       email: 'a.hahn@gsi.de'
@@ -1095,7 +1095,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'fmc-dio-16ch-lvds-a'
-    repository: 'https://ohwr.org/project/fmc-dio-16ch-lvds-a.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dio-16ch-lvds-a.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1104,12 +1104,12 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'fr_pcb_mm'
-    repository: 'https://ohwr.org/project/fr_pcb_mm.git'
+    repository: 'https://gitlab.com/ohwr/project/fr_pcb_mm.git'
     contact:
       name: 'Germano Postal'
       email: 'germanopostal@gmail.com'
   - id: 'svec-3v3'
-    repository: 'https://ohwr.org/project/svec-3v3.git'
+    repository: 'https://gitlab.com/ohwr/project/svec-3v3.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1119,7 +1119,7 @@ projects:
       - 'VME'
       - 'Power'
   - id: 'crio-wr'
-    repository: 'https://ohwr.org/project/crio-wr.git'
+    repository: 'https://gitlab.com/ohwr/project/crio-wr.git'
     contact:
       name: 'Achim Vollhardt'
       email: 'avollhar@physik.uzh.ch'
@@ -1134,21 +1134,21 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'conv-ttl-rs485-hw'
-    repository: 'https://ohwr.org/project/conv-ttl-rs485-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/conv-ttl-rs485-hw.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
     tags:
       - 'VME'
   - id: 'conv-ttl-blo-hw'
-    repository: 'https://ohwr.org/project/conv-ttl-blo-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/conv-ttl-blo-hw.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
     tags:
       - 'VME'
   - id: 'fmc-tdc-1ns-5cha-hw'
-    repository: 'https://ohwr.org/project/fmc-tdc-1ns-5cha-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-tdc-1ns-5cha-hw.git'
     contact:
       name: 'Evangelia Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
@@ -1160,7 +1160,7 @@ projects:
       - 'spec'
       - 'svec'
   - id: 'fmc-pof-10m-r3ch-t1ch'
-    repository: 'https://ohwr.org/project/fmc-pof-10m-r3ch-t1ch.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-pof-10m-r3ch-t1ch.git'
     contact:
       name: 'Ben Todd'
       email: 'benjamin.todd@cern.ch'
@@ -1168,7 +1168,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
   - id: 'fmc-pof-10m-r4ch'
-    repository: 'https://ohwr.org/project/fmc-pof-10m-r4ch.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-pof-10m-r4ch.git'
     contact:
       name: 'Ben Todd'
       email: 'benjamin.todd@cern.ch'
@@ -1176,7 +1176,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
   - id: 'fmc-adc-100m14b4cha-hw'
-    repository: 'https://ohwr.org/project/fmc-adc-100m14b4cha-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-100m14b4cha-hw.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -1188,7 +1188,7 @@ projects:
       - 'svec'
       - 'spec'
   - id: 'afck'
-    repository: 'https://ohwr.org/project/afck.git'
+    repository: 'https://gitlab.com/ohwr/project/afck.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1197,7 +1197,7 @@ projects:
       - 'FMC Carrier'
       - 'MTCA'
   - id: 'fmc-dtrx-4cha'
-    repository: 'https://ohwr.org/project/fmc-dtrx-4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dtrx-4cha.git'
     contact:
       name: 'Magnus Sundal'
       email: 'magnusvsun@hotmail.com'
@@ -1206,7 +1206,7 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'fmc-dtx-4cha'
-    repository: 'https://ohwr.org/project/fmc-dtx-4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dtx-4cha.git'
     contact:
       name: 'Magnus Sundal'
       email: 'magnusvsun@hotmail.com'
@@ -1215,7 +1215,7 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'utca-rtm-8-sfp'
-    repository: 'https://ohwr.org/project/utca-rtm-8-sfp.git'
+    repository: 'https://gitlab.com/ohwr/project/utca-rtm-8-sfp.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1228,14 +1228,14 @@ projects:
       - 'afck'
       - 'afcku'
   - id: 'video-fpga-hdmi-dvi-ethernet'
-    repository: 'https://ohwr.org/project/video-fpga-hdmi-dvi-ethernet.git'
+    repository: 'https://gitlab.com/ohwr/project/video-fpga-hdmi-dvi-ethernet.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
     tags:
       - 'Video'
   - id: 'amc-cpu-com6'
-    repository: 'https://ohwr.org/project/amc-cpu-com6.git'
+    repository: 'https://gitlab.com/ohwr/project/amc-cpu-com6.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1243,7 +1243,7 @@ projects:
       - 'MTCA'
       - 'COM Express'
   - id: 'wr-d3s'
-    repository: 'https://ohwr.org/project/wr-d3s.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-d3s.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
@@ -1259,14 +1259,14 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'usb-relay-box1'
-    repository: 'https://ohwr.org/project/usb-relay-box1.git'
+    repository: 'https://gitlab.com/ohwr/project/usb-relay-box1.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
     tags:
       - 'USB'
   - id: 'vme-adc-250k-16b-36cha'
-    repository: 'https://ohwr.org/project/vme-adc-250k-16b-36cha.git'
+    repository: 'https://gitlab.com/ohwr/project/vme-adc-250k-16b-36cha.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1274,7 +1274,7 @@ projects:
       - 'VME'
       - 'ADC'
   - id: 'fmc-dio-32chttla'
-    repository: 'https://ohwr.org/project/fmc-dio-32chttla.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dio-32chttla.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1283,7 +1283,7 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'fmc-dac-600m-12b-1cha-dds'
-    repository: 'https://ohwr.org/project/fmc-dac-600m-12b-1cha-dds.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dac-600m-12b-1cha-dds.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
@@ -1295,7 +1295,7 @@ projects:
     compatibles:
       - 'spec'
   - id: 'afc'
-    repository: 'https://ohwr.org/project/afc.git'
+    repository: 'https://gitlab.com/ohwr/project/afc.git'
     contact:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
@@ -1307,7 +1307,7 @@ projects:
       - 'fmc-adc-130m-16b-4cha'
       - 'fmc-adc-250m-16b-4cha'
   - id: 'fmc-adc-250m-16b-4cha'
-    repository: 'https://ohwr.org/project/fmc-adc-250m-16b-4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-250m-16b-4cha.git'
     contact:
       name: 'Gustavo bruno'
       email: 'gustavo.bruno@lnls.br'
@@ -1316,7 +1316,7 @@ projects:
       - 'FMC Module'
       - 'ADC'
   - id: 'fmc-adc-130m-16b-4cha'
-    repository: 'https://ohwr.org/project/fmc-adc-130m-16b-4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-130m-16b-4cha.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1325,7 +1325,7 @@ projects:
       - 'FMC Module'
       - 'ADC'
   - id: 'timex3'
-    repository: 'https://ohwr.org/project/timex3.git'
+    repository: 'https://gitlab.com/ohwr/project/timex3.git'
     contact:
       name: 'Jean-Paul Ricaud'
       email: 'jean-paul.ricaud@synchrotron-soleil.fr'
@@ -1333,7 +1333,7 @@ projects:
       - 'cPCI'
       - 'Digital I/O'
   - id: 'fmc-adc2m18b2ch-dac500k20b1ch'
-    repository: 'https://ohwr.org/project/fmc-adc2m18b2ch-dac500k20b1ch.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc2m18b2ch-dac500k20b1ch.git'
     contact:
       name: 'David Giloteaux'
       email: 'david.giloteaux@cern.ch'
@@ -1344,7 +1344,7 @@ projects:
       - 'DAC'
       - 'Digital I/O'
   - id: 'wr-switch-hw'
-    repository: 'https://ohwr.org/project/wr-switch-hw.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-switch-hw.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1354,7 +1354,7 @@ projects:
       - 'WR Switch'
       - 'WR Switch v3'
   - id: 'bpm-rffe'
-    repository: 'https://ohwr.org/project/bpm-rffe.git'
+    repository: 'https://gitlab.com/ohwr/project/bpm-rffe.git'
     contact:
       name: 'Rafael Antonio Baron'
       email: 'rafael.baron@lnls.br'
@@ -1364,7 +1364,7 @@ projects:
     tags:
       - 'Signal Conditioning'
   - id: 'bpm'
-    repository: 'https://ohwr.org/project/bpm.git'
+    repository: 'https://gitlab.com/ohwr/project/bpm.git'
     contact:
       name: 'Daniel Tavares'
       email: 'daniel.tavares@lnls.br'
@@ -1376,7 +1376,7 @@ projects:
       - 'afc'
       - 'bpm-rffe'
   - id: 'fmc-adc-250m12b2cha'
-    repository: 'https://ohwr.org/project/fmc-adc-250m12b2cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-250m12b2cha.git'
     contact:
       name: 'Daniel Florin'
       email: 'florin@physik.uzh.ch'
@@ -1385,7 +1385,7 @@ projects:
       - 'FMC Module'
       - 'ADC'
   - id: 'spexi'
-    repository: 'https://ohwr.org/project/spexi.git'
+    repository: 'https://gitlab.com/ohwr/project/spexi.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -1402,7 +1402,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'conv-ttl-rs485'
-    repository: 'https://ohwr.org/project/conv-ttl-rs485.git'
+    repository: 'https://gitlab.com/ohwr/project/conv-ttl-rs485.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -1412,7 +1412,7 @@ projects:
       - 'conv-rs485-opt-rtm'
       - 'conv-ttl-rs485-hw'
   - id: 'svec'
-    repository: 'https://ohwr.org/project/svec.git'
+    repository: 'https://gitlab.com/ohwr/project/svec.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -1431,7 +1431,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'conv-ttl-blo'
-    repository: 'https://ohwr.org/project/conv-ttl-blo.git'
+    repository: 'https://gitlab.com/ohwr/project/conv-ttl-blo.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -1440,7 +1440,7 @@ projects:
     compatibles:
       - 'conv-ttl-blo-hw'
   - id: 'fmc-dio-5chttla'
-    repository: 'https://ohwr.org/project/fmc-dio-5chttla.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dio-5chttla.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
@@ -1453,7 +1453,7 @@ projects:
       - 'FMC Module'
       - 'Digital I/O'
   - id: 'fmc-conn-tester'
-    repository: 'https://ohwr.org/project/fmc-conn-tester.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-conn-tester.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
@@ -1463,7 +1463,7 @@ projects:
       - 'Digital I/O'
       - 'Testing'
   - id: 'fmc-tdc'
-    repository: 'https://ohwr.org/project/fmc-tdc.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-tdc.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
@@ -1474,7 +1474,7 @@ projects:
     compatibles:
       - 'fmc-tdc-1ns-5cha-hw'
   - id: 'spec'
-    repository: 'https://ohwr.org/project/spec.git'
+    repository: 'https://gitlab.com/ohwr/project/spec.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -1495,7 +1495,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'fmc-delay-1ns-8cha'
-    repository: 'https://ohwr.org/project/fmc-delay-1ns-8cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-delay-1ns-8cha.git'
     contact:
       name: 'Tomasz Wlostowski'
       email: 'tomasz.wlostowski@cern.ch'
@@ -1507,7 +1507,7 @@ projects:
       - 'spec'
       - 'svec'
   - id: 'fmc-adc-100m14b4cha'
-    repository: 'https://ohwr.org/project/fmc-adc-100m14b4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-100m14b4cha.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
@@ -1518,7 +1518,7 @@ projects:
     compatibles:
       - 'fmc-adc-100m14b4cha-hw'
   - id: 'white-rabbit'
-    repository: 'https://ohwr.org/project/white-rabbit.git'
+    repository: 'https://gitlab.com/ohwr/project/white-rabbit.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1527,7 +1527,7 @@ projects:
       - 'Documentation'
       - 'White Rabbit'
   - id: 'wrtd'
-    repository: 'https://ohwr.org/project/wrtd.git'
+    repository: 'https://gitlab.com/ohwr/project/wrtd.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
@@ -1543,7 +1543,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'f-watch'
-    repository: 'https://ohwr.org/project/f-watch.git'
+    repository: 'https://gitlab.com/ohwr/project/f-watch.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
@@ -1561,7 +1561,7 @@ projects:
     compatibles:
       - 'diot-sb-igl'
   - id: '10G-wr-nic'
-    repository: 'https://ohwr.org/project/10G-wr-nic.git'
+    repository: 'https://gitlab.com/ohwr/project/10G-wr-nic.git'
     contact:
       name: 'Phil Clarke'
       email: 'phil@phil-clarke.net '
@@ -1577,7 +1577,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'wr-switch-hdl-usp-eval'
-    repository: 'https://ohwr.org/project/wr-switch-hdl-usp-eval.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-switch-hdl-usp-eval.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1588,7 +1588,7 @@ projects:
       - 'Documentation'
       - 'Gateware'
   - id: 'wr-compliance-tests'
-    repository: 'https://ohwr.org/project/wr-compliance-tests.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-compliance-tests.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1604,7 +1604,7 @@ projects:
       - 'wrs-fl-hw'
       - 'wrs-ljdprep-hw'
   - id: 'wr-fixed-point-calculations'
-    repository: 'https://ohwr.org/project/wr-fixed-point-calculations.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-fixed-point-calculations.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1614,7 +1614,7 @@ projects:
       - 'WR Node'
       - 'White Rabbit'
   - id: 'wr-calibration'
-    repository: 'https://ohwr.org/project/wr-calibration.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-calibration.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
@@ -1622,7 +1622,7 @@ projects:
       - 'Documentation'
       - 'White Rabbit'
   - id: 'soft-cpu-toolchains'
-    repository: 'https://ohwr.org/project/soft-cpu-toolchains.git'
+    repository: 'https://gitlab.com/ohwr/project/soft-cpu-toolchains.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
@@ -1635,7 +1635,7 @@ projects:
       - 'wr-switch-sw'
       - 'wrpc-sw'
   - id: 'wr-switch-sw'
-    repository: 'https://ohwr.org/project/wr-switch-sw.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-switch-sw.git'
     contact:
       name: 'Adam Wujek'
       email: 'adam.wujek@cern.ch'
@@ -1653,7 +1653,7 @@ projects:
       - 'wr-switch-hw-v4'
       - 'ppsi'
   - id: 'wrpc-sw'
-    repository: 'https://ohwr.org/project/wrpc-sw.git'
+    repository: 'https://gitlab.com/ohwr/project/wrpc-sw.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
@@ -1670,7 +1670,7 @@ projects:
       - 'wr-cores'
       - 'ppsi'
   - id: 'wr-cores'
-    repository: 'https://ohwr.org/project/wr-cores.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-cores.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
@@ -1683,7 +1683,7 @@ projects:
       - 'wrpc-sw'
       - 'wr-switch-hdl'
   - id: 'general-cores'
-    repository: 'https://ohwr.org/project/general-cores.git'
+    repository: 'https://gitlab.com/ohwr/project/general-cores.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
@@ -1696,7 +1696,7 @@ projects:
       - 'wr-switch-hdl'
       - 'wr-cores'
   - id: 'wr-switch-hdl'
-    repository: 'https://ohwr.org/project/wr-switch-hdl.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-switch-hdl.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1714,7 +1714,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'wren'
-    repository: 'https://ohwr.org/project/wren.git'
+    repository: 'https://gitlab.com/ohwr/project/wren.git'
     contact:
       name: 'Eva Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
@@ -1734,7 +1734,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'sfp-plus-i2c'
-    repository: 'https://ohwr.org/project/sfp-plus-i2c.git'
+    repository: 'https://gitlab.com/ohwr/project/sfp-plus-i2c.git'
     contact:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
@@ -1745,7 +1745,7 @@ projects:
     compatibles:
       - 'wr-calibration'
   - id: 'ppsi'
-    repository: 'https://ohwr.org/project/ppsi.git'
+    repository: 'https://gitlab.com/ohwr/project/ppsi.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1764,7 +1764,7 @@ projects:
       - 'wr-switch-hw-v4'
       - 'wrpc-sw'
   - id: 'wr-std'
-    repository: 'https://ohwr.org/project/wr-std.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-std.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1774,7 +1774,7 @@ projects:
     compatibles:
       - 'ppsi'
   - id: 'wr-switch-testing'
-    repository: 'https://ohwr.org/project/wr-switch-testing.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-switch-testing.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1784,7 +1784,7 @@ projects:
       - 'Documentation'
       - 'Testing'
   - id: 'wr-nic'
-    repository: 'https://ohwr.org/project/wr-nic.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-nic.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1801,7 +1801,7 @@ projects:
       - 'wr-switch-hw-v4'
       - 'spec'
   - id: 'wr-starting-kit'
-    repository: 'https://ohwr.org/project/wr-starting-kit.git'
+    repository: 'https://gitlab.com/ohwr/project/wr-starting-kit.git'
     contact:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
@@ -1818,7 +1818,7 @@ projects:
       - 'wr-switch-hw-v4'
       - 'spec'
   - id: 'cute-wr'
-    repository: 'https://ohwr.org/project/cute-wr.git'
+    repository: 'https://gitlab.com/ohwr/project/cute-wr.git'
     contact:
       name: 'Guanghua Gong'
       email: 'ggh@tsinghua.edu.cn'
@@ -1834,7 +1834,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'etherbone-core'
-    repository: 'https://ohwr.org/project/etherbone-core.git'
+    repository: 'https://gitlab.com/ohwr/project/etherbone-core.git'
     contact:
       name: 'Alexander Hahn'
       email: 'a.hahn@gsi.de'
@@ -1846,7 +1846,7 @@ projects:
       - 'wrpc-sw'
       - 'wr-cores'
   - id: 'spec7-ps-sw'
-    repository: 'https://ohwr.org/project/spec7-ps-sw.git'
+    repository: 'https://gitlab.com/ohwr/project/spec7-ps-sw.git'
     contact:
       name: 'Javier Garcia'
       email: 'jgarcia@gl-research.com'
@@ -1855,7 +1855,7 @@ projects:
     compatibles:
       - 'spec7'
   - id: 'distributed-oscilloscope'
-    repository: 'https://ohwr.org/project/distributed-oscilloscope.git'
+    repository: 'https://gitlab.com/ohwr/project/distributed-oscilloscope.git'
     contact:
       name: 'Dimitris Lampridis'
       email: 'dimitris.lampridis@cern.ch'
@@ -1871,7 +1871,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'ohw-research'
-    repository: 'https://ohwr.org/project/ohw-research.git'
+    repository: 'https://gitlab.com/ohwr/project/ohw-research.git'
     contact:
       name: 'L. F. R. Murillo'
       email: 'luisfelipe@ucla.edu'
@@ -1879,7 +1879,7 @@ projects:
       - 'Documentation'
       - 'White Rabbit'
   - id: 'timiq-sw'
-    repository: 'https://ohwr.org/project/timiq/timiq-sw.git'
+    repository: 'https://gitlab.com/ohwr/project/timiq/timiq-sw.git'
     contact:
       name: 'Jean-Paul Ricaud'
       email: 'jean-paul.ricaud@maxiv.lu.se'
@@ -1887,7 +1887,7 @@ projects:
       - 'Timing'
       - '19 inch'
   - id: 'hdlmaker'
-    repository: 'https://ohwr.org/garcialasheras/hdlmaker.git'
+    repository: 'https://gitlab.com/ohwr/garcialasheras/hdlmaker.git'
     contact:
       name: 'Javier D. Garcia-Lasheras'
       email: 'javier@garcialasheras.com'
@@ -1895,7 +1895,7 @@ projects:
       - 'Tools'
       - 'Software'
   - id: 'list'
-    repository: 'https://ohwr.org/project/list.git'
+    repository: 'https://gitlab.com/ohwr/project/list.git'
     contact:
       name: 'Federico Vaga'
       email: 'federico.vaga@cern.ch'
@@ -1909,14 +1909,14 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
   - id: 'vhdl-style'
-    repository: 'https://ohwr.org/project/vhdl-style.git'
+    repository: 'https://gitlab.com/ohwr/project/vhdl-style.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
     tags:
       - 'Documentation'
   - id: 'vme-sbc-a25-pcie-vme-bridge'
-    repository: 'https://ohwr.org/project/vme-sbc-a25-pcie-vme-bridge.git'
+    repository: 'https://gitlab.com/ohwr/project/vme-sbc-a25-pcie-vme-bridge.git'
     contact:
       name: 'Grzegorz Daniluk'
       email: 'grzegorz.daniluk@cern.ch'
@@ -1924,7 +1924,7 @@ projects:
       - 'Gateware'
       - 'VME'
   - id: 'sdb'
-    repository: 'https://ohwr.org/project/sdb.git'
+    repository: 'https://gitlab.com/ohwr/project/sdb.git'
     contact:
       name: 'Alessandro Rubini'
       email: 'rubini@gnudd.com'
@@ -1932,7 +1932,7 @@ projects:
       - 'Software'
       - 'Documentation'
   - id: 'fmc-dac100m14b16cha-adc2m14b4cha'
-    repository: 'https://ohwr.org/project/fmc-dac100m14b16cha-adc2m14b4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-dac100m14b16cha-adc2m14b4cha.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1940,7 +1940,7 @@ projects:
       - 'FMC'
       - 'ADC'
   - id: 'fmc-adc100m14b16cha-dac2m14b4cha'
-    repository: 'https://ohwr.org/project/fmc-adc100m14b16cha-dac2m14b4cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc100m14b16cha-dac2m14b4cha.git'
     contact:
       name: 'Filip Świtakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1948,7 +1948,7 @@ projects:
       - 'FMC'
       - 'ADC'
   - id: 'fmc-adc-2k24b8cha'
-    repository: 'https://ohwr.org/project/fmc-adc-2k24b8cha.git'
+    repository: 'https://gitlab.com/ohwr/project/fmc-adc-2k24b8cha.git'
     contact:
       name: 'Switakowski'
       email: 'filip.switakowski@creotech.pl'
@@ -1956,7 +1956,7 @@ projects:
       - 'FMC'
       - 'ADC'
   - id: 'masterfip'
-    repository: 'https://ohwr.org/project/masterfip.git'
+    repository: 'https://gitlab.com/ohwr/project/masterfip.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
@@ -1964,7 +1964,7 @@ projects:
       - 'Documentation'
       - 'WorldFIP'
   - id: 'pts-base'
-    repository: 'https://ohwr.org/project/pts-base.git'
+    repository: 'https://gitlab.com/ohwr/project/pts-base.git'
     contact:
       name: 'Juan David Gonzalez Cobas'
       email: 'dcobas@cern.ch'
@@ -1972,7 +1972,7 @@ projects:
       - 'Documentation'
       - 'Testing'
   - id: 'pts'
-    repository: 'https://ohwr.org/project/pts.git'
+    repository: 'https://gitlab.com/ohwr/project/pts.git'
     contact:
       name: 'Juan David Gonzalez Cobas'
       email: 'dcobas@cern.ch'
@@ -1980,7 +1980,7 @@ projects:
       - 'Documentation'
       - 'Testing'
   - id: 'cute-wr-dp'
-    repository: 'https://ohwr.org/project/cute-wr-dp.git'
+    repository: 'https://gitlab.com/ohwr/project/cute-wr-dp.git'
     contact:
       name: 'Li Hongming'
       email: 'lihm.thu@gmail.com'
@@ -1995,7 +1995,7 @@ projects:
       - 'wrs-fl-hw'
       - 'wrs-ljdprep-hw'
   - id: 'cern-kicad'
-    repository: 'https://ohwr.org/project/cern-kicad.git'
+    repository: 'https://gitlab.com/ohwr/project/cern-kicad.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
@@ -2004,28 +2004,28 @@ projects:
       - 'Documentation'
       - 'Software'
   - id: 'ed'
-    repository: 'https://ohwr.org/project/ed.git'
+    repository: 'https://gitlab.com/ohwr/project/ed.git'
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
     tags:
       - 'Documentation'
   - id: 'tdc-core'
-    repository: 'https://ohwr.org/project/tdc-core.git'
+    repository: 'https://gitlab.com/ohwr/project/tdc-core.git'
     contact:
       name: 'Sebastien Bourdeauducq'
       email: 'sebastien@milkymist.org'
     tags:
       - 'Gateware'
   - id: 'fpga-config-space'
-    repository: 'https://ohwr.org/project/fpga-config-space.git'
+    repository: 'https://gitlab.com/ohwr/project/fpga-config-space.git'
     contact:
       name: 'Alexander Hahn'
       email: 'a.hahn@gsi.de'
     tags:
       - 'Gateware'
   - id: 'hdl-make'
-    repository: 'https://ohwr.org/project/hdl-make.git'
+    repository: 'https://gitlab.com/ohwr/project/hdl-make.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
@@ -2033,7 +2033,7 @@ projects:
       - 'Tools'
       - 'Software'
   - id: 'gn4124-core'
-    repository: 'https://ohwr.org/project/gn4124-core.git'
+    repository: 'https://gitlab.com/ohwr/project/gn4124-core.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
@@ -2043,7 +2043,7 @@ projects:
     compatibles:
       - 'spec'
   - id: 'vme64x-core'
-    repository: 'https://ohwr.org/project/vme64x-core.git'
+    repository: 'https://gitlab.com/ohwr/project/vme64x-core.git'
     contact:
       name: 'Tristan Gingold'
       email: 'tristan.gingold@cern.ch'
@@ -2053,7 +2053,7 @@ projects:
     compatibles:
       - 'svec'
   - id: 'wishbone-gen'
-    repository: 'https://ohwr.org/project/wishbone-gen.git'
+    repository: 'https://gitlab.com/ohwr/project/wishbone-gen.git'
     contact:
       name: 'Tomasz Włostowski'
       email: 'tomasz.wlostowski@cern.ch'
@@ -2061,7 +2061,7 @@ projects:
       - 'Software'
       - 'Tools'
   - id: 'cern-fip'
-    repository: 'https://ohwr.org/project/cern-fip.git'
+    repository: 'https://gitlab.com/ohwr/project/cern-fip.git'
     contact:
       name: 'Eva Gousiou'
       email: 'Evangelia.Gousiou@cern.ch'
@@ -2070,7 +2070,7 @@ projects:
       - 'WorldFIP'
       - 'Documentation'
   - id: 'extract-cap-voltage-rating'
-    repository: 'https://ohwr.org/project/extract-cap-voltage-rating.git'
+    repository: 'https://gitlab.com/ohwr/project/extract-cap-voltage-rating.git'
     contact:
       name: 'Christos Gentsos'
       email: 'christos.gentsos@cern.ch'

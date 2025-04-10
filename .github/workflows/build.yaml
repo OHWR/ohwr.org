@@ -44,8 +44,6 @@ jobs:
           make build 2>&1 | \
             tee >(grep -oP ' - ERROR - \K.*(?=:)' >> "$GITHUB_OUTPUT")
           echo "EOF" >> "$GITHUB_OUTPUT"
-        env:
-          HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

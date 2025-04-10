@@ -21,10 +21,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/bb599887cc7542e1afd97cdd9f66c1f0)](https://app.codacy.com/gh/OHWR/ohwr.org/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Mattermost](https://img.shields.io/badge/Mattermost-Join_Channel-blue?logo=mattermost)](https://mattermost.web.cern.ch/ohr/channels/ohwrorg)
 
-A new website proposal for the Open Hardware Repository.
-
-If approved, this website will be deployed to <https://ohwr.org>, replacing the
-current OHWR website.
+This repository hosts the sources of [Open Hardware Repository website](https://ohwr.org).
 
 The website is built with [Hugo](https://gohugo.io) using the [Bigspring Light](https://github.com/gethugothemes/bigspring-light)
 theme.

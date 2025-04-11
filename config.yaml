@@ -133,6 +133,110 @@ redirects:
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf
   - source: project/cernohl/wikis/faq
     target: https://gitlab.com/ohwr/project/cernohl/wikis/faq
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure
+    # yamllint disable-line rule:line-length
+  - source: project/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf
+  - source: project/white-rabbit/-/wikis/home
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home
+  - source: project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis
+  - source: project/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf
+    # yamllint disable-line rule:line-length
+  - source: project/project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments
+    # yamllint disable-line rule:line-length
+  - source: project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf
+  - source: project/white-rabbit/-/wikis/WRpresentations
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/WRpresentations
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf
+  - source: project/wr-switch-sw/-/wikis/Release-v8.0
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v8.0
+    # yamllint disable-line rule:line-length
+  - source: project/wr-switch-sw/-/wikis/Release-v7.0
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v7.0
+    # yamllint disable-line rule:line-length
+  - source: project/wr-switch-sw/-/wikis/Release-v61
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v61
+  - source: project/wr-switch-sw/-/wikis/Release-v602
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v602
+  - source: project/wr-switch-sw/-/wikis/Release-v601
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v601
+  - source: project/wr-switch-hw/-/wikis/home
+    target: https://gitlab.com/ohwr/project/wr-switch-hw/-/wikis/home
+  - source: project/wr-switch-hw/-/wikis/home
+    target: https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home
+  - source: project/wrs-low-jitter/-/wikis/home
+    target: https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home
+  - source: project/wrs-fl-hw/-/wikis/home
+    target: https://gitlab.com/ohwr/project/wrs-fl-hw/-/wikis/home
+  - source: project/wrs-lj-hw/-/wikis/home
+    target: https://gitlab.com/ohwr/project/wrs-lj-hw/-/wikis/home
+    # yamllint disable-line rule:line-length
+  - source: project/wr-switch-sw/-/wikis/home#compatibility-of-the-official-firmware-releases-with-commercially-available-wr-switches
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/home#compatibility-of-the-official-firmware-releases-with-commercially-available-wr-switches
+  - source: project/white-rabbit/wiki/
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home
+  - source: project/white-rabbit/wiki/Calibration
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Calibration
+  - source: project/wr-switch-sw/issues
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/issues
+  - source: project/wr-switch-hdl/issues
+    target: https://gitlab.com/ohwr/project/wr-switch-hdl/-/issues
+    # yamllint disable-line rule:line-length
+  - source: project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh
+    # yamllint disable-line rule:line-length
+  - source: project/white-rabbit/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
+  - source: project/wren/-/wikis/White-Rabbit-Event-Node
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wren/-/wikis/White-Rabbit-Event-Node
+  - source: project/wren/-/wikis/WREN-V
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wren/-/wikis/WREN-V
+
+
 projects:
   - id: 'mdior'
     repository: 'https://gitlab.com/ohwr/project/mdior.git'

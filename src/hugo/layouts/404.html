@@ -28,22 +28,14 @@ SPDX-License-Identifier: BSD-3-Clause
 
 <script>
   let path = window.location.pathname;
-
-  const uploadsMarker = '/uploads/';
-  const wikisMarker = '/-/wikis/';
-
-  if (!path.includes(wikisMarker)) {
-    const uploadsIndex = path.indexOf(uploadsMarker);
-    if (uploadsIndex !== -1) {
-      const projectPath = path.substring(0, uploadsIndex);
-      const uploadPath = path.substring(uploadsIndex + uploadsMarker.length);
-      path = `${projectPath}${wikisMarker}uploads/${uploadPath}`;
-    }
-  }
-
+  const targetMarker = '/-/wikis/uploads/';
+  const regex = /^(.*?)(?:\/uploads\/|\/wikis\/uploads\/)(.*)$/;
+  path = path.replace(regex, `$1${targetMarker}$2`);
   const gitlabUrl = `https://gitlab.com/ohwr${path}`;
   const gitlabLink = document.getElementById("gitlab-link");
-  gitlabLink.href = gitlabUrl;
-  gitlabLink.textContent = gitlabUrl;
+  if (gitlabLink) {
+    gitlabLink.href = gitlabUrl;
+    gitlabLink.textContent = gitlabUrl;
+  }
 </script>
 {{ end }}

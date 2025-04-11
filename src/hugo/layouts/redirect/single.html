@@ -4,4 +4,10 @@ SPDX-FileCopyrightText: 2025 CERN (home.cern)
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
-{{- template "_internal/alias.html" (dict "Permalink" .Params.target) -}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url={{ .Params.target }}">
+    <link rel="canonical" href="{{ .Params.target }}">
+  </head>
+</html>

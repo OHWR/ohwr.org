@@ -229,6 +229,12 @@ redirects:
   - source: project/white-rabbit/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
     # yamllint disable-line rule:line-length
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
+  - source: project/wren/-/wikis/White-Rabbit-Event-Node
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wren/-/wikis/White-Rabbit-Event-Node
+  - source: project/wren/-/wikis/WREN-V
+    # yamllint disable-line rule:line-length
+    target: https://gitlab.com/ohwr/project/wren/-/wikis/WREN-V
 
 
 projects:

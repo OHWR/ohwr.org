@@ -32,17 +32,20 @@ convenience, links to the three variants of the [CERN Open Hardware Licence
 
 * The permissive variant, CERN-OHL-P-2.0
   ([txt](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt),
-  [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf)). User guide
+  [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf)).
+  User guide
   ([odt](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt),
   [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf)).
 * The weakly-reciprocal variant, CERN-OHL-W-2.0
   ([txt](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt),
-  [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf)). User guide
+  [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf)).
+  User guide
   ([odt](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt),
   [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf)).
 * The strongly-reciprocal variant, CERN-OHL-S-2.0
   ([txt](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt),
-  [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf)). User guide
+  [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf)).
+  User guide
   ([txt](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt),
   [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf)).
 

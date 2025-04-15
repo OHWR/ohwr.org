@@ -7,7 +7,7 @@ title: Submit a Project to OHWR
 ---
 
 Thank you for your interest in submitting your project to the Open Hardware
-Repository. Please follow the steps bellow to submit your project.
+Repository. Please follow the steps below to submit your project.
 
 ### Configure your OHWR project page
 

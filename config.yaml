@@ -7,6 +7,7 @@ sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
 tags:
   - '19 inch'
+  - 'Amplifier'
   - 'Attenuator'
   - 'ADC'
   - 'COM Express'
@@ -28,6 +29,7 @@ tags:
   - 'High Voltage'
   - 'Hobby'
   - 'Lighting'
+  - 'Low Noise'
   - 'Microcontroller'
   - 'Motor Control'
   - 'MTCA'
@@ -596,6 +598,7 @@ projects:
     tags:
       - 'Timing'
       - '19 inch'
+      - 'Low Noise'
   - id: 'roe-protocol'
     repository: 'https://gitlab.com/ohwr/project/roe-protocol.git'
     contact:
@@ -822,6 +825,7 @@ projects:
     tags:
       - '19 inch'
       - 'ADC'
+      - 'Low Noise'
   - id: 'diot-dio-16ch-opt-24v'
     repository: 'https://gitlab.com/ohwr/project/diot-dio-16ch-opt-24v.git'
     contact:
@@ -920,6 +924,7 @@ projects:
     tags:
       - 'Timing'
       - '19 inch'
+      - 'Low Noise'
   - id: 'conv-rs485-opt-rtm'
     repository: 'https://gitlab.com/ohwr/project/conv-rs485-opt-rtm.git'
     contact:
@@ -2188,3 +2193,12 @@ projects:
     tags:
       - 'Tools'
       - 'Software'
+  - id: 'ultra-low-noise-amplifier'
+    repository: 'https://gitlab.com/ohwr/project/ultra-low-noise-amplifier.git'
+    contact:
+      name: 'Daniel Valuch'
+      email: 'daniel.valuch@cern.ch'
+    tags:
+      - 'Amplifier'
+      - 'Low Noise'
+      - 'Signal Conditioning'

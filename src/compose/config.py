@@ -249,7 +249,7 @@ class Project(BaseModelForbidExtra):
 class Redirect(BaseModelForbidExtra):
     """Redirect configuration."""
 
-    source: AnnotatedStr = Field(exclude=True)
+    url: AnnotatedStr
     target: Url
 
 

@@ -43,7 +43,7 @@ logging.info("Generating 'redirects' section...")
 redirects = RedirectSection.from_config(config.redirects)
 
 logging.info("Writing 'redirects' section...")
-redirects.write(os.path.join(config.sources, 'content'))
+redirects.write(os.path.join(config.sources, 'content/redirects'))
 
 logging.info("Generating 'projects' section...")
 projects = ProjectSection.from_config(config.projects)

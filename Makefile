@@ -63,8 +63,8 @@ test-pytest:
 
 .PHONY: clean
 clean:
-	rm -rf ${HUGO}/resources ${HUGO}/content/project ${HUGO}/.hugo_build.lock \
-		 ${PUBLIC} ${HUGO}/content/cern_ohl_*_v2.* ${COMPOSE}/__pycache__ \
-		 ${TEST}/__pycache__ ${TEST}/.pytest_cache
+	rm -rf ${HUGO}/resources ${HUGO}/.hugo_build.lock ${COMPOSE}/__pycache__ \
+		${PUBLIC} ${TEST}/__pycache__ ${TEST}/.pytest_cache
 	find ${HUGO}/content/projects ! -name _index.md -type f -exec rm -f {} +
 	find ${HUGO}/content/news ! -name _index.md -type f -exec rm -f {} +
+	find ${HUGO}/content/redirects ! -name _index.md -type f -exec rm -f {} +

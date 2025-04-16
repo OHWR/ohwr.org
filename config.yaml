@@ -62,181 +62,113 @@ tags:
   - 'WR Switch v3'
   - 'WR Switch v4'
 redirects:
-  # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
-    # yamllint disable-line rule:line-length
+  # yamllint disable rule:line-length
+  - url: project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
-  - source: cern_ohl_s_v2.txt
-    # yamllint disable-line rule:line-length
+  - url: cern_ohl_s_v2.txt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
-  - source: cern_ohl_s_v2.pdf
-    # yamllint disable-line rule:line-length
+  - url: cern_ohl_s_v2.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
-  - source: cern_ohl_w_v2.txt
-    # yamllint disable-line rule:line-length
+  - url: cern_ohl_w_v2.txt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
-  - source: cern_ohl_w_v2.pdf
-    # yamllint disable-line rule:line-length
+  - url: cern_ohl_w_v2.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
-  - source: cern_ohl_p_v2.txt
-    # yamllint disable-line rule:line-length
+  - url: cern_ohl_p_v2.txt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
-  - source: cern_ohl_p_v2.pdf
-    # yamllint disable-line rule:line-length
+  - url: cern_ohl_p_v2.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
-  - source: project/cernohl/-/wikis/Documents/CERN-OHL-version-2
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/Documents/CERN-OHL-version-2
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/Documents/CERN-OHL-version-2
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt
-    # yamllint disable-line rule:line-length
-  - source: project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf
     target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf
-  - source: project/cernohl/wikis/faq
+  - url: project/cernohl/wikis/faq
     target: https://gitlab.com/ohwr/project/cernohl/wikis/faq
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure
-    # yamllint disable-line rule:line-length
-  - source: project/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf
-  - source: project/white-rabbit/-/wikis/home
+  - url: project/white-rabbit/-/wikis/home
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home
-  - source: project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis
-  - source: project/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments
-    # yamllint disable-line rule:line-length
-  - source: project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)
-    # yamllint disable-line rule:line-length
+  - url: project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)
     target: https://gitlab.com/ohwr/project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf
-  - source: project/white-rabbit/-/wikis/WRpresentations
+  - url: project/white-rabbit/-/wikis/WRpresentations
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/WRpresentations
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf
-  - source: project/wr-switch-sw/-/wikis/Release-v8.0
-    # yamllint disable-line rule:line-length
+  - url: project/wr-switch-sw/-/wikis/Release-v8.0
     target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v8.0
-    # yamllint disable-line rule:line-length
-  - source: project/wr-switch-sw/-/wikis/Release-v7.0
-    # yamllint disable-line rule:line-length
+  - url: project/wr-switch-sw/-/wikis/Release-v7.0
     target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v7.0
-    # yamllint disable-line rule:line-length
-  - source: project/wr-switch-sw/-/wikis/Release-v61
-    # yamllint disable-line rule:line-length
+  - url: project/wr-switch-sw/-/wikis/Release-v61
     target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v61
-  - source: project/wr-switch-sw/-/wikis/Release-v602
-    # yamllint disable-line rule:line-length
+  - url: project/wr-switch-sw/-/wikis/Release-v602
     target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v602
-  - source: project/wr-switch-sw/-/wikis/Release-v601
+  - url: project/wr-switch-sw/-/wikis/Release-v601
     target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v601
-  - source: project/wr-switch-hw/-/wikis/home
+  - url: project/wr-switch-hw/-/wikis/home
     target: https://gitlab.com/ohwr/project/wr-switch-hw/-/wikis/home
-  - source: project/wr-switch-hw/-/wikis/home
+  - url: project/wr-switch-hw/-/wikis/home
     target: https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home
-  - source: project/wrs-low-jitter/-/wikis/home
+  - url: project/wrs-low-jitter/-/wikis/home
     target: https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home
-  - source: project/wrs-fl-hw/-/wikis/home
+  - url: project/wrs-fl-hw/-/wikis/home
     target: https://gitlab.com/ohwr/project/wrs-fl-hw/-/wikis/home
-  - source: project/wrs-lj-hw/-/wikis/home
+  - url: project/wrs-lj-hw/-/wikis/home
     target: https://gitlab.com/ohwr/project/wrs-lj-hw/-/wikis/home
-    # yamllint disable-line rule:line-length
-  - source: project/wr-switch-sw/-/wikis/home#compatibility-of-the-official-firmware-releases-with-commercially-available-wr-switches
-    # yamllint disable-line rule:line-length
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/home#compatibility-of-the-official-firmware-releases-with-commercially-available-wr-switches
-  - source: project/white-rabbit/wiki/
+  - url: project/wr-switch-sw/-/wikis/home
+    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/home
+  - url: project/white-rabbit/wiki/
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home
-  - source: project/white-rabbit/wiki/Calibration
+  - url: project/white-rabbit/wiki/Calibration
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Calibration
-  - source: project/wr-switch-sw/issues
+  - url: project/wr-switch-sw/issues
     target: https://gitlab.com/ohwr/project/wr-switch-sw/-/issues
-  - source: project/wr-switch-hdl/issues
+  - url: project/wr-switch-hdl/issues
     target: https://gitlab.com/ohwr/project/wr-switch-hdl/-/issues
-    # yamllint disable-line rule:line-length
-  - source: project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh
-    # yamllint disable-line rule:line-length
+  - url: project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh
     target: https://gitlab.com/ohwr/project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh
-    # yamllint disable-line rule:line-length
-  - source: project/white-rabbit/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
-    # yamllint disable-line rule:line-length
+  - url: project/white-rabbit/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
     target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
-  - source: project/wren/-/wikis/White-Rabbit-Event-Node
-    # yamllint disable-line rule:line-length
+  - url: project/wren/-/wikis/White-Rabbit-Event-Node
     target: https://gitlab.com/ohwr/project/wren/-/wikis/White-Rabbit-Event-Node
-  - source: project/wren/-/wikis/WREN-V
-    # yamllint disable-line rule:line-length
+  - url: project/wren/-/wikis/WREN-V
     target: https://gitlab.com/ohwr/project/wren/-/wikis/WREN-V
-
-
 projects:
   - id: 'mdior'
     repository: 'https://gitlab.com/ohwr/project/mdior.git'
@@ -697,7 +629,6 @@ projects:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
   - id: 'psu-rad-acdc-230v-12v5v-110w'
-    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/psu-rad-acdc-230v-12v5v-110w.git'
     contact:
       name: 'Greg Daniluk'
@@ -1333,7 +1264,6 @@ projects:
       - 'afck'
       - 'afcku'
   - id: 'video-fpga-hdmi-dvi-ethernet'
-    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/video-fpga-hdmi-dvi-ethernet.git'
     contact:
       name: 'Filip Świtakowski'
@@ -1439,7 +1369,6 @@ projects:
       - 'cPCI'
       - 'Digital I/O'
   - id: 'fmc-adc2m18b2ch-dac500k20b1ch'
-    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/fmc-adc2m18b2ch-dac500k20b1ch.git'
     contact:
       name: 'David Giloteaux'
@@ -1655,7 +1584,6 @@ projects:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
   - id: 'fmc-nanofip-pcb'
-    # yamllint disable-line rule:line-length
     repository: https://gitlab.cern.ch/be-cem-edl/diot/FMC-nanoFIP/fmc-nanofip-pcb.git
     contact:
       name: 'Christos Gentsos'
@@ -1711,7 +1639,6 @@ projects:
       - 'wrs-fl-hw'
       - 'wrs-ljdprep-hw'
   - id: 'wr-fixed-point-calculations'
-    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/wr-fixed-point-calculations.git'
     contact:
       name: 'Maciej Lipinski'
@@ -2024,7 +1951,6 @@ projects:
     tags:
       - 'Documentation'
   - id: 'vme-sbc-a25-pcie-vme-bridge'
-    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/vme-sbc-a25-pcie-vme-bridge.git'
     contact:
       name: 'Grzegorz Daniluk'
@@ -2041,7 +1967,6 @@ projects:
       - 'Software'
       - 'Documentation'
   - id: 'fmc-dac100m14b16cha-adc2m14b4cha'
-    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/fmc-dac100m14b16cha-adc2m14b4cha.git'
     contact:
       name: 'Filip Świtakowski'
@@ -2050,7 +1975,6 @@ projects:
       - 'FMC'
       - 'ADC'
   - id: 'fmc-adc100m14b16cha-dac2m14b4cha'
-    # yamllint disable-line rule:line-length
     repository: 'https://gitlab.com/ohwr/project/fmc-adc100m14b16cha-dac2m14b4cha.git'
     contact:
       name: 'Filip Świtakowski'

@@ -6,6 +6,7 @@
 sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
 tags:
+  - 'Amplifier'
   - '19 inch'
   - 'Attenuator'
   - 'ADC'
@@ -28,6 +29,7 @@ tags:
   - 'High Voltage'
   - 'Hobby'
   - 'Lighting'
+  - 'Low Noise'
   - 'Microcontroller'
   - 'Motor Control'
   - 'MTCA'
@@ -61,8 +63,7 @@ tags:
   - 'WR Switch'
   - 'WR Switch v3'
   - 'WR Switch v4'
-  - 'Amplifier'
-  - 'Low Noise'
+
 redirects:
   # yamllint disable rule:line-length
   - url: 'project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt'
@@ -530,6 +531,7 @@ projects:
     tags:
       - 'Timing'
       - '19 inch'
+      - 'Low Noise'
   - id: 'roe-protocol'
     repository: 'https://gitlab.com/ohwr/project/roe-protocol.git'
     contact:
@@ -755,6 +757,7 @@ projects:
     tags:
       - '19 inch'
       - 'ADC'
+      - 'Low Noise'
   - id: 'diot-dio-16ch-opt-24v'
     repository: 'https://gitlab.com/ohwr/project/diot-dio-16ch-opt-24v.git'
     contact:
@@ -853,6 +856,7 @@ projects:
     tags:
       - 'Timing'
       - '19 inch'
+      - 'Low Noise'
   - id: 'conv-rs485-opt-rtm'
     repository: 'https://gitlab.com/ohwr/project/conv-rs485-opt-rtm.git'
     contact:

@@ -6,8 +6,8 @@
 sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
 tags:
-  - 'Amplifier'
   - '19 inch'
+  - 'Amplifier'
   - 'Attenuator'
   - 'ADC'
   - 'COM Express'

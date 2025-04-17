@@ -61,114 +61,116 @@ tags:
   - 'WR Switch'
   - 'WR Switch v3'
   - 'WR Switch v4'
+  - 'Amplifier'
+  - 'Low Noise'
 redirects:
   # yamllint disable rule:line-length
-  - url: project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
-  - url: project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
-  - url: project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
-  - url: project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
-  - url: project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
-  - url: project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
-  - url: cern_ohl_s_v2.txt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt
-  - url: cern_ohl_s_v2.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf
-  - url: cern_ohl_w_v2.txt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt
-  - url: cern_ohl_w_v2.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf
-  - url: cern_ohl_p_v2.txt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt
-  - url: cern_ohl_p_v2.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf
-  - url: project/cernohl/-/wikis/Documents/CERN-OHL-version-2
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/Documents/CERN-OHL-version-2
-  - url: project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt
-  - url: project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf
-  - url: project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt
-  - url: project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf
-  - url: project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt
-  - url: project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf
-    target: https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf
-  - url: project/cernohl/wikis/faq
-    target: https://gitlab.com/ohwr/project/cernohl/wikis/faq
-  - url: project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure
-  - url: project/white-rabbit/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf
-  - url: project/white-rabbit/-/wikis/home
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home
-  - url: project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis
-  - url: project/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf
-  - url: project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments
-  - url: project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)
-    target: https://gitlab.com/ohwr/project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)
-  - url: project/white-rabbit/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf
-  - url: project/white-rabbit/-/wikis/WRpresentations
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/WRpresentations
-  - url: project/white-rabbit/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf
-  - url: project/white-rabbit/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx
-  - url: project/white-rabbit/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf
-  - url: project/white-rabbit/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf
-  - url: project/white-rabbit/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf
-  - url: project/wr-switch-sw/-/wikis/Release-v8.0
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v8.0
-  - url: project/wr-switch-sw/-/wikis/Release-v7.0
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v7.0
-  - url: project/wr-switch-sw/-/wikis/Release-v61
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v61
-  - url: project/wr-switch-sw/-/wikis/Release-v602
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v602
-  - url: project/wr-switch-sw/-/wikis/Release-v601
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v601
-  - url: project/wr-switch-hw/-/wikis/home
-    target: https://gitlab.com/ohwr/project/wr-switch-hw/-/wikis/home
-  - url: project/wr-switch-hw/-/wikis/home
-    target: https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home
-  - url: project/wrs-low-jitter/-/wikis/home
-    target: https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home
-  - url: project/wrs-fl-hw/-/wikis/home
-    target: https://gitlab.com/ohwr/project/wrs-fl-hw/-/wikis/home
-  - url: project/wrs-lj-hw/-/wikis/home
-    target: https://gitlab.com/ohwr/project/wrs-lj-hw/-/wikis/home
-  - url: project/wr-switch-sw/-/wikis/home
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/home
-  - url: project/white-rabbit/wiki/
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home
-  - url: project/white-rabbit/wiki/Calibration
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Calibration
-  - url: project/wr-switch-sw/issues
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/-/issues
-  - url: project/wr-switch-hdl/issues
-    target: https://gitlab.com/ohwr/project/wr-switch-hdl/-/issues
-  - url: project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh
-    target: https://gitlab.com/ohwr/project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh
-  - url: project/white-rabbit/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
-    target: https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf
-  - url: project/wren/-/wikis/White-Rabbit-Event-Node
-    target: https://gitlab.com/ohwr/project/wren/-/wikis/White-Rabbit-Event-Node
-  - url: project/wren/-/wikis/WREN-V
-    target: https://gitlab.com/ohwr/project/wren/-/wikis/WREN-V
+  - url: 'project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt'
+  - url: 'project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf'
+  - url: 'project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt'
+  - url: 'project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf'
+  - url: 'project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt'
+  - url: 'project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf'
+  - url: 'cern_ohl_s_v2.txt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/819d71bea3458f71fba6cf4fb0f2de6b/cern_ohl_s_v2.txt'
+  - url: 'cern_ohl_s_v2.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b236492596cfc91c12def7d50bbf7da0/cern_ohl_s_v2.pdf'
+  - url: 'cern_ohl_w_v2.txt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/82b567f43ce515395f7ddbfbad7a8806/cern_ohl_w_v2.txt'
+  - url: 'cern_ohl_w_v2.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f773df342791cc55b35ac4f907c78602/cern_ohl_w_v2.pdf'
+  - url: 'cern_ohl_p_v2.txt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/3eff4154d05e7a0459f3ddbf0674cae4/cern_ohl_p_v2.txt'
+  - url: 'cern_ohl_p_v2.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/98ff9662c7ce4252ec91104118c2af8e/cern_ohl_p_v2.pdf'
+  - url: 'project/cernohl/-/wikis/Documents/CERN-OHL-version-2'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/Documents/CERN-OHL-version-2'
+  - url: 'project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/b88fd806c337866bff655f2506f23d37/cern_ohl_s_v2_user_guide.txt'
+  - url: 'project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf'
+  - url: 'project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/eb5fac4e02180da7a4d15f99ab48ab7c/cern_ohl_w_v2_howto.odt'
+  - url: 'project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/c2e5e9d297949b5c2d324a6cbf6adda0/cern_ohl_w_v2_howto.pdf'
+  - url: 'project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/f123aac388675e12b308de0ade1a0278/cern_ohl_p_v2_howto.odt'
+  - url: 'project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/8a6b5d01f71c207c49493e4d114d61e6/cern_ohl_p_v2_howto.pdf'
+  - url: 'project/cernohl/wikis/faq'
+    target: 'https://gitlab.com/ohwr/project/cernohl/wikis/faq'
+  - url: 'project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-calibration-procedure'
+  - url: 'project/white-rabbit/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/76cdbdbadccc9d6c54d5caf246550fbf/WR_Calibration-v1.1-20151109.pdf'
+  - url: 'project/white-rabbit/-/wikis/home'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home'
+  - url: "project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis"
+    target: "https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis"
+  - url: 'project/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf'
+  - url: 'project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments'
+  - url: 'project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)'
+    target: 'https://gitlab.com/ohwr/project/wr-std/-/wikis/Documents/White-Rabbit-Specification-(latest-version)'
+  - url: 'project/white-rabbit/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/b6ce4dc092f0d5af89d107e48020a85a/WhiteRabbitSpec.v2.0.pdf'
+  - url: 'project/white-rabbit/-/wikis/WRpresentations'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/WRpresentations'
+  - url: 'project/white-rabbit/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae61d785a29affa550e16c06a0508bab/WRintro.pdf'
+  - url: 'project/white-rabbit/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/c6df0490aa53bcf19ab9e014cd577073/WRintro.pptx'
+  - url: 'project/white-rabbit/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/2b9d42b664f8e2fd9856c042bd5f6652/WR_Maciej_ALBA.v0.3.pdf'
+  - url: 'project/white-rabbit/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/f729eb9993258c26953ce9141fa82eab/IBIC2013_WR.pdf'
+  - url: 'project/white-rabbit/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/cfc34350adcbf5156f968fac0b9301b5/ISPCS2011_WR.pdf'
+  - url: 'project/wr-switch-sw/-/wikis/Release-v8.0'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v8.0'
+  - url: 'project/wr-switch-sw/-/wikis/Release-v7.0'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v7.0'
+  - url: 'project/wr-switch-sw/-/wikis/Release-v61'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v61'
+  - url: 'project/wr-switch-sw/-/wikis/Release-v602'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v602'
+  - url: 'project/wr-switch-sw/-/wikis/Release-v601'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/Release-v601'
+  - url: 'project/wr-switch-hw/-/wikis/home'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-hw/-/wikis/home'
+  - url: 'project/wr-switch-hw/-/wikis/home'
+    target: 'https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home'
+  - url: 'project/wrs-low-jitter/-/wikis/home'
+    target: 'https://gitlab.com/ohwr/project/wrs-low-jitter/-/wikis/home'
+  - url: 'project/wrs-fl-hw/-/wikis/home'
+    target: 'https://gitlab.com/ohwr/project/wrs-fl-hw/-/wikis/home'
+  - url: 'project/wrs-lj-hw/-/wikis/home'
+    target: 'https://gitlab.com/ohwr/project/wrs-lj-hw/-/wikis/home'
+  - url: 'project/wr-switch-sw/-/wikis/home'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/wikis/home'
+  - url: 'project/white-rabbit/wiki/'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home'
+  - url: 'project/white-rabbit/wiki/Calibration'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Calibration'
+  - url: 'project/wr-switch-sw/issues'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/issues'
+  - url: 'project/wr-switch-hdl/issues'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-hdl/-/issues'
+  - url: 'project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh'
+    target: 'https://gitlab.com/ohwr/project/wr-switch-sw/blob/master/userspace/host_tools/wrs_dump.sh'
+  - url: 'project/white-rabbit/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/ae3282acd8f9f6c5a9067b061202277d/wr_external_reference.pdf'
+  - url: 'project/wren/-/wikis/White-Rabbit-Event-Node'
+    target: 'https://gitlab.com/ohwr/project/wren/-/wikis/White-Rabbit-Event-Node'
+  - url: 'project/wren/-/wikis/WREN-V'
+    target: 'https://gitlab.com/ohwr/project/wren/-/wikis/WREN-V'
 projects:
   - id: 'mdior'
     repository: 'https://gitlab.com/ohwr/project/mdior.git'
@@ -2112,3 +2114,12 @@ projects:
     tags:
       - 'Tools'
       - 'Software'
+  - id: 'ultra-low-noise-amplifier'
+    repository: 'https://gitlab.com/ohwr/project/ultra-low-noise-amplifier.git'
+    contact:
+      name: 'Daniel Valuch'
+      email: 'daniel.valuch@cern.ch'
+    tags:
+      - 'Amplifier'
+      - 'Low Noise'
+      - 'Signal Conditioning'

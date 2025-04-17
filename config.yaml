@@ -114,7 +114,7 @@ redirects:
     target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home'
   - url: "project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis"
     target: "https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/Tom's-Master-thesis"
-  - url: 'project/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf'
+  - url: 'project/white-rabbit/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf'
     target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/uploads/6a357829064b9e27a46fbce4cb4398b4/mgr.pdf'
   - url: 'project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments'
     target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Documents/White-Rabbit-Specification:-Draft-for-Comments'
@@ -160,6 +160,8 @@ redirects:
     target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/home'
   - url: 'project/white-rabbit/wiki/Calibration'
     target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Calibration'
+  - url: 'projects/white-rabbit/wiki/Calibration'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/Calibration'
   - url: 'project/wr-switch-sw/issues'
     target: 'https://gitlab.com/ohwr/project/wr-switch-sw/-/issues'
   - url: 'project/wr-switch-hdl/issues'
@@ -172,6 +174,8 @@ redirects:
     target: 'https://gitlab.com/ohwr/project/wren/-/wikis/White-Rabbit-Event-Node'
   - url: 'project/wren/-/wikis/WREN-V'
     target: 'https://gitlab.com/ohwr/project/wren/-/wikis/WREN-V'
+  - url: 'cernohl'
+    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/home'
 projects:
   - id: 'mdior'
     repository: 'https://gitlab.com/ohwr/project/mdior.git'

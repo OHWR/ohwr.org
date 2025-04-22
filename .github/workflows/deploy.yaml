@@ -24,6 +24,9 @@ concurrency:
 
 jobs:
   build:
+    if: |
+      (github.event_name != 'schedule') ||
+      (github.event_name == 'schedule' && github.repository == 'OHWR/ohwr.org')
     uses: ./.github/workflows/build.yaml
   deploy:
     environment:

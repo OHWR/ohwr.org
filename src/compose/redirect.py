@@ -25,8 +25,8 @@ class RedirectPage(Page):
         Returns:
             RedirectPage: Instance of RedirectPage class.
         """
-        front_matter = config.model_dump(exclude_none=True)
-        front_matter['type'] = 'redirect'
+        front_matter = config.model_dump()
+        front_matter['url'] = os.path.join(config.url, 'index.html')
         return cls(front_matter=front_matter, markdown='')
 
 
@@ -45,38 +45,14 @@ class RedirectSection(Section):
             RedirectSection: Instance of RedirectSection class.
         """
         redirect_section = {}
-        for config in configs:
-            page = config.source.split('/')[-1]
-            logging.info("Generating '{0}' page...".format(page))
+        for index, config in enumerate(configs):
+            logging.info("Generating '{0}' page...".format(config.url))
             try:
                 redirect = RedirectPage.from_config(config)
             except ValueError as redirect_error:
                 logging.error("Failed to generate '{0}' page:\n{1}".format(
-                    page, redirect_error,
+                    config.url, redirect_error,
                 ))
                 continue
-            redirect_section[config.source] = redirect
+            redirect_section[str(index)] = redirect
         return cls(redirect_section)
-
-    def _page_path(self, path: str, name: str) -> str:
-        """
-        Get page path.
-
-        Parameters:
-            path: Base path.
-            name: Page name.
-
-        Returns:
-            Page path.
-
-        Raises:
-            ValueError: If creating the directory fails.
-        """
-        redirect_dir = os.path.join(path, name)
-        try:
-            os.makedirs(redirect_dir)
-        except OSError as makedirs_error:
-            raise ValueError("Failed to create '{0}' directory:\n{1}".format(
-                redirect_dir, makedirs_error,
-            ))
-        return os.path.join(redirect_dir, 'index.md')

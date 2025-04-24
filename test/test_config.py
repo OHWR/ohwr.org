@@ -83,7 +83,7 @@ class TestConfig:
             sources=tmp_path,
             licenses=dummy_licenses_file,
             redirects=[Redirect(
-                source="/old",
+                url="/old",
                 target="https://github.com/new"
             )],
             tags=["test-tag"],
@@ -93,4 +93,4 @@ class TestConfig:
         assert len(config.projects) == 1
         assert config.projects[0].id == "test-project"
         assert config.licenses == dummy_licenses_file
-        assert config.redirects[0].source == "/old"
+        assert config.redirects[0].url == "/old"

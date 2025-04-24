@@ -11,6 +11,7 @@ tags:
   - 'Attenuator'
   - 'ADC'
   - 'COM Express'
+  - 'Commercial'
   - 'CompactRIO'
   - 'Course'
   - 'COVID-19'
@@ -53,6 +54,15 @@ tags:
   - 'Testing'
   - 'Timing'
   - 'Tools'
+  - 'TRL1'
+  - 'TRL2'
+  - 'TRL3'
+  - 'TRL4'
+  - 'TRL5'
+  - 'TRL6'
+  - 'TRL7'
+  - 'TRL8'
+  - 'TRL9'
   - 'USB'
   - 'Video'
   - 'VME'
@@ -188,6 +198,7 @@ projects:
     tags:
       - 'DI/OT'
       - 'Digital I/O'
+      - 'TRL4'
   - id: 'giraph32'
     repository: 'https://gitlab.com/ohwr/project/giraph32.git'
     contact:
@@ -196,6 +207,7 @@ projects:
     tags:
       - 'Digital I/O'
       - '19 inch'
+      - 'TRL9'
   - id: 'babywr'
     repository: 'https://gitlab.com/ohwr/project/babywr.git'
     contact:
@@ -210,6 +222,7 @@ projects:
     tags:
       - 'White Rabbit'
       - 'WR Node'
+      - 'TRL4'
   - id: 'diot-pb-lbk'
     repository: 'https://gitlab.com/ohwr/project/diot-pb-lbk.git'
     contact:
@@ -221,6 +234,7 @@ projects:
       - 'diot-sb-zu'
     tags:
       - 'DI/OT'
+      - 'TRL8'
   - id: 'pz-tio'
     repository: 'https://gitlab.com/ohwr/project/pz-tio.git'
     contact:
@@ -237,6 +251,7 @@ projects:
       - 'WR Node'
       - 'Digital I/O'
       - 'SoC'
+      - 'TRL8'
   - id: 'fmc-hv-2ch'
     repository: 'https://gitlab.com/ohwr/project/fmc-hv-2ch.git'
     contact:
@@ -249,6 +264,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'High Voltage'
+      - 'TRL9'
   - id: 'fmc-mfe'
     repository: 'https://gitlab.com/ohwr/project/fmc-mfe.git'
     contact:
@@ -261,6 +277,7 @@ projects:
       - 'FMC Module'
       - 'SAMbuCa'
       - 'Motor Control'
+      - 'TRL4'
   - id: 'afcku'
     repository: 'https://gitlab.com/ohwr/project/afcku.git'
     contact:
@@ -270,6 +287,8 @@ projects:
       - 'FMC'
       - 'FMC Carrier'
       - 'MTCA'
+      - 'TRL9'
+      - 'Commercial'
   - id: 'diot-fsi-det-8ch'
     repository: 'https://gitlab.com/ohwr/project/diot-fsi-det-8ch.git'
     contact:

@@ -29,6 +29,7 @@ tags:
   - 'Gateware'
   - 'High Voltage'
   - 'Hobby'
+  - 'Inactive'
   - 'Lighting'
   - 'Low Noise'
   - 'Microcontroller'
@@ -396,6 +397,7 @@ projects:
     tags:
       - 'COVID-19'
       - 'TRL8'
+      - 'Inactive'
   - id: 'diot-reliability'
     repository: 'https://gitlab.com/ohwr/project/diot-reliability.git'
     contact:
@@ -413,6 +415,7 @@ projects:
     tags:
       - 'COVID-19'
       - 'TRL8'
+      - 'Inactive'
   - id: 'hydra'
     repository: 'https://gitlab.com/ohwr/project/hydra.git'
     contact:
@@ -437,6 +440,7 @@ projects:
       - 'Course'
       - 'Documentation'
       - 'SoC'
+      - 'Inactive'
   - id: 'diot-pfc-ku'
     repository: 'https://gitlab.com/ohwr/project/diot-pfc-ku.git'
     contact:
@@ -513,6 +517,7 @@ projects:
       email: 'aubert@stogger.com'
     tags:
       - 'COVID-19'
+      - 'Inactive'
   - id: 'diot-sb-igl'
     repository: 'https://gitlab.com/ohwr/project/diot-sb-igl.git'
     contact:
@@ -634,6 +639,7 @@ projects:
       - 'FMC Carrier'
       - 'White Rabbit'
       - 'WR Node'
+      - 'Inactive'
   - id: 'diot-crate-hw'
     repository: 'https://gitlab.com/ohwr/project/diot-crate-hw.git'
     contact:
@@ -683,6 +689,8 @@ projects:
     contact:
       name: 'Erik van der Bij'
       email: 'erik.van.der.bij@cern.ch'
+    tags:
+      - 'Inactive'
   - id: 'psu-rad-acdc-230v-12v5v-110w'
     repository: 'https://gitlab.com/ohwr/project/psu-rad-acdc-230v-12v5v-110w.git'
     contact:
@@ -987,6 +995,7 @@ projects:
       email: 'denis@envox.hr'
     tags:
       - 'Power'
+      - 'Inactive'
   - id: 'pandabox'
     repository: 'https://gitlab.com/ohwr/project/pandabox.git'
     contact:
@@ -1097,6 +1106,8 @@ projects:
     contact:
       name: 'Andy Butterworth'
       email: 'Andrew.Butterworth@cern.ch'
+    tags:
+      - 'Inactive'
   - id: 'fmc-dio-10i-8o'
     repository: 'https://gitlab.com/ohwr/project/fmc-dio-10i-8o.git'
     contact:
@@ -1171,6 +1182,7 @@ projects:
       - 'Rad-tol'
       - 'FMC'
       - 'FMC Carrier'
+      - 'TRL9'
   - id: 'vfc-hd'
     repository: 'https://gitlab.com/ohwr/project/vfc-hd.git'
     contact:
@@ -1182,6 +1194,7 @@ projects:
       - 'WR Node'
       - 'FMC'
       - 'FMC Carrier'
+      - 'TRL9'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1197,6 +1210,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'WorldFIP'
+      - 'TRL9'
     compatibles:
       - 'spec'
   - id: 'tr-pmc'
@@ -1208,6 +1222,8 @@ projects:
       - 'White Rabbit'
       - 'WR Node'
       - 'PMC'
+      - 'TRL9'
+      - 'Commercial'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1260,6 +1276,7 @@ projects:
       email: 'grzegorz.daniluk@cern.ch'
     tags:
       - 'VME'
+      - 'TRL9'
   - id: 'conv-ttl-blo-hw'
     repository: 'https://gitlab.com/ohwr/project/conv-ttl-blo-hw.git'
     contact:
@@ -1267,6 +1284,7 @@ projects:
       email: 'grzegorz.daniluk@cern.ch'
     tags:
       - 'VME'
+      - 'TRL9'
   - id: 'fmc-tdc-1ns-5cha-hw'
     repository: 'https://gitlab.com/ohwr/project/fmc-tdc-1ns-5cha-hw.git'
     contact:
@@ -1276,6 +1294,7 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'TDC'
+      - 'TRL9'
     compatibles:
       - 'spec'
       - 'svec'
@@ -1304,6 +1323,8 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'ADC'
+      - 'TRL9'
+      - 'Commercial'
     compatibles:
       - 'svec'
       - 'spec'
@@ -1316,6 +1337,8 @@ projects:
       - 'FMC'
       - 'FMC Carrier'
       - 'MTCA'
+      - 'TRL9'
+      - 'Commercial'
   - id: 'fmc-dtrx-4cha'
     repository: 'https://gitlab.com/ohwr/project/fmc-dtrx-4cha.git'
     contact:
@@ -1402,6 +1425,8 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'Digital I/O'
+      - 'TRL9'
+      - 'Commercial'
   - id: 'fmc-dac-600m-12b-1cha-dds'
     repository: 'https://gitlab.com/ohwr/project/fmc-dac-600m-12b-1cha-dds.git'
     contact:
@@ -1412,6 +1437,8 @@ projects:
       - 'DAC'
       - 'DDS'
       - 'FMC Module'
+      - 'TRL8'
+      - 'Commercial'
     compatibles:
       - 'spec'
   - id: 'afc'
@@ -1423,6 +1450,8 @@ projects:
       - 'MTCA'
       - 'FMC'
       - 'FMC Carrier'
+      - 'TRL9'
+      - 'Commercial'
     compatibles:
       - 'fmc-adc-130m-16b-4cha'
       - 'fmc-adc-250m-16b-4cha'
@@ -1435,6 +1464,8 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'ADC'
+      - 'TRL9'
+      - 'Commercial'
   - id: 'fmc-adc-130m-16b-4cha'
     repository: 'https://gitlab.com/ohwr/project/fmc-adc-130m-16b-4cha.git'
     contact:
@@ -1473,6 +1504,8 @@ projects:
       - 'White Rabbit'
       - 'WR Switch'
       - 'WR Switch v3'
+      - 'TRL9'
+      - 'Commercial'
   - id: 'bpm-rffe'
     repository: 'https://gitlab.com/ohwr/project/bpm-rffe.git'
     contact:
@@ -1515,6 +1548,7 @@ projects:
       - 'PXIe'
       - 'White Rabbit'
       - 'WR Node'
+      - 'Inactive'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1543,6 +1577,8 @@ projects:
       - 'VME'
       - 'White Rabbit'
       - 'WR Node'
+      - 'TRL9'
+      - 'Commercial'
     compatibles:
       - 'fmc-adc-100m14b4cha-hw'
       - 'wr-switch-hw'
@@ -1572,6 +1608,8 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'Digital I/O'
+      - 'TRL9'
+      - 'Commercial'
   - id: 'fmc-conn-tester'
     repository: 'https://gitlab.com/ohwr/project/fmc-conn-tester.git'
     contact:
@@ -1605,6 +1643,8 @@ projects:
       - 'FMC Carrier'
       - 'White Rabbit'
       - 'WR Node'
+      - 'TRL9'
+      - 'Commercial'
     compatibles:
       - 'fmc-tdc-1ns-5cha-hw'
       - 'fmc-delay-1ns-8cha'
@@ -1626,6 +1666,8 @@ projects:
     compatibles:
       - 'spec'
       - 'svec'
+      - 'TRL9'
+      - 'Commercial'
   - id: 'fmc-adc-100m14b4cha'
     repository: 'https://gitlab.com/ohwr/project/fmc-adc-100m14b4cha.git'
     contact:
@@ -1667,6 +1709,8 @@ projects:
     contact:
       name: 'Javier Serrano'
       email: 'javier.serrano@cern.ch'
+    tags:
+      - 'Inactive'
   - id: 'fmc-nanofip-pcb'
     repository: https://gitlab.cern.ch/be-cem-edl/diot/FMC-nanoFIP/fmc-nanofip-pcb.git
     contact:
@@ -1677,6 +1721,7 @@ projects:
       - 'FMC Module'
       - 'Rad-tol'
       - 'WorldFIP'
+      - 'TRL9'
     compatibles:
       - 'diot-sb-igl'
   - id: '10G-wr-nic'
@@ -1717,6 +1762,7 @@ projects:
       - 'White Rabbit'
       - 'WR Switch'
       - 'Testing'
+      - 'TRL9'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1764,6 +1810,7 @@ projects:
       - 'WR Switch'
       - 'WR Switch v3'
       - 'WR Switch v4'
+      - 'TRL9'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1783,6 +1830,7 @@ projects:
       - 'White Rabbit'
       - 'Software'
       - 'RISC-V'
+      - 'TRL9'
     compatibles:
       - 'soft-cpu-toolchains'
       - 'wr-switch-sw'
@@ -1798,6 +1846,7 @@ projects:
       - 'WR Node'
       - 'Gateware'
       - 'White Rabbit'
+      - 'TRL9'
     compatibles:
       - 'wrpc-sw'
       - 'wr-switch-hdl'
@@ -1811,6 +1860,7 @@ projects:
       - 'WR Node'
       - 'Gateware'
       - 'White Rabbit'
+      - 'TRL9'
     compatibles:
       - 'wr-switch-hdl'
       - 'wr-cores'
@@ -1825,6 +1875,7 @@ projects:
       - 'White Rabbit'
       - 'WR Switch v3'
       - 'WR Switch v4'
+      - 'TRL9'
     compatibles:
       - 'wr-switch-sw'
       - 'wr-switch-hw'
@@ -1846,6 +1897,7 @@ projects:
       - 'PCIe'
       - 'PXIe'
       - 'VME'
+      - 'TRL7'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1875,6 +1927,7 @@ projects:
       - 'WR Switch v4'
       - 'WR Node'
       - 'Software'
+      - 'TRL9'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1946,6 +1999,7 @@ projects:
       - 'WR Node'
       - 'White Rabbit'
       - 'FMC Module'
+      - 'Inactive'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1964,6 +2018,7 @@ projects:
     compatibles:
       - 'wrpc-sw'
       - 'wr-cores'
+      - 'TRL9'
   - id: 'spec7-ps-sw'
     repository: 'https://gitlab.com/ohwr/project/spec7-ps-sw.git'
     contact:
@@ -1973,6 +2028,7 @@ projects:
       - 'Software'
     compatibles:
       - 'spec7'
+      - 'Inactive'
   - id: 'distributed-oscilloscope'
     repository: 'https://gitlab.com/ohwr/project/distributed-oscilloscope.git'
     contact:
@@ -1982,6 +2038,7 @@ projects:
       - 'Software'
       - 'Documentation'
       - 'White Rabbit'
+      - 'Inactive'
     compatibles:
       - 'spec'
       - 'wr-switch-hw'
@@ -1997,6 +2054,7 @@ projects:
     tags:
       - 'Documentation'
       - 'White Rabbit'
+      - 'Inactive'
   - id: 'timiq-sw'
     repository: 'https://gitlab.com/ohwr/project/timiq/timiq-sw.git'
     contact:
@@ -2013,6 +2071,7 @@ projects:
     tags:
       - 'Tools'
       - 'Software'
+      - 'Inactive'
   - id: 'list'
     repository: 'https://gitlab.com/ohwr/project/list.git'
     contact:
@@ -2020,6 +2079,7 @@ projects:
       email: 'federico.vaga@cern.ch'
     tags:
       - 'White Rabbit'
+      - 'Inactive'
     compatibles:
       - 'svec'
       - 'wr-switch-hw'
@@ -2042,6 +2102,7 @@ projects:
     tags:
       - 'Gateware'
       - 'VME'
+      - 'TRL9'
   - id: 'sdb'
     repository: 'https://gitlab.com/ohwr/project/sdb.git'
     contact:
@@ -2090,6 +2151,7 @@ projects:
     tags:
       - 'Documentation'
       - 'Testing'
+      - 'Inactive'
   - id: 'pts'
     repository: 'https://gitlab.com/ohwr/project/pts.git'
     contact:
@@ -2098,6 +2160,7 @@ projects:
     tags:
       - 'Documentation'
       - 'Testing'
+      - 'Inactive'
   - id: 'cute-wr-dp'
     repository: 'https://gitlab.com/ohwr/project/cute-wr-dp.git'
     contact:
@@ -2108,6 +2171,7 @@ projects:
       - 'WR Node'
       - 'White Rabbit'
       - 'FMC Module'
+      - 'Inactive'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -2122,6 +2186,7 @@ projects:
       - 'Tools'
       - 'Documentation'
       - 'Software'
+      - 'Inactive'
   - id: 'ed'
     repository: 'https://gitlab.com/ohwr/project/ed.git'
     contact:
@@ -2151,6 +2216,7 @@ projects:
     tags:
       - 'Tools'
       - 'Software'
+      - 'TRL9'
   - id: 'gn4124-core'
     repository: 'https://gitlab.com/ohwr/project/gn4124-core.git'
     contact:
@@ -2159,6 +2225,7 @@ projects:
     tags:
       - 'Gateware'
       - 'PCIe'
+      - 'TRL9'
     compatibles:
       - 'spec'
   - id: 'vme64x-core'
@@ -2169,6 +2236,7 @@ projects:
     tags:
       - 'Gateware'
       - 'VME'
+      - 'TRL9'
     compatibles:
       - 'svec'
   - id: 'wishbone-gen'
@@ -2179,6 +2247,7 @@ projects:
     tags:
       - 'Software'
       - 'Tools'
+      - 'Inactive'
   - id: 'cern-fip'
     repository: 'https://gitlab.com/ohwr/project/cern-fip.git'
     contact:
@@ -2205,3 +2274,4 @@ projects:
       - 'Amplifier'
       - 'Low Noise'
       - 'Signal Conditioning'
+      - 'TRL4'

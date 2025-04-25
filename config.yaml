@@ -2015,10 +2015,10 @@ projects:
       - 'WR Node'
       - 'White Rabbit'
       - 'Gateware'
+      - 'TRL9'
     compatibles:
       - 'wrpc-sw'
       - 'wr-cores'
-      - 'TRL9'
   - id: 'spec7-ps-sw'
     repository: 'https://gitlab.com/ohwr/project/spec7-ps-sw.git'
     contact:

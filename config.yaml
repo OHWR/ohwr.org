@@ -1663,11 +1663,11 @@ projects:
       - 'FMC'
       - 'FMC Module'
       - 'Fine Delay'
+      - 'TRL9'
+      - 'Commercial'
     compatibles:
       - 'spec'
       - 'svec'
-      - 'TRL9'
-      - 'Commercial'
   - id: 'fmc-adc-100m14b4cha'
     repository: 'https://gitlab.com/ohwr/project/fmc-adc-100m14b4cha.git'
     contact:

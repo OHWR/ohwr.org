@@ -2026,9 +2026,9 @@ projects:
       email: 'jgarcia@gl-research.com'
     tags:
       - 'Software'
+      - 'Inactive'
     compatibles:
       - 'spec7'
-      - 'Inactive'
   - id: 'distributed-oscilloscope'
     repository: 'https://gitlab.com/ohwr/project/distributed-oscilloscope.git'
     contact:

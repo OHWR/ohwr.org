@@ -186,7 +186,9 @@ redirects:
   - url: 'project/wren/-/wikis/WREN-V'
     target: 'https://gitlab.com/ohwr/project/wren/-/wikis/WREN-V'
   - url: 'cernohl'
-    target: 'https://gitlab.com/ohwr/project/cernohl/-/wikis/home'
+    target: 'https://cern-ohl.web.cern.ch'
+  - url: 'CERNOHL'
+    target: 'https://cern-ohl.web.cern.ch'
 projects:
   - id: 'mdior'
     repository: 'https://gitlab.com/ohwr/project/mdior.git'

@@ -20,8 +20,8 @@ participate in discussions around those designs.
 
 As a visitor, you can use ohwr.org to find designs and communities you might be
 interested in. As a designer, you can use it as a window to the world for your
-designs, by [submitting your projects](../submit-project) so we can include them
-in the catalogue.
+designs, by [submitting your projects]({{< relref "submit-project" >}}) so we
+can include them in the catalogue.
 
 Write to us at [ohwr-support@cern.ch](mailto:ohwr-support@cern.ch) with any
 questions or comments. Happy browsing!

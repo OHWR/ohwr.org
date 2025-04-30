@@ -186,9 +186,7 @@ function displayAvailableFilters(filters) {
     }
     return acc;
   }, new Map());
-  const sortedFilters = Array.from(filterMap.values()).sort((a, b) => {
-    a.filter.localeCompare(b.filter)
-  });
+  const sortedFilters = Array.from(filterMap.values()).sort((a, b) => a.filter.localeCompare(b.filter));
 
   sortedFilters.forEach(item => {
     const button = Object.assign(document.createElement("button"), {

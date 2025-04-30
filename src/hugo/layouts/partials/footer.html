@@ -44,12 +44,8 @@ SPDX-License-Identifier: BSD-3-Clause
           {{ else }}{{site.Title}}{{end}}
         </a>
         <p class="mb-4">{{ site.Params.footer_content | markdownify }}</p>
-        {{ with site.Params.social }}
-        <ul class="list-inline social-icons">
-          {{ range . }}
-          <li class="list-inline-item"><a href="{{ .link | safeURL }}" title="{{ .title }}"><i class="{{ .icon }}"></i></a></li>
-          {{ end }}
-        </ul>
+        {{ range site.Params.social }}
+        <a href="{{ .link | relLangURL }}" {{ if strings.HasPrefix .link `http` }}target="_blank" rel="noopener noreferrer"{{ end }} title="{{ .title }}" class="social-button text-truncate"><i class="{{ .icon }} mb-4"></i>{{ with .text}} {{ . }}{{ end }}</a>
         {{ end }}
       </div>
     </div>

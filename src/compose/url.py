@@ -8,6 +8,7 @@ import json
 import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+import time
 from typing import Annotated, Any
 from urllib.parse import quote
 
@@ -70,36 +71,48 @@ class Url:
         return url.url
 
     @classmethod
-    def _head(cls, url: str) -> requests.Response:
-        try:
-            res = requests.head(url, timeout=10, allow_redirects=True)
-        except requests.exceptions.RequestException as head_error:
-            raise ValueError("HEAD request to '{0}' failed:\n{1}".format(
-                url, head_error,
-            ))
-        try:
-            res.raise_for_status()
-        except requests.exceptions.RequestException as raise_for_status_error:
-            raise ValueError("HEAD request to '{0}' failed:\n{1}".format(
-                url, raise_for_status_error,
-            ))
-        return res
+    def _head(cls, url: str, max_retries: int = 3) -> requests.Response:
+        requests_error = None
+        for attempt in range(max_retries):
+            if attempt > 0:
+                time.sleep(attempt)
+            try:
+                res = requests.head(url, timeout=10, allow_redirects=True)
+            except requests.exceptions.RequestException as head_error:
+                requests_error = head_error
+                continue
+            try:
+                res.raise_for_status()
+            except requests.exceptions.RequestException as status_error:
+                requests_error = status_error
+                continue
+            return res
+        raise ValueError("HEAD request to '{0}' failed:\n{1}".format(
+            url, requests_error,
+        ))
 
     @classmethod
-    def _get(cls, url: str, headers: str = '') -> requests.Response:
-        try:
-            res = requests.get(url, headers=headers, timeout=10)
-        except requests.exceptions.RequestException as get_error:
-            raise ValueError("GET request to '{0}' failed:\n{1}".format(
-                url, get_error,
-            ))
-        try:
-            res.raise_for_status()
-        except requests.exceptions.RequestException as raise_for_status_error:
-            raise ValueError("GET request to '{0}' failed:\n{1}".format(
-                url, raise_for_status_error,
-            ))
-        return res
+    def _get(
+        cls, url: str, headers: str = '', max_retries: int = 3,
+    ) -> requests.Response:
+        requests_error = None
+        for attempt in range(max_retries):
+            if attempt > 0:
+                time.sleep(attempt)
+            try:
+                res = requests.get(url, headers=headers, timeout=10)
+            except requests.exceptions.RequestException as get_error:
+                requests_error = get_error
+                continue
+            try:
+                res.raise_for_status()
+            except requests.exceptions.RequestException as status_error:
+                requests_error = status_error
+                continue
+            return res
+        raise ValueError("GET request to '{0}' failed:\n{1}".format(
+            url, requests_error,
+        ))
 
 
 UrlList = Annotated[list[Url], Field(min_length=1)]

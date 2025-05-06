@@ -24,7 +24,7 @@ from pydantic import (
 )
 from repository import Repository
 from schema import AnnotatedStr, AnnotatedStrList, BaseModelForbidExtra, Schema
-from url import Url, UrlList
+from url import StrictUrl, StrictUrlList
 
 
 class Contact(BaseModelForbidExtra):
@@ -39,7 +39,7 @@ class News(BaseModelForbidExtra):
 
     title: AnnotatedStr
     date: datetime.date
-    images: Optional[UrlList] = None
+    images: Optional[StrictUrlList] = None
     project: Optional['Project'] = Field(default=None, exclude=True)
     description: Optional[AnnotatedStr] = Field(default=None, exclude=True)
 
@@ -250,7 +250,7 @@ class Redirect(BaseModelForbidExtra):
     """Redirect configuration."""
 
     url: AnnotatedStr
-    target: Url
+    target: StrictUrl
 
 
 class Config(Schema):

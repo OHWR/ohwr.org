@@ -11,11 +11,11 @@ from dataclasses import dataclass
 from typing import Any
 from urllib.parse import quote
 
-from url import Url
+from url import StrictUrl
 
 
 @dataclass
-class Repository(Url, ABC):
+class Repository(StrictUrl, ABC):
     """Abstract repository class to fetch files from a Git repository."""
 
     @classmethod

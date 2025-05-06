@@ -18,7 +18,7 @@ from pydantic_core import CoreSchema, core_schema
 
 
 @dataclass
-class Url:
+class StrictUrl:
     """Represent a reachable URL."""
 
     url: str
@@ -46,7 +46,7 @@ class Url:
         )
 
     @classmethod
-    def _validate(cls, input_value: Any) -> 'Url':
+    def _validate(cls, input_value: Any) -> 'StrictUrl':
         """
         Validate input value.
 
@@ -54,7 +54,7 @@ class Url:
             input_value: Value to validate.
 
         Returns:
-            A Url instance.
+            A StrictUrl instance.
 
         Raises:
             ValueError: If the provided value is not valid.
@@ -67,7 +67,7 @@ class Url:
         raise ValueError("Invalid value: '{0}'".format(input_value))
 
     @classmethod
-    def _serialize(cls, url: 'Url') -> str:
+    def _serialize(cls, url: 'StrictUrl') -> str:
         return url.url
 
     @classmethod
@@ -115,11 +115,11 @@ class Url:
         ))
 
 
-UrlList = Annotated[list[Url], Field(min_length=1)]
+StrictUrlList = Annotated[list[StrictUrl], Field(min_length=1)]
 
 
 @dataclass
-class UrlContent(Url, ABC):
+class UrlContent(StrictUrl, ABC):
     """Abstract class to fetch URL content."""
 
     text: str

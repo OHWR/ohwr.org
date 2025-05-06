@@ -46,11 +46,11 @@ def valid_manifest_data(minimal_manifest_data) -> Dict[str, Any]:
 @pytest.fixture
 def mock_requests(mocker):
     """Fixture to mock all requests."""
-    mock_head = mocker.patch("manifest.Url._head")
+    mock_head = mocker.patch("manifest.StrictUrl._head")
     mock_head.return_value.status_code = 200
     mock_head.return_value.raise_for_status.return_value = None
 
-    mock_get = mocker.patch("manifest.Url._get")
+    mock_get = mocker.patch("manifest.StrictUrl._get")
     mock_get.return_value.status_code = 200
     mock_get.return_value.text = "Sample content"
     mock_get.return_value.json.return_value = {"content": "Wiki content"}

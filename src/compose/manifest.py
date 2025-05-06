@@ -9,14 +9,14 @@ from typing import Annotated, Literal, Optional
 
 from pydantic import Field
 from schema import AnnotatedStr, AnnotatedStrList, BaseModelForbidExtra, Schema
-from url import Url, UrlContent, UrlList
+from url import StrictUrl, UrlContent, StrictUrlList
 
 
 class Link(BaseModelForbidExtra):
     """Link configuration."""
 
     name: AnnotatedStr
-    url: Url
+    url: StrictUrl
 
 
 LinkList = Annotated[list[Link], Field(min_length=1)]
@@ -28,12 +28,12 @@ class Manifest(Schema):
     version: Literal['1.0.0'] = Field(exclude=True)
     name: AnnotatedStr = Field(serialization_alias='title')
     description: UrlContent = Field(exclude=True)
-    website: Url
+    website: StrictUrl
     licenses: Optional[AnnotatedStrList] = Field(default=None, exclude=True)
-    images: Optional[UrlList] = None
-    documentation: Optional[Url] = None
-    issues: Optional[Url] = None
-    latest_release: Optional[Url] = None
-    forum: Optional[Url] = None
+    images: Optional[StrictUrlList] = None
+    documentation: Optional[StrictUrl] = None
+    issues: Optional[StrictUrl] = None
+    latest_release: Optional[StrictUrl] = None
+    forum: Optional[StrictUrl] = None
     newsfeed: Optional[UrlContent] = Field(default=None, exclude=True)
     links: Optional[LinkList] = None

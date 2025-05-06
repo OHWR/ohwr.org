@@ -6,7 +6,7 @@ import pytest
 
 from config import Contact, Project
 from repository import Repository
-from url import Url
+from url import StrictUrl
 
 
 @pytest.fixture(autouse=True)
@@ -27,7 +27,7 @@ def sample_contact():
 @pytest.fixture
 def mock_repository(mocker):
     mock = mocker.Mock(spec=Repository)
-    mock.url = Url("https://github.com/example/repo.git")
+    mock.url = StrictUrl("https://github.com/example/repo.git")
     return mock
 
 

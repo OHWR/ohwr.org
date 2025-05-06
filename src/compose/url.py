@@ -11,6 +11,7 @@ from dataclasses import dataclass
 import time
 from typing import Annotated, Any
 from urllib.parse import quote
+import warnings
 
 import requests
 from pydantic import Field, GetCoreSchemaHandler
@@ -18,8 +19,8 @@ from pydantic_core import CoreSchema, core_schema
 
 
 @dataclass
-class StrictUrl:
-    """Represent a reachable URL."""
+class Url:
+    """Represent a URL."""
 
     url: str
 
@@ -46,7 +47,7 @@ class StrictUrl:
         )
 
     @classmethod
-    def _validate(cls, input_value: Any) -> 'StrictUrl':
+    def _validate(cls, input_value: Any) -> 'Url':
         """
         Validate input value.
 
@@ -54,20 +55,20 @@ class StrictUrl:
             input_value: Value to validate.
 
         Returns:
-            A StrictUrl instance.
-
-        Raises:
-            ValueError: If the provided value is not valid.
+            A Url instance.
         """
         if isinstance(input_value, cls):
             return input_value
         if isinstance(input_value, str):
-            cls._head(input_value)
+            try:
+                cls._head(input_value)
+            except ValueError as head_error:
+                warnings.warn(head_error)
             return cls(input_value)
-        raise ValueError("Invalid value: '{0}'".format(input_value))
+        warnings.warn("Invalid value: '{0}'".format(input_value))
 
     @classmethod
-    def _serialize(cls, url: 'StrictUrl') -> str:
+    def _serialize(cls, url: 'Url') -> str:
         return url.url
 
     @classmethod
@@ -113,6 +114,35 @@ class StrictUrl:
         raise ValueError("GET request to '{0}' failed:\n{1}".format(
             url, requests_error,
         ))
+
+
+UrlList = Annotated[list[Url], Field(min_length=1)]
+
+
+@dataclass
+class StrictUrl(Url):
+    """Represent a reachable URL."""
+
+    @classmethod
+    def _validate(cls, input_value: Any) -> 'StrictUrl':
+        """
+        Validate input value.
+
+        Parameters:
+            input_value: Value to validate.
+
+        Returns:
+            A StrictUrl instance.
+
+        Raises:
+            ValueError: If the provided value is not valid.
+        """
+        if isinstance(input_value, cls):
+            return input_value
+        if isinstance(input_value, str):
+            cls._head(input_value)
+            return cls(input_value)
+        raise ValueError("Invalid value: '{0}'".format(input_value))
 
 
 StrictUrlList = Annotated[list[StrictUrl], Field(min_length=1)]

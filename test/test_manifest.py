@@ -46,18 +46,25 @@ def valid_manifest_data(minimal_manifest_data) -> Dict[str, Any]:
 @pytest.fixture
 def mock_requests(mocker):
     """Fixture to mock all requests."""
-    mock_head = mocker.patch("manifest.StrictUrl._head")
-    mock_head.return_value.status_code = 200
-    mock_head.return_value.raise_for_status.return_value = None
 
-    mock_get = mocker.patch("manifest.StrictUrl._get")
-    mock_get.return_value.status_code = 200
-    mock_get.return_value.text = "Sample content"
-    mock_get.return_value.json.return_value = {"content": "Wiki content"}
-    mock_get.return_value.headers = {"Content-Type": "text/plain"}
-    mock_get.return_value.raise_for_status.return_value = None
+    mock_head = mocker.patch("url.Url._head")
+    mock_strict_head = mocker.patch("url.StrictUrl._head")
 
-    return mock_head, mock_get
+    for mock in (mock_head, mock_strict_head):
+        mock.return_value.status_code = 200
+        mock.return_value.raise_for_status.return_value = None
+
+    mock_get = mocker.patch("url.Url._get")
+    mock_strict_get = mocker.patch("url.StrictUrl._get")
+
+    for mock in (mock_get, mock_strict_get):
+        mock.return_value.status_code = 200
+        mock.return_value.text = "Sample content"
+        mock.return_value.json.return_value = {"content": "Wiki content"}
+        mock.return_value.headers = {"Content-Type": "text/plain"}
+        mock.return_value.raise_for_status.return_value = None
+
+    return mock_head, mock_strict_head, mock_get, mock_strict_get
 
 
 class TestManifest:
@@ -93,19 +100,6 @@ class TestManifest:
             with pytest.raises(ValidationError):
                 Manifest(**test_data)
 
-    def test_failed_url_validation(self, valid_manifest_data, mock_requests):
-        mock_head, _ = mock_requests
-        mock_head.side_effect = ValueError(
-            "URL validation failed: 404 Not Found"
-        )
-        try:
-            Manifest(**valid_manifest_data)
-        except ValidationError as err:
-            msgs = [str(msg["msg"]) for msg in err.errors()]
-            assert any("URL validation failed" in msg for msg in msgs)
-        else:
-            pytest.fail("Expected ValidationError not raised")
-
     def test_serialization(self, valid_manifest_data, mock_requests):
         manifest = Manifest(**valid_manifest_data)
         serialized = manifest.model_dump(by_alias=True)
@@ -130,16 +124,3 @@ class TestLink:
             Link(name="Missing URL")
         with pytest.raises(ValidationError):
             Link(url="https://example.com")
-
-    def test_failed_url_validation(self, mock_requests):
-        mock_head, _ = mock_requests
-        mock_head.side_effect = ValueError(
-            "URL validation failed: 404 Not Found"
-        )
-        try:
-            Link(name="Bad URL", url="https://invalid-url.com")
-        except ValidationError as err:
-            msgs = [str(msg["msg"]) for msg in err.errors()]
-            assert any("URL validation failed" in msg for msg in msgs)
-        else:
-            pytest.fail("Expected ValidationError not raised")

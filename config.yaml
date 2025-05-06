@@ -189,6 +189,8 @@ redirects:
     target: 'https://cern-ohl.web.cern.ch'
   - url: 'CERNOHL'
     target: 'https://cern-ohl.web.cern.ch'
+  - url: 'projects/white-rabbit/wiki/SFP'
+    target: 'https://gitlab.com/ohwr/project/white-rabbit/-/wikis/SFP'
 projects:
   - id: 'mdior'
     repository: 'https://gitlab.com/ohwr/project/mdior.git'

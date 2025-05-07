@@ -42,7 +42,7 @@ class TestContact:
 
 class TestNews:
     def test_from_markdown_valid(self, mocker, valid_markdown):
-        mocker.patch('url.Url._validate', return_value=True)
+        mocker.patch('url.StrictUrl._validate', return_value=True)
         news = News.from_markdown(valid_markdown)
         assert news.title == "Sample News"
         assert news.date == date.fromisoformat('2023-01-15')
@@ -75,7 +75,7 @@ class TestConfig:
     def test_valid_config(
         self, mocker, sample_projects, tmp_path, dummy_licenses_file
     ):
-        mocker.patch('url.Url._validate', return_value=True)
+        mocker.patch('url.StrictUrl._validate', return_value=True)
         mock_repo = mocker.Mock(spec=Repository)
         mocker.patch('repository.Repository.create', return_value=mock_repo)
 

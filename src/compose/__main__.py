@@ -8,6 +8,7 @@ import argparse
 import logging
 import os
 import sys
+import warnings
 
 from config import Config
 from license import SpdxLicenseList
@@ -22,12 +23,18 @@ logging.basicConfig(
 )
 
 parser = argparse.ArgumentParser()
-parser.add_argument('config', type=argparse.FileType('r'))
+parser.add_argument('config', type=str)
 args = parser.parse_args()
 
-logging.info("Loading configuration from '{0}'...".format(args.config.name))
+logging.info("Loading configuration from '{0}'...".format(args.config))
 try:
-    config = Config.from_yaml(args.config.read())
+    with open(args.config, 'r') as config_file:
+        with warnings.catch_warnings(record=True) as warns:
+            warnings.simplefilter('always')
+            config = Config.from_yaml(config_file.read())
+            if warns:
+                for warn in warns:
+                    logging.warning('Warning: {0}'.format(warn.message))
 except (ValidationError, ValueError) as config_error:
     logging.error('Failed to load configuration:\n{0}'.format(config_error))
     sys.exit(1)
@@ -46,13 +53,25 @@ logging.info("Writing 'redirects' section...")
 redirects.write(os.path.join(config.sources, 'content/redirects'))
 
 logging.info("Generating 'projects' section...")
-projects = ProjectSection.from_config(config.projects)
+with warnings.catch_warnings(record=True) as warns:
+    warnings.simplefilter('always')
+    projects = ProjectSection.from_config(config.projects)
+    if warns:
+        for warn in warns:
+            logging.warning('Warning: {0}'.format(
+                warn.message,
+            ))
 
 logging.info("Writing 'projects' section...")
 projects.write(os.path.join(config.sources, 'content/projects'))
 
 logging.info("Generating 'news' section...")
-news = NewsSection.from_config(config.projects)
+with warnings.catch_warnings(record=True) as warns:
+    warnings.simplefilter('always')
+    news = NewsSection.from_config(config.projects)
+    if warns:
+        for warn in warns:
+            logging.warning('Warning: {0}'.format(warn.message))
 
 logging.info("Writing 'news' section...")
 news.write(os.path.join(config.sources, 'content/news'))

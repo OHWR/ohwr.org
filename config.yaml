@@ -65,6 +65,7 @@ tags:
   - 'TRL8'
   - 'TRL9'
   - 'USB'
+  - 'UTCA'
   - 'Video'
   - 'VME'
   - 'White Rabbit'
@@ -294,6 +295,7 @@ projects:
       - 'MTCA'
       - 'TRL9'
       - 'Commercial'
+      - 'UTCA'
   - id: 'diot-fsi-det-8ch'
     repository: 'https://gitlab.com/ohwr/project/diot-fsi-det-8ch.git'
     contact:
@@ -320,6 +322,7 @@ projects:
       - 'WR Node'
       - 'Commercial'
       - 'TRL9'
+      - 'UTCA'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -920,6 +923,7 @@ projects:
       - 'MTCA'
       - 'USB'
       - 'TRL9'
+      - 'UTCA'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1024,6 +1028,7 @@ projects:
       - 'MTCA'
       - 'TRL9'
       - 'Commercial'
+      - 'UTCA'
     compatibles:
       - 'wr-switch-hw'
       - 'wrs-lj-hw'
@@ -1055,6 +1060,7 @@ projects:
       email: 'filip.switakowski@creotech.pl'
     tags:
       - 'MTCA'
+      - 'UTCA'
   - id: 'fmc-del-1ns-2cha'
     repository: 'https://gitlab.com/ohwr/project/fmc-del-1ns-2cha.git'
     contact:
@@ -1343,6 +1349,7 @@ projects:
       - 'MTCA'
       - 'TRL9'
       - 'Commercial'
+      - 'UTCA'
   - id: 'fmc-dtrx-4cha'
     repository: 'https://gitlab.com/ohwr/project/fmc-dtrx-4cha.git'
     contact:
@@ -1369,6 +1376,7 @@ projects:
     tags:
       - 'MTCA'
       - 'SFP'
+      - 'UTCA'
     compatibles:
       - 'afc'
       - 'afcz'
@@ -1389,6 +1397,7 @@ projects:
     tags:
       - 'MTCA'
       - 'COM Express'
+      - 'UTCA'
   - id: 'wr-d3s'
     repository: 'https://gitlab.com/ohwr/project/wr-d3s.git'
     contact:
@@ -1456,6 +1465,7 @@ projects:
       - 'FMC Carrier'
       - 'TRL9'
       - 'Commercial'
+      - 'UTCA'
     compatibles:
       - 'fmc-adc-130m-16b-4cha'
       - 'fmc-adc-250m-16b-4cha'

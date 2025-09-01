@@ -7,7 +7,7 @@ name: Submit a project 🚀
 about: Propose adding a project to OHWR
 title: '[PROJ] '
 labels: project
-assignees: vascoguita
+assignees: javier-serrano-pareja
 ---
 
 ## Details 📋

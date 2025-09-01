@@ -178,9 +178,7 @@ class UrlContent(StrictUrl, ABC):
         Returns:
             A UrlContent instance.
         """
-        gitlab = (
-            r'^https://(?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch)/.+?/wikis/.+'
-        )
+        gitlab = r'^https://(?:gitlab\.com|gitlab\.cern\.ch)/.+?/wikis/.+'
         if re.search(gitlab, url):
             return GitLabWikiPage.from_url(url)
         return GenericUrlContent.from_url(url)
@@ -224,7 +222,7 @@ class GitLabWikiPage(UrlContent):
             ValueError: If fetching the wiki page fails.
         """
         exp = (
-            r'^https://((?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch))/' +
+            r'^https://((?:gitlab\.com|gitlab\.cern\.ch))/' +
             '(.+?)(?:/-)?/wikis/(.+)'
         )
         match = re.search(exp, url)

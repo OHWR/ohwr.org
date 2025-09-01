@@ -5,6 +5,9 @@
 
 name: YAML Lint
 
+permissions:
+  contents: read
+
 on: [push, pull_request, workflow_dispatch]  # yamllint disable-line rule:truthy
 
 jobs:

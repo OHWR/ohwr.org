@@ -7,7 +7,7 @@ name: Request documentation 📘
 about: Suggest improvements or additions to project documentation
 title: '[DOCS] '
 labels: documentation
-assignees: vascoguita
+assignees: giacomd
 ---
 
 ## Documentation 📚

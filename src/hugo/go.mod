@@ -4,6 +4,6 @@
 
 module github.com/OHWR/ohwr.org
 
-go 1.24.2
+go 1.23.10
 
 require github.com/gethugothemes/bigspring-light-hugo v0.0.0-20230727035851-bec36f77483f // indirect

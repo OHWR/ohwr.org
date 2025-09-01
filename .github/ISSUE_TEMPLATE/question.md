@@ -7,7 +7,7 @@ name: Ask a question ❓
 about: Ask a question or seek clarification
 title: '[QUES] '
 labels: question
-assignees: vascoguita
+assignees: giacomd
 ---
 
 ## Question 🤔

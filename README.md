@@ -30,7 +30,7 @@ theme.
 
 ### Requirements :clipboard:
 
-* [Go](https://go.dev/doc/install) >= 1.24.2
+* [Go](https://go.dev/doc/install) >= 1.23.10
 * [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.147.2
 * [Python](https://www.python.org/downloads) >= 3.12.3
 * [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) >= 6.0.2

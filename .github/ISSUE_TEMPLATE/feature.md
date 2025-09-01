@@ -7,7 +7,7 @@ name: Request a feature 🌟
 about: Suggest a new feature or enhancement
 title: '[FEAT] '
 labels: feature
-assignees: vascoguita
+assignees: giacomd
 ---
 
 ## Feature ✨

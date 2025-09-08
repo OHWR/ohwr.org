@@ -51,6 +51,7 @@ tags:
   - 'SoC'
   - 'Soft Core'
   - 'Software'
+  - 'STM32'
   - 'TDC'
   - 'Testing'
   - 'Timing'
@@ -2289,3 +2290,14 @@ projects:
       - 'Low Noise'
       - 'Signal Conditioning'
       - 'TRL4'
+  - id: 'caju-lnls'
+    repository: 'https://gitlab.com/WilliamArnoniKKWA/caju-lnls.git'
+    contact:
+      name: 'Patricia Nallin'
+      email: 'patricia.nallin@lnls.br'
+    tags:
+      - 'Ethernet'
+      - 'Microcontroller'
+      - 'STM32'
+      - 'USB'
+      

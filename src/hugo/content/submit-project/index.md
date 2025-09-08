@@ -107,4 +107,4 @@ Our team will review your submission and add your project to the OHWR website.
 
 Thank you for contributing to the open-source hardware community through OHWR!
 
-{{< button link="https://github.com/OHWR/ohwr.org/issues/new?assignees=vascoguita&labels=project&projects=&template=project.md&title=%5BPROJ%5D+" label="New Issue" >}} <!-- markdownlint-disable-line MD013 MD034 -->
+{{< button link="https://github.com/OHWR/ohwr.org/issues/new?assignees=javier-serrano-pareja&labels=project&projects=&template=project.md&title=%5BPROJ%5D+" label="New Issue" >}} <!-- markdownlint-disable-line MD013 MD034 -->

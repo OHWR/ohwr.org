@@ -5,6 +5,9 @@
 
 name: Build
 
+permissions:
+  contents: read
+
 on:  # yamllint disable-line rule:truthy
   workflow_call:
     outputs:
@@ -20,11 +23,11 @@ jobs:
       error: ${{ steps.build.outputs.error }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.145.0'
+          hugo-version: '0.147.2'
           extended: true
       - name: Setup Pages
         id: pages
@@ -47,6 +50,6 @@ jobs:
         env:
           HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public

@@ -6,7 +6,13 @@ import pytest
 import json
 from requests.exceptions import RequestException
 from pydantic import BaseModel, ValidationError
-from url import Url, UrlContent, GitLabWikiPage, GenericUrlContent, UrlList
+from url import (
+    StrictUrl,
+    UrlContent,
+    GitLabWikiPage,
+    GenericUrlContent,
+    StrictUrlList
+)
 
 
 EXAMPLE_URL = "http://example.com"
@@ -21,20 +27,20 @@ REQUESTS_GET = "requests.get"
 RE_SEARCH = "re.search"
 
 
-class UrlListTestModel(BaseModel):
-    """Test model for UrlList validation."""
-    urls: UrlList
+class StrictUrlListTestModel(BaseModel):
+    """Test model for StrictUrlList validation."""
+    urls: StrictUrlList
 
 
-class TestUrl:
-    """Test the Url class functionality."""
+class TestStrictUrl:
+    """Test the StrictUrl class functionality."""
 
     def test_url_validation_success(self, mocker):
         mock_response = mocker.Mock()
         mock_response.raise_for_status.return_value = None
         mocker.patch(REQUESTS_HEAD, return_value=mock_response)
 
-        url = Url._validate(EXAMPLE_URL)
+        url = StrictUrl._validate(EXAMPLE_URL)
         assert url.url == EXAMPLE_URL
 
     def test_url_validation_failure(self, mocker):
@@ -44,25 +50,25 @@ class TestUrl:
         )
 
         with pytest.raises(ValueError):
-            Url._validate("http://invalid.com")
+            StrictUrl._validate("http://invalid.com")
 
     def test_url_serialization(self):
-        url_obj = Url(EXAMPLE_URL)
-        assert Url._serialize(url_obj) == EXAMPLE_URL
+        url_obj = StrictUrl(EXAMPLE_URL)
+        assert StrictUrl._serialize(url_obj) == EXAMPLE_URL
 
     def test_url_get_success(self, mocker):
         mock_response = mocker.Mock()
         mock_response.raise_for_status.return_value = None
         mocker.patch(REQUESTS_GET, return_value=mock_response)
 
-        response = Url._get(EXAMPLE_URL)
+        response = StrictUrl._get(EXAMPLE_URL)
         assert response == mock_response
 
     def test_url_get_failure(self, mocker):
         mocker.patch(REQUESTS_GET, side_effect=RequestException("GET error"))
 
         with pytest.raises(ValueError):
-            Url._get("http://invalid.com")
+            StrictUrl._get("http://invalid.com")
 
 
 class TestUrlContent:
@@ -130,7 +136,7 @@ class TestUrlContent:
         mock_response.json.return_value = {"content": "wiki content"}
         mocker.patch(REQUESTS_GET, return_value=mock_response)
 
-        mocker.patch('url.Url._get', return_value=mock_response)
+        mocker.patch('url.StrictUrl._get', return_value=mock_response)
 
         result_obj = UrlContent.create(GITLAB_URL)
 
@@ -150,26 +156,26 @@ class TestUrlContent:
             UrlContent._validate(invalid_value)
 
 
-class TestUrlList:
-    """Test the UrlList type."""
+class TestStrictUrlList:
+    """Test the StrictUrlList type."""
 
     def test_urllist_validation_success(self, mocker):
         mock_response = mocker.Mock()
         mock_response.raise_for_status.return_value = None
         mocker.patch(REQUESTS_HEAD, return_value=mock_response)
 
-        model = UrlListTestModel(urls=[EXAMPLE_URL])
+        model = StrictUrlListTestModel(urls=[EXAMPLE_URL])
         assert len(model.urls) == 1
-        assert isinstance(model.urls[0], Url)
+        assert isinstance(model.urls[0], StrictUrl)
         assert model.urls[0].url == EXAMPLE_URL
 
-        model = UrlListTestModel(urls=[EXAMPLE_URL, EXAMPLE_ORG_URL])
+        model = StrictUrlListTestModel(urls=[EXAMPLE_URL, EXAMPLE_ORG_URL])
         assert len(model.urls) == 2
-        assert all(isinstance(url, Url) for url in model.urls)
+        assert all(isinstance(url, StrictUrl) for url in model.urls)
 
     def test_urllist_validation_failure(self, mocker):
         with pytest.raises(ValidationError) as exc_info:
-            UrlListTestModel(urls=[])
+            StrictUrlListTestModel(urls=[])
         assert "too_short" in str(exc_info.value)
 
         mocker.patch(
@@ -177,7 +183,7 @@ class TestUrlList:
             side_effect=RequestException("Connection error")
         )
         with pytest.raises(ValidationError) as exc_info:
-            UrlListTestModel(urls=["http://invalid.com"])
+            StrictUrlListTestModel(urls=["http://invalid.com"])
         assert "validation" in str(exc_info.value)
 
     def test_urllist_with_existing_url_objects(self, mocker):
@@ -185,21 +191,21 @@ class TestUrlList:
         mock_response.raise_for_status.return_value = None
         mocker.patch(REQUESTS_HEAD, return_value=mock_response)
 
-        url1 = Url(EXAMPLE_URL).url
-        url2 = Url(EXAMPLE_ORG_URL).url
+        url1 = StrictUrl(EXAMPLE_URL).url
+        url2 = StrictUrl(EXAMPLE_ORG_URL).url
 
-        model = UrlListTestModel(urls=[url1, url2])
+        model = StrictUrlListTestModel(urls=[url1, url2])
         assert len(model.urls) == 2
-        assert all(isinstance(url, Url) for url in model.urls)
+        assert all(isinstance(url, StrictUrl) for url in model.urls)
 
     def test_urllist_serialization(self, mocker):
         mock_response = mocker.Mock()
         mock_response.raise_for_status.return_value = None
         mocker.patch(REQUESTS_HEAD, return_value=mock_response)
 
-        model = UrlListTestModel(urls=[EXAMPLE_URL, EXAMPLE_ORG_URL])
+        model = StrictUrlListTestModel(urls=[EXAMPLE_URL, EXAMPLE_ORG_URL])
         json_data = model.model_dump_json()
-        loaded_model = UrlListTestModel.model_validate_json(json_data)
+        loaded_model = StrictUrlListTestModel.model_validate_json(json_data)
 
         assert len(loaded_model.urls) == 2
         assert loaded_model.urls[0].url == EXAMPLE_URL

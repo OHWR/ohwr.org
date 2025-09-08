@@ -5,6 +5,9 @@
 
 name: Makefile Lint
 
+permissions:
+  contents: read
+
 on: [push, pull_request, workflow_dispatch]  # yamllint disable-line rule:truthy
 
 jobs:
@@ -12,6 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Makefile Lint
         uses: Uno-Takashi/checkmake-action@v2

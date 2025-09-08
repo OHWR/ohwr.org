@@ -11,11 +11,11 @@ from dataclasses import dataclass
 from typing import Any
 from urllib.parse import quote
 
-from url import Url
+from url import StrictUrl
 
 
 @dataclass
-class Repository(Url, ABC):
+class Repository(StrictUrl, ABC):
     """Abstract repository class to fetch files from a Git repository."""
 
     @classmethod
@@ -33,9 +33,7 @@ class Repository(Url, ABC):
             ValueError: If creating a repository from the provided URL fails.
         """
         github = r'^https://github\.com/.+?\.git$'
-        gitlab = (
-            r'^https://(?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch)/.+?\.git$'
-        )
+        gitlab = r'^https://(?:gitlab\.com|gitlab\.cern\.ch)/.+?\.git$'
         if re.search(github, url):
             return GitHubRepository(url)
         elif re.search(gitlab, url):
@@ -109,8 +107,10 @@ class GitLabRepository(Repository):
         Raises:
             ValueError: If requesting the file fails.
         """
-        exp = (r'^https://((?:gitlab\.com|gitlab\.cern\.ch))/(.+?)\.git')
-        match = re.search(exp, self.url)
+        match = re.search(
+            r'^https://((?:gitlab\.com|gitlab\.cern\.ch))/(.+?)\.git',
+            self.url,
+        )
         url = 'https://{0}/api/v4/projects/{1}'.format(
             match.group(1),
             quote(match.group(2), safe=''),

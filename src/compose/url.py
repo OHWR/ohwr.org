@@ -8,8 +8,10 @@ import json
 import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+import time
 from typing import Annotated, Any
 from urllib.parse import quote
+import warnings
 
 import requests
 from pydantic import Field, GetCoreSchemaHandler
@@ -18,7 +20,7 @@ from pydantic_core import CoreSchema, core_schema
 
 @dataclass
 class Url:
-    """Represent a reachable URL."""
+    """Represent a URL."""
 
     url: str
 
@@ -54,6 +56,83 @@ class Url:
 
         Returns:
             A Url instance.
+        """
+        if isinstance(input_value, cls):
+            return input_value
+        if isinstance(input_value, str):
+            try:
+                cls._head(input_value)
+            except ValueError as head_error:
+                warnings.warn(head_error)
+            return cls(input_value)
+        warnings.warn("Invalid value: '{0}'".format(input_value))
+
+    @classmethod
+    def _serialize(cls, url: 'Url') -> str:
+        return url.url
+
+    @classmethod
+    def _head(cls, url: str, max_retries: int = 3) -> requests.Response:
+        requests_error = None
+        for attempt in range(max_retries):
+            if attempt > 0:
+                time.sleep(attempt)
+            try:
+                res = requests.head(url, timeout=10, allow_redirects=True)
+            except requests.exceptions.RequestException as head_error:
+                requests_error = head_error
+                continue
+            try:
+                res.raise_for_status()
+            except requests.exceptions.RequestException as status_error:
+                requests_error = status_error
+                continue
+            return res
+        raise ValueError("HEAD request to '{0}' failed:\n{1}".format(
+            url, requests_error,
+        ))
+
+    @classmethod
+    def _get(
+        cls, url: str, headers: str = '', max_retries: int = 3,
+    ) -> requests.Response:
+        requests_error = None
+        for attempt in range(max_retries):
+            if attempt > 0:
+                time.sleep(attempt)
+            try:
+                res = requests.get(url, headers=headers, timeout=10)
+            except requests.exceptions.RequestException as get_error:
+                requests_error = get_error
+                continue
+            try:
+                res.raise_for_status()
+            except requests.exceptions.RequestException as status_error:
+                requests_error = status_error
+                continue
+            return res
+        raise ValueError("GET request to '{0}' failed:\n{1}".format(
+            url, requests_error,
+        ))
+
+
+UrlList = Annotated[list[Url], Field(min_length=1)]
+
+
+@dataclass
+class StrictUrl(Url):
+    """Represent a reachable URL."""
+
+    @classmethod
+    def _validate(cls, input_value: Any) -> 'StrictUrl':
+        """
+        Validate input value.
+
+        Parameters:
+            input_value: Value to validate.
+
+        Returns:
+            A StrictUrl instance.
 
         Raises:
             ValueError: If the provided value is not valid.
@@ -65,48 +144,12 @@ class Url:
             return cls(input_value)
         raise ValueError("Invalid value: '{0}'".format(input_value))
 
-    @classmethod
-    def _serialize(cls, url: 'Url') -> str:
-        return url.url
 
-    @classmethod
-    def _head(cls, url: str) -> requests.Response:
-        try:
-            res = requests.head(url, timeout=10, allow_redirects=True)
-        except requests.exceptions.RequestException as head_error:
-            raise ValueError("HEAD request to '{0}' failed:\n{1}".format(
-                url, head_error,
-            ))
-        try:
-            res.raise_for_status()
-        except requests.exceptions.RequestException as raise_for_status_error:
-            raise ValueError("HEAD request to '{0}' failed:\n{1}".format(
-                url, raise_for_status_error,
-            ))
-        return res
-
-    @classmethod
-    def _get(cls, url: str, headers: str = '') -> requests.Response:
-        try:
-            res = requests.get(url, headers=headers, timeout=10)
-        except requests.exceptions.RequestException as get_error:
-            raise ValueError("GET request to '{0}' failed:\n{1}".format(
-                url, get_error,
-            ))
-        try:
-            res.raise_for_status()
-        except requests.exceptions.RequestException as raise_for_status_error:
-            raise ValueError("GET request to '{0}' failed:\n{1}".format(
-                url, raise_for_status_error,
-            ))
-        return res
-
-
-UrlList = Annotated[list[Url], Field(min_length=1)]
+StrictUrlList = Annotated[list[StrictUrl], Field(min_length=1)]
 
 
 @dataclass
-class UrlContent(Url, ABC):
+class UrlContent(StrictUrl, ABC):
     """Abstract class to fetch URL content."""
 
     text: str
@@ -135,9 +178,7 @@ class UrlContent(Url, ABC):
         Returns:
             A UrlContent instance.
         """
-        gitlab = (
-            r'^https://(?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch)/.+?/wikis/.+'
-        )
+        gitlab = r'^https://(?:gitlab\.com|gitlab\.cern\.ch)/.+?/wikis/.+'
         if re.search(gitlab, url):
             return GitLabWikiPage.from_url(url)
         return GenericUrlContent.from_url(url)
@@ -181,7 +222,7 @@ class GitLabWikiPage(UrlContent):
             ValueError: If fetching the wiki page fails.
         """
         exp = (
-            r'^https://((?:gitlab\.com|ohwr\.org|gitlab\.cern\.ch))/' +
+            r'^https://((?:gitlab\.com|gitlab\.cern\.ch))/' +
             '(.+?)(?:/-)?/wikis/(.+)'
         )
         match = re.search(exp, url)

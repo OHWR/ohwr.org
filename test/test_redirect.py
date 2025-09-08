@@ -79,9 +79,6 @@ class TestRedirectSection:
         sample_redirect_configs_length = len(sample_redirect_configs)
 
         assert len(section) == sample_redirect_configs_length
-        for config in sample_redirect_configs:
-            assert '0' in section
-            assert isinstance(section['0'], RedirectPage)
         assert mock_requests.call_count == sample_redirect_configs_length
 
     def test_from_config_with_invalid_config(

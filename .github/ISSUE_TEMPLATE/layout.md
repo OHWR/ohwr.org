@@ -7,7 +7,7 @@ name: Request layout improvement 🎨
 about: Suggest an improvement to the appearance of the website
 title: '[LAYO] '
 labels: layout
-assignees: vascoguita
+assignees: giacomd
 ---
 
 ## Layout Improvement 📝

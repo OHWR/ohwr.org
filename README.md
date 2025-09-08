@@ -30,14 +30,14 @@ theme.
 
 ### Requirements :clipboard:
 
-* [Go](https://go.dev/doc/install) >= 1.24.0
-* [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.145.0
+* [Go](https://go.dev/doc/install) >= 1.23.10
+* [Hugo](https://gohugo.io/installation) (the extended edition) >= 0.147.2
 * [Python](https://www.python.org/downloads) >= 3.12.3
 * [PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) >= 6.0.2
-* [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.11.3
+* [Pydantic](https://docs.pydantic.dev/latest/install) >= 2.11.7
 * [email-validator](https://github.com/JoshData/python-email-validator?tab=readme-ov-file#installation)
-  \>= 2.2.0
-* [Requests](https://requests.readthedocs.io/en/latest/user/install) >= 2.32.3
+  \>= 2.3.0
+* [Requests](https://requests.readthedocs.io/en/latest/user/install) >= 2.32.5
 
 ### Steps :footprints:
 
@@ -78,15 +78,15 @@ theme.
 * [wemake-python-styleguide](https://wemake-python-styleguide.readthedocs.io/en/latest/#quickstart)
   \>= 1.0.0
 * [yamllint](https://yamllint.readthedocs.io/en/stable/quickstart.html#installing-yamllint)
-  \>= 1.37.0
+  \>= 1.37.1
 * [checkmake](https://github.com/mrtazz/checkmake#installation)
   \>= 0.2.2
 * [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2#install)
   \>= 0.10.0
 * [pytest](https://docs.pytest.org/en/stable/getting-started.html#install-pytest)
-  \>= 8.3.5
+  \>= 8.4.1
 * [pytest-mock](https://pytest-mock.readthedocs.io/en/latest/#install)
-  \>=3.14.0
+  \>=3.14.1
 
 ### Steps :footprints: <!-- markdownlint-disable-line MD024 -->
 

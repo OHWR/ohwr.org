@@ -4,6 +4,21 @@
 
 $secondary-color: #4dab54;
 
+.social-button {
+  background-color: $secondary-color;
+  border-bottom: 1px solid $secondary-color !important;
+  color: $white !important;
+  border: 0;
+  border-radius: 8px;
+  margin: 2px;
+  padding: .375rem .75rem;
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+    color: $white !important;
+    text-decoration: none !important;
+  }
+}
+
 .cards-section {
   a.post-title {
     color: $text-color-dark;

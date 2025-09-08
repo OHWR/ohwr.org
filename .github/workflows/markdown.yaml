@@ -5,6 +5,9 @@
 
 name: Markdown Lint
 
+permissions:
+  contents: read
+
 on: [push, pull_request, workflow_dispatch]  # yamllint disable-line rule:truthy
 
 jobs:
@@ -12,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Markdown Lint
-        uses: DavidAnson/markdownlint-cli2-action@v19
+        uses: DavidAnson/markdownlint-cli2-action@v20
         with:
           globs: '**/*.md'

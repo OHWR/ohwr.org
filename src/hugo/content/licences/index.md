@@ -20,7 +20,7 @@ good advice on the actual licences you can use in each of those sharing regimes.
 
 Bear in mind that you project will typically include not only hardware, but
 possibly also
-[gateware](https://www.oshwa.org/best-practices-for-sharing-fpga-designs-2/),
+[gateware](https://oshwa.org/resources/best-practices-for-sharing-fpga-designs/),
 firmware, software and documentation. Each part should be licensed under an
 appropriate open-source licence, and they do not need to be all the same. In
 fact, it makes sense to use a good hardware licence for the hardware, a good
@@ -50,7 +50,7 @@ convenience, links to the three variants of the [CERN Open Hardware Licence
   [pdf](https://gitlab.com/ohwr/project/cernohl/-/wikis/uploads/cf37727497ca2b5295a7ab83a40fcf5a/cern_ohl_s_v2_user_guide.pdf)).
 
 A good resource containing more detailed information, including licensing, is
-the [Best Practices](https://www.oshwa.org/sharing-best-practices/) document
+the [Best Practices](https://oshwa.org/resources/sharing-best-practices/) document
 from the Open Source Hardware Association (OSHWA).
 
 If you have questions about the CERN OHL v2, or about open-source hardware

@@ -7,7 +7,7 @@ name: Request content 📝
 about: Prupose adding static content
 title: '[CONT] '
 labels: content
-assignees: vascoguita
+assignees: giacomd
 ---
 
 ## Content 📄

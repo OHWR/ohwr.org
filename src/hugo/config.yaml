@@ -63,3 +63,11 @@ params:
     text_color_dark: '#022b3a'
     primary_color: '#fd810d'
     light: '#f5faf6'
+  social:
+    - title: 'GitHub'
+      icon: 'fab fa-github'
+      link: 'https://github.com/OHWR/ohwr.org'
+    - title: 'Bug Report'
+      icon: 'fas fa-bug'
+      link: 'https://github.com/OHWR/ohwr.org/issues/new?template=bug.md'
+      text: 'Report a website issue'

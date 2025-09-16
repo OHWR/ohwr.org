@@ -10,6 +10,7 @@ tags:
   - 'Amplifier'
   - 'Attenuator'
   - 'ADC'
+  - 'ARM'
   - 'COM Express'
   - 'Commercial'
   - 'CompactRIO'
@@ -254,6 +255,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
     tags:
+      - 'ARM'
       - 'White Rabbit'
       - 'WR Node'
       - 'Digital I/O'
@@ -315,6 +317,7 @@ projects:
       email: 'filip.switakowski@creotech.pl'
     weight: 60
     tags:
+      - 'ARM'
       - 'FMC'
       - 'FMC Carrier'
       - 'MTCA'
@@ -445,6 +448,7 @@ projects:
       name: 'Javier García Lasheras'
       email: 'jgarcia@gl-research.com'
     tags:
+      - 'ARM'
       - 'Course'
       - 'Documentation'
       - 'SoC'
@@ -498,6 +502,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
     tags:
+      - 'ARM'
       - 'FMC'
       - 'FMC Carrier'
       - 'White Rabbit'
@@ -641,6 +646,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
     tags:
+      - 'ARM'
       - 'FMC'
       - 'SoC'
       - '19 inch'
@@ -668,6 +674,7 @@ projects:
     compatibles:
       - 'diot-crate-hw'
     tags:
+      - 'ARM'
       - 'Microcontroller'
       - 'Rad-tol'
       - 'DI/OT'
@@ -685,6 +692,7 @@ projects:
       - 'wrs-ljdprep-hw'
       - 'wr-switch-hw-v4'
     tags:
+      - 'ARM'
       - 'FMC'
       - 'FMC Carrier'
       - 'WR Node'
@@ -778,6 +786,7 @@ projects:
       name: 'Maciej Lipinski'
       email: 'maciej.lipinski@cern.ch'
     tags:
+      - 'ARM'
       - 'WR Switch v4'
       - 'WR Switch'
       - 'SoC'
@@ -900,6 +909,7 @@ projects:
       name: 'Peter Jansweijer'
       email: 'peterj@nikhef.nl'
     tags:
+      - 'ARM'
       - 'White Rabbit'
       - 'WR Node'
       - 'FMC'
@@ -1013,6 +1023,7 @@ projects:
     weight: 55
     tags:
       - '19 inch'
+      - 'ARM'
       - 'SoC'
       - 'FMC'
       - 'FMC Carrier'
@@ -1051,6 +1062,7 @@ projects:
       name: 'Javier Serrano'
       email: 'Javier.Serrano@cern.ch'
     tags:
+      - 'ARM'
       - 'SoC'
       - 'TDC'
       - '19 inch'
@@ -1077,6 +1089,7 @@ projects:
       name: 'Pieter Van Trappen'
       email: 'pieter.van.trappen@cern.ch'
     tags:
+      - 'ARM'
       - 'White Rabbit'
       - 'WR Node'
       - 'FMC'
@@ -1905,6 +1918,7 @@ projects:
       email: 'Evangelia.Gousiou@cern.ch'
     weight: 80
     tags:
+      - 'ARM'
       - 'Gateware'
       - 'WR Node'
       - 'White Rabbit'
@@ -2296,7 +2310,9 @@ projects:
       name: 'Patricia Nallin'
       email: 'patricia.nallin@lnls.br'
     tags:
+      - 'ARM'
       - 'Ethernet'
       - 'Microcontroller'
       - 'STM32'
+      - 'TRL7'
       - 'USB'

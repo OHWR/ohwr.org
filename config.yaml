@@ -50,6 +50,7 @@ tags:
   - 'SFP'
   - 'Signal Conditioning'
   - 'SoC'
+  - 'SoM'
   - 'Soft Core'
   - 'Software'
   - 'STM32'
@@ -2316,3 +2317,14 @@ projects:
       - 'STM32'
       - 'TRL7'
       - 'USB'
+  - id: 'zu-som'
+    repository: 'https://gitlab.com/ohwr/project/zu-som.git'
+    contact:
+      name: 'David Nisbet'
+      email: 'David.Nisbet@cern.ch'
+    tags:
+      - 'SoC'
+      - 'SoM'
+      - 'TRL2'
+    compatibles:
+      - 'diot-sb-zu'

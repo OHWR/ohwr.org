@@ -4,13 +4,14 @@
 
 """Represent URLs."""
 
+from functools import partial
 import json
 import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import time
 from typing import Annotated, Any
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 import warnings
 
 import requests
@@ -226,15 +227,26 @@ class GitLabWikiPage(UrlContent):
             '(.+?)(?:/-)?/wikis/(.+)'
         )
         match = re.search(exp, url)
-        url = 'https://{0}/api/v4/projects/{1}/wikis/{2}'.format(
+        api_url = 'https://{0}/api/v4/projects/{1}/wikis/{2}'.format(
             match.group(1),
             quote(match.group(2), safe=''),
             quote(match.group(3), safe=''),
         )
         try:
-            return cls(url, cls._get(url).json()['content'])
+            text = cls._get(api_url).json()['content']
         except (TypeError, json.JSONDecodeError, KeyError) as json_error:
             raise ValueError('Failed to load JSON:\n{0}'.format(json_error))
+        replacer = partial(cls._rel_to_abs, url=url)
+        text = re.sub(r'\[(.*?)\]\((.*?)\)', replacer, text)
+        return cls(api_url, text)
+
+    @classmethod
+    def _rel_to_abs(cls, match, url):
+        text = match.group(1)
+        link = match.group(2)
+        if not re.match(r'^[a-zA-Z]+://', link):
+            link = urljoin(url, link)
+        return "[{}]({})".format(text, link)
 
 
 class GenericUrlContent(UrlContent):

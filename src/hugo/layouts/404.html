@@ -34,6 +34,9 @@ SPDX-License-Identifier: BSD-3-Clause
   const targetMarker2 = '/-/wikis/';
   const regex2 = /^(.*?)(?:\/wiki$|\/wiki\/)(.*)$/;
   path = path.replace(regex2, `$1${targetMarker2}$2`);
+  const targetMarker3 = '/project/';
+  const regex3 = /^\/projects\/(.*)$/;
+  path = path.replace(regex3, `${targetMarker3}$1`);
   const gitlabUrl = `https://gitlab.com/ohwr${path}`;
   const gitlabLink = document.getElementById("gitlab-link");
   if (gitlabLink) {

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-pydantic==2.12.3
+pydantic==2.12.4
 PyYAML==6.0.3
 email_validator==2.3.0
 requests==2.32.5

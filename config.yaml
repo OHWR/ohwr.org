@@ -2220,8 +2220,8 @@ projects:
   - id: 'ed'
     repository: 'https://gitlab.com/ohwr/project/ed.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Erik van der Bij'
+      email: 'Erik.van.der.Bij@cern.ch'
     tags:
       - 'Documentation'
   - id: 'tdc-core'

@@ -9,7 +9,7 @@ title: Submit a Project to OHWR
 Thank you for your interest in submitting your project to the Open Hardware
 Repository. Please follow the steps below to submit your project.
 
-### Configure your OHWR project page
+## Configure your OHWR project page
 
 Add an `.ohwr.yaml` file to the root directory of your project's repository.
 This file should follow the following schema:
@@ -50,7 +50,7 @@ links:
     url: 'https://foo.com/bar2'
 ```
 
-### Write a newsfeed (**optional**)
+## Write a newsfeed (**optional**)
 
 To post news about your project, create a Markdown file (e.g. a `News.md` file
 in the Wiki of your project) and fill in the `newsfeed` field of your
@@ -94,7 +94,7 @@ This is the content of the third news item. It can contain any relevant
 information or updates.
 ```
 
-### Create an issue
+## Create an issue
 
 Open an issue on the OHWR GitHub repository specifying:
 

@@ -2328,3 +2328,14 @@ projects:
       - 'TRL2'
     compatibles:
       - 'diot-sb-zu'
+  - id: 'diot-pb-dummy'
+    repository: 'https://gitlab.cern.ch/abt-projects/public/diot-dummy-peripheral-board.git'
+    contact:
+      name: 'Léa Strobino'
+      email: 'lea.strobino@cern.ch'
+    tags:
+      - 'DI/OT'
+      - 'TRL4'
+    compatibles:
+      - 'diot-sb-zu'
+      - 'diot-crate-hw'

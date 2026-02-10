@@ -7,11 +7,10 @@ sources: './src/hugo'
 licenses: './third_party/spdx/license-list-data/json/licenses.json'
 tags:
   - '19 inch'
-  - 'ADC'
   - 'Amplifier'
-  - 'ARM'
-  - 'ASIC'
   - 'Attenuator'
+  - 'ADC'
+  - 'ARM'
   - 'COM Express'
   - 'Commercial'
   - 'CompactRIO'
@@ -2329,14 +2328,3 @@ projects:
       - 'TRL2'
     compatibles:
       - 'diot-sb-zu'
-  - id: 'ACCURATE2-EvalBoard'
-    repository: 'https://github.com/boukabache/ACCURATE2_EvalBoard.git'
-    contact:
-      name: 'Hamza Boukabache'
-      email: 'hamza.boukabache@cern.ch'
-    tags:
-      - 'ASIC'
-      - 'Gateware'
-      - 'Low Noise'
-      - 'Signal Conditioning'
-      - 'TRL7'

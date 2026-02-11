@@ -2340,7 +2340,7 @@ projects:
     compatibles:
       - 'diot-sb-zu'
       - 'diot-crate-hw'
-- id: 'ACCURATE2-EvalBoard'
+  - id: 'ACCURATE2-EvalBoard'
     repository: 'https://github.com/boukabache/ACCURATE2_EvalBoard.git'
     contact:
       name: 'Hamza Boukabache'

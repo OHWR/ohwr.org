@@ -11,6 +11,7 @@ tags:
   - 'Attenuator'
   - 'ADC'
   - 'ARM'
+  - 'ASIC'
   - 'COM Express'
   - 'Commercial'
   - 'CompactRIO'
@@ -2339,3 +2340,14 @@ projects:
     compatibles:
       - 'diot-sb-zu'
       - 'diot-crate-hw'
+  - id: 'ACCURATE2-EvalBoard'
+    repository: 'https://github.com/boukabache/ACCURATE2_EvalBoard.git'
+    contact:
+      name: 'Hamza Boukabache'
+      email: 'hamza.boukabache@cern.ch'
+    tags:
+      - 'ASIC'
+      - 'Gateware'
+      - 'Low Noise'
+      - 'Signal Conditioning'
+      - 'TRL7'

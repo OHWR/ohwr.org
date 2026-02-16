@@ -2351,3 +2351,15 @@ projects:
       - 'Low Noise'
       - 'Signal Conditioning'
       - 'TRL7'
+  - id: 'WR2RF-VME'
+    repository: 'https://gitlab.cern.ch/be-cem-edl/chronos/wr2rf-vme.git'
+    contact:
+      name: 'Eva Gousiou'
+      email: 'evangelia.gousiou@cern.ch'
+    tags:
+      - 'RF'
+      - 'White Rabbit'
+      - 'WR Node'
+      - 'Timing'
+      - 'DDS'
+      - 'TRL7'

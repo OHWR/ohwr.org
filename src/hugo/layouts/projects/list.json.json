@@ -4,7 +4,7 @@
     "title" .Title
     "id" .Params.id
     "content" .Plain
-    "text" (transform.Plainify .Summary)
+    "text" (transform.Plainify .Summary | htmlUnescape)
     "url" .Permalink
   -}}
   {{- with .Params.tags -}}

@@ -4,7 +4,7 @@
     "title" .Title
     "content" .Plain
     "filter" .Params.project
-    "text" (transform.Plainify .Summary)
+    "text" (transform.Plainify .Summary | htmlUnescape)
     "url" .Permalink
   -}}
   {{- with .Params.images -}}

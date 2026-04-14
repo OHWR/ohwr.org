@@ -2363,3 +2363,11 @@ projects:
       - 'Timing'
       - 'DDS'
       - 'TRL7'
+  - id: 'TRIDENT-IHP-teststructures'
+    repository: 'https://gitlab.cern.ch/trident/trident-ihp-teststructures.git'
+    contact:
+      name: 'Clyde Laforge'
+      email: 'clyde.laforge@cern.ch'
+    tags:
+      - 'Testing'
+      - 'Low Noise'

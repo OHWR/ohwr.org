@@ -32,6 +32,7 @@ tags:
   - 'High Voltage'
   - 'Hobby'
   - 'Inactive'
+  - 'KiCad'
   - 'Lighting'
   - 'Low Noise'
   - 'Microcontroller'
@@ -55,6 +56,7 @@ tags:
   - 'Soft Core'
   - 'Software'
   - 'STM32'
+  - 'Telemetry'
   - 'TDC'
   - 'Testing'
   - 'Timing'
@@ -2371,3 +2373,11 @@ projects:
     tags:
       - 'Testing'
       - 'Low Noise'
+  - id: 'argos-demo-board'
+    repository: 'https://github.com/CNES/argos-demo-board.git'
+    contact:
+      name: 'Paul Miailhe'
+      email: 'paul.miailhe@cnes.fr'
+    tags:
+      - 'KiCad'
+      - 'Telemetry'

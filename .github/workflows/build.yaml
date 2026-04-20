@@ -50,6 +50,6 @@ jobs:
         env:
           HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public

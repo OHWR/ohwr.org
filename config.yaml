@@ -2381,3 +2381,12 @@ projects:
     tags:
       - 'KiCad'
       - 'Telemetry'
+  - id: 'P4CH-LNLS'
+    repository: 'https://gitlab.com/ohwr/project/P4CH-LNLS.git'
+    contact:
+      name: 'Patricia Nallin'
+      email: 'patricia.nallin@lnls.br'
+    tags:
+      - 'ADC'
+      - 'Amplifier'
+      - 'Low Noise'

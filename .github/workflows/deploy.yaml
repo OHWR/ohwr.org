@@ -44,7 +44,7 @@ jobs:
     if: needs.build.outputs.error != ''
     steps:
       - name: Notify Mattermost Channel
-        uses: mattermost/action-mattermost-notify@2.0.0
+        uses: mattermost/action-mattermost-notify@v2.1.0
         with:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
           # yamllint disable rule:line-length

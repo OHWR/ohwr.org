@@ -2390,11 +2390,11 @@ projects:
       - 'ADC'
       - 'Amplifier'
       - 'Low Noise'
-  - id: 'TRIDENT-GF180-teststructures'
-    repository: 'https://gitlab.cern.ch/trident/trident-gf180-teststructures.git'
+  - id: 'fmc-projects'
+    repository: 'https://gitlab.com/ohwr/project/fmc-projects.git'
     contact:
-      name: 'Clyde Laforge'
-      email: 'clyde.laforge@cern.ch'
+      name: 'Javier Serrano'
+      email: 'javier.serrano@cern.ch'
     tags:
-      - 'Testing'
-      - 'Low Noise'
+      - 'FMC'
+      - 'Documentation'

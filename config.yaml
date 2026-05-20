@@ -2401,8 +2401,8 @@ projects:
   - id: 'fmc-projects'
     repository: 'https://gitlab.com/ohwr/project/fmc-projects.git'
     contact:
-      name: 'Javier Serrano'
-      email: 'javier.serrano@cern.ch'
+      name: 'Erik Van Der Bij'
+      email: 'Erik.van.der.Bij@cern.ch'
     tags:
       - 'FMC'
       - 'Documentation'

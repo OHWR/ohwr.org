@@ -212,9 +212,9 @@ projects:
       - 'Digital I/O'
       - 'TRL4'
   - id: 'giraph32'
-    repository: 'https://gitlab.com/ohwr/project/giraph32.git'
+    repository: 'https://gitlab.cern.ch/abt-projects/public/giraph32.git'
     contact:
-      name: 'Lea Strobino'
+      name: 'Léa Strobino'
       email: 'lea.strobino@cern.ch'
     tags:
       - 'Digital I/O'

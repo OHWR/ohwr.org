@@ -17,4 +17,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Python Lint
-        uses: wemake-services/wemake-python-styleguide@1.7.1
+        uses: wemake-services/wemake-python-styleguide@1.8.0

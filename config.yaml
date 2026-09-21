@@ -2429,3 +2429,11 @@ projects:
       - 'ESP32'
       - 'KiCad'
       - 'TRL2'
+  - id: 'TRIDENT-PCBleakage-testsamples'
+    repository: 'https://gitlab.cern.ch/trident/trident-pcbleakage-testsamples.git'
+    contact:
+      name: 'Clyde Laforge'
+      email: 'clyde.laforge@cern.ch'
+    tags:
+      - 'Testing'
+      - 'Low Noise'

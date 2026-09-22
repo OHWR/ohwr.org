@@ -20,9 +20,11 @@ tags:
   - 'cPCI'
   - 'DAC'
   - 'DDS'
+  - 'Development Board'
   - 'DI/OT'
   - 'Documentation'
   - 'Digital I/O'
+  - 'ESP32'
   - 'Ethernet'
   - 'Fine Delay'
   - 'FMC'
@@ -2417,3 +2419,21 @@ projects:
       - 'Rad-tol'
       - 'Lighting'
       - 'TRL8'
+  - id: 'Raiden S0-1'
+    repository: 'https://github.com/RaidenTechnology/raiden-s01.git'
+    contact:
+      name: 'Raiden Technology'
+      email: 'raidentechnologyy@gmail.com'
+    tags:
+      - 'Development Board'
+      - 'ESP32'
+      - 'KiCad'
+      - 'TRL2'
+  - id: 'TRIDENT-PCBleakage-testsamples'
+    repository: 'https://gitlab.cern.ch/trident/trident-pcbleakage-testsamples.git'
+    contact:
+      name: 'Clyde Laforge'
+      email: 'clyde.laforge@cern.ch'
+    tags:
+      - 'Testing'
+      - 'Low Noise'

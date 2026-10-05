@@ -10,4 +10,4 @@ reuse==6.2.0
 wemake-python-styleguide==1.8.1
 yamllint==1.38.0
 pytest==9.1.1
-pytest-mock==3.15.1
+pytest-mock==3.16.0

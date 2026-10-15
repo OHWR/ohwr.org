@@ -100,6 +100,8 @@ class TestSpdxLicenseList:
     @pytest.mark.parametrize("license_id,should_exist", [
         ("Apache-2.0", True),
         ("MISSING", False),
+        ("MISSING+", False),
+        ("+", False),
     ])
     def test_get_license(self, license_id, should_exist):
         """Test license retrieval."""
@@ -123,16 +125,6 @@ class TestSpdxLicenseList:
         assert license_data.name == "CERN-OHL-W-2.0 License or later"
         assert license_data.url == base_license.url
         assert base_license.name == "CERN-OHL-W-2.0 License"
-
-    @pytest.mark.parametrize("license_id", ["MISSING+", "+"])
-    def test_get_license_or_later_unknown(self, license_id):
-        """Test '+' retrieval fails for unknown base licenses."""
-        SpdxLicenseList._spdx_license_list = [
-            self._create_license("Apache-2.0")
-        ]
-        with pytest.raises(ValueError) as excinfo:
-            SpdxLicenseList.get_license(license_id)
-        assert "Unknown SPDX identifier" in str(excinfo.value)
 
     def _create_license(self, license_id):
         """Helper to create test license."""

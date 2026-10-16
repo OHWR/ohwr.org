@@ -79,6 +79,9 @@ class SpdxLicenseList:
         """
         Find license data for an SPDX license identifier.
 
+        A trailing '+' (the SPDX "or later" operator) is accepted: the base
+        license is looked up and "or later" is appended to its name.
+
         Parameters:
             license_id: license identifier string.
 
@@ -88,7 +91,13 @@ class SpdxLicenseList:
         Raises:
             ValueError: if no data was found for an SPDX license identifier.
         """
+        base_id = license_id.removesuffix('+')
         for spdx_license in cls._spdx_license_list:
-            if spdx_license.id == license_id:
-                return spdx_license
+            if spdx_license.id == base_id:
+                if base_id == license_id:
+                    return spdx_license
+                return spdx_license.model_copy(update={
+                    'id': license_id,
+                    'name': '{0} or later'.format(spdx_license.name),
+                })
         raise ValueError("Unknown SPDX identifier '{0}'.".format(license_id))

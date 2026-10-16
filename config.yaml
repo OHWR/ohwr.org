@@ -2437,3 +2437,11 @@ projects:
     tags:
       - 'Testing'
       - 'Low Noise'
+  - id: 'colibri'
+    repository: 'https://gitlab.com/colibri-cern/colibri.git'
+    contact:
+      name: 'Alberto Perro'
+      email: 'alberto.perro@cern.ch'
+    tags:
+      - 'ASIC'
+      - 'Gateware'

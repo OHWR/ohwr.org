@@ -51,6 +51,7 @@ jobs:
           HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
           GITLAB_CERN_TOKEN: ${{ secrets.GITLAB_CERN_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:

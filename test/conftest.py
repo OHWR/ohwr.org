@@ -30,9 +30,9 @@ def reset_throttle(mocker):
 
 
 @pytest.fixture(autouse=True)
-def no_gitlab_tokens(monkeypatch):
-    monkeypatch.delenv('GITLAB_TOKEN', raising=False)
-    monkeypatch.delenv('GITLAB_CERN_TOKEN', raising=False)
+def no_tokens(monkeypatch):
+    for token_var in ('GITLAB_TOKEN', 'GITLAB_CERN_TOKEN', 'GITHUB_TOKEN'):
+        monkeypatch.delenv(token_var, raising=False)
 
 
 @pytest.fixture

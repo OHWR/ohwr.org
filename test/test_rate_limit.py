@@ -21,6 +21,7 @@ GET = "get"
 HTTP_OK = 200
 HTTP_ERROR = 400
 TOO_MANY = 429
+FORBIDDEN = 403
 NOT_FOUND = 404
 RETRY_AFTER = 30
 RETRY_AFTER_HEADER = "Retry-After"
@@ -100,6 +101,29 @@ class TestRequest:
         assert excinfo.value.status_code == TOO_MANY
         assert mock_get.call_count == 1
         mock_sleep.assert_not_called()
+
+
+class TestGitHubRateLimit:
+    """Test GitHub's way of reporting rate limits."""
+
+    def test_github_limit_is_rate_limited(self, mocker):
+        mocker.patch("time.time", return_value=NOW)
+        headers = {
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": str(NOW + RESET_IN),
+        }
+        limited = make_response(mocker, FORBIDDEN, headers)
+        assert RateLimited.matches(limited)
+        assert retry_delay(limited, 0) == RESET_IN
+
+    def test_plain_forbidden_is_not_retried(self, mocker):
+        forbidden = make_response(mocker, FORBIDDEN)
+        mock_get = mocker.patch(REQUESTS_GET, return_value=forbidden)
+
+        with pytest.raises(RequestFailed) as excinfo:
+            request(GET, EXAMPLE_URL)
+        assert not isinstance(excinfo.value, RateLimited)
+        assert mock_get.call_count == 1
 
 
 class TestThrottle:

@@ -83,6 +83,15 @@ class TestGitHubRepository:
         )
         assert file_content == TEST_FILE_CONTENT
 
+    def test_fetch_file_with_token(self, mocker, monkeypatch):
+        """Test that the GitHub token is sent when configured."""
+        monkeypatch.setenv("GITHUB_TOKEN", TEST_TOKEN)
+        mock_get = mocker.patch(MOCK_GET_PATH)
+
+        GitHubRepository(TEST_GITHUB_URL).fetch(TEST_FILE_PATH)
+        headers = mock_get.call_args.kwargs["headers"]
+        assert headers["Authorization"] == "Bearer {0}".format(TEST_TOKEN)
+
 
 class TestGitLabRepository:
     """Test GitLabRepository functionality."""

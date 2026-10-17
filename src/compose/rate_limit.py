@@ -51,6 +51,7 @@ class RequestFailed(ValueError):
         ))
         res = getattr(error, 'response', None)
         self.status_code = None if res is None else res.status_code
+        self.rate_limited = RateLimited.matches(res)
 
     @classmethod
     def create(
@@ -71,7 +72,7 @@ class RequestFailed(ValueError):
             A RequestFailed or RateLimited instance.
         """
         failure = cls(method, url, error)
-        if failure.status_code not in RATE_LIMIT_CODES:
+        if not failure.rate_limited:
             return failure
         if not waited_on_rate_limit:
             logging.info("Not checked, rate-limited: '{0}'".format(url))
@@ -80,6 +81,27 @@ class RequestFailed(ValueError):
 
 class RateLimited(RequestFailed):
     """The last attempt of an HTTP request was rate-limited."""
+
+    @classmethod
+    def matches(cls, res: requests.Response | None) -> bool:
+        """
+        Tell whether a response means the request was rate-limited.
+
+        Parameters:
+            res: HTTP response, or None if no response was received.
+
+        Returns:
+            True if the server rate-limited the request.
+        """
+        if res is None:
+            return False
+        if res.status_code in RATE_LIMIT_CODES:
+            return True
+        # GitHub reports rate limits as 403 with one of these headers.
+        return res.status_code == HTTPStatus.FORBIDDEN and (
+            res.headers.get('X-RateLimit-Remaining') == '0' or
+            'Retry-After' in res.headers
+        )
 
 
 def request(
@@ -140,7 +162,7 @@ def _error_delay(
     res = getattr(error, 'response', None)
     if res is None:
         return attempt + 1
-    if res.status_code in RATE_LIMIT_CODES:
+    if RateLimited.matches(res):
         if not wait_on_rate_limit:
             return math.inf
         return retry_delay(res, attempt)
@@ -162,7 +184,9 @@ def retry_delay(res: requests.Response, attempt: int) -> float:
     """
     delay = 2 ** (attempt + 1)
     retry_after = str(res.headers.get('Retry-After', ''))
-    reset = str(res.headers.get('RateLimit-Reset', ''))
+    reset = str(res.headers.get(
+        'RateLimit-Reset', res.headers.get('X-RateLimit-Reset', ''),
+    ))
     if retry_after.isdigit():
         delay = int(retry_after)
     elif reset.isdigit():

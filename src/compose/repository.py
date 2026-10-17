@@ -5,6 +5,7 @@
 """Represent Git Repositories."""
 
 import json
+import os
 import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
@@ -89,6 +90,11 @@ class GitHubRepository(Repository):
             path,
         )
         headers = {'Accept': 'application/vnd.github.v3.raw'}
+        # Anonymous API requests are limited to 60 per hour per IP, which
+        # is often used up on shared CI runners.
+        token = os.environ.get('GITHUB_TOKEN')
+        if token:
+            headers['Authorization'] = 'Bearer {0}'.format(token)
         return self._get(url, headers=headers).text
 
 

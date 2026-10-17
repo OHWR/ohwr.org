@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from typing import Any
 from urllib.parse import quote
 
+from rate_limit import gitlab_headers
 from url import StrictUrl
 
 
@@ -111,15 +112,25 @@ class GitLabRepository(Repository):
             r'^https://((?:gitlab\.com|gitlab\.cern\.ch))/(.+?)\.git',
             self.url,
         )
+        headers = gitlab_headers(match.group(1))
+        if not headers:
+            # Without a token the API is heavily rate-limited: use the web
+            # route instead, where 'HEAD' resolves to the default branch.
+            url = 'https://{0}/{1}/-/raw/HEAD/{2}'.format(
+                match.group(1), match.group(2), path,
+            )
+            return self._get(url).text
         url = 'https://{0}/api/v4/projects/{1}'.format(
             match.group(1),
             quote(match.group(2), safe=''),
         )
         try:
-            default_branch = self._get(url).json()['default_branch']
+            default_branch = self._get(
+                url, headers=headers,
+            ).json()['default_branch']
         except (TypeError, json.JSONDecodeError, KeyError) as json_error:
             raise ValueError('Failed to load JSON:\n{0}'.format(json_error))
-        url = 'https://{0}/{1}/-/raw/{2}/{3}'.format(
-            match.group(1), match.group(2), default_branch, path,
+        url = '{0}/repository/files/{1}/raw?ref={2}'.format(
+            url, quote(path, safe=''), quote(default_branch, safe=''),
         )
-        return self._get(url).text
+        return self._get(url, headers=headers).text

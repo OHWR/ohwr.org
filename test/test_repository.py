@@ -17,6 +17,7 @@ TEST_INVALID_URL = "https://unsupported.com/repo.git"
 TEST_FILE_PATH = "path/to/file.txt"
 TEST_FILE_CONTENT = "file content"
 TEST_DEFAULT_BRANCH = "main"
+TEST_TOKEN = "secret"
 MOCK_GET_PATH = "repository.Repository._get"
 
 
@@ -90,19 +91,41 @@ class TestGitLabRepository:
         [TEST_GITLAB_URL, TEST_CERN_URL],
     )
     def test_fetch_file(self, mocker, repo_url):
-        """Test fetching a file from GitLab instances."""
-        mock_get = self._setup_mocks(mocker)
-        repository = GitLabRepository(repo_url)
-        project_url, file_url = self._get_expected_urls(repo_url)
-        file_content = repository.fetch(TEST_FILE_PATH)
+        """Test fetching a file without a token uses the web route."""
+        mock_get = mocker.patch(MOCK_GET_PATH)
+        mock_get.return_value.text = TEST_FILE_CONTENT
+        file_content = GitLabRepository(repo_url).fetch(TEST_FILE_PATH)
 
-        assert mock_get.call_count == 2
-        mock_get.assert_any_call(project_url)
-        mock_get.assert_any_call(file_url)
+        mock_get.assert_called_once_with("{0}/-/raw/HEAD/{1}".format(
+            repo_url.removesuffix(".git"), TEST_FILE_PATH,
+        ))
         assert file_content == TEST_FILE_CONTENT
 
-    def test_fetch_file_json_error(self, mocker):
+    @pytest.mark.parametrize(
+        "repo_url,token_var",
+        [
+            (TEST_GITLAB_URL, "GITLAB_TOKEN"),
+            (TEST_CERN_URL, "GITLAB_CERN_TOKEN"),
+        ],
+    )
+    def test_fetch_file_with_token(
+        self, mocker, monkeypatch, repo_url, token_var,
+    ):
+        """Test fetching a file with a token uses the API."""
+        monkeypatch.setenv(token_var, TEST_TOKEN)
+        mock_get = self._setup_mocks(mocker)
+        project_url, file_url = self._get_expected_urls(repo_url)
+        file_content = GitLabRepository(repo_url).fetch(TEST_FILE_PATH)
+
+        headers = {"PRIVATE-TOKEN": TEST_TOKEN}
+        assert mock_get.call_count == 2
+        mock_get.assert_any_call(project_url, headers=headers)
+        mock_get.assert_any_call(file_url, headers=headers)
+        assert file_content == TEST_FILE_CONTENT
+
+    def test_fetch_file_json_error(self, mocker, monkeypatch):
         """Test handling of JSON decode errors."""
+        monkeypatch.setenv("GITLAB_TOKEN", TEST_TOKEN)
         mock_get = mocker.patch(MOCK_GET_PATH)
         mock_response = mocker.Mock()
         mock_response.json.side_effect = json.JSONDecodeError(
@@ -115,8 +138,9 @@ class TestGitLabRepository:
             repository.fetch(TEST_FILE_PATH)
         assert "Failed to load JSON" in str(excinfo.value)
 
-    def test_fetch_file_missing_branch(self, mocker):
+    def test_fetch_file_missing_branch(self, mocker, monkeypatch):
         """Test handling of missing default branch."""
+        monkeypatch.setenv("GITLAB_TOKEN", TEST_TOKEN)
         mock_get = mocker.patch(MOCK_GET_PATH)
         mock_response = mocker.Mock()
         mock_response.json.return_value = {}
@@ -135,8 +159,11 @@ class TestGitLabRepository:
 
         return (
             "{0}/api/v4/projects/{1}".format(base_url, quote(path, safe="")),
-            "{0}/{1}/-/raw/{2}/{3}".format(
-                base_url, path, TEST_DEFAULT_BRANCH, TEST_FILE_PATH
+            "{0}/api/v4/projects/{1}/repository/files/{2}/raw?ref={3}".format(
+                base_url,
+                quote(path, safe=""),
+                quote(TEST_FILE_PATH, safe=""),
+                TEST_DEFAULT_BRANCH,
             )
         )
 

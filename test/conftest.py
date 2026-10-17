@@ -19,6 +19,22 @@ def mock_requests(mocker):
     return mock_response
 
 
+@pytest.fixture(autouse=True)
+def mock_sleep(mocker):
+    return mocker.patch('time.sleep')
+
+
+@pytest.fixture(autouse=True)
+def reset_throttle(mocker):
+    mocker.patch.dict('rate_limit._last_request', clear=True)
+
+
+@pytest.fixture(autouse=True)
+def no_gitlab_tokens(monkeypatch):
+    monkeypatch.delenv('GITLAB_TOKEN', raising=False)
+    monkeypatch.delenv('GITLAB_CERN_TOKEN', raising=False)
+
+
 @pytest.fixture
 def sample_contact():
     return Contact(name="John Doe", email="john@example.com")

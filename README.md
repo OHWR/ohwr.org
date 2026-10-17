@@ -61,6 +61,21 @@ theme.
 
    The website is stored in the `public` directory.
 
+   The build fetches data from GitLab, which rate-limits anonymous requests.
+   To avoid `429 Too Many Requests` errors, set GitLab personal access tokens
+   with the `read_api` scope. Each token is only sent to its own instance:
+
+   * `GITLAB_TOKEN`: token created on [gitlab.com](https://gitlab.com)
+   * `GITLAB_CERN_TOKEN`: token created on [gitlab.cern.ch](https://gitlab.cern.ch)
+
+   Both are optional and can be used together:
+
+   ```bash
+   export GITLAB_TOKEN=<gitlab.com token>
+   export GITLAB_CERN_TOKEN=<gitlab.cern.ch token>
+   make build
+   ```
+
 4. Serve the website
 
    ```bash

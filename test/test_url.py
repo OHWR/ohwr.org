@@ -4,11 +4,12 @@
 
 import pytest
 import json
-from requests.exceptions import RequestException
+from requests.exceptions import HTTPError, RequestException
 from pydantic import BaseModel, ValidationError
 from url import (
     StrictUrl,
     UrlContent,
+    GitLabRawFile,
     GitLabWikiPage,
     GenericUrlContent,
     StrictUrlList
@@ -25,6 +26,27 @@ CONTENT_TEXT = "content"
 REQUESTS_HEAD = "requests.head"
 REQUESTS_GET = "requests.get"
 RE_SEARCH = "re.search"
+METHOD_NOT_ALLOWED = 405
+TOO_MANY_REQUESTS = 429
+NOT_FOUND = 404
+RAW_URL = (
+    "https://gitlab.com/group/project/-/raw/master/docs/changelog.md"
+    "?ref_type=heads"
+)
+RAW_API_URL = (
+    "https://gitlab.com/api/v4/projects/group%2Fproject/repository/files/"
+    "docs%2Fchangelog.md/raw?ref=master"
+)
+
+
+def error_response(mocker, status_code):
+    response = mocker.Mock()
+    response.status_code = status_code
+    response.headers = {"Retry-After": "3600"}
+    response.raise_for_status.side_effect = HTTPError(
+        str(status_code), response=response,
+    )
+    return response
 
 
 class StrictUrlListTestModel(BaseModel):
@@ -51,6 +73,28 @@ class TestStrictUrl:
 
         with pytest.raises(ValueError):
             StrictUrl._validate("http://invalid.com")
+
+    def test_head_falls_back_to_get(self, mocker):
+        rejected = error_response(mocker, METHOD_NOT_ALLOWED)
+        mock_head = mocker.patch(REQUESTS_HEAD, return_value=rejected)
+        ok_response = mocker.Mock()
+        ok_response.raise_for_status.return_value = None
+        mock_get = mocker.patch(REQUESTS_GET, return_value=ok_response)
+
+        assert StrictUrl._head(EXAMPLE_URL) == ok_response
+        assert mock_head.call_count == 1
+        mock_get.assert_called_once_with(EXAMPLE_URL, timeout=10, stream=True)
+        ok_response.close.assert_called_once()
+
+    @pytest.mark.parametrize("status_code", [NOT_FOUND, TOO_MANY_REQUESTS])
+    def test_head_no_fallback_on_other_errors(self, mocker, status_code):
+        failed = error_response(mocker, status_code)
+        mocker.patch(REQUESTS_HEAD, return_value=failed)
+        mock_get = mocker.patch(REQUESTS_GET)
+
+        with pytest.raises(ValueError):
+            StrictUrl._head(EXAMPLE_URL)
+        mock_get.assert_not_called()
 
     def test_url_serialization(self):
         url_obj = StrictUrl(EXAMPLE_URL)
@@ -154,6 +198,38 @@ class TestUrlContent:
         invalid_value = 123
         with pytest.raises(ValueError):
             UrlContent._validate(invalid_value)
+
+
+class TestGitLabRawFile:
+    """Test fetching raw files from GitLab."""
+
+    def test_gitlab_raw_file(self, mocker, monkeypatch):
+        monkeypatch.setenv("GITLAB_TOKEN", "secret")
+        mock_response = mocker.Mock()
+        mock_response.text = CONTENT_TEXT
+        mock_get = mocker.patch(
+            "url.StrictUrl._get", return_value=mock_response,
+        )
+
+        raw_file = UrlContent.create(RAW_URL)
+        assert isinstance(raw_file, GitLabRawFile)
+        assert raw_file.url == RAW_URL
+        assert raw_file.text == CONTENT_TEXT
+        mock_get.assert_called_once_with(
+            RAW_API_URL, headers={"PRIVATE-TOKEN": "secret"},
+        )
+
+    def test_gitlab_raw_file_without_token(self, mocker):
+        mock_response = mocker.Mock()
+        mock_response.text = CONTENT_TEXT
+        mock_get = mocker.patch(
+            "url.StrictUrl._get", return_value=mock_response,
+        )
+
+        raw_file = UrlContent.create(RAW_URL)
+        assert isinstance(raw_file, GitLabRawFile)
+        assert raw_file.text == CONTENT_TEXT
+        mock_get.assert_called_once_with(RAW_URL)
 
 
 class TestStrictUrlList:

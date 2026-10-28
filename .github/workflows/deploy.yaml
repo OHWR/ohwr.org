@@ -28,6 +28,7 @@ jobs:
       (github.event_name != 'schedule') ||
       (github.event_name == 'schedule' && github.repository == 'OHWR/ohwr.org')
     uses: ./.github/workflows/build.yaml
+    secrets: inherit
   deploy:
     environment:
       name: github-pages

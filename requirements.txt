@@ -4,7 +4,7 @@
 
 pydantic==2.14.1
 PyYAML==6.0.3
-email_validator==2.3.0
+email_validator==2.4.0
 requests==2.34.2
 reuse==6.2.0
 wemake-python-styleguide==1.8.1
